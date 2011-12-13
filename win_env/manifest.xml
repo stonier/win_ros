@@ -1,0 +1,14 @@
+<package>
+  <description brief="Configures environment variables for ros on windows">
+
+   Can be used to either configure environment variables temporarily inside a shell, or 
+   permanently save the environment variables in the registry for session-wide use.
+
+  </description>
+  <author>Daniel Stonier</author>
+  <license>BSD</license>
+  <review status="experimental" notes=""/>
+  <url>http://ros.org/wiki/win_setup</url>
+  <depend package="win_py2exe"/>
+  <depend package="win_roscd"/>
+</package>

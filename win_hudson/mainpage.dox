@@ -1,0 +1,36 @@
+/**
+\mainpage
+\htmlinclude manifest.html
+
+\section Overview
+
+Resources to get the auto-build up and running on hudson.
+
+\section Links
+
+ - Hudson Node Url: http://build.willowgarage.com/computer/win7-64/
+ - Hudson Project Url: http://build.willowgarage.com/job/roswin/
+ - Hudson Manual Trigger Url: http://build.willowgarage.com/job/roswin/build?token=yujin
+ - Java for Windows Url: http://java.com/en/download/help/windows_manual_download.xml
+
+\section Setup
+
+ - Machine: windows 7 64 bit
+ - User: rosbuild (this is important!)
+ - Location: C:\Users\rosbuild\hudson
+ - Location: C:\Users\rosbuild\hudson\workspace\roswin
+
+The make.bat script will copy files to their correct locations.
+
+\Section Execution
+
+Start the slave
+
+@code
+cd C:\Users\rosbuild\hudson
+hudson
+@endcode
+
+Start the build manually by calling the 'Hudson Manual Trigger Url' (in a web browser or via wget).
+
+*/

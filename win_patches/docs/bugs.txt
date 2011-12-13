@@ -1,0 +1,17 @@
+== UDP Bug ==
+
+The combo talker + listener_unreliable fails, somewhere forming the connection, it mangles the header. Some debugging output:
+
+On listener_unreliable's side:
+
+    Subscription::negotiateConnection writing 118 bytes.
+        callerid=/listener_unreliable'    md5sum=992ce8a1687cec8c8bd883ec73ca41d1    topic=/chatter    type=std_msgs/String
+
+On talker's side:
+    TopicManager::requestTopic received a type UDPROS
+    TopicManager::requestTopic header bytes 118
+        ca le id /l st ne _u re ia le     md su =9 2c 8a 68 ce 8c bd 83 c7 ca 1d     t pi =/ ha ter    t pe st _m gs St in 
+
+There's a pattern there, every third byte is missing, but I've no idea why.
+
+THIS HAS BEEN FIXED.

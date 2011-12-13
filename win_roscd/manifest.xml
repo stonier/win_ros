@@ -1,0 +1,15 @@
+<package>
+  <description brief="Implements the legendary bash roscd in the windows shell">
+
+  Some quick magic to implement roscd in cmd.exe. This is called from 
+  winshell.bat (see win_env).
+
+  </description>
+  <author>Daniel Stonier</author>
+  <license>BSD</license>
+  <review status="experimental" notes=""/>
+  <url>http://ros.org/wiki/win_roscd</url>
+
+</package>
+
+

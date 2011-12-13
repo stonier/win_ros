@@ -1,0 +1,1 @@
+java -jar slave.jar -jnlpUrl http://build.willowgarage.com/computer/win7-64/slave-agent.jnlp

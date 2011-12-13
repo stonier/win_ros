@@ -1,0 +1,56 @@
+There may have been one or two other changes over and above this...
+
+Non cpp code
+
+ - remove unnecessary dependency on roslib in manifest.xml
+ - add a python call to the genmsg_cpp add_custom_commands to work around a windows bug handling long arg strings
+
+
+transport/transport_udp.cpp
+
+ - ssize_t/DWORD definitions replaced.
+ - bugfix the windows WSARecv functionality (stop it from calling overlapping functionality and revert to non-blocking only).
+
+timer_manager.hpp
+
+- Remove the class definition in front of TimerInfoPtr calls in funciton args
+  It confuses the msvc compiler and isn't necessary (check on linux).
+
+this_node.cpp
+
+ - getenv -> _dupenv_s
+ - sprintf define
+
+master.cpp
+
+ - getenv -> _dupenv_s
+
+poll_set.cpp, io.h and io.cpp
+
+ - close the signal pair properly in windows (via closesocket).
+ - write, read to _write, _read on msc
+
+network.cpp
+ - getenv -> _dupenv_s
+
+init.cpp
+
+ - getenv -> _dupenv_s
+ - log4cxx encoders to deal with windows wchar's.
+
+io.h
+
+ - typdef for int -> pid_t
+
+file_log.cpp
+
+ - getenv -> _dupenv_s
+ - snprintf -> _snprintf_s
+
+forwards.h
+
+ - struct WallTimerEvent -> class to remove warning.
+
+rosout_appender.cpp
+
+ - log4cxx transcoder.h's ENCODE_CHAR function.

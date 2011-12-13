@@ -1,0 +1,49 @@
+/**
+\mainpage
+\htmlinclude manifest.html
+
+\section packageSummary Package Summary
+
+     Installer script for the mingw cross environment.
+     
+\section Usage
+     
+     Simply run the following commands.
+     
+     @code
+     roscd mingw_cross
+     make         // installs to /opt/mingw and compiles gcc, boost and qt, also adds links.
+     @endcode
+     
+     Further build recipes can be compiled into the toolchain by 
+     simply switching to the root and making the appropriate target.
+     A list of packages that can be installed can be found on 
+     
+     http://mingw-cross-env.nongnu.org/#packages
+     
+     To build wxwidgets for example,
+     
+     @code
+     cd /opt/mingw
+     make wxwidgets
+     @endcode
+
+\section ToDo
+    
+     Create apr, apr-util and log4cxx build makefiles and submit upstream.
+     
+     - binutils, libpng : take out patches when mingw cross updates.
+     - apr : backup url's, update and test program.
+     - apr-util : backup url's update and test program.
+     - log4cxx : backup url's and test program.
+    
+     Redo this package so that it installs in a user's directory and adds
+     path information to the setup.sh
+ 
+\section ChangeLog
+
+     - <b>Oct 11</b> : moved to win_ros
+     - <b>Oct 11</b> : converting to use hg clone and hg pull instead of the tarball.
+     - <b>Nov 10</b> : Done and road tested.
+
+*/

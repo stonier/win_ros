@@ -1,0 +1,30 @@
+<package>
+  <description brief="Build recipe to install the mingw cross environment">
+
+     Installer script for the mingw cross environment. This will install to /opt/mingw
+     and immediately begin cross-compiling gcc, boost and qt. Other libraries can be added by
+     simply cd'ing to /opt/mingw and running make for the desired target.
+
+  </description>
+  <author>Daniel Stonier (d.stonier@gmail.com)</author>
+  <license>BSD</license>
+  <review status="doc reviewed" notes=""/>
+  <url>http://mingw-cross-env.nongnu.org/</url>
+  <!-- provided by win_ros/rosdep.yaml -->
+  <rosdep name="hg"/>
+  <rosdep name="xz"/>
+  <rosdep name="flex"/>
+  <rosdep name="bison"/>
+  <rosdep name="yasm"/>
+  <!-- provided by ros/rosdep.yaml -->
+  <!-- actually supplying these in win_ros/rosdep.yaml for now
+       since huey's oneiric is spitting the dummy about the 
+       official ros/rosdep.yaml and I don't know why yet.
+  -->
+  <rosdep name="autoconf"/>
+  <rosdep name="libtool"/>
+  <rosdep name="intltool"/>
+  <rosdep name="scons"/>
+</package>
+
+

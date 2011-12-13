@@ -1,0 +1,20 @@
+/**
+\mainpage
+\htmlinclude manifest.html
+
+@section Warning
+
+This is unused for now, till we start trying to put together a runtime
+environment for windows again.
+
+@section Overview
+
+This package helps configure environment variables on windows for ros. 
+
+@section Issues
+
+Probably we can just dump roscd.bat into win_ros/bin and we don't need the doskey 
+and ROS_INSTALL_ROOT calls in winshell.bat. If we ever actually absolutely 
+need win_ros/bin, might do that. Currently we don't actually need it.
+
+*/

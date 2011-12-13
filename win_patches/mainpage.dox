@@ -1,0 +1,26 @@
+/**
+\mainpage
+\htmlinclude manifest.html
+
+
+\section Overview
+
+Nothing to see here - no code...well, except for patches to get ros working on windows
+until those patches are accepted upstream.
+
+\section Patches
+
+Important:
+
+ - common/actionlib/rosbuild.cmake : ???
+  - ???
+ - ros/core/roslib/include/ros/package.h : declspec definitions had no shared library macro defined.
+  - https://code.ros.org/trac/ros/ticket/3687
+ - ros_comm/utilities/cpp_common/include/ros/macros.h : declspec definitions had no shared library macro defined.
+  - https://code.ros.org/trac/ros/ticket/3687
+ - ros_comm/utilities/xmlrpcpp/rosbuild.cmake : didn't install a header.
+  - https://code.ros.org/trac/ros/ticket/3715
+ - ros_comm/clients/cpp/roscpp/manifest.xml : temporarily add log4cxx as a rosbuild2 rosdep, (mingw needs it).
+  - https://code.ros.org/trac/ros/ticket/3686
+
+*/

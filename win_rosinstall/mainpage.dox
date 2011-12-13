@@ -1,0 +1,38 @@
+/**
+\mainpage
+\htmlinclude manifest.html
+
+\section Overview
+
+Experimental hacks on rosinstall/vcstools for playing with windows. Hopefully we can later merge this back upstream.
+
+\section Tickets
+
+Current tickets pending...
+
+
+ - https://kforge.ros.org/vcstools/trac/ticket/1 - git problems in vcstools.
+ - https://code.ros.org/trac/ros/ticket/3682 - git problems in rosinstall.
+
+\section Requirements
+
+Refer to http://www.ros.org/wiki/win_rosinstall for a list of the tools needed to run it.
+To build the installer for it, you'll also need:
+
+Developer:
+
+ - http://pypi.python.org/pypi/setuptools#files : chose the exe that matches your python version.
+
+After installing everything, make sure PYTHONHOME has been set and %PYTHONHOME%/Scripts 
+is in your PATH as described on the wiki page.
+
+\Section Building
+
+To build the windows installer, simply switch to the 
+root of the win_rosinstall package and run
+
+@code
+python setup.py bdist_wininst
+@endcode
+
+*/

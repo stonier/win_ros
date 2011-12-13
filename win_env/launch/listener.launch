@@ -1,0 +1,7 @@
+<!--
+  Starts up the python listener, and also tests parameter setting. 
+    -->
+<launch>
+  <param name="dude" value="snorri" />
+  <node pkg="rospy_tutorials" type="listener.py" name="listener"  output="screen"/>
+</launch>

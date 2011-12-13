@@ -1,0 +1,15 @@
+<package>
+  <description brief="resources to enable hudson build farm execution for ros on windows">
+
+  This stack is now being used to execute a hudson build farm job to test/build ros on 
+  a windows platform. This package provides resources relevant to that.
+
+  </description>
+  <author>Daniel Stonier</author>
+  <license>BSD</license>
+  <review status="experimental" notes=""/>
+  <url>http://ros.org/wiki/win_patches</url>
+
+</package>
+
+

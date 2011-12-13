@@ -1,0 +1,19 @@
+/**
+\mainpage
+\htmlinclude manifest.html
+
+@section Overview
+
+This avoids doing complete package compilation and just generates sources for
+msg and srv files of a package and all its dependencies.
+
+@section Details
+
+This glues together a bit of the logic in the scripts of both rospy and roscpp 
+packages with some roslib magic. The scripts do the actual source generation,
+while roslib is used to chase down dependencies.
+
+Note we have to add the scripts to the system path since unfortunately they're 
+not actual python modules (so roslib can't autofind them). 
+     
+*/

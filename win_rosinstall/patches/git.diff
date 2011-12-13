@@ -1,0 +1,65 @@
+--- git.original.py	Thu Sep 22 08:40:30 2011
++++ git.py	Thu Sep 22 06:00:45 2011
+@@ -52,7 +52,7 @@
+     including if version cannot be detected
+     """
+     try:
+-        version = subprocess.Popen(['git --version'], shell=True, stdout=subprocess.PIPE).communicate()[0]
++        version = subprocess.Popen('git --version', shell=True, stdout=subprocess.PIPE).communicate()[0]
+     except:
+         return False
+    # 'git version 1.7.0.4\n'
+@@ -81,7 +81,7 @@
+         @return: GIT URL of the directory path (output of git info command), or None if it cannot be determined
+         """
+         if self.detect_presence():
+-            output = subprocess.Popen(["git config --get remote.origin.url"], shell=True, cwd=self._path, stdout=subprocess.PIPE).communicate()[0]
++            output = subprocess.Popen("git config --get remote.origin.url", shell=True, cwd=self._path, stdout=subprocess.PIPE).communicate()[0]
+             return output.rstrip()
+         return None
+ 
+@@ -220,7 +220,7 @@
+         
+     def is_remote_branch(self, branch_name):
+         if self.path_exists():
+-            output = subprocess.Popen(['git branch -r'], shell=True, cwd= self._path, stdout=subprocess.PIPE).communicate()[0]
++            output = subprocess.Popen('git branch -r', shell=True, cwd= self._path, stdout=subprocess.PIPE).communicate()[0]
+             for l in output.splitlines():
+                 elems = l.split()
+                 if len(elems) == 1:
+@@ -231,7 +231,7 @@
+ 
+     def is_local_branch(self, branch_name):
+         if self.path_exists():
+-            output = subprocess.Popen(['git branch'], shell=True, cwd= self._path, stdout=subprocess.PIPE).communicate()[0]
++            output = subprocess.Popen('git branch', shell=True, cwd= self._path, stdout=subprocess.PIPE).communicate()[0]
+             for l in output.splitlines():
+                 elems = l.split()
+                 if len(elems) == 1:
+@@ -244,7 +244,7 @@
+ 
+     def get_branch(self):
+         if self.path_exists():
+-            output = subprocess.Popen(['git branch'], shell=True, cwd= self._path, stdout=subprocess.PIPE).communicate()[0]
++            output = subprocess.Popen('git branch', shell=True, cwd= self._path, stdout=subprocess.PIPE).communicate()[0]
+             for l in output.splitlines():
+                 elems = l.split()
+                 if len(elems) == 2 and elems[0] == '*':
+@@ -253,7 +253,7 @@
+ 
+     def get_branch_parent(self):
+         if self.path_exists():
+-            output = subprocess.Popen(['git config --get branch.%s.merge'%self.get_branch()], shell=True, cwd= self._path, stdout=subprocess.PIPE).communicate()[0].strip()
++            output = subprocess.Popen('git config --get branch.%s.merge'%self.get_branch(), shell=True, cwd= self._path, stdout=subprocess.PIPE).communicate()[0].strip()
+             if not output:
+                 print "No output of get branch.%s.merge"%self.get_branch()
+                 return None
+@@ -278,7 +278,7 @@
+ 
+     def is_tag(self, tag_name):
+         if self.path_exists():
+-            output = subprocess.Popen(['git tag -l %s'%tag_name], shell=True, cwd= self._path, stdout=subprocess.PIPE).communicate()[0]
++            output = subprocess.Popen('git tag -l %s'%tag_name, shell=True, cwd= self._path, stdout=subprocess.PIPE).communicate()[0]
+             lines =  output.splitlines()
+             if len(lines) == 1:
+                 return True

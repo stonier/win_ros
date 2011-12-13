@@ -1,0 +1,15 @@
+<package>
+  <description brief="Temporarily stores patches for ros on windows till merged upstream">
+
+     This is a temporary storage place for patches that enable ros on windows until these
+     patches have been merged upstream.
+
+  </description>
+  <author>Daniel Stonier</author>
+  <license>BSD</license>
+  <review status="experimental" notes=""/>
+  <url>http://ros.org/wiki/win_patches</url>
+
+</package>
+
+

@@ -1,0 +1,18 @@
+bison:
+  ubuntu: bison
+flex:
+  ubuntu: flex
+hg:
+  ubuntu: mercurial
+yasm:
+  ubuntu: yasm
+xz:
+  ubuntu: xz-utils
+intltool:
+  ubuntu: intltool
+scons:
+  ubuntu: scons
+libtool:
+  ubuntu: libtool
+autoconf:
+  ubuntu: autoconf

@@ -1,0 +1,24 @@
+--- helpers-0.5.21.py	Thu Sep 22 01:58:12 2011
++++ helpers.py	Fri Sep 23 00:17:36 2011
+@@ -75,9 +75,8 @@
+ def get_yaml_from_uri(uri):
+ 
+   # now that we've got a config uri and a path, let's move out.
+-  u = urlparse.urlparse(uri)
+   f = 0
+-  if u.scheme == '': # maybe it's a local file?
++  if os.path.isfile(uri):
+     try:
+       f = open(uri, 'r')
+     except IOError as e:
+@@ -87,7 +86,9 @@
+     try:
+       f = urllib2.urlopen(uri)
+     except IOError as e:
+-      sys.stderr.write("Unable to download URL [%s]: %s\n" % (uri, e))
++      sys.stderr.write("Is not a local file, nor able to download as a URL [%s]: %s\n" % (uri, e))
++    except ValueError as e:
++      sys.stderr.write("Is not a local file, nor a valid URL [%s] : %s\n" % (uri,e))
+   if not f:
+     sys.stderr.write("couldn't load config uri %s\n" % uri)
+     return None

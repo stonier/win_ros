@@ -1,0 +1,6 @@
+<!--
+  Starts up the python talker.
+    -->
+<launch>
+  <node pkg="rospy_tutorials" type="talker.py" name="talker"  output="screen" />
+</launch>

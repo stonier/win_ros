@@ -1,0 +1,27 @@
+/**
+\mainpage
+\htmlinclude manifest.html
+
+@section Overview
+
+Windows python scripts aren't recognised as executables, so alot of the ros
+build logic will fail when trying to call python scripts because they 
+utilise the bash logic at the top of the script.
+ 
+This remedies the problem by wrapping each ROS_ROOT/bin
+python script with a executable. 
+
+@section how The Fugly How
+
+Had problems getting standardised modules like py2exe and pyInstaller working with ros.
+So I quickly hacked a self-describing executable that does the following:
+
+- determines its own name (e.g. rosversion.exe -> rosversion).
+- extracts ROS_ROOT from the environment.
+- executes "python $ROS_ROOT/name"
+
+Installation simply copies this exe with the appropriate name into ROS_ROOT/bin. 
+If you need to add more, add them to the CMakeLists.txt, or for quick and dirty, 
+just copy and rename one of these exe's with your new script name. 
+
+*/

@@ -1,0 +1,9 @@
+/**
+\mainpage
+\htmlinclude manifest.html
+
+@section Overview
+
+This has a few tools for devs who want to package the windows sdk. Details are in the internal documentation.
+
+*/

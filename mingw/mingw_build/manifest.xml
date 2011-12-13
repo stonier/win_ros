@@ -1,0 +1,15 @@
+<package>
+  <description brief="supporting resources for building with the mingw_cross compiler">
+
+     This includes resources for cross-compiling mingw programs with the mingw_cross cross compiler.
+     The most important of which is the cmake toolchain file.
+
+  </description>
+  <author>Daniel Stonier</author>
+  <license>BSD</license>
+  <review status="experimental" notes=""/>
+  <url>http://ros.org/wiki/mingw_build</url>
+
+</package>
+
+
