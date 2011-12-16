@@ -48,9 +48,10 @@
     uri: https://code.ros.org/svn/ros-pkg/stacks/common_tutorials/tags/common_tutorials-0.1.2
     local-name: common_tutorials
 
-- svn:
+- git:
+    uri: https://stonier@github.com/stonier/win_ros.git
     local-name: win_ros
-    uri: https://win-ros-pkg.googlecode.com/svn/stacks/win_ros/trunk
+    version: master
 
 - git:
     uri: https://stonier@github.com/stonier/qt_ros.git
