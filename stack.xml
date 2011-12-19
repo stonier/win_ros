@@ -7,8 +7,7 @@
   <review status="experimental" notes=""/>
   <url>http://ros.org/wiki/win_ros</url>
   <depend stack="ros" />
-  <depend stack="common" />
+  <depend stack="ros_comm" /> <!-- rospy, roscpp -->
   <depend stack="rosidl" />
   <depend stack="cmake" />
-  <depend stack="ros_comm" /> <!-- rospy, roscpp -->
 </stack>

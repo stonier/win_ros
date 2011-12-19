@@ -1,52 +1,13 @@
-#
-# Before rosinstalling!
-#   sudo apt-get install ros-electric-desktop-full
-#
-
 # Official Ros Stacks
+#
+# You need at least ros, ros_comm, bond_core, common, common_msgs, 
+# geometry, ros_tutorials, common_tutorials
 
 - other:
     local-name: /opt/ros/electric/ros
 
 - other:
     local-name: /opt/ros/electric/stacks
-
-# Official ros stacks.
-
-- svn:
-    uri: https://code.ros.org/svn/ros/stacks/ros/tags/ros-1.6.2
-    local-name: ros
-
-- svn:
-    uri: https://code.ros.org/svn/ros/stacks/ros_comm/tags/ros_comm-1.6.2
-    local-name: ros_comm
-
-- hg:
-    uri: https://kforge.ros.org/common/bondcore
-    version: bond_core-1.6.0
-    local-name: bond_core
- 
-- hg:
-    uri: https://kforge.ros.org/common/common
-    version: common-1.6.0
-    local-name: common
-
-- svn:
-    uri: https://code.ros.org/svn/ros-pkg/stacks/common_msgs/tags/common_msgs-1.6.0
-    local-name: common_msgs
-
-- hg:
-    uri: https://kforge.ros.org/geometry/geometry
-    local-name: geometry
-    version: geometry-1.6.0
-
-- svn:
-    uri: https://code.ros.org/svn/ros/stacks/ros_tutorials/tags/ros_tutorials-0.2.6
-    local-name: ros_tutorials
-
-- svn:
-    uri: https://code.ros.org/svn/ros-pkg/stacks/common_tutorials/tags/common_tutorials-0.1.2
-    local-name: common_tutorials
 
 # Development stacks for the windows environment
 - git:

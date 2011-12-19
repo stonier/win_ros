@@ -8,7 +8,8 @@ Rosinstall is a tool to check out source code. This is a slightly modified versi
   <license>BSD</license>
   <review status="experimental" notes=""/>
   <url>http://ros.org/wiki/rosinstall</url>
-  <depend package="vcstools"/>
+  <!-- Indirectly exporting this straight from svn, so don't need it as a ros dependency. -->
+  <!-- <depend package="vcstools"/> -->
 
 </package>
 
