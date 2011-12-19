@@ -1,17 +1,17 @@
-# This is a fully self-containing rosinstaller for a known working 
-# mingw build environment on electric.
-# It sets up the qt_ros stack for development on git (you'll need
-# to be part of qt_ros and have ssh keys set up to use it).
+#
+# Before rosinstalling!
+#   sudo apt-get install ros-electric-desktop-full
+#
 
-- git:
-    uri: https://github.com/stonier/ros-cmake.git
-    local-name: cmake
-    version: master
+# Official Ros Stacks
 
-- git:
-    uri: https://github.com/straszheim/rosidl.git
-    local-name: rosidl
-    version: master
+- other:
+    local-name: /opt/ros/electric/ros
+
+- other:
+    local-name: /opt/ros/electric/stacks
+
+# Official ros stacks.
 
 - svn:
     uri: https://code.ros.org/svn/ros/stacks/ros/tags/ros-1.6.2
@@ -48,13 +48,24 @@
     uri: https://code.ros.org/svn/ros-pkg/stacks/common_tutorials/tags/common_tutorials-0.1.2
     local-name: common_tutorials
 
+# Development stacks for the windows environment
 - git:
-    uri: git@github.com:stonier/win_ros.git
+    uri: https://github.com/stonier/ros-cmake.git
+    local-name: cmake
+    version: master
+
+- git:
+    uri: https://github.com/straszheim/rosidl.git
+    local-name: rosidl
+    version: master
+
+- git:
+    uri: https://github.com/stonier/win_ros.git
     local-name: win_ros
     version: master
 
 - git:
-    uri: git@github.com:stonier/qt_ros.git
+    uri: https://github.com/stonier/qt_ros.git
     local-name: qt_ros
     version: master
 
