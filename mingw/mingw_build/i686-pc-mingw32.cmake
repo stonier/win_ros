@@ -1,13 +1,17 @@
 ###############################################################################
 # Family : mingw_cross
 # Tuple : i686-pc-mingw32
-# Sysroot : /opt/mingw/usr/i686-pc-mingw32
+# Sysroot : $(MINGW_ROOT)/usr/i686-pc-mingw32
 ###############################################################################
+
+# Note that the MINGW_ROOT environment variable should be set and 
+# $ENV{MINGW_ROOT}/usr/bin should be in your PATH to use this cmake 
+# module (these will be set if you used ros to install mingw_cross).
 
 # Some useful custom variables that uniquely define this toolchain module
 set(TOOLCHAIN_FAMILY "mingw_cross")
 set(TOOLCHAIN_TUPLE "i686-pc-mingw32" CACHE STRING "Toolchain signature identifying cpu-vendor-platform-clibrary.")
-set(TOOLCHAIN_SYSROOT "/opt/mingw/usr/${TOOLCHAIN_TUPLE}" CACHE STRING "Root of the target development environment (libraries, headers etc).")
+set(TOOLCHAIN_SYSROOT "$ENV{MINGW_ROOT}/usr/${TOOLCHAIN_TUPLE}" CACHE STRING "Root of the target development environment (libraries, headers etc).")
 set(TOOLCHAIN_INSTALL_PREFIX "${TOOLCHAIN_SYSROOT}" CACHE STRING "Preferred install location when using the toolchain.")
 # Boost needs to be hand held on windoze for boost_thread.
 # Maybe bad place for this? Could also embed in rosbuild/public.cmake

@@ -49,12 +49,12 @@
     local-name: common_tutorials
 
 - git:
-    uri: https://stonier@github.com/stonier/win_ros.git
+    uri: git@github.com:stonier/win_ros.git
     local-name: win_ros
     version: master
 
 - git:
-    uri: https://stonier@github.com/stonier/qt_ros.git
+    uri: git@github.com:stonier/qt_ros.git
     local-name: qt_ros
     version: master
 

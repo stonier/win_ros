@@ -1,0 +1,24 @@
+#!/bin/sh
+
+WIN_PATCHES=`rospack find win_patches`
+ROSCONSOLE=`rospack find rosconsole`
+ROSCPP=`rospack find roscpp`
+
+echo ${ROSCONSOLE}
+
+cp ${WIN_PATCHES}/updates/ros_comm/tools/rosconsole/rosbuild.cmake ${ROSCONSOLE}/
+cp ${WIN_PATCHES}/updates/ros_comm/clients/cpp/roscpp/cmake/rosbuild2.cmake ${ROSCPP}/cmake
+
+if [ $? -eq 0 ]; then
+  echo "Successfully patched."
+else
+  echo "Failed to patch, trying with sudo"
+  sudo cp ${WIN_PATCHES}/updates/ros_comm/tools/rosconsole/rosbuild.cmake ${ROSCONSOLE}/
+  sudo cp ${WIN_PATCHES}/updates/ros_comm/clients/cpp/roscpp/cmake/rosbuild2.cmake ${ROSCPP}/cmake
+  if [ $? -eq 0 ]; then
+    echo "Successfully patched."
+  else
+    echo "Failed to patch"
+  fi
+fi
+  

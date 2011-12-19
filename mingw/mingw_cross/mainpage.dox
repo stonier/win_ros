@@ -28,11 +28,18 @@
      make wxwidgets
      @endcode
 
+\section Troubleshooting
+
+     <b>Broken Links</b>:
+     
+     To update the latest source link information, simply run `hg pull -u` from the mingw
+     installation directory.
+     
 \section ToDo
     
      Create apr, apr-util and log4cxx build makefiles and submit upstream.
      
-     - binutils, libpng : take out patches when mingw cross updates.
+     - xxx : take out any temporary patches when mingw cross updates.
      - apr : backup url's, update and test program.
      - apr-util : backup url's update and test program.
      - log4cxx : backup url's and test program.
@@ -42,6 +49,7 @@
  
 \section ChangeLog
 
+	 - <b>Dec 11</b> : now installs to a non sudo location.
      - <b>Oct 11</b> : moved to win_ros
      - <b>Oct 11</b> : converting to use hg clone and hg pull instead of the tarball.
      - <b>Nov 10</b> : Done and road tested.
