@@ -6,7 +6,7 @@ echo " - workspace: ${WORKSPACE}"
 echo " - cleaning out old builds"
 rm -rf ${WORKSPACE}/mingw
 rm -rf ${WORKSPACE}/ros
-rosinstall ${WORKSPACE}/ros http://win-ros-pkg.googlecode.com/svn/stacks/win_ros/trunk/mingw_electric.rosinstall
+rosinstall ${WORKSPACE}/ros https://raw.github.com/stonier/win_ros/master/mingw_electric.rosinstall
 cd ${WORKSPACE}/ros; . ./setup.bash
 export MINGW_INSTALL_PREFIX=${WORKSPACE}/mingw
 roscd mingw_cross; make compile
