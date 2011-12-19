@@ -5,6 +5,12 @@ DEST:=${ROS_ROOT}/..
 OPTIONS=--recursive
 EXCLUDES=--exclude '.svn'
 
+help:
+	@echo "Nothing to see here"
+
+# This is the old rsync I was using to update with patches.
+# Now use either apply_mingw_patches or update.bat
+
 all:
 	rsync ${OPTIONS} ${EXCLUDES} ${FROM} ${DEST}
 

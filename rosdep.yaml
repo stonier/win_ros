@@ -8,11 +8,26 @@ yasm:
   ubuntu: yasm
 xz:
   ubuntu: xz-utils
+libtool:
+  ubuntu:
+    apt: 
+      packages: [libtool, libltdl-dev]
+  debian:
+    squeeze: libtool libltdl-dev
+    lenny: libtool libltdl3-dev
+  opensuse: libtool libltdl3
+  fedora: libtool libtool-ltdl-devel
+  rhel: libtool libtool-ltdl-devel
+  macports: libtool
+  osxbrew:
+    homebrew:
+      packages: |
+  arch: libtool
+  gentoo: sys-devel/libtool
+  freebsd: libtool
 intltool:
   ubuntu: intltool
 scons:
   ubuntu: scons
-libtool:
-  ubuntu: libtool
 autoconf:
   ubuntu: autoconf
