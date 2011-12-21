@@ -9,7 +9,7 @@
 - other:
     local-name: /opt/ros/electric/stacks
 
-# Development stacks for the windows environment
+# Development stacks for the mingw cross environment
 - git:
     uri: https://github.com/stonier/ros-cmake.git
     local-name: cmake
