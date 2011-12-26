@@ -12,3 +12,15 @@
 > if(NOT EXISTS ${CMAKE_SOURCE_DIR}/ros/config/rosconsole.config)
 >   configure_file(${CMAKE_SOURCE_DIR}/ros/config/rosconsole.config
 
+== ros_comm/clients/rospy
+
+ Add some help so that rospy msg generators will generate __init__.py for both 
+actions and msgs in the same package.
+
+ * cmake/rosbuild2.cmake
+ * scripts/genutil.py
+
+Not ticketing this one yet - it needs some testing. Probably the python generator should
+be sent a command to know whether it should create or append to the __init__.py.
+
+
