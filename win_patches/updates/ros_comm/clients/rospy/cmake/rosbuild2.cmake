@@ -80,6 +80,7 @@ macro(genmsg_py TYPE)
         ${ROSBUILD_SUBSHELL} 
         python ${genmsg_py_exe} 
         --initpy 
+        -a
         -p ${PROJECT_NAME}
         -s ${CMAKE_CURRENT_SOURCE_DIR}/src
         -o ${_outdir}

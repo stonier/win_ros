@@ -151,7 +151,7 @@ class Generator(object):
                             pfiles))
             generated_modules = [self._module_name(f) for f in good_types.intersection(types)]
 
-            self.write_module(options.outdir, package, generated_modules, options.srcdir)
+            self.write_module(options.outdir, package, generated_modules, options.srcdir, options.append)
         return 0
 
     ## @param base_dir str: path to package
@@ -159,14 +159,18 @@ class Generator(object):
     ## @param generated_modules [str]: list of generated message modules,
     ##   i.e. the names of the .py files that were generated for each
     ##   .msg file.
-    def write_module(self, basedir, package, generated_modules, srcdir):
+    def write_module(self, basedir, package, generated_modules, srcdir, append):
         """create a module file to mark directory for python"""
         if not os.path.exists(basedir):
             os.makedirs(basedir)
         elif not os.path.isdir(basedir):
             raise self.exception("file preventing the creating of module directory: %s"%dir)
         p = os.path.join(basedir, '__init__.py')
-        f = open(p, 'a')
+        if append:
+            mode = 'a'
+        else:
+            mode = 'w'
+        f = open(p, mode)
         try:
             #this causes more problems than anticipated -- for pure python
             #packages it works fine, but in C++ packages doxygen seems to prefer python first.
@@ -293,6 +297,7 @@ def genmain(argv, gen, usage_fn=usage):
     parser = OptionParser("options")
     parser.add_option('--initpy', dest='initpy', action='store_true',
                       default=False)
+    parser.add_option('-a', dest='append')
     parser.add_option('-p', dest='package')
     parser.add_option('-s', dest='srcdir')
     parser.add_option('-o', dest='outdir')
