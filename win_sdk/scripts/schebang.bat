@@ -40,7 +40,7 @@ REM *************** 3rdparty **************
 
 REM Just downloading the appropriate one into the sdk directory for now.
 cd %SDK_DIR%
-wget http://win-ros-pkg.googlecode.com/files/log4cxx-x86-vs10.tar.gz
+wget --no-check-certificate https://github.com/downloads/stonier/win_ros/log4cxx-x86-vs10.tar.gz
 tar -xvzf log4cxx-x86-vs10.tar.gz
 rm log4cxx-x86-vs10.tar.gz
 rm debug\log4cxx.txt
@@ -52,9 +52,9 @@ REM *************** Sources ***************
 IF "%SOURCE_TYPE%" == "unstable" (
     REM *************** We need the delete-changed-uris because git is hopeless with ***************
     call rosinstall %SRC_DIR% "http://packages.ros.org/cgi-bin/gen_rosinstall.py?rosdistro=electric&variant=robot&overlay=no"
-    call rosinstall %SRC_DIR% "http://win-ros-pkg.googlecode.com/svn/stacks/win_ros/trunk/win_hudson/resources/msvc_electric_hudson.rosinstall" --delete-changed-uris
+    call rosinstall %SRC_DIR% "https://raw.github.com/stonier/win_ros/master/msvc_electric_overlay.rosinstall" --delete-changed-uris
 ) ELSE (
-    call rosinstall %SRC_DIR% "http://win-ros-pkg.googlecode.com/svn/stacks/win_ros/trunk/msvc_electric.rosinstall" --delete-changed-uris
+    call rosinstall %SRC_DIR% "https://raw.github.com/stonier/win_ros/master/msvc_electric.rosinstall" --delete-changed-uris
 )
 
 call %SRC_DIR%\setup.bat
