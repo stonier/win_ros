@@ -1,0 +1,32 @@
+# This is a fully self-containing rosinstaller for a known working 
+# mingw/qt build environment on electric.
+
+- git:
+    uri: https://github.com/stonier/ros-cmake.git
+    local-name: cmake
+    version: master
+
+- git:
+    uri: https://github.com/straszheim/rosidl.git
+    local-name: rosidl
+    version: master
+
+- svn:
+    uri: https://code.ros.org/svn/ros/stacks/ros_tutorials/tags/ros_tutorials-0.2.6
+    local-name: ros_tutorials
+
+- svn:
+    uri: https://code.ros.org/svn/ros-pkg/stacks/common_tutorials/tags/common_tutorials-0.1.2
+    local-name: common_tutorials
+
+- git:
+    uri: https://github.com/stonier/win_ros.git
+    local-name: win_ros
+    version: master
+
+- git:
+    uri: https://github.com/stonier/qt_ros.git
+    local-name: qt_ros
+    version: master
+
+
