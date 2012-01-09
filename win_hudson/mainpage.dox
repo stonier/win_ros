@@ -8,29 +8,34 @@ Resources to get the auto-build up and running on hudson.
 
 \section Links
 
- - Hudson Node Url: http://build.willowgarage.com/computer/win7-64/
- - Hudson Project Url: http://build.willowgarage.com/job/roswin/
- - Hudson Manual Trigger Url: http://build.willowgarage.com/job/roswin/build?token=yujin
- - Java for Windows Url: http://java.com/en/download/help/windows_manual_download.xml
+ - ''Hudson Node Url:'' http://build.willowgarage.com/computer/win7-64/
+ - ''Hudson Project Url:'' http://build.willowgarage.com/job/roswin/
+ - ''Hudson Manual Trigger Url:'' http://build.willowgarage.com/job/roswin/build?token=yujin
+ - ''Java for Windows Url:'' http://java.com/en/download/help/windows_manual_download.xml
 
-\section Setup
+\section machineSetup Machine Setup
 
- - Machine: windows 7 64 bit
- - User: rosbuild (this is important!)
- - Location: C:\Users\rosbuild\hudson
- - Location: C:\Users\rosbuild\hudson\workspace\roswin
+ - Install [[http://www.java.com/en/download/index.jsp|java]]
+ - Create a user `rosbuild`.
 
-The make.bat script will copy files to their correct locations.
+This is an ''ugly'', but necessary constraint of the script on the hudson server. It also needs a specific directory in which to operate (i.e. look for the script that needs to be run).
 
-\Section Execution
-
-Start the slave
+ - Create the working directory and download a few scripts.
 
 @code
-cd C:\Users\rosbuild\hudson
-hudson
+> mkdir %USERPROFILE%/hudson/workspace/roswin
+> cd %USERPROFILE%/hudson/workspace/roswin
+> wget --no-check-certificate https://raw.github.com/stonier/win_ros/master/win_sdk/scripts/schebang.bat
+> wget --no-check-certificate https://raw.github.com/stonier/win_ros/master/win_hudson/resources/hudson.bat
+> wget --no-check-certificate https://raw.github.com/stonier/win_ros/master/win_hudson/resources/slave.jar
 @endcode
 
-Start the build manually by calling the 'Hudson Manual Trigger Url' (in a web browser or via wget).
+\section Execution
+
+Open the trigger url in a browser:
+
+@code
+http://build.willowgarage.com/job/roswin/build?token=yujin
+@endcode
 
 */
