@@ -70,7 +70,7 @@ class GitClient(VcsClientBase):
         VcsClientBase.__init__(self, 'git', path)
         with open(os.devnull, 'w') as fnull:
             try:
-                subprocess.call("git help".split(), stdout=fnull, stderr=fnull)
+                subprocess.call("git help".split(), shell=True, stdout=fnull, stderr=fnull)
             except:
                 raise LookupError("git not installed, cannot create a git vcs client")
 

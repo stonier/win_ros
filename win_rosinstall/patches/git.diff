@@ -1,5 +1,5 @@
---- git.original.py	Thu Sep 22 08:40:30 2011
-+++ git.py	Thu Sep 22 06:00:45 2011
+--- git.original.py	2011-12-16 16:15:02.793122446 +0900
++++ git.py	2012-01-17 09:08:12.887518863 +0900
 @@ -52,7 +52,7 @@
      including if version cannot be detected
      """
@@ -9,6 +9,15 @@
      except:
          return False
     # 'git version 1.7.0.4\n'
+@@ -70,7 +70,7 @@
+         VcsClientBase.__init__(self, 'git', path)
+         with open(os.devnull, 'w') as fnull:
+             try:
+-                subprocess.call("git help".split(), stdout=fnull, stderr=fnull)
++                subprocess.call("git help".split(), shell=True, stdout=fnull, stderr=fnull)
+             except:
+                 raise LookupError("git not installed, cannot create a git vcs client")
+ 
 @@ -81,7 +81,7 @@
          @return: GIT URL of the directory path (output of git info command), or None if it cannot be determined
          """
