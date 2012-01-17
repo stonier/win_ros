@@ -3,8 +3,9 @@ include(${CMAKE_CURRENT_BINARY_DIR}/package.cmake)
 #
 #  Make a buildspace rosconsole.config if we've got one handy
 #
+file(TO_CMAKE_PATH "$ENV{ROS_ROOT}" CMAKE_ROS_ROOT)
 if(NOT EXISTS ${CMAKE_BINARY_DIR}/rosconsole.config)
-  configure_file($ENV{ROS_ROOT}/config/rosconsole.config
+  configure_file(${CMAKE_ROS_ROOT}/config/rosconsole.config
     ${CMAKE_BINARY_DIR}/rosconsole.config
     @ONLY
     )
