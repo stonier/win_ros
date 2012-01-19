@@ -5,4 +5,5 @@ This stack provides an implementation for developing with ros on windows via:
 * Qt + Mingw cross compiles on linux
 * Msvc compiler on windows
 
+Daniel Stonier
 
