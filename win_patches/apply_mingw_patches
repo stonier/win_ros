@@ -5,12 +5,14 @@ ROSCONSOLE=`rospack find rosconsole`
 ROSCPP=`rospack find roscpp`
 CPP_COMMON=`rospack find cpp_common`
 ROSPY=`rospack find rospy`
+ROSTIME=`rospack find rostime`
 
 cp ${WIN_PATCHES}/updates/ros_comm/tools/rosconsole/rosbuild.cmake ${ROSCONSOLE}/
 cp ${WIN_PATCHES}/updates/ros_comm/clients/cpp/roscpp/cmake/rosbuild2.cmake ${ROSCPP}/cmake
 cp ${WIN_PATCHES}/updates/ros_comm/clients/rospy/cmake/rosbuild2.cmake ${ROSPY}/cmake
 cp ${WIN_PATCHES}/updates/ros_comm/clients/rospy/scripts/rosbuild2/genutil.py ${ROSPY}/scripts/rosbuild2
 cp ${WIN_PATCHES}/updates/ros_comm/utilities/cpp_common/include/ros/platform.h ${CPP_COMMON}/include/ros
+patch -p1 -N -d $ROSTIME < ${WIN_PATCHES}/patches/rostime.patch
 
 if [ $? -eq 0 ]; then
   echo "Successfully patched."
@@ -21,6 +23,7 @@ else
   sudo cp ${WIN_PATCHES}/updates/ros_comm/clients/rospy/cmake/rosbuild2.cmake ${ROSPY}/cmake
   sudo cp ${WIN_PATCHES}/updates/ros_comm/clients/rospy/scripts/rosbuild2/genutil.py ${ROSPY}/scripts/rosbuild2
   sudo cp ${WIN_PATCHES}/updates/ros_comm/utilities/cpp_common/include/ros/platform.h ${CPP_COMMON}/include/ros
+  sudo patch -p1 -N -d $ROSTIME < ${WIN_PATCHES}/patches/rostime.patch
   if [ $? -eq 0 ]; then
     echo "Successfully patched."
   else
