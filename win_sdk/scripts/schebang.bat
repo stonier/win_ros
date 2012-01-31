@@ -52,9 +52,9 @@ REM *************** Sources ***************
 IF "%SOURCE_TYPE%" == "unstable" (
     REM *************** We need the delete-changed-uris because git is hopeless with ***************
     call rosinstall %SRC_DIR% "http://packages.ros.org/cgi-bin/gen_rosinstall.py?rosdistro=electric&variant=robot&overlay=no"
-    call rosinstall %SRC_DIR% "https://raw.github.com/stonier/win_ros/master/msvc_electric_overlay.rosinstall" --delete-changed-uris
+    call rosinstall %SRC_DIR% "https://raw.github.com/stonier/win_ros/electric/msvc_electric_overlay.rosinstall" --delete-changed-uris
 ) ELSE (
-    call rosinstall %SRC_DIR% "https://raw.github.com/stonier/win_ros/master/msvc_electric.rosinstall" --delete-changed-uris
+    call rosinstall %SRC_DIR% "https://raw.github.com/stonier/win_ros/electric/msvc_electric.rosinstall" --delete-changed-uris
 )
 
 call %SRC_DIR%\setup.bat
