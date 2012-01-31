@@ -22,11 +22,11 @@
 - git:
     uri: https://github.com/stonier/win_ros.git
     local-name: win_ros
-    version: master
+    version: electric
 
 - git:
     uri: https://github.com/stonier/qt_ros.git
     local-name: qt_ros
-    version: master
+    version: electric
 
 
