@@ -39,14 +39,8 @@ set(CMAKE_CXX_FLAGS ${TOOLCHAIN_COMPILE_FLAGS} CACHE PATH "Compile flags for c++
 ###############################
 # Mingw Ecosystem is Static
 ###############################
-set(ROS_BUILD_STATIC_EXES true CACHE BOOL "Build static executables")
-set(ROS_BUILD_SHARED_EXES false CACHE BOOL "Build shared executables")
-set(ROS_BUILD_STATIC_LIBS true CACHE BOOL "Build static libraries")
-set(ROS_BUILD_SHARED_LIBS false CACHE BOOL "Build shared libraries")
-
 set(BUILD_STATIC true CACHE BOOL "Build statically linked binaries")
 set(BUILD_SHARED false CACHE BOOL "Build dynamically linked binaries")
-
 
 ###############################
 # Prepare Qt Environment
