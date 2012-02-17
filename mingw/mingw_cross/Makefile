@@ -60,7 +60,7 @@ clone:
 	    chown -R $(USER) $(PREFIX); \
 		echo "Cloning stable branch to $(PREFIX)"; \
 		hg clone -r stable $(URL) $(PREFIX); \
-		echo "Patching mingw_cross makefiles."
+		echo "Patching mingw_cross makefiles."; \
 	    for i in patches/*.mk; do cp $$i ${PREFIX}/src; done; \
 	    for i in patches/*.patch; do cp $$i ${PREFIX}/src; done; \
 	else \
