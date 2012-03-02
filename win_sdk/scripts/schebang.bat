@@ -66,17 +66,15 @@ call update
 
 REM *************** Debug *****************
 
-REM Should try with -G "NMake Makefiles"
 cd %BLD_DBG_DIR%
-cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX=%SDK_DBG_DIR% -DLOG4CXX_ROOT_DIR=%SDK_DBG_DIR% %SRC_DIR%
+cmake -G "NMake Makefiles" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX=%SDK_DBG_DIR% -DLOG4CXX_ROOT_DIR=%SDK_DBG_DIR% %SRC_DIR%
 CALL :NMake
 CALL :NMakeInstall
 
 REM *************** Release ***************
 
-REM Should try with -G "NMake Makefiles"
 cd %BLD_REL_DIR%
-cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=%SDK_REL_DIR% -DLOG4CXX_ROOT_DIR=%SDK_REL_DIR% %SRC_DIR%
+cmake -G "NMake Makefiles" -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=%SDK_REL_DIR% -DLOG4CXX_ROOT_DIR=%SDK_REL_DIR% %SRC_DIR%
 CALL :NMake
 CALL :NMakeInstall
 
