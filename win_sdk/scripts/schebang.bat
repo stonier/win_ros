@@ -101,6 +101,10 @@ REM ************* Subroutines *************
   cd ..
 GOTO :EOF
 
+REM Rospack is just experimental, avoid for now
+REM (not necessary for simple execution)
+REM cd ..\rospack
+REM nmake install
 :NMakeInstall
   cd cpp_common
   nmake install
@@ -111,8 +115,6 @@ GOTO :EOF
   cd ..\roscpp_serialization
   nmake install
   cd ..\xmlrpcpp
-  nmake install
-  cd ..\rospack
   nmake install
   cd ..\rosconsole
   nmake install
