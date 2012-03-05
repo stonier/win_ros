@@ -1,0 +1,13 @@
+--- svn.original.py	Mon Mar  5 09:59:26 2012
++++ svn_path.py	Mon Mar  5 14:00:32 2012
+@@ -71,7 +71,9 @@
+             subprocess.Popen('svn --version',
+                              shell=True,
+                              stdout=subprocess.PIPE,
+-                             env={"LANG":"en_US.UTF-8"}).communicate()[0]
++                             env={"LANG":"en_US.UTF-8",
++                                  "PATH" : os.environ['PATH']}
++                             ).communicate()[0]
+         except:
+             raise VcsError("svn not installed")
+         self._pysvnclient = pysvn.Client()
