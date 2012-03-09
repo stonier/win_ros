@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/ros/!svn/ver/6776/stacks/ros_tutorials/trunk/roscpp_tutorials/listener_async_spin
+END
+listener_async_spin.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/ros/!svn/ver/6776/stacks/ros_tutorials/trunk/roscpp_tutorials/listener_async_spin/listener_async_spin.cpp
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/ros/!svn/ver/6776/stacks/ros_tutorials/trunk/roscpp_tutorials/listener_async_spin/CMakeLists.txt
+END

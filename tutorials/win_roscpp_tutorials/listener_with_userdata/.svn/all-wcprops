@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/ros/!svn/ver/6776/stacks/ros_tutorials/trunk/roscpp_tutorials/listener_with_userdata
+END
+listener_with_userdata.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/ros/!svn/ver/6000/stacks/ros_tutorials/trunk/roscpp_tutorials/listener_with_userdata/listener_with_userdata.cpp
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/ros/!svn/ver/6776/stacks/ros_tutorials/trunk/roscpp_tutorials/listener_with_userdata/CMakeLists.txt
+END

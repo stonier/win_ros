@@ -1,0 +1,19 @@
+K 10
+svn:ignore
+V 33
+.build_version
+bin
+build
+lib
+src
+
+K 13
+svn:mergeinfo
+V 330
+/branches/ros-0.5/tutorials/roscpp_tutorials:4228-4427
+/branches/roscpp-handles/tutorials/roscpp_tutorials:4153-4227
+/branches/sessions-dec2008/tutorials/roscpp_tutorials:2916-3352
+/stacks/ros_tutorials/tags/unstable/roscpp_tutorials:13008-13009
+/tags/rc/tutorials/roscpp_tutorials:5045
+/trunk/tutorials/roscpp_tutorials:4229-4426
+END

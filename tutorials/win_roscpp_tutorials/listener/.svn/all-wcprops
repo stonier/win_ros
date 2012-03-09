@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/ros/!svn/ver/15874/stacks/ros_tutorials/trunk/roscpp_tutorials/listener
+END
+listener.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/ros/!svn/ver/10547/stacks/ros_tutorials/trunk/roscpp_tutorials/listener/listener.cpp
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/ros/!svn/ver/15874/stacks/ros_tutorials/trunk/roscpp_tutorials/listener/CMakeLists.txt
+END

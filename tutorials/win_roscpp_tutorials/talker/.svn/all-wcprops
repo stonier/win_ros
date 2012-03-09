@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/ros/!svn/ver/15874/stacks/ros_tutorials/trunk/roscpp_tutorials/talker
+END
+talker.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/ros/!svn/ver/10546/stacks/ros_tutorials/trunk/roscpp_tutorials/talker/talker.cpp
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/ros/!svn/ver/15874/stacks/ros_tutorials/trunk/roscpp_tutorials/talker/CMakeLists.txt
+END

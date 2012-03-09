@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/ros/!svn/ver/13010/stacks/ros_tutorials/trunk/roscpp_tutorials/listener_with_tracked_object
+END
+listener_with_tracked_object.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/ros/!svn/ver/6000/stacks/ros_tutorials/trunk/roscpp_tutorials/listener_with_tracked_object/listener_with_tracked_object.cpp
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/ros/!svn/ver/6776/stacks/ros_tutorials/trunk/roscpp_tutorials/listener_with_tracked_object/CMakeLists.txt
+END

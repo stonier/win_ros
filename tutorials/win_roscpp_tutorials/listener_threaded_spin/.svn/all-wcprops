@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/ros/!svn/ver/13010/stacks/ros_tutorials/trunk/roscpp_tutorials/listener_threaded_spin
+END
+listener_threaded_spin.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/ros/!svn/ver/6776/stacks/ros_tutorials/trunk/roscpp_tutorials/listener_threaded_spin/listener_threaded_spin.cpp
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/ros/!svn/ver/6776/stacks/ros_tutorials/trunk/roscpp_tutorials/listener_threaded_spin/CMakeLists.txt
+END

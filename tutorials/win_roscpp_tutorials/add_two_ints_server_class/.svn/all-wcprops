@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/ros/!svn/ver/10560/stacks/ros_tutorials/trunk/roscpp_tutorials/add_two_ints_server_class
+END
+add_two_ints_server_class.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/ros/!svn/ver/10560/stacks/ros_tutorials/trunk/roscpp_tutorials/add_two_ints_server_class/add_two_ints_server_class.cpp
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/ros/!svn/ver/6776/stacks/ros_tutorials/trunk/roscpp_tutorials/add_two_ints_server_class/CMakeLists.txt
+END

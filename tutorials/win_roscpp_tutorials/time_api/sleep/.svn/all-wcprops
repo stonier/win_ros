@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/ros/!svn/ver/15063/stacks/ros_tutorials/trunk/roscpp_tutorials/time_api/sleep
+END
+sleep.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/ros/!svn/ver/15063/stacks/ros_tutorials/trunk/roscpp_tutorials/time_api/sleep/sleep.cpp
+END
+CMakeLists.txt
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/ros/!svn/ver/6776/stacks/ros_tutorials/trunk/roscpp_tutorials/time_api/sleep/CMakeLists.txt
+END
