@@ -78,9 +78,9 @@ REM for more information.
     text += "REM Environment settings for your compiler [MS Express]\n"
     text += 'REM "call '+os.environ['PROGRAMFILES']+'\\Microsoft Visual Studio 10.0\\VC\\vcvarsall.bat"\n'
     text += "REM Environment settings for your compiler [Windows SDK][Experimental]\n"
-    text += 'call "C:\Program Files\Microsoft SDKs\Windows\v7.1\Bin\SetEnv.cmd" /x86 /Debug'
-    text += 'REM Debug color is a god awfully ugly canary yellow'
-    text += 'color 7'
+    text += 'call "C:\\Program Files\\Microsoft SDKs\\Windows\\v7.1\\Bin\\SetEnv.cmd" /x86 /Debug\n'
+    text += 'REM Debug color is a god awfully ugly canary yellow\n'
+    text += 'color 7\n'
     text += "\n"
     return text
 
