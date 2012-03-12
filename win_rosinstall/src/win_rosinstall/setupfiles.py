@@ -65,6 +65,7 @@ REM for more information.
     text += "\n"
     text += "REM Utility variables\n"
     text += 'doskey wordpad="'+os.environ['PROGRAMFILES']+'\\Windows NT\\Accessories\\wordpad.exe" $1\n'
+    text += 'doskey notepp="C:\Program Files (x86)\Notepad++\notepad++.exe" $1\n'
     text += "REM This isn't fully supported yet\n"
     text += 'REM doskey roscd=%s\\win_ros\\win_roscd\\roscd.bat $1\n'%base_path
     text += "\n"
