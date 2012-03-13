@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8)
-project(roscpp_tutorials)
+project(win_roscpp_tutorials)
 find_package(Boost COMPONENTS date_time thread)
 find_package(ROS COMPONENTS catkin genmsg roscpp)
 include_directories(${ROS_INCLUDE_DIRS})
@@ -13,8 +13,8 @@ macro(rostutorial T)
   add_executable(${T} ${T}/${T}.cpp)
   find_package(ROS COMPONENTS catkin genmsg rostime roscpp rosconsole roscpp_serialization)
   target_link_libraries(${T} ${ROS_LIBRARIES} ${Boost_LIBRARIES})
-  add_dependencies(${T} roscpp_tutorials_gencpp)
-  install(TARGETS ${T} RUNTIME DESTINATION share/roscpp_tutorials/bin)
+  add_dependencies(${T} win_roscpp_tutorials_gencpp)
+  install(TARGETS ${T} RUNTIME DESTINATION share/win_roscpp_tutorials/bin)
 endmacro()
 
 foreach(dir
@@ -44,6 +44,6 @@ endforeach()
 
 add_executable(time_api_sleep time_api/sleep/sleep.cpp)
 target_link_libraries(time_api_sleep ${ROS_LIBRARIES})
-install(TARGETS time_api_sleep RUNTIME DESTINATION share/roscpp_tutorials/bin)
+install(TARGETS time_api_sleep RUNTIME DESTINATION share/win_roscpp_tutorials/bin)
 
-catkin_project(roscpp_tutorials)
+catkin_project(win_roscpp_tutorials)

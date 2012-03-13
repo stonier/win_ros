@@ -26,10 +26,10 @@
  */
 
 #include "ros/ros.h"
-#include "roscpp_tutorials/TwoInts.h"
+#include "win_roscpp_tutorials/TwoInts.h"
 
-bool add(roscpp_tutorials::TwoInts::Request  &req,
-         roscpp_tutorials::TwoInts::Response &res )
+bool add(win_roscpp_tutorials::TwoInts::Request  &req,
+		win_roscpp_tutorials::TwoInts::Response &res )
 {
   res.sum = req.a + req.b;
   ROS_INFO("request: x=%ld, y=%ld", (long int)req.a, (long int)req.b);
