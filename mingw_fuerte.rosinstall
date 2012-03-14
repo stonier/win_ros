@@ -6,7 +6,8 @@
 - git:
     uri: 'git@github.com:yujinrobot/catkin.git'
     local-name: catkin
-    version: win
+    version: master
+#    version: win
 
 - git:
     uri: 'git://github.com/willowgarage/catkin-debs.git'
