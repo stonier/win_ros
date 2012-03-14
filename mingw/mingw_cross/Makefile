@@ -9,7 +9,7 @@ else
 endif
 TUPLE=i686-pc-mingw32
 URL=http://hg.savannah.nongnu.org/hgweb/mingw-cross-env
-
+CMAKE_TOOLCHAIN_FILE==$(PREFIX)/usr/${TUPLE}/share/cmake/mingw-cross-env-conf.cmake
 ##############################################################################
 # Primary targets
 ##############################################################################
@@ -32,11 +32,12 @@ install: compile
 	@if grep "$(PREFIX)/usr/bin" $(HOME)/.bashrc -q; then \
 	  echo "Mingw path already added to .bashrc"; \
 	else \
-	  echo "Adding MINGW_ROOT and PATH to .bashrc"; \
+	  echo "Adding MINGW_ROOT,MINGW_CMAKE_TOOLCHAIN_FILE and PATH to .bashrc"; \
 	  echo "export MINGW_ROOT=$(PREFIX); export PATH=\$${PATH}:$(PREFIX)/usr/bin" >> $(HOME)/.bashrc; \
+	  echo "export MINGW_CMAKE_TOOLCHAIN_FILE=${CMAKE_TOOLCHAIN_FILE}; export PATH=\$${PATH}:$(PREFIX)/usr/bin" >> $(HOME)/.bashrc; \
 	fi
 	@echo "You may need to resource your .bashrc if you want to use mingw directly."
-	
+
 uninstall:
 	@if grep "$(PREFIX)/usr/bin" $(HOME)/.bashrc -q; then \
 	  echo "Removing mingw path from .bashrc"; \
