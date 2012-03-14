@@ -9,7 +9,9 @@ else
 endif
 TUPLE=i686-pc-mingw32
 URL=http://hg.savannah.nongnu.org/hgweb/mingw-cross-env
-CMAKE_TOOLCHAIN_FILE==$(PREFIX)/usr/${TUPLE}/share/cmake/mingw-cross-env-conf.cmake
+CMAKE_CACHE_FILE=$(PREFIX)/usr/${TUPLE}/share/cmake/mingw-cross-env-ros.cmake
+CMAKE_TOOLCHAIN_FILE=$(PREFIX)/usr/${TUPLE}/share/cmake/mingw-cross-env-conf.cmake
+
 ##############################################################################
 # Primary targets
 ##############################################################################
@@ -35,8 +37,12 @@ install: compile
 	  echo "Adding MINGW_ROOT,MINGW_CMAKE_TOOLCHAIN_FILE and PATH to .bashrc"; \
 	  echo "export MINGW_ROOT=$(PREFIX); export PATH=\$${PATH}:$(PREFIX)/usr/bin" >> $(HOME)/.bashrc; \
 	  echo "export MINGW_CMAKE_TOOLCHAIN_FILE=${CMAKE_TOOLCHAIN_FILE}" >> $(HOME)/.bashrc; \
+	  echo "export MINGW_CMAKE_ROS_CONFIG_FILE=${CMAKE_CACHE_FILE}" >> $(HOME)/.bashrc; \
 	fi
+	@echo "Copying ros configuration variable file -> $(CMAKE_CACHE_FILE)"
+	@cp cmake/mingw-cross-env-ros.cmake $(CMAKE_CACHE_FILE)
 	@echo "You may need to resource your .bashrc if you want to use mingw directly."
+	@echo ""
 
 uninstall:
 	@if grep "$(PREFIX)/usr/bin" $(HOME)/.bashrc -q; then \
