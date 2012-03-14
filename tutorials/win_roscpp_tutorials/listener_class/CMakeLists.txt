@@ -1,1 +1,1 @@
-rosbuild_add_executable(listener_class listener_class.cpp)
+rosbuild_add_executable(win_listener_class listener_class.cpp)

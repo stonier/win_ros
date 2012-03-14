@@ -1,2 +1,2 @@
-add_executable(add_two_ints_client add_two_ints_client.cpp)
-target_link_libraries(add_two_ints_client ${ROS_LIBRARIES})
+add_executable(win_add_two_ints_client add_two_ints_client.cpp)
+target_link_libraries(win_add_two_ints_client ${ROS_LIBRARIES})

@@ -1,1 +1,1 @@
-rosbuild_add_executable(sleep sleep.cpp)
+rosbuild_add_executable(win_sleep sleep.cpp)

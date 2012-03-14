@@ -1,1 +1,1 @@
-rosbuild_add_executable(listener_multiple listener_multiple.cpp)
+rosbuild_add_executable(win_listener_multiple listener_multiple.cpp)

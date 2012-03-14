@@ -10,11 +10,11 @@ generate_messages(DEPENDENCIES std_msgs)
 
 
 macro(rostutorial T)
-  add_executable(${T} ${T}/${T}.cpp)
+  add_executable(win_${T} ${T}/${T}.cpp)
   find_package(ROS COMPONENTS catkin genmsg rostime roscpp rosconsole roscpp_serialization)
-  target_link_libraries(${T} ${ROS_LIBRARIES} ${Boost_LIBRARIES})
-  add_dependencies(${T} win_roscpp_tutorials_gencpp)
-  install(TARGETS ${T} RUNTIME DESTINATION share/win_roscpp_tutorials/bin)
+  target_link_libraries(win_${T} ${ROS_LIBRARIES} ${Boost_LIBRARIES})
+  add_dependencies(win_${T} roscpp_tutorials_gencpp)
+  install(TARGETS win_${T} RUNTIME DESTINATION share/win_roscpp_tutorials/bin)
 endmacro()
 
 foreach(dir
@@ -42,8 +42,8 @@ foreach(dir
   rostutorial(${dir})
 endforeach()
 
-add_executable(time_api_sleep time_api/sleep/sleep.cpp)
-target_link_libraries(time_api_sleep ${ROS_LIBRARIES})
-install(TARGETS time_api_sleep RUNTIME DESTINATION share/win_roscpp_tutorials/bin)
+add_executable(win_time_api_sleep time_api/sleep/sleep.cpp)
+target_link_libraries(win_time_api_sleep ${ROS_LIBRARIES})
+install(TARGETS win_time_api_sleep RUNTIME DESTINATION share/win_roscpp_tutorials/bin)
 
 catkin_project(win_roscpp_tutorials)

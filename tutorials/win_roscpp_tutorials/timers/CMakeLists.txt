@@ -1,1 +1,1 @@
-rosbuild_add_executable(timers timers.cpp)
+rosbuild_add_executable(win_timers timers.cpp)

@@ -1,1 +1,1 @@
-rosbuild_add_executable(listener_single_message listener_single_message.cpp)
+rosbuild_add_executable(win_listener_single_message listener_single_message.cpp)
