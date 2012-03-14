@@ -76,9 +76,7 @@ REM for more information.
     text += "REM Boost Path\n"
     text += "REM set PATH="+os.environ['PROGRAMFILES']+"\\boost\\boost_1_44\\lib"+os.pathsep+"%PATH%\n"
     text += "\n"
-    text += "REM Environment settings for your compiler [MS Express]\n"
-    text += 'REM "call '+os.environ['PROGRAMFILES']+'\\Microsoft Visual Studio 10.0\\VC\\vcvarsall.bat"\n'
-    text += "REM Environment settings for your compiler [Windows SDK][Experimental]\n"
+    text += "REM Environment settings for your compiler [Windows SDK]\n"
     text += 'call "C:\\Program Files\\Microsoft SDKs\\Windows\\v7.1\\Bin\\SetEnv.cmd" /x86 /Debug\n'
     text += 'REM Debug color is a god awfully ugly canary yellow\n'
     text += 'color 7\n'
