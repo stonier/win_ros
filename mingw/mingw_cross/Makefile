@@ -34,7 +34,7 @@ install: compile
 	else \
 	  echo "Adding MINGW_ROOT,MINGW_CMAKE_TOOLCHAIN_FILE and PATH to .bashrc"; \
 	  echo "export MINGW_ROOT=$(PREFIX); export PATH=\$${PATH}:$(PREFIX)/usr/bin" >> $(HOME)/.bashrc; \
-	  echo "export MINGW_CMAKE_TOOLCHAIN_FILE=${CMAKE_TOOLCHAIN_FILE}; export PATH=\$${PATH}:$(PREFIX)/usr/bin" >> $(HOME)/.bashrc; \
+	  echo "export MINGW_CMAKE_TOOLCHAIN_FILE=${CMAKE_TOOLCHAIN_FILE}" >> $(HOME)/.bashrc; \
 	fi
 	@echo "You may need to resource your .bashrc if you want to use mingw directly."
 
