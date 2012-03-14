@@ -9,7 +9,8 @@ else
 endif
 TUPLE=i686-pc-mingw32
 URL=http://hg.savannah.nongnu.org/hgweb/mingw-cross-env
-CMAKE_TOOLCHAIN_FILE==$(PREFIX)/usr/${TUPLE}/share/cmake/mingw-cross-env-conf.cmake
+CMAKE_TOOLCHAIN_FILE=$(PREFIX)/usr/${TUPLE}/share/cmake/mingw-cross-env-conf.cmake
+
 ##############################################################################
 # Primary targets
 ##############################################################################
