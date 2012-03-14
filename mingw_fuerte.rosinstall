@@ -63,6 +63,10 @@
     local-name: actionlib
     uri: 'https://kforge.ros.org/common/actionlib'
 
+- svn:
+    uri: 'https://code.ros.org/svn/ros/stacks/ros_tutorials/trunk'
+    local-name: ros_tutorials
+
 #- svn:
 #    local-name: rx
 #    uri: 'https://code.ros.org/svn/ros/stacks/rx/trunk'
