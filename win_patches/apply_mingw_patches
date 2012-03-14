@@ -1,5 +1,22 @@
 #!/bin/sh
 
+EXPECTED_ARGS=1
+if [ $# -ne ${EXPECTED_ARGS} ]
+then
+  echo "Usage: `basename $0` <ros-workspace-dir>"
+  echo ""
+  echo "Note: only works if everything is rooted under the ros"
+  echo "workspace directory. Fix this with rospack help later."
+  echo ""
+  exit 1
+fi
+
+cp -r updates/* $1/
+
+exit
+
+# This is old patching from electric.
+
 WIN_PATCHES=`rospack find win_patches`
 ROSCONSOLE=`rospack find rosconsole`
 ROSCPP=`rospack find roscpp`
