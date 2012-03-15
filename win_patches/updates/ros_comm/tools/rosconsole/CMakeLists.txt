@@ -26,14 +26,15 @@ include_directories(include)
 add_library(rosconsole src/rosconsole/rosconsole.cpp)
 set_target_properties(rosconsole PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
-if(WIN32) # windows installs of log4cxx will always have a log4cxx-config.cmake
-  find_package(Log4cxx)
-else() # For *nix systems where the library is in a system path
-  find_library(LOG4CXX_LIBRARIES log4cxx PATHS ${LOG4CXX_ROOT_DIR} PATH_SUFFIXES "/lib")
+find_package(Log4cxx QUIET)
+if (NOT LOG4CXX_LIBRARIES)
+  # backup plan, hope it is in the system path
+  find_library(LOG4CXX_LIBRARIES log4cxx)
 endif()
 if(NOT LOG4CXX_LIBRARIES)
   message(FATAL_ERROR "Couldn't find log4cxx library")
 endif()
+
 target_link_libraries(rosconsole ${ROS_LIBRARIES} ${LOG4CXX_LIBRARIES} ${Boost_LIBRARIES})
 
 install(TARGETS rosconsole
