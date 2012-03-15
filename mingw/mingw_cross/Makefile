@@ -34,9 +34,11 @@ install: compile
 	@if grep "$(PREFIX)/usr/bin" $(HOME)/.bashrc -q; then \
 	  echo "Mingw path already added to .bashrc"; \
 	else \
-	  echo "Adding MINGW_ROOT,MINGW_CMAKE_TOOLCHAIN_FILE and PATH to .bashrc"; \
+	  echo "Adding MINGW_ROOT and updating PATH in .bashrc"; \
 	  echo "export MINGW_ROOT=$(PREFIX); export PATH=\$${PATH}:$(PREFIX)/usr/bin" >> $(HOME)/.bashrc; \
+	  echo "Adding MINGW_CMAKE_TOOLCHAIN_FILE to .bashrc"; \
 	  echo "export MINGW_CMAKE_TOOLCHAIN_FILE=${CMAKE_TOOLCHAIN_FILE}" >> $(HOME)/.bashrc; \
+	  echo "Adding MINGW_CMAKE_ROS_CONFIG_FILE to .bashrc"; \
 	  echo "export MINGW_CMAKE_ROS_CONFIG_FILE=${CMAKE_CACHE_FILE}" >> $(HOME)/.bashrc; \
 	fi
 	@echo "Copying ros configuration variable file -> $(CMAKE_CACHE_FILE)"
