@@ -13,7 +13,7 @@ macro(rostutorial T)
   add_executable(win_${T} ${T}/${T}.cpp)
   find_package(ROS COMPONENTS catkin genmsg rostime roscpp rosconsole roscpp_serialization)
   target_link_libraries(win_${T} ${ROS_LIBRARIES} ${Boost_LIBRARIES})
-  add_dependencies(win_${T} roscpp_tutorials_gencpp)
+  add_dependencies(win_${T} win_roscpp_tutorials_gencpp)
   install(TARGETS win_${T} RUNTIME DESTINATION share/win_roscpp_tutorials/bin)
 endmacro()
 
