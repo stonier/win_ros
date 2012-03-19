@@ -1,0 +1,13 @@
+/**
+\mainpage
+\htmlinclude manifest.html
+
+\section Current Status
+
+ - Downloads version 3.10
+ - Builds an msi installer (build/PyYAML-3.10/dist/PyYAML-3.10.win32.msi)
+ - Will compile against whatever python you currently have.
+
+See make.bat for details.
+
+*/
