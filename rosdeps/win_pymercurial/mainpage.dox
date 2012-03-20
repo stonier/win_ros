@@ -2,12 +2,29 @@
 \mainpage
 \htmlinclude manifest.html
 
-\section Current Status
+\section Status
 
  - Downloads version 3.10
  - Builds an msi installer (build/PyYAML-3.10/dist/PyYAML-3.10.win32.msi)
- - Will compile against whatever python you currently have.
+ - Will build against whatever python you currently have.
+ - By default builds a 'pure' python version of hg.
 
-See make.bat for details.
+\section Optional
+
+You can get it to compile binaries (thus faster) by doing the following.
+
+ - Install ms express or visual studio (windows sdk7.1 won't cut it)
+ - Start a shell with the vsvarsall.bat loaded, e.g.
+ 
+@code
+call C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\vcvarsall.bat
+@endcode
+ 
+ - Run 'make compiled'
+
+\section Other
+
+ - See make.bat for more details.
+ - http://mercurial.selenic.com/wiki/WindowsInstall
 
 */
