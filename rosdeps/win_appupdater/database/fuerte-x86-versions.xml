@@ -2,6 +2,9 @@
 <!DOCTYPE versions SYSTEM "http://appupdater.nabber.org/versions.dtd">
 <versions>
 	<signature>http://192.168.10.66/appupdater/fuerte-x86-versions.xml.asc</signature>
+	<pubkey>http://192.168.10.66/appupdater/winros.fuerte.pub.asc</pubkey>
+	<!--
+	-->
 	<entry id="1">
 		<name>
 			Appupdater
@@ -823,6 +826,10 @@
 		<depends>Python2.7</depends>
 		<depends>Python2.7-Win32</depends>
 		<depends>Python2.7-Yaml</depends>
+		<depends>Python2.7-Mercurial</depends>
+		<depends>Python2.7-Svn</depends>
+		<depends>MSysGit</depends>
+		<depends>WGet</depends>
 		<filename name='win-rosinstall.bat'>
 			<hash type='md5'>
 				37555bed9beb72d94e2ca7dc953bf183

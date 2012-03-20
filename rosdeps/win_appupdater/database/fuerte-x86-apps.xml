@@ -3,13 +3,15 @@
 <applications>
 	<versions>http://192.168.10.66/appupdater/fuerte-x86-versions.xml</versions>
 	<signature>http://192.168.10.66/appupdater/fuerte-x86-apps.xml.asc</signature>
+	<pubkey>http://192.168.10.66/appupdater/winros.fuerte.pub.asc</pubkey>
+	<!--
+	-->
 	<!--<suggest>http://192.168.10.66/appupdater/fuerte-x86-python.xml</suggest>-->
         <!--<suggest>http://pcwelt-praxis.de/dfiles/apps.xml</suggest>
         <suggest>http://appupdater.googlecode.com/files/apps.metalink</suggest>-->
         <!--<suggest>http://appupdater.sourceforge.net/data/appsm.xml</suggest>-->
         <!--<versions>http://appupdater.nabber.org/data/versions.xml</versions>-->
 	<!--<pubkey>https://www.nabber.org/Nabber.org.2011.pub.asc</pubkey>-->
-	<pubkey>http://192.168.10.66/appupdater/winros.fuerte.pub.asc</pubkey>
         <!--<feedback type="http_get">http://www.nabber.org/projects/appupdater/data/submit.php</feedback>-->
 	<!--
 	<group name="Python">
