@@ -1,0 +1,23 @@
+/**
+\mainpage
+\htmlinclude manifest.html
+
+\section Overview
+
+Stores the appupdater repository files. Also runs a script to generate signatures:
+
+\section Usage
+
+To generate signatures:
+
+@code
+make signatures
+@endcode
+
+You may need to generate your own secret key first though:
+
+@code
+make key
+@endcode
+
+*/

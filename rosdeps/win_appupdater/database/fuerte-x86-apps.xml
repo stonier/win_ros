@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE applications SYSTEM "http://appupdater.nabber.org/applications.dtd">
+<applications>
+	<!--<signature>http://appupdater.nabber.org/data/apps.xml.asc</signature>-->
+	<!--<versions>http://appupdater.nabber.org/data/versions.xml</versions>-->
+	<!--<suggest>http://192.168.10.66/appupdater/fuerte-x86-python.xml</suggest>-->
+	<versions>http://192.168.10.66/appupdater/fuerte-x86-versions.xml</versions>
+        <!--<suggest>http://pcwelt-praxis.de/dfiles/apps.xml</suggest>
+        <suggest>http://appupdater.googlecode.com/files/apps.metalink</suggest>-->
+        <!--<suggest>http://appupdater.sourceforge.net/data/appsm.xml</suggest>-->
+        <!--<versions>http://appupdater.nabber.org/data/versions.xml</versions>-->
+	<!--<pubkey>https://www.nabber.org/Nabber.org.2011.pub.asc</pubkey>-->
+	<!--<pubkey>https://www.nabber.org/Nabber.org.2012.pub.asc</pubkey>-->
+        <!--<feedback type="http_get">http://www.nabber.org/projects/appupdater/data/submit.php</feedback>-->
+	<!--
+	<group name="Python">
+		<package>Python2.7</package>
+	</group>
+	-->
+	<app id="1">
+		<name>
+			Appupdater
+		</name>
+		<description>
+			Appupdater provides advanced functionality to Windows, similar to apt-get or yum on Linux. It automates the process of installing and maintaining up to date versions of programs. It is fully customizable for use in a corporate environment.
+		</description>
+		<html>
+			http://www.nabber.org/projects/appupdater/
+		</html>
+		<file>
+			appupdater.exe
+		</file>
+	</app>
+	<app id="2">
+		<name>
+			Wget
+		</name>
+		<description>
+			Command line download utility.
+		</description>
+		<html>
+			http://gnuwin32.sourceforge.net/packages/wget.htm
+		</html>
+		<file>
+			wget.exe
+		</file>
+	</app>
+	<app id="11">
+		<name>
+			SlikSvn
+		</name>
+		<description>
+			Command line subversion client.
+		</description>
+		<html>
+			http://www.sliksvn.com/
+		</html>
+		<file>
+			svn.exe
+		</file>
+	</app>
+	<app id="12">
+		<name>
+			MSysGit
+		</name>
+		<description>
+			Git client for windows.
+		</description>
+		<html>
+			http://code.google.com/p/msysgit/
+		</html>
+		<file>
+			git.exe
+		</file>
+	</app>
+	<app id="31">
+		<name>
+			Python2.7
+		</name>
+		<description>
+			Python is a dynamic object-oriented programming language that can be used for many kinds of software development. It offers strong support for integration with other languages and tools, comes with extensive standard libraries, and can be learned in a few days. Many Python programmers report substantial productivity gains and feel the language encourages the development of higher quality, more maintainable code.
+		</description>
+		<html>
+			http://www.python.org
+		</html>
+		<file>
+			python.exe
+		</file>
+		<file>
+			python27.dll
+		</file>
+	</app>
+	<app id="32">
+		<name>
+			Python2.7-Empy
+		</name>
+		<description>
+			A powerful and robust templating system for Python.
+		</description>
+		<html>
+			http://wiki.python.org/moin/EmPy
+		</html>
+		<file>
+			em.py
+		</file>
+	</app>
+	<app id="33">
+		<name>
+			Python2.7-Win32
+		</name>
+		<description>
+			Win32 extensions for python.
+		</description>
+		<html>
+			http://sourceforge.net/projects/pywin32/
+		</html>
+		<file>
+			pythoncom27.dll
+		</file>
+	</app>
+	<app id="34">
+		<name>
+			Python2.7-Yaml
+		</name>
+		<description>
+			Python yaml parsers and utilities.
+		</description>
+		<html>
+			http://pyyaml.org/
+		</html>
+		<file>
+			cyaml.py
+		</file>
+	</app>
+	<app id="35">
+		<name>
+			Python2.7-Svn
+		</name>
+		<description>
+			Python subversion client module.
+		</description>
+		<html>
+			http://pysvn.tigris.org/
+		</html>
+		<file>
+			libsvn_client-1.dll
+		</file>
+	</app>
+	<app id="36">
+		<name>
+			Python2.7-Mercurial
+		</name>
+		<description>
+			Python mercurial module.
+		</description>
+		<html>
+			http://mercurial.selenic.com/wiki/WindowsInstall
+		</html>
+		<file>
+			hg.bat
+		</file>
+	</app>
+	<app id="37">
+		<name>
+			Python2.7-WinRosinstall
+		</name>
+		<description>
+			Python source code installer for ros stacks.
+		</description>
+		<html>
+			http://www.ros.org/wiki/win_rosinstall
+		</html>
+		<file>
+			win-rosinstall.bat
+		</file>
+	</app>
+</applications>

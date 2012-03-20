@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metalink version="3.0" generator="Metalink Editor version 1.1.0" xmlns="http://www.metalinker.org/">
+  <publisher>
+    <name>Nabber.org</name>
+    <url>http://www.nabber.org/projects/appupdater/</url>
+  </publisher>
+  <identity>Application Listing</identity>
+  <description>Application listing XML file for use with Appupdater</description>
+  <files>
+    <file name="apps.xml">
+      <language>en-US</language>
+      <os>Windows-x86</os>
+      <resources>
+        <url type="http" location="ko" maxconnections="1">http://192.168.10.66/appupdater/fuerte-x86-apps.xml</url>
+      </resources>
+    </file>
+  </files>
+</metalink>

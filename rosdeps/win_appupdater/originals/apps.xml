@@ -1,0 +1,1367 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE applications SYSTEM "http://appupdater.nabber.org/applications.dtd">
+<applications>
+	<signature>http://appupdater.nabber.org/data/apps.xml.asc</signature>
+	<versions>http://appupdater.nabber.org/data/versions.xml</versions>
+        <!--<suggest>http://pcwelt-praxis.de/dfiles/apps.xml</suggest>
+        <suggest>http://appupdater.googlecode.com/files/apps.metalink</suggest>-->
+        <!--<suggest>http://appupdater.sourceforge.net/data/appsm.xml</suggest>-->
+        <!--<versions>http://appupdater.nabber.org/data/versions.xml</versions>-->
+	<!--<pubkey>https://www.nabber.org/Nabber.org.2011.pub.asc</pubkey>-->
+	<pubkey>https://www.nabber.org/Nabber.org.2012.pub.asc</pubkey>
+        <feedback type="http_get">http://www.nabber.org/projects/appupdater/data/submit.php</feedback>
+	<group name="Development">
+		<package>TortoiseSVN</package>
+		<package>Python2.6</package>
+		<package>py2exe_python2.6</package>
+		<package>pywin32_python2.6</package>
+		<package>Notepad++</package>
+		<package>nsis</package>
+	</group>
+	<app id="1">
+		<name>
+			7-Zip
+		</name>
+		<description>
+			7-Zip is a file archiver with a high compression ratio.
+		</description>
+		<html>
+			http://www.7-zip.org/
+		</html>
+		<file>
+			7z.exe
+		</file>
+	</app>
+	<app id="3">
+		<name>
+			Acrobat Reader
+		</name>
+		<description>
+			Adobe Acrobat Reader
+		</description>
+		<html>
+			http://www.adobe.com/go/getreader/
+		</html>
+		<file>
+			AcroRd32.exe
+		</file>
+		<file>
+			AcroRd32.dll
+		</file>
+	</app>
+	<app id="5">
+		<name>
+			Instant Messenger
+		</name>
+		<description>
+			AOL Instant Messenger (AIM)
+		</description>
+		<html>
+			http://www.aim.com/
+		</html>
+		<file>
+			aim.exe
+		</file>
+		<file>
+			aim6.exe
+		</file>
+	</app>
+	<app id="8">
+		<name>
+			RealPlayer
+		</name>
+		<description>
+			RealPlayer
+		</description>
+		<html>
+			http://www.real.com/
+		</html>
+		<file>
+			realplay.exe
+		</file>
+	</app>
+	<app id="19">
+		<name>
+			CDex
+		</name>
+		<description>
+			CDex is a CD-Ripper, extracting digital audio data from an Audio CD. The application supports many Audio encoders, like MPEG (MP2,MP3), VQF, AAC encoders.
+		</description>
+		<html>
+			http://cdexos.sourceforge.net/
+		</html>
+		<file>
+			CDex.exe
+		</file>
+	</app>
+	<app id="20">
+		<name>
+			Citrix ICA Client
+		</name>
+		<description>
+			Citrix ICA Client
+		</description>
+		<html>
+			http://www.citrix.com/English/SS/downloads/downloads.asp?dID=2755
+		</html>
+		<file>
+			wfcrun32.exe
+		</file>
+		<file>
+			wfica32.exe
+		</file>
+	</app>
+	<app id="27">
+		<name>
+			Eraser
+		</name>
+		<description>
+			Eraser is an advanced security tool (for Windows), which allows you to completely remove sensitive data from your hard drive by overwriting it several times with carefully selected patterns.
+		</description>
+		<html>
+			http://www.heidi.ie/eraser/
+		</html>
+		<file>
+			eraser.exe
+		</file>
+	</app>
+	<app id="28">
+		<name>
+			Ethereal
+		</name>
+		<description>
+			Ethereal is used by network professionals around the world for troubleshooting, analysis, software and protocol development, and education. It has all of the standard features  you would expect in a protocol analyzer, and several features not seen in any other product.
+		</description>
+		<html>
+			http://www.ethereal.com/
+		</html>
+		<file>
+			ethereal.exe
+		</file>
+	</app>
+	<app id="30">
+		<name>
+			WinPcap
+		</name>
+		<description>
+			WinPcap is the industry-standard tool for link-layer network access in Windows environments: it allows applications to capture and transmit network packets bypassing the protocol stack, and has additional useful features, including kernel-level packet filtering, a network statistics engine and support for remote packet capture.
+		</description>
+		<html>
+			http://www.winpcap.org/
+		</html>
+		<file>
+			rpcapd.exe
+                </file>
+	</app>
+	<app id="31">
+		<name>
+			FeedReader
+		</name>
+		<description>
+			Feedreader is a FREE RSS news aggregation solution that provides robust,state-of-the-art features in an intuitive, user-friendly environment.
+		</description>
+		<html>
+			http://www.feedreader.com/
+		</html>
+		<file>
+			feedreader.exe
+		</file>
+	</app>
+	<app id="38">
+		<name>
+			Google Earth
+		</name>
+		<description>
+			Google Earth combines the power of Google Search with satellite imagery, maps, terrain and 3D buildings to put the world's geographic information at your fingertips.
+		</description>
+		<html>
+			http://earth.google.com/
+		</html>
+		<file>
+			GoogleEarth.exe
+		</file>
+	</app>
+	<app id="42">
+		<name>
+			iTunes
+		</name>
+		<description>
+			
+		</description>
+		<html>
+			http://www.apple.com/itunes/
+		</html>
+		<file>
+			iTunes.exe
+		</file>
+	</app>
+	<app id="43">
+		<name>
+			IrfanView
+		</name>
+		<description>
+			IrfanView is a very fast, small, compact and innovative FREEWARE (for non-commercial use) graphic viewer for Windows 9x/ME/NT/2000/XP/2003/Vista.
+		</description>
+		<html>
+			http://www.irfanview.com/
+		</html>
+		<file>
+			i_view32.exe
+		</file>
+	</app>
+	<app id="44">
+		<name>
+			Java
+		</name>
+		<description>
+			Java(TM) Platform Standard Edition binary
+		</description>
+		<html>
+			http://www.java.com
+		</html>
+		<file>
+			java.exe
+		</file>
+	</app>
+	<app id="45">
+		<name>
+			Ad-Aware
+		</name>
+		<description>
+			Ad-Aware SE Core application
+		</description>
+		<html>
+			http://www.lavasoftusa.com/products/ad_aware_free.php
+		</html>
+		<file>
+			Ad-Aware.exe
+		</file>
+	</app>
+	<app id="48">
+		<name>
+			SyncToy
+		</name>
+		<description>
+			SyncToy helps you copy, move, rename, and delete files between folders and computers quickly and easily.
+		</description>
+		<html>
+			http://www.microsoft.com/downloads/details.aspx?familyid=E0FC1154-C975-4814-9649-CCE41AF06EB7
+		</html>
+		<file>
+			SyncToy.exe
+		</file>
+	</app>
+	<app id="50">
+		<name>
+			Virtual PC
+		</name>
+		<description>
+			Virtual PC lets you create separate virtual machines on your Windows desktop, each of which virtualizes the hardware of a complete physical computer. Use virtual machines to run operating systems such as MS-DOS, Windows, and OS/2. You can run multiple operating systems at once on a single physical computer and switch between them as easily as switching applications.instantly, with a mouse click. Virtual PC is perfect for any scenario in which you need to support multiple operating systems, whether you use it for tech support, legacy application support, training, or just for consolidating physical computers.
+		</description>
+		<html>
+			http://www.microsoft.com/windows/products/winfamily/virtualpc/default.mspx
+		</html>
+		<file>
+			Virtual PC.exe
+		</file>
+	</app>
+	<app id="53">
+		<name>
+			Firefox
+		</name>
+		<description>
+			Mozilla Firefox Web Browser
+		</description>
+		<html>
+			http://www.mozilla.com/firefox/
+		</html>
+		<file>
+			firefox.exe
+		</file>
+	</app>
+	<app id="54">
+		<name>
+			Sunbird
+		</name>
+		<description>
+			Mozilla Sunbird is a cross-platform calendar application, built upon Mozilla Toolkit. Our goal is to bring Mozilla-style ease-of-use to your calendar, without tying you to a particular storage solution.
+		</description>
+		<html>
+			http://www.mozilla.org/projects/calendar/sunbird/
+		</html>
+		<file>
+			sunbird.exe
+		</file>
+	</app>
+	<app id="55">
+		<name>
+			Thunderbird
+		</name>
+		<description>
+			Mozilla Thunderbird E-mail Client
+		</description>
+		<html>
+			http://www.mozilla.com/thunderbird/
+		</html>
+		<file>
+			thunderbird.exe
+		</file>
+	</app>
+	<app id="56">
+		<name>
+			World Wind
+		</name>
+		<description>
+			World Wind lets you zoom from satellite altitude into any place on Earth. Leveraging Landsat satellite imagery and Shuttle Radar Topography Mission data, World Wind lets you experience Earth terrain in visually rich 3D, just as if you were really there.
+		</description>
+		<html>
+			http://worldwind.arc.nasa.gov/
+		</html>
+		<file>
+			WorldWind.exe
+		</file>
+	</app>
+	<app id="58">
+		<name>
+			Netstumbler
+		</name>
+		<description>
+			NetStumbler is a tool for Windows that allows you to detect Wireless Local Area Networks (WLANs) using 802.11b, 802.11a and 802.11g.
+		</description>
+		<html>
+			http://www.netstumbler.com/
+		</html>
+		<file>
+			NetStumbler.exe
+		</file>
+	</app>
+<!-- remove? -->
+	<app id="59">
+		<name>
+			PDFCreator
+		</name>
+		<description>
+			PDFCreator easily creates PDFs from any Windows program. Use it like a printer in Word, StarCalc or any other Windows application.
+		</description>
+		<html>
+			http://www.pdfforge.org/
+		</html>
+		<file>
+			PDFCreator.exe
+		</file>
+	</app>
+	<app id="60">
+		<name>
+			QuickTime
+		</name>
+		<description>
+			The QuickTime family of digital media creation, delivery and playback software lets you deliver live or pre-recorded video and audio to an audience of any size.
+		</description>
+		<html>
+			http://www.apple.com/quicktime/
+		</html>
+		<file>
+			QuickTimePlayer.exe
+		</file>
+	</app>
+	<app id="62">
+		<name>
+			Cisco Systems VPN Client
+		</name>
+		<description>
+			Cisco Systems VPN Client
+		</description>
+		<html>
+			
+		</html>
+		<file>
+			ipsecdialer.exe
+		</file>
+	</app>
+	<app id="63">
+		<name>
+			StreamRipper
+		</name>
+		<description>
+			StreamRipper
+		</description>
+		<html>
+			
+		</html>
+		<file>
+			StreamRipper32.exe
+		</file>
+	</app>
+	<app id="68">
+		<name>
+			VCDControlTool
+		</name>
+		<description>
+			VCDControlTool MFC Application
+		</description>
+		<html>
+			
+		</html>
+		<file>
+			VCdControlTool.exe
+		</file>
+	</app>
+	<app id="69">
+		<name>
+			Winamp
+		</name>
+		<description>
+			The Ultimate Media Player
+		</description>
+		<html>
+			http://www.winamp.com
+		</html>
+		<file>
+			winamp.exe
+		</file>
+	</app>
+	<app id="71">
+		<name>
+			WinSCP
+		</name>
+		<description>
+			WinSCP is an open source SFTP client and FTP client for Windows. Its main function is the secure file transfer between a local and a remote computer. Beyond this, WinSCP offers basic file manager functionality. It uses Secure Shell (SSH) and supports, in addition to Secure FTP, also legacy SCP protocol.
+		</description>
+		<html>
+			http://winscp.net/
+		</html>
+		<file>
+			WinSCP3.exe
+		</file>
+		<file>
+			WinSCP.exe
+		</file>
+	</app>
+	<app id="72">
+		<name>
+			OpenOffice.org
+		</name>
+		<description>
+			OpenOffice.org is a multiplatform and multilingual office suite and an open-source project. Compatible with all other major office suites, the product is free to download, use, and distribute.
+		</description>
+		<html>
+			http://www.openoffice.org/
+		</html>
+		<file>
+			soffice.exe
+		</file>
+		<!--
+		<file>
+			scalc.exe
+		</file>
+		<file>
+			sdraw.exe
+		</file>
+		<file>
+			swriter.exe
+		</file>
+		<file>
+			smath.exe
+		</file>
+		<file>
+			sbase.exe
+		</file>
+		-->
+	</app>
+	<app id="73">
+		<name>
+			Audacity
+		</name>
+		<description>
+			The Free, Cross-Platform Sound Editor.  Audacity is free, open source software for recording and editing sounds. It is available for Mac OS X, Microsoft Windows, GNU/Linux, and other operating systems.
+		</description>
+		<html>
+			http://audacity.sourceforge.net/
+		</html>
+		<file>
+			audacity.exe
+		</file>
+	</app>
+	<app id="74">
+		<name>
+			Wireshark
+		</name>
+		<description>
+			Wireshark is the world's foremost network protocol analyzer, and is the standard in many industries.  It is the continuation of a project that started in 1998. Hundreds of developers around the world have contributed to it, and it is still under active development.
+		</description>
+		<html>
+			http://www.wireshark.org/
+		</html>
+		<file>
+			wireshark.exe
+		</file>
+	</app>
+	<app id="75">
+		<name>
+			ActivePerl
+		</name>
+		<description>
+			ActivePerl is the complete, ready-to-install Perl distribution for Windows, Mac OS X, Linux, Solaris, AIX and HP-UX.
+		</description>
+		<html>
+			http://www.activestate.com/products/activeperl/
+		</html>
+		<file>
+			perl.exe
+		</file>
+	</app>
+	<app id="76">
+		<name>
+			RealVNC
+		</name>
+		<description>
+			RealVNC provides remote control software which lets you see and interact with desktop applications across the network. The software has a widespread user base from individuals to the largest multi-national companies. The company was founded by the original developers of VNC to promote, enhance and commercialize VNC.
+		</description>
+		<html>
+			http://www.realvnc.com/
+		</html>
+		<file>
+			vncviewer.exe
+		</file>
+	</app>
+	<app id="77">
+		<name>
+			GIMP
+		</name>
+		<description>
+			GIMP is the GNU Image Manipulation Program. It is a freely distributed piece of software for such tasks as photo retouching, image composition and image authoring. It works on many operating systems, in many languages.
+		</description>
+		<html>
+			http://www.gimp.org
+		</html>
+		<file>
+			gimp-2.2.exe
+		</file>
+		<file>
+			gimp.exe
+		</file>
+		<file>
+			gimp-2.4.exe
+		</file>
+	</app>
+	<app id="79">
+		<name>
+			Python2.5
+		</name>
+		<description>
+			Python is a dynamic object-oriented programming language that can be used for many kinds of software development. It offers strong support for integration with other languages and tools, comes with extensive standard libraries, and can be learned in a few days. Many Python programmers report substantial productivity gains and feel the language encourages the development of higher quality, more maintainable code.
+		</description>
+		<html>
+			http://www.python.org
+		</html>
+		<file>
+			python.exe
+		</file>
+		<file>
+			python25.dll
+		</file>
+	</app>
+	<app id="80">
+		<name>
+			MythTV Filters
+		</name>
+		<description>
+			DirectShow filters that enables playback of MythTV .nuv files on Windows.
+		</description>
+		<html>
+			http://dsmyth.sourceforge.net/
+		</html>
+		<file>
+			DSMyth.dll
+		</file>
+	</app>
+	<app id="81">
+		<name>
+			BitTorrent
+		</name>
+		<description>
+			
+		</description>
+		<html>
+			http://www.bittorrent.com/download.html
+		</html>
+		<file>
+			btdownloadgui.exe
+		</file>
+		<file>
+			bittorrent.exe
+		</file>
+	</app>
+	<app id="83">
+		<name>
+			DivX
+		</name>
+		<description>
+			
+		</description>
+		<html>
+			http://www.divx.com/divx/windows/download/
+		</html>
+		<file>
+			DivX Player.exe
+		</file>
+		<file>
+			DivX.dll
+		</file>
+	</app>
+	<app id="84">
+		<name>
+			VLC Media Player
+		</name>
+		<description>
+			VLC - the cross-platform media player and streaming server VLC media player is a highly portable multimedia player for various audio and video formats (MPEG-1, MPEG-2, MPEG-4, DivX, mp3, ogg, ...) as well as DVDs, VCDs, and various streaming protocols. It can also be used as a server to stream in unicast or multicast in IPv4 or IPv6 on a high-bandwidth network. 
+		</description>
+		<html>
+			http://www.videolan.org/vlc
+		</html>
+		<file>
+			vlc.exe
+		</file>
+	</app>
+	<app id="85">
+		<name>
+			Aspell
+		</name>
+		<description>
+			GNU Aspell is a Free and Open Source spell checker designed to eventually replace Ispell. It can either be used as a library or as an independent spell checker. Its main feature is that it does a superior job of suggesting possible replacements for a misspelled word than just about any other spell checker out there for the English language. Unlike Ispell, Aspell can also easily check documents in UTF-8 without having to use a special dictionary. Aspell will also do its best to respect the current locale setting. Other advantages over Ispell include support for using multiple dictionaries at once and intelligently handling personal dictionaries when more than one Aspell process is open at once.
+		</description>
+		<html>
+			http://aspell.net/win32/
+		</html>
+		<file>
+			aspell.exe
+		</file>
+	</app>
+	<app id="86">
+		<name>
+			GAIM
+		</name>
+		<description>
+			Project renamed to Pidgin			
+		</description>
+		<html>
+			http://sourceforge.net/projects/gaim/
+		</html>
+		<file>
+			gaim.exe
+		</file>
+	</app>
+	<app id="87">
+		<name>
+			PuTTY
+		</name>
+		<description>
+			PuTTY is a free implementation of Telnet and SSH for Win32 and Unix platforms, along with an xterm terminal emulator.
+		</description>
+		<html>
+			http://www.chiark.greenend.org.uk/~sgtatham/putty/
+		</html>
+		<file>
+			putty.exe
+		</file>
+	</app>
+	<app id="88">
+		<name>
+			Spybot
+		</name>
+		<description>
+			Spybot - Search and Destroy detects and removes spyware, a relatively new kind of threat not yet covered by common anti-virus applications. Spyware silently tracks your surfing behaviour to create a marketing profile for you that is transmitted without your knowledge to the compilers and sold to advertising companies. If you see new toolbars in your Internet Explorer that you haven't intentionally installed, if your browser crashes inexplicably, or if your home page has been "hijacked" (or changed without your knowledge), your computer is most probably infected with spyware. Even if you don't see the symptoms, your computer may be infected, because more and more spyware is emerging. Spybot-SD is free, so there's no harm giving it a try to see if something has invaded your computer.
+		</description>
+		<html>
+			http://www.safer-networking.org/
+		</html>
+		<file>
+			SpybotSD.exe
+		</file>
+	</app>
+	<app id="89">
+		<name>
+			Flash
+		</name>
+		<description>
+			Adobe Flash
+		</description>
+		<html>
+			http://www.macromedia.com/go/getflash
+		</html>
+		<file>
+			Flash9.ocx
+		</file>
+		<file>
+			Flash10c.ocx
+		</file>
+		<file>
+			Flash.ocx
+		</file>
+		<file>
+			Flash8.ocx
+		</file>
+		<file>
+			npswf32.dll
+		</file>
+		<file>
+			swflash.ocx
+		</file>
+	</app>
+	<app id="90">
+		<name>
+			Shockwave
+		</name>
+		<description>
+			
+		</description>
+		<html>
+			http://www.adobe.com/go/getshockwave/
+		</html>
+		<file>
+			SwInit.exe
+		</file>
+	</app>
+	<app id="91">
+		<name>
+			Appupdater
+		</name>
+		<description>
+			Appupdater provides advanced functionality to Windows, similar to apt-get or yum on Linux. It automates the process of installing and maintaining up to date versions of programs. It is fully customizable for use in a corporate environment.
+		</description>
+		<html>
+			http://www.nabber.org/projects/appupdater/
+		</html>
+		<file>
+			appupdater.exe
+		</file>
+	</app>
+	<app id="92">
+		<name>
+			GTK+
+		</name>
+		<description>
+			GTK+ is a multi-platform toolkit for creating graphical user interfaces. Offering a complete set of widgets, GTK+ is suitable for projects ranging from small one-off projects to complete application suites.
+		</description>
+		<html>
+			http://www.gtk.org/
+		</html>
+		<file>
+			libgdk-win32-2.0-0.dll
+		</file>
+	</app>
+	<app id="97">
+		<name>
+			TortoiseSVN
+		</name>
+		<description>
+			 A Subversion client, implemented as a windows shell extension. TortoiseSVN is a really easy to use Revision control / version control / source control software for Windows. Since it's not an integration for a specific IDE you can use it with whatever development tools you like. TortoiseSVN is free to use. You don't need to get a loan or pay a full years salary to use it. 
+		</description>
+		<html>
+			http://tortoisesvn.tigris.org/
+		</html>
+		<file>
+			TortoiseProc.exe
+		</file>
+	</app>
+        <app id="101">
+                <name>
+                        Pidgin
+                </name>
+                <description>
+			Pidgin is an instant messaging program for Windows, Linux, BSD, and other Unixes. You can talk to your friends using AIM, ICQ, Jabber/XMPP, MSN Messenger, Yahoo!, Bonjour, Gadu-Gadu, IRC, Novell GroupWise Messenger, QQ, Lotus Sametime, SILC, SIMPLE, and Zephyr.
+                </description>
+                <html>
+			http://www.pidgin.im/
+                </html>
+                <file>
+                        pidgin.exe
+                </file>
+        </app>
+        <app id="102">
+                <name>
+                        AbiWord
+                </name>
+                <description>
+			AbiWord is a free word processing program similar to Microsoft Word. It is suitable for a wide variety of word processing tasks.
+                </description>
+                <html>
+			http://www.abisource.com/
+                </html>
+                <file>
+                        abiword.exe
+                </file>
+        </app>
+        <app id="103">
+                <name>
+                        Notepad++
+                </name>
+                <description>
+			Notepad++ is a free source code editor (and Notepad replacement), which supports several programming languages, running under the MS Windows environment.
+                </description>
+                <html>
+			http://notepad-plus.sourceforge.net/uk/site.htm
+                </html>
+                <file>
+			notepad++.exe
+                </file>
+        </app>
+        <app id="104">
+                <name>
+                        Metalink Editor
+                </name>
+                <description>
+			Metalink Editor is a metalink editor written in Python, with a graphical user interface. It allows you to create and edit almost any kind of metalink, in a fast and simple way. One of its most powerful features, besides its nice user interface, is the ability to "scan" a file to create hashes and fill in the right file name and file size automatically. Adding mirrors is as easy as it can get and if you want to edit an already existing metalink, you can do that too.
+                </description>
+                <html>
+			http://hampus.vox.nu/metalink/
+                </html>
+                <file>
+			metalink_editor.exe
+                </file>
+        </app>
+        <app id="106">
+                <name>
+                        NSIS
+                </name>
+                <description>
+			NSIS (Nullsoft Scriptable Install System) is a professional open source system to create Windows installers. It is designed to be as small and flexible as possible and is therefore very suitable for internet distribution.
+                </description>
+                <html>
+			http://nsis.sourceforge.net/
+                </html>
+                <file>
+			nsis.exe
+                </file>
+        </app>
+        <app id="108">
+                <name>
+                        Album Cover Art Downloader
+                </name>
+                <description>
+			Download album-cover art based on the ID3 tags of artist and album names in your MP3s. Import right into the ID3 tag from an online database. Customize the size of any cover on both locally saved and ID3-tag pictures and save the images directly to your hard drive with whatever names you want. The program supports bulk saving. Click a picture box to see the full image in its original size, detect corrupted tags and audio-sync headers to fix them, and search for subdirectory options.
+                </description>
+                <html>
+			http://louhi.kempele.fi/~skyostil/projects/albumart/
+                </html>
+                <file>
+			albumart-qt.exe
+                </file>
+        </app>
+        <app id="109">
+                <name>
+                        Celestia
+                </name>
+                <description>
+			The free space simulation that lets you explore our universe in three dimensions. Celestia runs on Windows, Linux, and Mac OS X.
+                </description>
+                <html>
+			http://www.shatters.net/celestia/
+                </html>
+                <file>
+			celestia.exe
+                </file>
+        </app>
+        <app id="110">
+                <name>
+                        py2exe_python2.5
+                </name>
+                <description>
+			py2exe is a Python Distutils extension which converts Python scripts into executable Windows programs, able to run without requiring a Python installation.
+                </description>
+                <html>
+			http://www.py2exe.org/
+                </html>
+                <file>
+			py2exe_util.pyd
+                </file>
+        </app>
+        <app id="111">
+                <name>
+                        pywin32_python2.5
+                </name>
+                <description>
+			Python Extensions for Windows
+                </description>
+                <html>
+			https://sourceforge.net/projects/pywin32/
+                </html>
+                <file>
+			win32api.pyd
+                </file>
+        </app>
+	<app id="112">
+		<name>
+			Aria2
+		</name>
+		<description>
+			aria2 is a download utility with resuming and segmented downloading. Supported protocols are HTTP/HTTPS/FTP/BitTorrent. It also supports Metalink version 3.0. 
+		</description>
+		<html>
+			http://aria2.sourceforge.net/
+		</html>
+		<file>
+			aria2c.exe
+		</file>
+	</app>
+	<app id="113">
+		<name>
+			Inkscape
+		</name>
+		<description>
+			Inkscape is an Open Source vector graphics editor, with capabilities similar to Illustrator, Freehand, CorelDraw, or Xara X using the  W3C standard Scalable Vector Graphics  (SVG) file format. Supported SVG features include shapes, paths, text, markers, clones, alpha blending, transforms, gradients, patterns, and grouping. Inkscape also supports Creative Commons meta-data, node editing, layers, complex path operations, bitmap tracing, text-on-path, flowed text, direct XML editing, and more. It imports formats such as JPEG, PNG, TIFF, and others and exports PNG as well as multiple vector-based formats.
+		</description>
+		<html>
+			http://inkscape.org/
+		</html>
+		<file>
+			inkscape.exe
+		</file>
+	</app>
+	<app id="114">
+		<name>
+			AutoIt
+		</name>
+		<description>
+			AutoIt is a freeware Windows automation language. It can be used to script most simple Windows-based tasks (great for PC rollouts or home automation).
+		</description>
+		<html>
+			http://www.autoitscript.com
+		</html>
+		<file>
+			autoit3.exe
+		</file>
+	</app>
+	<app id="115">
+		<name>
+			Opera
+		</name>
+		<description>
+			Secure, fast, and easy to use, the full-featured Opera browser comes in a compact 3.5 MB download. We give you: The Best Internet Experience.
+		</description>
+		<html>
+			http://www.opera.com
+		</html>
+		<file>
+			opera.exe
+		</file>
+	</app>
+	<app id="116">
+		<name>
+			GnuPG
+		</name>
+		<description>
+			GnuPG is the GNU project's complete and free implementation of the OpenPGP standard as defined by RFC2440 . GnuPG allows to encrypt and sign your data and communication, features a versatile key managment system as well as access modules for all kind of public key directories. GnuPG, also known as GPG, is a command line tool with features for easy integration with other applications. A wealth of frontend applications  and libraries  are available. Version 2 of GnuPG also provides support for S/MIME.
+		</description>
+		<html>
+			http://www.gnupg.org
+		</html>
+		<file>
+			gpg.exe
+		</file>
+	</app>
+	<app id="117">
+		<name>
+			ImgBurn
+		</name>
+		<description>
+			ImgBurn is a lightweight CD / DVD / HD DVD / Blu-ray burning application that everyone should have in their toolkit!  ImgBurn supports a wide range of image file formats - including BIN, DI, DVD, GI, IMG, ISO, MDS, NRG and PDI.
+		</description>
+		<html>
+			http://www.imgburn.com
+		</html>
+		<file>
+			ImgBurn.exe
+		</file>
+	</app>
+	<app id="118">
+		<name>
+			TortoiseCVS
+		</name>
+		<description>
+			TortoiseCVS lets you work with files under CVS version control directly from Windows Explorer. It's freely available under the GPL.  With TortoiseCVS you can directly check out modules, update, commit and see differences by right clicking on files and folders within Explorer. You can see the state of a file with overlays on top of the normal icons within Explorer. It even works from within the file open dialog. 
+		</description>
+		<html>
+			http://www.tortoisecvs.org
+		</html>
+		<file>
+			TortoiseAct.exe
+		</file>
+	</app>
+	<app id="119">
+		<name>
+			NcFTP
+		</name>
+		<description>
+			NcFTP Client (also known as just NcFTP) is a set of FREE application programs implementing the File Transfer Protocol (FTP).  The program has been in service on UNIX systems since 1991 and is a popular alternative to the standard FTP program, /usr/bin/ftp. NcFTP offers many ease-of-use and performance enhancements over the stock ftp client, and runs on a wide variety of UNIX platforms as well as operating systems such Microsoft Windows and Apple Mac OS X.
+		</description>
+		<html>
+			http://www.ncftp.com/ncftp/
+		</html>
+		<file>
+			ncftp.exe
+		</file>
+	</app>
+	<app id="120">
+		<name>
+			RocketDock
+		</name>
+		<description>
+			RocketDock is a smoothly animated, alpha blended application launcher. It provides a nice clean interface to drop shortcuts on for easy access and organization. With each item completely customizable there is no end to what you can add and launch from the dock.  Now with added Taskbar support your minimized windows can appear as icons on the dock. This allows for better productivity and accessibility.
+		</description>
+		<html>
+			http://www.rocketdock.com
+		</html>
+		<file>
+			RocketDock.exe
+		</file>
+	</app>
+	<app id="121">
+		<name>
+			TaskSwitchXP
+		</name>
+		<description>
+			TaskSwitchXP is an advanced task management utility that picks up where the standard Windows Alt+Tab switcher leaves off. It provides the same functionality, and adds visual styles to the dialog and also enhances it by displaying thumbnail preview of the application that will be switched to. TaskSwitchXP also has a powerful process and window management capability that allows you quickly to close/minimize applications and their groups. The unique capabilities of TaskSwitchXP make it useful for tracking down multitudinous windows, and provide insight into the way Windows and applications work.
+		</description>
+		<html>
+			http://www.ntwind.com/software/taskswitchxp.html
+		</html>
+		<file>
+			TaskSwitchXP.exe
+		</file>
+	</app>
+	<app id="122">
+		<name>
+			WinMerge			
+		</name>
+		<description>
+			WinMerge is an Open Source visual text file differencing and merging tool for Win32 platforms. It is highly useful for determing what has changed between project versions, and then merging changes between versions.
+		</description>
+		<html>
+			http://winmerge.org
+		</html>
+		<file>
+			WinMergeU.exe
+		</file>
+		<file>
+			WinMerge.exe
+		</file>
+	</app>
+	<app id="125">
+		<name>
+			Xming
+		</name>
+		<description>
+			Xming is the leading free unlimited X Window server for Microsoft Windows (XP/2003/Vista). It is fully featured, small and fast, simple to install and being standalone native Microsoft Windows, easily transported portable as a Pocket PC X server.
+		</description>
+		<html>
+			http://www.straightrunning.com/XmingNotes/
+		</html>
+		<file>
+			Xming.exe
+		</file>
+	</app>
+	<app id="126">
+		<name>
+			FileZilla
+		</name>
+		<description>
+			FileZilla Client is a fast and reliable cross-platform FTP, FTPS and SFTP client with lots of useful features and an intuitive interface.
+		</description>
+		<html>
+			http://filezilla-project.org/
+		</html>
+		<file>
+			filezilla.exe
+		</file>
+	</app>
+	<app id="133">
+		<name>
+			Foxit Reader
+		</name>
+		<description>
+			Foxit Reader is a free PDF document viewer and printer, with incredible small size (only 2.1 M download size), breezing-fast launch speed and rich feature set. Foxit Reader supports Windows 98/Me/2000/XP/2003/Vista. Its core function is compatible with PDF Standard 1.7.
+		</description>
+		<html>
+			http://www.foxitsoftware.com/pdf/rd_intro.php
+		</html>
+		<file>
+			Foxit Reader.exe
+		</file>
+	</app>
+	<app id="137">
+		<name>
+			CCleaner
+		</name> 
+		<description>
+			CCleaner is a freeware system optimization and privacy tool. It removes unused files from your system - allowing Windows to run faster and freeing up valuable hard disk space. It also cleans traces of your online activities such as your Internet history. But the best part is that it's fast (normally taking less than a second to run) and contains NO Spyware or Adware!
+		</description> 
+		<html>
+			http://www.ccleaner.com/
+		</html> 
+		<file>
+			ccleaner.exe
+		</file> 
+	</app>
+	<app id="142">
+		<name>
+			TeraCopy
+		</name>
+		<description>
+			File Copy Utility
+		</description>
+		<html>
+			
+		</html>
+		<file>
+			TeraCopy.exe
+		</file>
+	</app>
+	<app id="145">
+		<name>
+			Sysinternals
+		</name>
+		<description>
+			Whether you.re an IT Pro or a developer, you.ll find Sysinternals utilities to help you manage, troubleshoot and diagnose your Windows systems and applications.
+		</description>
+		<html>
+			http://technet.microsoft.com/en-us/sysinternals/
+		</html>
+		<file>
+			psversion.txt
+		</file>
+	</app>
+	<app id="146">
+		<name>
+			Launchy
+		</name>
+		<description>
+			Launchy is a free windows utility designed to help you forget about your start menu, the icons on your desktop, and even your file manager. Launchy indexes the programs in your start menu and can launch your documents, project files, folders, and bookmarks with just a few keystrokes!
+		</description>
+		<html>
+			http://www.launchy.net/
+		</html>
+		<file>
+			Launchy.exe
+		</file>
+	</app>
+	<app id="147">
+		<name>
+			uTorrent
+		</name>
+		<description>
+			A (very) tiny bittorrent client
+		</description>
+		<html>
+			http://www.utorrent.com/
+		</html>
+		<file>
+			uTorrent.exe
+		</file>
+	</app>
+	<app id="148">
+		<name>
+			Paint.NET
+		</name>
+		<description>
+			Paint.NET is free image and photo editing software for computers that run Windows. It  features an intuitive and innovative user interface with support for layers, unlimited undo, special effects, and a wide variety of useful and powerful tools. An active and growing online community provides friendly help,  tutorials, and plugins.
+		</description>
+		<html>
+			http://www.getpaint.net/
+		</html>
+		<file>
+			PaintDotNet.exe
+		</file>
+	</app>
+	<app id="149">
+		<name>
+			CutePDF Writer
+		</name>
+		<description>
+			Create professional quality PDF files from almost any printable document.  FREE for personal, commercial, gov or edu use! No watermarks! No popup Web ads!
+		</description>
+		<html>
+			http://www.cutepdf.com/
+		</html>
+		<file>
+			cpwsave.exe
+		</file>
+	</app>
+	<app id="150">
+		<name>
+			VirtualBox
+		</name>
+		<description>
+			VirtualBox is a family of powerful x86 virtualization products for enterprise as well as home use. Not only is VirtualBox an extremely feature rich, high performance product for enterprise customers, it is also the only professional solution that is freely available as Open Source Software under the terms of the GNU General Public License (GPL).
+		</description>
+		<html>
+			http://www.virtualbox.org/
+		</html>
+		<file>
+			VBoxSDL.exe
+		</file>
+	</app>
+	<app id="151">
+		<name>
+			AVG
+		</name>
+		<description>
+			AVG Free provides you with basic antivirus and antispyware protection for Windows and is available to download for free.
+		</description>
+		<html>
+			http://free.avg.com/
+		</html>
+		<file>
+			avgui.exe
+		</file>
+	</app>
+	<app id="152">
+		<name>
+			TrueCrypt
+		</name>
+		<description>
+			Free open-source disk encryption software for Windows Vista/XP, Mac OS X, and Linux
+		</description>
+		<html>
+			http://www.truecrypt.org/
+		</html>
+		<file>
+			truecrypt.exe
+		</file>
+	</app>
+	<app id="153">
+		<name>
+			Songbird
+		</name>
+		<description>
+			Songbird is an open-source customizable music player that's under active development.
+		</description>
+		<html>
+			http://getsongbird.com/
+		</html>
+		<file>
+			songbird.exe
+		</file>
+	</app>
+	<app id="154">
+		<name>
+			AutoHotkey
+		</name>
+		<description>
+			Automation.  Hotkeys.  Scripting.
+		</description>
+		<html>
+			http://www.autohotkey.com/
+		</html>
+		<file>
+			autohotkey.exe
+		</file>
+	</app>
+	<app id="155">
+		<name>
+			Blender
+		</name>
+		<description>
+			Blender is the free open source 3D content creation suite, available for all major operating systems under the GNU General Public License.
+		</description>
+		<html>
+			http://www.blender.org
+		</html>
+		<file>
+			blender.exe
+		</file>
+	</app>
+        <app id="156">
+                <name>
+                        py2exe_python2.6
+                </name>
+                <description>
+			py2exe is a Python Distutils extension which converts Python scripts into executable Windows programs, able to run without requiring a Python installation.
+                </description>
+                <html>
+			http://www.py2exe.org/
+                </html>
+                <file>
+			py2exe_util.pyd
+                </file>
+        </app>
+        <app id="157">
+                <name>
+                        pywin32_python2.6
+                </name>
+                <description>
+			Python Extensions for Windows
+                </description>
+                <html>
+			https://sourceforge.net/projects/pywin32/
+                </html>
+                <file>
+			win32api.pyd
+                </file>
+        </app>
+	<app id="158">
+		<name>
+			Python2.6
+		</name>
+		<description>
+			Python is a dynamic object-oriented programming language that can be used for many kinds of software development. It offers strong support for integration with other languages and tools, comes with extensive standard libraries, and can be learned in a few days. Many Python programmers report substantial productivity gains and feel the language encourages the development of higher quality, more maintainable code.
+		</description>
+		<html>
+			http://www.python.org
+		</html>
+		<file>
+			python.exe
+		</file>
+		<file>
+			python26.dll
+		</file>
+	</app>
+	<app id="159">
+		<name>
+			Python2.4
+		</name>
+		<description>
+			Python is a dynamic object-oriented programming language that can be used for many kinds of software development. It offers strong support for integration with other languages and tools, comes with extensive standard libraries, and can be learned in a few days. Many Python programmers report substantial productivity gains and feel the language encourages the development of higher quality, more maintainable code.
+		</description>
+		<html>
+			http://www.python.org
+		</html>
+		<file>
+			python.exe
+		</file>
+		<file>
+			python24.dll
+		</file>
+	</app>
+	<app id="160">
+		<name>
+			Python2.3
+		</name>
+		<description>
+			Python is a dynamic object-oriented programming language that can be used for many kinds of software development. It offers strong support for integration with other languages and tools, comes with extensive standard libraries, and can be learned in a few days. Many Python programmers report substantial productivity gains and feel the language encourages the development of higher quality, more maintainable code.
+		</description>
+		<html>
+			http://www.python.org
+		</html>
+		<file>
+			python.exe
+		</file>
+		<file>
+			python23.dll
+		</file>
+	</app>
+	<app id="161">
+		<name>
+			Gpg4win
+		</name>
+		<description>
+			Gpg4win - a secure solution for file and email encryption. Gpg4win (GNU Privacy Guard for Windows) is Free Software and can be installed with just a few mouse clicks. 
+		</description>
+		<html>
+			http://www.gpg4win.org
+		</html>
+		<file>
+			gpg2.exe
+		</file>
+	</app>
+</applications>

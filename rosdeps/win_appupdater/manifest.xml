@@ -1,0 +1,14 @@
+<package>
+  <description brief="win_appupdater">
+
+     win_appupdater
+
+  </description>
+  <author>Daniel Stonier</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/win_appupdater</url>
+
+</package>
+
+

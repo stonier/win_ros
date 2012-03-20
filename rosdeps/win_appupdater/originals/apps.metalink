@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metalink version="3.0" generator="Metalink Editor version 1.1.0" xmlns="http://www.metalinker.org/">
+  <publisher>
+    <name>Nabber.org</name>
+    <url>http://www.nabber.org/projects/appupdater/</url>
+  </publisher>
+  <identity>Application Listing</identity>
+  <description>Application listing XML file for use with Appupdater</description>
+  <files>
+    <file name="apps.xml">
+      <language>en-US</language>
+      <os>Windows-x86</os>
+      <resources>
+        <url type="http" location="us" maxconnections="1">http://appupdater.nabber.org/data/apps.xml</url>
+<!--        <url type="http" location="us" maxconnections="1">https://www.nabber.org/projects/appupdater/data/apps.xml</url>-->
+        <!--<url type="http" maxconnections="1">http://appupdater.sourceforge.net/data/apps.xml</url>-->
+      </resources>
+    </file>
+  </files>
+</metalink>

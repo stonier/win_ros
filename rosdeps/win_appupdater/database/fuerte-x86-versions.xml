@@ -1,0 +1,891 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE versions SYSTEM "http://appupdater.nabber.org/versions.dtd">
+<versions>
+	<!--<signature>http://appupdater.nabber.org/data/versions.xml.asc</signature>-->
+	<entry id="1">
+		<name>
+			Appupdater
+		</name>
+		<value>
+			1.5
+		</value>
+		<filename name='appupdater.exe'>
+			<md5sum>
+				ad03099f40343435939fe8b757266685
+			</md5sum>
+			<sha1sum>
+				d8cbda92697e535b8c092b105065f0fa91a28c23
+			</sha1sum>
+			<hash type='sha256'>
+				dfd99cee5ce77754c5006953caf5a11e98ba14880754c42845260e21e2cf34cc
+			</hash>
+		</filename>
+		<instructions>
+			<install>
+				"%cache\Appupdater-1.5.exe"
+			</install>
+			<silentinstall>
+				"%cache\Appupdater-1.5.exe" /S
+			</silentinstall>
+			<uninstall>
+				%remove "Appupdater"
+			</uninstall>
+			<silentuninstall>
+				%remove "Appupdater" %remove "Appupdater" /S
+			</silentuninstall>
+		</instructions>
+		<metalink version='3.0' generator='Metalink Checker Version 5.1' xmlns='http://www.metalinker.org/'>
+			<identity>
+				Appupdater
+			</identity>
+			<version>
+				1.5
+			</version>
+			<files>
+				<file name='Appupdater-1.5.exe'>
+					<size>
+						11043265
+					</size>
+					<verification>
+						<hash type='sha256'>
+							370da50bee39070584d873d677ff86a2078a6e11fb28e4246f99b814a349ec32
+						</hash>
+						<hash type='sha1'>
+							5ba5c49a28d8b79ea2c185d6418c7efec2c58f88
+						</hash>
+						<hash type='md5'>
+							ec152b3eabc1f243a44910bae275c562
+						</hash>
+						<pieces length='262144' type='sha1'>
+							<hash piece='0'>
+								10a67e5e8a9376b7dc81f98e38da2c761f92bbb4
+							</hash>
+							<hash piece='1'>
+								6bd210d271a946ab8ca2be633e55a27e01425845
+							</hash>
+							<hash piece='2'>
+								bb3a4ddeab98a5abcafff1c34a40ba0fc0b8fc1d
+							</hash>
+							<hash piece='3'>
+								f81a22aee6523332c6c9d4fff3c2cc8fce5c4910
+							</hash>
+							<hash piece='4'>
+								f9c736e12eeb9d7e2e8936c2240a070a7abe6fa2
+							</hash>
+							<hash piece='5'>
+								3c887a6fe8d488db3cda2ce9992fcfd0f2affb55
+							</hash>
+							<hash piece='6'>
+								8a53af99ef7e1e9070bdb708bf5cc1879a360f32
+							</hash>
+							<hash piece='7'>
+								d228d86e019eeabb2b86c44a72aae40f31dea5d8
+							</hash>
+							<hash piece='8'>
+								b03c14d76a0ea8b3a4d6795d1f8564cabda5dde6
+							</hash>
+							<hash piece='9'>
+								f4cf4c95fba8cfe027f29edf7f9c51f17c14fdfd
+							</hash>
+							<hash piece='10'>
+								7279761963ae0118788ae1e348946a868b71dd8a
+							</hash>
+							<hash piece='11'>
+								66da5d38a8ab0bd54f6bb8be65d5fbc462fd1098
+							</hash>
+							<hash piece='12'>
+								7289888ef841113dd3af0a31f665db2cb6ebe54f
+							</hash>
+							<hash piece='13'>
+								e2bb9fa9c89edfc262dc9d47a45048480001d5ce
+							</hash>
+							<hash piece='14'>
+								f7494aeeb3586e38d2a5c44895adc2abf145825a
+							</hash>
+							<hash piece='15'>
+								d4e379b43b2ec1400a42456f16248967c370e98c
+							</hash>
+							<hash piece='16'>
+								8f3949c229694c3f9ae28a603f107c1b65fe4d58
+							</hash>
+							<hash piece='17'>
+								b9a6768ba9f41353e67f9b08618a014945f2a18e
+							</hash>
+							<hash piece='18'>
+								9a0ac07107ad6abab9e0542f673b89a0e6ad0c9d
+							</hash>
+							<hash piece='19'>
+								1a775012492d5a1fbb98e65b08a4286989e4fb41
+							</hash>
+							<hash piece='20'>
+								f52cce6ab9c9395578c49573d363f4b55590c4e5
+							</hash>
+							<hash piece='21'>
+								35c793f47c51e285367f27be66bf72937ac02323
+							</hash>
+							<hash piece='22'>
+								f61c6efcede3fcd536d677e4d14b0f19e5baa524
+							</hash>
+							<hash piece='23'>
+								550377871b946d4b47b45ab00c7b7287a50d304e
+							</hash>
+							<hash piece='24'>
+								7241e999bbc078a1bde9bd176ccb81533995dd74
+							</hash>
+							<hash piece='25'>
+								a1a02d3733da77425bbbb401017cace258ddc08d
+							</hash>
+							<hash piece='26'>
+								e002edd93053cc96659131a0f9d774083ff4345b
+							</hash>
+							<hash piece='27'>
+								506c5ce47865efb4eb91444b3e1a92e9db6535af
+							</hash>
+							<hash piece='28'>
+								f31e97cdd228849ecc0b2157e852a1c4c2633755
+							</hash>
+							<hash piece='29'>
+								18de9eccff9a7d6e1fd26388e821640d65f064f7
+							</hash>
+							<hash piece='30'>
+								27aa8a83184e51c7bdf1ed3a33b40599c2534f12
+							</hash>
+							<hash piece='31'>
+								0185dd530bad4712bdadca4e3727b69fc89d81c1
+							</hash>
+							<hash piece='32'>
+								472c70db0a2eceb2f71e8ddb1d48311c75f1ea06
+							</hash>
+							<hash piece='33'>
+								a782f2274940da83b05a0029f6bf5124b739423e
+							</hash>
+							<hash piece='34'>
+								6385d1f8eb015a032ea5443d4cd7885bd9be8da9
+							</hash>
+							<hash piece='35'>
+								74ed9d1f01d4b7d7ecc4b6772a4305822e911678
+							</hash>
+							<hash piece='36'>
+								8ffd14de3381dbe844d8ccf3f80bdd7b91e716ed
+							</hash>
+							<hash piece='37'>
+								8446aa7ee6d52217ae4e64ea65c55108e9bae6a6
+							</hash>
+							<hash piece='38'>
+								5d7ac59fb1f1068284f99de5b657264907f9a13b
+							</hash>
+							<hash piece='39'>
+								e747e6d575d0cb19166e7e6f52e6b0e1489cad4c
+							</hash>
+							<hash piece='40'>
+								702f7d3ebb723721be57e25a5a19be4a0537b23c
+							</hash>
+							<hash piece='41'>
+								6ea4d55824c15566b12a8f43c791be527a513db9
+							</hash>
+							<hash piece='42'>
+								aab02b9dd60efa7c69779d009014a6ff115ec9b8
+							</hash>
+						</pieces>
+					</verification>
+					<resources>
+						<url type='ed2k'>
+							ed2k://|file|Appupdater-1.5.exe|d6b870a8528d1212d9067bc00bb8cfa6|d6b870a8528d1212d9067bc00bb8cfa6|/
+						</url>
+						<url type='http'>
+							http://sourceforge.net/projects/appupdater/files/appupdater/appupdater-1.5/Appupdater-1.5.exe
+						</url>
+					</resources>
+				</file>
+			</files>
+		</metalink>
+	</entry>
+	<entry id="2">
+		<name>
+			Wget
+		</name>
+		<value>
+			1.11.4
+		</value>
+		<filename name='wget.exe'>
+			<md5sum>
+				aa173375c21ea31b8cc615dccb54e43b
+			</md5sum>
+			<sha1sum>
+				a00ea43c0ebbed364a606da39526f1dbed37e91e
+			</sha1sum>
+			<hash type='sha256'>
+				cf02b7614fea863672ccbed7701e5b5a8fad8ed1d0faa2f9ea03b9cc9ba2a3ba
+			</hash>
+		</filename>
+		<instructions>
+			<install>
+				"%cache\wget-1.11.4-1-setup.exe"
+			</install>
+			<silentinstall>
+				"%cache\wget-1.11.4-1-setup.exe" /SILENT
+			</silentinstall>
+		</instructions>
+		<metalink version='3.0' generator='Metalink Checker Version 5.1' xmlns='http://www.metalinker.org/'>
+			<license>
+				<name>
+					GNU GPL
+				</name>
+				<url>
+					http://www.gnu.org/licenses/gpl.html
+				</url>
+			</license>
+			<identity>
+				Wget
+			</identity>
+			<version>
+				1.11.4
+			</version>
+			<files>
+				<file name='wget-1.11.4-1-setup.exe'>
+					<size>
+						3012464
+					</size>
+					<verification>
+						<hash type='sha256'>
+							2f03cdcb576414f670885e716145316f3dae1f141e3a150f9767e4f07d4f8b5b
+						</hash>
+						<hash type='sha1'>
+							35e3ecc99c5a28745f957e87695b5a18b1f61680
+						</hash>
+						<hash type='md5'>
+							b4679ac6f7757b35435ec711c6c8d912
+						</hash>
+					</verification>
+					<resources>
+						<url type='http'>
+							http://rnd.yujinrobot.com/pub/appupdater/utilities/wget-1.11.4-1-setup.exe
+						</url>
+					</resources>
+				</file>
+			</files>
+		</metalink>
+	</entry>
+	<entry id="11">
+		<name>
+			SlikSvn
+		</name>
+		<value>
+			1.7.2
+		</value>
+		<filename name='svn.exe'>
+			<hash type='md5'>
+				1537b3a0d8c767cbf13275a8945656bf
+			</hash>
+			<hash type='sha1'>
+				29f9562708fcb74320315c0c931c0d55b33b2495
+			</hash>
+			<hash type='sha256'>
+				4616c0cd1430aba098a9d571f0ad98a2702364303f495e553294ac2aff48459c
+			</hash>
+		</filename>
+		<instructions>
+			<install>
+				"%cache\Slik-Subversion-1.7.2-win32.msi"
+			</install>
+			<uninstall>
+				"msiexec" /x "%cache\Slik-Subversion-1.7.2-win32.msi"
+			</uninstall>
+			<silentinstall>
+				"msiexec" /i "%cache\Slik-Subversion-1.7.2-win32.msi" /qn
+			</silentinstall>
+			<silentuninstall>
+				"msiexec" /x "%cache\Slik-Subversion-1.7.2-win32.msi" /qn
+			</silentuninstall>
+		</instructions>
+		<metalink version='3.0' generator='Metalink Checker Version 5.1' xmlns='http://www.metalinker.org/'>
+			<identity> 
+				SlikSvn
+			</identity>
+			<version>
+				1.7.2
+			</version>
+			<files>
+				<file name='Slik-Subversion-1.7.2-win32.msi'>
+					<size>
+						4685824
+					</size>
+					<verification>
+						<hash type='sha256'>
+							8609f28e91ea74c5524697c59d036a90a82d1b91449a1266a06af3f22312a4d0
+						</hash>
+						<hash type='sha1'>
+							efb8e2b5d5ba2fd6a88f417fd7aa94d968ba6995
+						</hash>
+						<hash type='md5'>
+							7871ca4c2b6d17169860e386e7d20091
+						</hash>
+					</verification>
+					<resources>
+						<url type='http'>
+							http://rnd.yujinrobot.com/pub/appupdater/vcstools/Slik-Subversion-1.7.2-win32.msi
+						</url>
+					</resources>
+				</file>
+			</files>
+		</metalink>
+	</entry>
+	<entry id="12">
+		<name>
+			MSysGit
+		</name>
+		<value>
+			1.7.9
+		</value>
+		<filename name='git.exe'>
+			<hash type='md5'>
+				b8098b41ac1de755e37bd27a7fc5b26f
+			</hash>
+			<hash type='sha1'>
+				d1f66a731e1dd97cd0edc020b274c67126b42397
+			</hash>
+			<hash type='sha256'>
+				f8ce038239b0bdd5dcf09e1f89d294269f7b553a75da211a2d0b6351092dbdf2
+			</hash>
+		</filename>
+		<instructions>
+			<!-- We need to manually set some options here that aren't customisable from the command line" -->
+			<install>
+				"%cache\Git-1.7.9-preview20120201.exe" /COMPONENTS="ext\reg\shellhere,ext\reg\guihere"
+			</install>
+		</instructions>
+		<metalink version='3.0' generator='Metalink Checker Version 5.1' xmlns='http://www.metalinker.org/'>
+			<license>
+				<name>
+					GNU LGPL
+				</name>
+				<url>
+					http://www.gnu.org/licenses/lgpl.html
+				</url>
+			</license>
+			<identity> 
+				MSysGit
+			</identity>
+			<version>
+				1.7.9
+			</version>
+			<files>
+				<file name='Git-1.7.9-preview20120201.exe'>
+					<size>
+						15067506
+					</size>
+					<verification>
+						<hash type='sha256'>
+							8920ab5bb392ab2634df3592d4ce32953dbf04a57660036187b86b261e58ffaa
+						</hash>
+						<hash type='sha1'>
+							0627394709375140d1e54e923983d259a60f9d8e
+						</hash>
+						<hash type='md5'>
+							8d9bc9a566b081d0bef9bb7b73ee57a1
+						</hash>
+					</verification>
+					<resources>
+						<url type='http'>
+							http://rnd.yujinrobot.com/pub/appupdater/vcstools/Git-1.7.9-preview20120201.exe
+						</url>
+					</resources>
+				</file>
+			</files>
+		</metalink>
+	</entry>
+	<entry id="31">
+		<name>
+			Python2.7
+		</name>
+		<value>
+			2.7.2
+		</value>
+		<filename name='python27.dll'>
+			<hash type='md5'>
+				df0ed44c6ea53d13ceb2b4a0911430eb
+			</hash>
+			<hash type='sha1'>
+				986ee55ada55555fc02474230c8e03e113be0d0c
+			</hash>
+			<hash type='sha256'>
+				c442d39cc655294817687241c6a32268e303a6d71466e7dd34ce65c14e58f7dd
+			</hash>
+		</filename>
+		<instructions>
+			<install>
+				"%cache\python-2.7.2.msi"
+			</install>
+			<uninstall>
+				"msiexec" /x "%cache\python-2.7.2.msi"
+			</uninstall>
+			<silentinstall>
+				"msiexec" /i "%cache\python-2.7.2.msi" /qn TARGETDIR=C:\Python27
+			</silentinstall>
+			<silentuninstall>
+				"msiexec" /x "%cache\python-2.7.2.msi" /qn
+			</silentuninstall>
+		</instructions>
+		<metalink version='3.0' generator='Metalink Checker Version 5.1' xmlns='http://www.metalinker.org/'>
+			<license>
+				<name>
+					Open Source
+				</name>
+				<url>
+					http://www.python.org/download/releases/2.7/license/
+				</url>
+			</license>
+			<identity> 
+				Python2.7
+			</identity>
+			<version>
+				2.7.2
+			</version>
+			<files>
+				<file name='python-2.7.2.msi'>
+					<size>
+						15970304
+					</size>
+					<verification>
+						<hash type='sha256'>
+							b99c20bece1fe4ac05844aea586f268e247107cd0f8b29593172764c178a6ebe
+						</hash>
+						<hash type='sha1'>
+							32144054fe67aa684ee8e2e622682405bd999423
+						</hash>
+						<hash type='md5'>
+							44c8bbe92b644d78dd49e18df354386f
+						</hash>
+					</verification>
+					<resources>
+						<url type='http'>
+							http://rnd.yujinrobot.com/pub/appupdater/python/2.7/python-2.7.2.msi
+						</url>
+					</resources>
+				</file>
+			</files>
+		</metalink>
+	</entry>
+	<entry id="32">
+		<name>
+			Python2.7-Empy
+		</name>
+		<value>
+			3.1
+		</value>
+		<depends>Python2.7</depends>
+		<filename name='em.py'>
+			<hash type='md5'>
+				47a2188a9162dee97e6ff2aa900e02e3
+			</hash>
+			<hash type='sha1'>
+				2ff040fd7810fd90b9ef39a88a6d0ae1bd7faaf2
+			</hash>
+			<hash type='sha256'>
+				7c93caa4f839aa696a5fe817e793b180744975f8830cde30cd0118b25672b123
+			</hash>
+		</filename>
+		<instructions>
+			<install>
+				"%cache\empy-3.1.win32.msi"
+			</install>
+			<uninstall>
+				"msiexec" /x "%cache\empy-3.1.win32.msi"
+			</uninstall>
+			<silentinstall>
+				"%cache\empy-3.1.win32.msi" /qn TARGETDIR=C:\Python27
+			</silentinstall>
+			<silentuninstall>
+				"msiexec" /x "%cache\empy-3.1.win32.msi" /qn
+			</silentuninstall>
+		</instructions>
+		<metalink version='3.0' generator='Metalink Checker Version 5.1' xmlns='http://www.metalinker.org/'>
+			<license>
+				<name>
+					Open Source
+				</name>
+				<url>
+					http://www.python.org/download/releases/2.7/license/
+				</url>
+			</license>
+			<identity> 
+				Python2.7-Empy
+			</identity>
+			<version>
+				3.1
+			</version>
+			<files>
+				<file name='empy-3.1.win32.msi'>
+					<size>
+						212992
+					</size>
+					<verification>
+						<hash type='sha256'>
+							5493325e852d2a63b2ea147e09b8793a960412b60439cff56c93d3613b458814
+						</hash>
+						<hash type='sha1'>
+							72c614529cd9a807b53bca70c9a0957787031303
+						</hash>
+						<hash type='md5'>
+							ef97ad325dff4a13e5e2fc6352930ec6
+						</hash>
+					</verification>
+					<resources>
+						<url type='http'>
+							http://rnd.yujinrobot.com/pub/appupdater/python/2.7/empy-3.1.win32.msi
+						</url>
+					</resources>
+				</file>
+			</files>
+		</metalink>
+	</entry>
+	<entry id="33">
+		<name>
+			Python2.7-Win32
+		</name>
+		<value>
+			217
+		</value>
+		<depends>Python2.7</depends>
+		<filename name='pythoncom27.dll'>
+			<hash type='md5'>
+				809ffe12c747f387d757e34fdc345d30
+			</hash>
+			<hash type='sha1'>
+				d9198c87fb7d91d9c1e89d8f30da4353300664f9
+			</hash>
+			<hash type='sha256'>
+				3184255cf1cc930fbf67fa9d7931085ff8ead3d0230d57825a11d465dfd5e94f
+			</hash>
+		</filename>
+		<instructions>
+			<install>
+				"%cache\pywin32-217.win32-py2.7.exe"
+			</install>
+		</instructions>
+		<metalink version='3.0' generator='Metalink Checker Version 5.1' xmlns='http://www.metalinker.org/'>
+			<license>
+				<name>
+					Open Source
+				</name>
+				<url>
+					http://www.python.org/download/releases/2.7/license/
+				</url>
+			</license>
+			<identity> 
+				Python2.7-Win32
+			</identity>
+			<version>
+				217
+			</version>
+			<files>
+				<file name='pywin32-217.win32-py2.7.exe'>
+					<size>
+						6612322
+					</size>
+					<verification>
+						<hash type='sha256'>
+							79c4bcc19a33e6b1ef4308b8d8ca93a6f97a08280d80d3ed856805d560e4489d
+						</hash>
+						<hash type='sha1'>
+							36016bbccebddd9060073f1c9f0c80a2c2dd9cc1
+						</hash>
+						<hash type='md5'>
+							42202e223b9d21079f397b9116093ac6
+						</hash>
+					</verification>
+					<resources>
+						<url type='http'>
+							http://rnd.yujinrobot.com/pub/appupdater/python/2.7/pywin32-217.win32-py2.7.exe
+						</url>
+					</resources>
+				</file>
+			</files>
+		</metalink>
+	</entry>
+	<entry id="34">
+		<name>
+			Python2.7-Yaml
+		</name>
+		<value>
+			3.10
+		</value>
+		<depends>Python2.7</depends>
+		<filename name='cyaml.py'>
+			<hash type='md5'>
+				6c92c2479a2814e5c5dd584d95bba486
+			</hash>
+			<hash type='sha1'>
+				c862cb2a47912a6323ff8d55bc86a648c1e301c8
+			</hash>
+			<hash type='sha256'>
+				c4afc8c64ad171eb5978dc01ff0cc30076025acba63857ec4e593709ea0ce644
+			</hash>
+		</filename>
+		<instructions>
+			<install>
+				"%cache\PyYAML-3.10.win32-py2.7.msi"
+			</install>
+			<uninstall>
+				"msiexec" /x "%cache\PyYAML-3.10.win32-py2.7.msi"
+			</uninstall>
+			<silentinstall>
+				"%cache\PyYAML-3.10.win32-py2.7.msi" /qn TARGETDIR=C:\Python27
+			</silentinstall>
+			<silentuninstall>
+				"msiexec" /x "%cache\PyYAML-3.10.win32-py2.7.msi" /qn
+			</silentuninstall>
+		</instructions>
+		<metalink version='3.0' generator='Metalink Checker Version 5.1' xmlns='http://www.metalinker.org/'>
+			<license>
+				<name>
+					Open Source
+				</name>
+				<url>
+					http://www.python.org/download/releases/2.7/license/
+				</url>
+			</license>
+			<identity> 
+				Python2.7-Yaml
+			</identity>
+			<version>
+				3.10
+			</version>
+			<files>
+				<file name='PyYAML-3.10.win32-py2.7.msi'>
+					<size>
+						196608
+					</size>
+					<verification>
+						<hash type='sha256'>
+							2d77777c6c2805378669f997cdde7205487add56c5a686e2a15149bb1adf2725
+						</hash>
+						<hash type='sha1'>
+							d5dad832e21775e470d151f19e55bb8a320cc33f
+						</hash>
+						<hash type='md5'>
+							68eea101efa2d375c625963e1d9c81a1
+						</hash>
+					</verification>
+					<resources>
+						<url type='http'>
+							http://rnd.yujinrobot.com/pub/appupdater/python/2.7/PyYAML-3.10.win32-py2.7.msi
+						</url>
+					</resources>
+				</file>
+			</files>
+		</metalink>
+	</entry>
+	<entry id="35">
+		<name>
+			Python2.7-Svn
+		</name>
+		<value>
+			1321
+		</value>
+		<depends>Python2.7</depends>
+		<filename name='libsvn_client-1.dll'>
+			<hash type='md5'>
+				ad3b45b80cf8268e7459b4b94e57035f
+			</hash>
+			<hash type='sha1'>
+				bb862a8aeb819022645434a76d7ba5da886fe932
+			</hash>
+			<hash type='sha256'>
+				74f23135ee8c9b680126001ff581ea4a50fbb4d70ef63b5131642eaad8a653b7
+			</hash>
+		</filename>
+		<instructions>
+			<install>
+				"%cache\py27-pysvn-svn1612-1.7.4-1321.exe"
+			</install>
+		</instructions>
+		<metalink version='3.0' generator='Metalink Checker Version 5.1' xmlns='http://www.metalinker.org/'>
+			<license>
+				<name>
+					Open Source
+				</name>
+				<url>
+					http://www.python.org/download/releases/2.7/license/
+				</url>
+			</license>
+			<identity> 
+				Python2.7-Svn
+			</identity>
+			<version>
+				1321
+			</version>
+			<files>
+				<file name='py27-pysvn-svn1612-1.7.4-1321.exe'>
+					<size>
+						6612322
+					</size>
+					<verification>
+						<hash type='sha256'>
+							b91c7d15e10f9a9f948526b20ae60235de568a07d0a25cf9118b1886862e5c58
+						</hash>
+						<hash type='sha1'>
+							51ac1e30dec2675f2872846fe49da53e70ec4f55
+						</hash>
+						<hash type='md5'>
+							b84f81cfe849a557c4f88579c01a5989
+						</hash>
+					</verification>
+					<resources>
+						<url type='http'>
+							http://rnd.yujinrobot.com/pub/appupdater/python/2.7/py27-pysvn-svn1612-1.7.4-1321.exe
+						</url>
+					</resources>
+				</file>
+			</files>
+		</metalink>
+	</entry>
+	<entry id="36">
+		<name>
+			Python2.7-Mercurial
+		</name>
+		<value>
+			2.1.1
+		</value>
+		<depends>Python2.7</depends>
+		<filename name='hg.bat'>
+			<hash type='md5'>
+				e38e88a143302df28d46aae880e9f3b7
+			</hash>
+			<hash type='sha1'>
+				3cad17cbef29c8450a5de610b426bc9a46c85e99
+			</hash>
+			<hash type='sha256'>
+				6ca902f492a39b1a680bf0674cc94619656a5dfe0bfd81202b6a9047b32ba32e
+			</hash>
+		</filename>
+		<instructions>
+			<install>
+				"%cache\mercurial-2.1.1.win32.msi"
+			</install>
+			<uninstall>
+				"msiexec" /x "%cache\mercurial-2.1.1.win32.msi"
+			</uninstall>
+			<silentinstall>
+				"%cache\mercurial-2.1.1.win32.msi" /qn TARGETDIR=C:\Python27
+			</silentinstall>
+			<silentuninstall>
+				"msiexec" /x "%cache\mercurial-2.1.1.win32.msi" TARGETDIR=C:\Python27 /qn
+			</silentuninstall>
+		</instructions>
+		<metalink version='3.0' generator='Metalink Checker Version 5.1' xmlns='http://www.metalinker.org/'>
+			<license>
+				<name>
+					Open Source
+				</name>
+				<url>
+					http://www.python.org/download/releases/2.7/license/
+				</url>
+			</license>
+			<identity> 
+				Python2.7-Mercurial
+			</identity>
+			<version>
+				2.1.1
+			</version>
+			<files>
+				<file name='mercurial-2.1.1.win32.msi'>
+					<size>
+						6612322
+					</size>
+					<verification>
+						<hash type='sha256'>
+							02aeeaa5cdd9c9a00735be118970cbc8ffc0bb60d88db5223e45d3a5900698c8
+						</hash>
+						<hash type='sha1'>
+							bb3d9c7de13a22cfb507a27c9d7ec2e95a00f072
+						</hash>
+						<hash type='md5'>
+							02c111a3ac36512ccc36ef0b9c743b99
+						</hash>
+					</verification>
+					<resources>
+						<url type='http'>
+							http://rnd.yujinrobot.com/pub/appupdater/python/2.7/mercurial-2.1.1.win32.msi
+						</url>
+					</resources>
+				</file>
+			</files>
+		</metalink>
+	</entry>
+	<entry id="37">
+		<name>
+			Python2.7-WinRosinstall
+		</name>
+		<value>
+			0.5.30
+		</value>
+		<depends>Python2.7</depends>
+		<depends>Python2.7-Win32</depends>
+		<depends>Python2.7-Yaml</depends>
+		<filename name='win-rosinstall.bat'>
+			<hash type='md5'>
+				37555bed9beb72d94e2ca7dc953bf183
+			</hash>
+			<hash type='sha1'>
+				647db78472061a58c864ff0957d0f3eb8a5e8916
+			</hash>
+			<hash type='sha256'>
+				89314b51fac6f66302213319113c8348fd8f7280114d8062ef6bd947128672ca
+			</hash>
+		</filename>
+		<instructions>
+			<install>
+				"%cache\win_rosinstall-0.5.30.win32.msi"
+			</install>
+			<uninstall>
+				"msiexec" /x "%cache\win_rosinstall-0.5.30.win32.msi"
+			</uninstall>
+			<silentinstall>
+				"%cache\win_rosinstall-0.5.30.win32.msi" /qn TARGETDIR=C:\Python27
+			</silentinstall>
+			<silentuninstall>
+				"msiexec" /x "%cache\win_rosinstall-0.5.30.win32.msi" /qn
+			</silentuninstall>
+		</instructions>
+		<metalink version='3.0' generator='Metalink Checker Version 5.1' xmlns='http://www.metalinker.org/'>
+			<license>
+				<name>
+					BSD
+				</name>
+				<url>
+					http://opensource.org/licenses/bsd-license.php
+				</url>
+			</license>
+			<identity> 
+				Python2.7-WinRosinstall
+			</identity>
+			<version>
+				0.5.30
+			</version>
+			<files>
+				<file name='win_rosinstall-0.5.30.win32.msi'>
+					<size>
+						6612322
+					</size>
+					<verification>
+						<hash type='sha256'>
+							94391f5c464257ee2ae69c20ba87258eb92c52e48ca29d4f899d14a6e1be337c
+						</hash>
+						<hash type='sha1'>
+							f4ca11fb2da35a41ea8d851fbac38b7c01fbffdd
+						</hash>
+						<hash type='md5'>
+							3f2c6871bb9361e0182fbadd91aa673a
+						</hash>
+					</verification>
+					<resources>
+						<url type='http'>
+							http://rnd.yujinrobot.com/pub/appupdater/python/2.7/win_rosinstall-0.5.30.win32.msi
+						</url>
+					</resources>
+				</file>
+			</files>
+		</metalink>
+	</entry>
+</versions>
