@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE applications SYSTEM "http://appupdater.nabber.org/applications.dtd">
 <applications>
-	<!--<signature>http://appupdater.nabber.org/data/apps.xml.asc</signature>-->
-	<!--<versions>http://appupdater.nabber.org/data/versions.xml</versions>-->
-	<!--<suggest>http://192.168.10.66/appupdater/fuerte-x86-python.xml</suggest>-->
 	<versions>http://192.168.10.66/appupdater/fuerte-x86-versions.xml</versions>
+	<signature>http://192.168.10.66/appupdater/fuerte-x86-apps.xml.asc</signature>
+	<!--<suggest>http://192.168.10.66/appupdater/fuerte-x86-python.xml</suggest>-->
         <!--<suggest>http://pcwelt-praxis.de/dfiles/apps.xml</suggest>
         <suggest>http://appupdater.googlecode.com/files/apps.metalink</suggest>-->
         <!--<suggest>http://appupdater.sourceforge.net/data/appsm.xml</suggest>-->
         <!--<versions>http://appupdater.nabber.org/data/versions.xml</versions>-->
 	<!--<pubkey>https://www.nabber.org/Nabber.org.2011.pub.asc</pubkey>-->
-	<!--<pubkey>https://www.nabber.org/Nabber.org.2012.pub.asc</pubkey>-->
+	<pubkey>http://192.168.10.66/appupdater/winros.fuerte.pub.asc</pubkey>
         <!--<feedback type="http_get">http://www.nabber.org/projects/appupdater/data/submit.php</feedback>-->
 	<!--
 	<group name="Python">

@@ -6,18 +6,33 @@
 
 Stores the appupdater repository files. Also runs a script to generate signatures:
 
-\section Usage
+\section Keys
 
-To generate signatures:
+Generate a key for each new release.
+
+@code
+make key
+@endcode
+
+Take note of the public id - this is the number after the slash when doing:
+
+@code
+make list_keys
+@endcode
+
+\section Signatures
+
+ * http://www.gnupg.org/gph/en/manual/x135.html
+
+Note that we're using detached signatures (.asc) not regular signatures (.sig)
 
 @code
 make signatures
 @endcode
 
-You may need to generate your own secret key first though:
+\section Issues
 
-@code
-make key
-@endcode
+After all this - it doesn't work. Problems with verifying the detached signatures
+on the appupdater side.
 
 */
