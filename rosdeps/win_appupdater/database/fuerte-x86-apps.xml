@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE applications SYSTEM "http://appupdater.nabber.org/applications.dtd">
 <applications>
-	<versions>http://192.168.10.66/appupdater/fuerte-x86-versions.xml</versions>
-	<signature>http://192.168.10.66/appupdater/fuerte-x86-apps.xml.asc</signature>
-	<pubkey>http://192.168.10.66/appupdater/winros.fuerte.pub.asc</pubkey>
+	<versions>http://rnd.yujinrobot.com/pub/appupdater/fuerte-x86-versions.xml</versions>
+	<signature>http://rnd.yujinrobot.com/pub/appupdater/fuerte-x86-apps.xml.asc</signature>
+	<pubkey>http://rnd.yujinrobot.com/pub/appupdater/winros.fuerte.pub.asc</pubkey>
 	<!--
 	-->
 	<!--<suggest>http://192.168.10.66/appupdater/fuerte-x86-python.xml</suggest>-->

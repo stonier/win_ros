@@ -11,7 +11,7 @@
       <language>en-US</language>
       <os>Windows-x86</os>
       <resources>
-        <url type="http" location="ko" maxconnections="1">http://192.168.10.66/appupdater/fuerte-x86-apps.xml</url>
+        <url type="http" location="ko" maxconnections="1">http://rnd.yujinrobot.com/pub/appupdater/fuerte-x86-apps.xml</url>
       </resources>
     </file>
   </files>

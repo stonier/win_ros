@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE versions SYSTEM "http://appupdater.nabber.org/versions.dtd">
 <versions>
-	<signature>http://192.168.10.66/appupdater/fuerte-x86-versions.xml.asc</signature>
-	<pubkey>http://192.168.10.66/appupdater/winros.fuerte.pub.asc</pubkey>
+	<signature>http://rnd.yujinrobot.com/pub/appupdater/fuerte-x86-versions.xml.asc</signature>
+	<pubkey>http://rnd.yujinrobot.com/pub/appupdater/winros.fuerte.pub.asc</pubkey>
 	<!--
 	-->
 	<entry id="1">

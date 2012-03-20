@@ -1,7 +1,7 @@
 <package>
-  <description brief="rosinstall for windows">
+  <description brief="python empy module for windows">
 
-Rosinstall is a tool to check out source code. This is a slightly modified version so that it works on windows. Alot of the patches to rosinstall are already being merged upstream to the actual rosinstall package, whilst others will remain here until its decided they are stable (at which point we'll try to merge them upstream). 
+Build script for python expressions module.
 
   </description>
   <author>Daniel Stonier</author>
