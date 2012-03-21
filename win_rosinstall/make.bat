@@ -20,7 +20,8 @@ IF NOT EXIST %cd%\src\vcstools (
   move %cd%\rosinstall\src\rosinstall %cd%\src\rosinstall
   rd /S /Q vcstools
   rd /S /Q rosinstall
-  copy %cd%\patches\svn.py %cd%\src\vcstools
+  copy /Y %cd%\patches\svn.py %cd%\src\vcstools
+  copy /Y %cd%\patches\multiproject_cmd.py %cd%\src\rosinstall
 )
 IF X%1==Xall GOTO Distro
 
@@ -31,8 +32,10 @@ rd /S /Q %cd%\src\vcstools
 rd /S /Q %cd%\src\rosinstall
 GOTO End
 
+REM python setup.py bdist_wininst
+
 :Distro
-python setup.py bdist_wininst
+python setup.py bdist_msi
 GOTO End
 
 :End
