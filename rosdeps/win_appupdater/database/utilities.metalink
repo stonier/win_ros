@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metalink version="3.0" generator="Metalink Editor version 1.1.0" xmlns="http://www.metalinker.org/">
+  <publisher>
+    <name>Yujin Robot</name>
+    <url>http://rnd.yujinrobot.com/pub/appupdater</url>
+  </publisher>
+  <identity>WinRos Utilities</identity>
+  <description>Utility programs useful for WinRos development</description>
+  <files>
+    <file name="utilities-apps.xml">
+      <language>en-US</language>
+      <os>Windows-x86</os>
+      <resources>
+        <url type="http" location="ko" maxconnections="1">http://rnd.yujinrobot.com/pub/appupdater/utilities-apps.xml</url>
+      </resources>
+    </file>
+  </files>
+</metalink>
