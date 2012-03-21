@@ -76,8 +76,9 @@
 #    local-name: catkin_issues
 #    version: master
 
+#    uri: git@github.com:stonier/win_ros.git
 - git:
-    uri: git@github.com:stonier/win_ros.git
+    uri: 'git://github.com/stonier/win_ros.git'
     local-name: win_ros
     version: master
 
