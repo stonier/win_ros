@@ -22,8 +22,6 @@ import sys
 from optparse import OptionParser
 import yaml
 
-import pkg_resources
-
 import rosinstall.multiproject_cmd
 import rosinstall.rosinstall_cmd
 
