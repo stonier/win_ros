@@ -47,7 +47,15 @@ signatures:
 	  gpg -u $(KEY_ID) --armor --detach-sign $$i; \
 	done
 	@if [ $$? -ne 0 ]; then \
-	  echo "You need to generate/importa a key first - 'make key'"; \
+	  echo "You need to generate/import a key first - 'make key'"; \
+	fi
+	@rm -f database/utilities*.asc
+	@for i in database/utilities*; do \
+	  echo "gpg -u $(KEY_ID) --armor --detach-sign $$i"; \
+	  gpg -u $(KEY_ID) --armor --detach-sign $$i; \
+	done
+	@if [ $$? -ne 0 ]; then \
+	  echo "You need to generate/import a key first - 'make key'"; \
 	fi
 
 verify_signatures:
