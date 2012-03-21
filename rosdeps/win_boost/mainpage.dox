@@ -1,0 +1,21 @@
+/**
+\mainpage
+\htmlinclude manifest.html
+
+\section Current Status
+
+ - Builds bzip2.dll via windows sdk7.1, cmake and nmake.
+ - CMake config module for the install
+ - Haven't actually tested it (need to compile and run rosbag) 
+ 
+\section Source
+
+ - Version: 1.0.6
+ - Url: http://www.bzip.org/downloads.html
+ 
+\section Todo
+
+ - add the bzip2 executables if necessary
+ - installer for the package
+ 
+*/
