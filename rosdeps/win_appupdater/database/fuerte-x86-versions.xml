@@ -877,13 +877,13 @@
 					</size>
 					<verification>
 						<hash type='sha256'>
-							94391f5c464257ee2ae69c20ba87258eb92c52e48ca29d4f899d14a6e1be337c
+							5e7e1a3fbad6a4da28c889df1d14c1f7343c94222889829a85bef3f16ef24b3c
 						</hash>
 						<hash type='sha1'>
-							f4ca11fb2da35a41ea8d851fbac38b7c01fbffdd
+							2a7d5e197ed8381c26a8606ff9ba19a6ec26b1c4
 						</hash>
 						<hash type='md5'>
-							3f2c6871bb9361e0182fbadd91aa673a
+							57def5d87fd920493d4b12e2232af1b8
 						</hash>
 					</verification>
 					<resources>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE applications SYSTEM "http://appupdater.nabber.org/applications.dtd">
+<applications>
+	<versions>http://rnd.yujinrobot.com/pub/appupdater/utilities-versions.xml</versions>
+	<!--
+	<signature>http://rnd.yujinrobot.com/pub/appupdater/utilities-apps.xml.asc</signature>
+	<pubkey>http://rnd.yujinrobot.com/pub/appupdater/winros.fuerte.pub.asc</pubkey>
+	-->
+	<!--<suggest>http://192.168.10.66/appupdater/fuerte-x86-python.xml</suggest>-->
+        <!--<suggest>http://pcwelt-praxis.de/dfiles/apps.xml</suggest>
+        <suggest>http://appupdater.googlecode.com/files/apps.metalink</suggest>-->
+        <!--<suggest>http://appupdater.sourceforge.net/data/appsm.xml</suggest>-->
+        <!--<versions>http://appupdater.nabber.org/data/versions.xml</versions>-->
+	<!--<pubkey>https://www.nabber.org/Nabber.org.2011.pub.asc</pubkey>-->
+        <!--<feedback type="http_get">http://www.nabber.org/projects/appupdater/data/submit.php</feedback>-->
+	<!--
+	<group name="Python">
+		<package>Python2.7</package>
+	</group>
+	-->
+	<app id="1">
+                <name>
+                        Notepad++
+                </name>
+                <description>
+			Notepad++ is a free source code editor (and Notepad replacement), which supports several programming languages, running under the MS Windows environment.
+                </description>
+                <html>
+			http://notepad-plus.sourceforge.net/uk/site.htm
+                </html>
+                <file>
+			notepad++.exe
+                </file>
+	</app>
+	<!--
+	<app id="2">
+                <name>
+                        Console
+                </name>
+                <description>
+			Console is a Windows console window enhancement.
+                </description>
+                <html>
+			http://sourceforge.net/projects/console/
+                </html>
+                <file>
+			console.exe
+                </file>
+	</app>
+	-->
+</applications>

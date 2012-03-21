@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE versions SYSTEM "http://appupdater.nabber.org/versions.dtd">
+<versions>
+	<!--
+	<signature>http://rnd.yujinrobot.com/pub/appupdater/fuerte-x86-versions.xml.asc</signature>
+	<pubkey>http://rnd.yujinrobot.com/pub/appupdater/winros.fuerte.pub.asc</pubkey>
+	-->
+	<entry id="1">
+		<name>
+			Notepad++
+		</name>
+		<value>
+			5.4.5
+		</value>
+		<filename name='notepad++.exe'>
+			<md5sum>
+				9c55972ba7f14d74817d76a428a5a8e7
+			</md5sum>
+			<sha1sum>
+				02ba1acf35712cee3ab982220ff8fa9fe85d8853
+			</sha1sum>
+		</filename>
+		<metalink version='3.0' generator='Metalink Editor version 1.1.0' xmlns='http://www.metalinker.org/'>
+			<license>
+				<name>
+					GNU GPL
+				</name>
+				<url>
+					http://www.gnu.org/licenses/gpl.html
+				</url>
+			</license>
+			<identity>
+				Notepad++
+			</identity>
+			<version>
+				5.4.5
+			</version>
+			<files>
+				<file name='npp.5.4.5.Installer.exe'>
+					<size>
+						3018868
+					</size>
+					<os>
+						Windows-x86
+					</os>
+					<verification>
+						<hash type='md5'>
+							94a31600e363bcffddd34a749a5ef752
+						</hash>
+						<hash type='sha1'>
+							29fab91d0944d213bedb57884e1f23aacb60cf6f
+						</hash>
+						<hash type='sha256'>
+							e12869e3d632d9125fa1813820b0c07996fe08e2d5fd3421e2442fe4f81909b9
+						</hash>
+						<pieces length='262144' type='sha1'>
+							<hash piece='0'>
+								9d7e12adbc22f29e71143a2dcf5485071ecba0b9
+							</hash>
+							<hash piece='1'>
+								d623426ced54a9c7f7bf43d402f902f4db72bfe8
+							</hash>
+							<hash piece='2'>
+								da664e8b1918e120c10ce69db9a444b54dbea976
+							</hash>
+							<hash piece='3'>
+								1300a3576c89bedda8acaa5602a65fe00f39c60c
+							</hash>
+							<hash piece='4'>
+								dd0a932312d4bc7becddfc8dffe23ec9371a139a
+							</hash>
+							<hash piece='5'>
+								48c98946b4ae38fadf25d48c7badadc58a253b4c
+							</hash>
+							<hash piece='6'>
+								5febee4f84b2e5ff6e0b59474c775c9c54731b49
+							</hash>
+							<hash piece='7'>
+								4527dc0e26a41b6cc63fbd57d6e5fabc04d452a7
+							</hash>
+							<hash piece='8'>
+								7290f9cbe56d6bcd074c4ce3b76b15a3a917ed53
+							</hash>
+							<hash piece='9'>
+								9dd991c0b46b00fb24ddb68b69c7ac32695e4476
+							</hash>
+							<hash piece='10'>
+								abf985537f9cc25fdc2c40b673cc1637e8e8a3ec
+							</hash>
+							<hash piece='11'>
+								df0322b873ed3bf30f0afcaeb44a93a8c9f8e6e9
+							</hash>
+						</pieces>
+					</verification>
+					<resources>
+						<url type='ed2k'>
+							ed2k://|file|npp.5.4.5.Installer.exe|3018868|b5f1235e49cf4ed2fd18d010e404c5ac|/
+						</url>
+						<url type='http'>
+							http://downloads.sourceforge.net/notepad-plus/npp.5.4.5.Installer.exe
+						</url>
+					</resources>
+				</file>
+			</files>
+		</metalink>
+		<instructions>
+			<install>
+				"%cache\npp.5.4.5.Installer.exe"
+			</install>
+			<uninstall>
+				%remove "Notepad++"
+			</uninstall>
+			<silentuninstall>
+				%remove "Notepad++" /S
+			</silentuninstall>
+		</instructions>
+	</entry>
+	<!--
+	<entry id="2">
+		<name>
+			Console
+		</name>
+		<value>
+			2.00.148
+		</value>
+		<filename name='console.exe'>
+			<hash type='md5'>
+				4ec4a7d78ff127fcef4809f0d8ba9780
+			</hash>
+			<hash type='sha1'>
+				1e3f37d0671955b7f6f274f49b2acca932a3edbc
+			</hash>
+			<hash type='sha256'>
+				91fb4c7a9e7045b763cadd3f8d7a1e0a3787e7a572701f7fc655327baa19ac52
+			</hash>
+		</filename>
+		<metalink version='3.0' generator='Metalink Editor version 1.1.0' xmlns='http://www.metalinker.org/'>
+			<identity>
+				Console
+			</identity>
+			<version>
+				5.4.5
+			</version>
+			<files>
+				<file name='Console-2.00b148-Beta_32bit.zip'>
+					<size>
+						1579454
+					</size>
+					<os>
+						Windows-x86
+					</os>
+					<verification>
+						<hash type='md5'>
+							5167a73fc962eac4b0ef9f7958e8c847
+						</hash>
+						<hash type='sha1'>
+							4122a6c5943a4113197a31a27ed6ce140fe2f1c8
+						</hash>
+						<hash type='sha256'>
+							721ef2b7c564ff4171942d2c0dc653fd752ad4a27e3993bcab911d3936f5e4c7
+						</hash>
+					</verification>
+					<resources>
+						<url type='http'>
+							http://rnd.yujinrobot.com/pub/appupdater/utilities/Console-2.00b148-Beta_32bit.zip
+						</url>
+					</resources>
+				</file>
+			</files>
+		</metalink>
+		<instructions>
+			<install>
+				%unzip "%cache\Console-2.00b148-Beta_32bit.zip" -d C:\opt\utils
+			</install>
+		</instructions>
+	</entry>
+	-->
+</versions>
