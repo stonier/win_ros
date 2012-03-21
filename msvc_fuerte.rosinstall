@@ -71,10 +71,10 @@
 #    local-name: qt_ros
 #    version: master
 
-- git:
-    uri: git@github.com:yujinrobot/catkin_issues.git
-    local-name: catkin_issues
-    version: master
+#- git:
+#    uri: git@github.com:yujinrobot/catkin_issues.git
+#    local-name: catkin_issues
+#    version: master
 
 - git:
     uri: git@github.com:stonier/win_ros.git
