@@ -13,15 +13,14 @@ xpressive;optional;tokenizer;io;bind;date_time;thread;^
 algorithm;range;foreach;array;functional;unordered;pool;spirit;variant;serialization;format;math;^
 multi_index;any;random;graph;python;parameter;accumulators;system;asio;circular_buffer;ptr_container;^
 assign;bimap;compatibility;conversion;crc;timer;test;disjoint_sets;dynamic_bitset;filesystem;^
-interprocess;flyweight;geometry;gil;^
+interprocess;flyweight;geometry;gil;regex;^
 icl;iostreams;lambda;msm;multi_array;phoenix;polygon;program_options;property_tree;^
 ratio;rational;signals;signals2;statechart;tr1;units;uuid;wave
 SET FAILED_TO_BUILD_PROJECTS=chrono;
-set WILL_BE_DISABLED_PROJECTS_BECAUSE_OF_DEPS=regex;mpi;graph_parallel
+set WILL_BE_DISABLED_PROJECTS_BECAUSE_OF_DEPS=mpi;graph_parallel
 
 cmake -G "NMake Makefiles" %WITHOUT_FLAGS% %WITH_FLAGS% -DBUILD_PROJECTS:STRING=%BUILD_PROJECTS% %NO_STATIC% ..\boost
 nmake
 REM nmake package
 REM nmake install
 cd ..
-

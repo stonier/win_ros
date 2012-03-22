@@ -47,6 +47,9 @@ REM for more information.
     pythonpath = os.path.join(ros_root,'core')
     pythonpath = os.path.join(ros_root,'core','roslib','src')
     ros_root_bin = os.path.join(ros_root,'bin')
+    visual_studio_ten_env=r'C:\Program Files\Microsoft Visual Studio 10.0\VC\vcvarsall.bat';
+    windows_sdk_env=r'C:\Program Files\Microsoft SDKs\Windows\v7.1\Bin\SetEnv.cmd';
+    
     text += "\n"
     text += "ECHO OFF\n"
     text += "\n"
@@ -65,21 +68,20 @@ REM for more information.
     text += "\n"
     text += "REM Utility variables - need to search for these better (PROGRAMFILES is unreliable depending on your shell)\n"
     text += 'doskey wordpad="'+os.environ['PROGRAMFILES']+'\\Windows NT\\Accessories\\wordpad.exe" $1\n'
-    text += 'doskey notepp="C:\\Program Files (x86)\\Notepad++\\notepad++.exe" $1\n'
+    text += 'doskey notepp="'+os.environ['PROGRAMFILES']+'\\Notepad++\\notepad++.exe" $1\n'
     text += "REM This isn't fully supported yet\n"
     text += 'REM doskey roscd=%s\\win_ros\\win_roscd\\roscd.bat $1\n'%base_path
     text += "\n"
-    # could use some logic here to detect if it is already in your path.
-    # maybe also some logic to automagically pick it up.
-    # PROGRAMFILES will fail on 64 bit systems - we always install 32 bit python and this
-    # will always return 'Program Files (x86)'.
-    text += "REM Boost Path\n"
-    text += "REM set PATH="+os.environ['PROGRAMFILES']+"\\boost\\boost_1_44\\lib"+os.pathsep+"%PATH%\n"
-    text += "\n"
-    text += "REM Environment settings for your compiler [Windows SDK]\n"
-    text += 'call "C:\\Program Files\\Microsoft SDKs\\Windows\\v7.1\\Bin\\SetEnv.cmd" /x86 /Debug\n'
-    text += 'REM Debug color is a god awfully ugly canary yellow\n'
-    text += 'color 7\n'
+    if os.path.isfile(visual_studio_ten_env):
+        text += "REM Environment settings for Visual Studio\n"
+        text += 'call "' + visual_studio_ten_env + '" x86 Debug\n'
+    elif os.path.isfile(windows_sdk_env):
+        text += "REM Environment settings for your compiler [Windows SDK/Visual Studio]\n"
+        text += 'call "' + windows_sdk_env + '" x86 Debug\n'
+    else:
+        text += "REM Could not find windows sdk or visual studio, please configure by hand\n"
+        text += 'REM "' + visual_studio_ten_env + '" x86 Debug\n'
+        text += 'REM call "' + windows_sdk_env + '" x86 Debug\n'
     text += "\n"
     return text
 
