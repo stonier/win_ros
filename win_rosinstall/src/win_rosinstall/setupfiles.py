@@ -74,14 +74,17 @@ REM for more information.
     text += "\n"
     if os.path.isfile(visual_studio_ten_env):
         text += "REM Environment settings for Visual Studio\n"
-        text += 'call "' + visual_studio_ten_env + '" x86 Debug\n'
+        text += 'call "' + visual_studio_ten_env + '" x86\n'
     elif os.path.isfile(windows_sdk_env):
         text += "REM Environment settings for your compiler [Windows SDK/Visual Studio]\n"
         text += 'call "' + windows_sdk_env + '" x86 Debug\n'
     else:
         text += "REM Could not find windows sdk or visual studio, please configure by hand\n"
-        text += 'REM "' + visual_studio_ten_env + '" x86 Debug\n'
-        text += 'REM call "' + windows_sdk_env + '" x86 Debug\n'
+        text += 'REM "' + visual_studio_ten_env + '" x86\n'
+        text += 'REM call "' + windows_sdk_env + '" /x86 /Debug\n'
+    text += 'REM Debug color is a god awfully ugly canary yellow\n'
+    text += 'color 7\n'
+
     text += "\n"
     return text
 

@@ -21,6 +21,6 @@ set WILL_BE_DISABLED_PROJECTS_BECAUSE_OF_DEPS=mpi;graph_parallel
 
 cmake -G "NMake Makefiles" %WITHOUT_FLAGS% %WITH_FLAGS% -DBUILD_PROJECTS:STRING=%BUILD_PROJECTS% %NO_STATIC% ..\boost
 nmake
-REM nmake package
+nmake package
 REM nmake install
 cd ..
