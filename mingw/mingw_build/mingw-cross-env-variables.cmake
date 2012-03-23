@@ -19,7 +19,7 @@ set(TOOLCHAIN_TUPLE i686-pc-mingw32)
 #   refer to http://lists.gnu.org/archive/html/mingw-cross-env-list/2011-05/msg00060.html
 set(MINGW_CROSS_COMPILE_FLAGS "-DBOOST_THREAD_USE_LIB -D_WIN32_WINNT=0x0501")
 set(Boost_THREADAPI "win32" CACHE STRING "Necessary variable for cmake to find mingw boost, needs cmake v2.8.3+")
-#set(Boost_USE_STATIC_LIBS TRUE CACHE STRING "Using static libs for boost.")
+set(Boost_USE_STATIC_LIBS TRUE CACHE BOOL "Force static libs for boost.")
 
 set(CMAKE_C_FLAGS ${MINGW_CROSS_COMPILE_FLAGS} CACHE PATH "Compile flags for c.")
 set(CMAKE_CXX_FLAGS ${MINGW_CROSS_COMPILE_FLAGS} CACHE PATH "Compile flags for c++.")
