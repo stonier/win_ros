@@ -25,7 +25,4 @@ set(CATKIN_BUILD_PROJECTS "All" CACHE STRING "Semi-colon list of stacks to build
 ###########################
 set(Boost_DEBUG FALSE CACHE BOOL "Debug boost.")
 set(Boost_DETAILED_FAILURE_MSG FALSE CACHE BOOL "Detailed failure reports from boost.")
-# BOOST_ALL_NO_LIB : don't auto-link in windoze (better portability -> see FindBoost.cmake)
-# BOOST_ALL_DYN_LINK=1 : actually redundant since we turn off auto-linking above
-# Ordinarily it will choose dynamic links instead of static links
 
