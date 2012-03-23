@@ -33,6 +33,8 @@ list_keys:
 send_key:
 	gpg --send-keys --keyserver keyserver.ubuntu.com $(KEY_ID) 
 
+import_key:
+	gpg --recv-keys --keyserver keyserver.ubuntu.com $(KEY_ID) 
 
 receive_key:
 	gpgp --recv-keys $(KEY_ID)
