@@ -1,0 +1,33 @@
+# Official Ros Stacks
+#
+# You need at least ros, ros_comm, bond_core, common, common_msgs, 
+# geometry, ros_tutorials, common_tutorials
+#
+# Currently only used for ensuring ming_cross installs.
+#
+- other:
+    local-name: /opt/ros/electric/ros
+
+- other:
+    local-name: /opt/ros/electric/stacks
+
+# Development stacks for the mingw cross environment
+- git:
+    uri: https://github.com/stonier/ros-cmake.git
+    local-name: cmake
+    version: master
+
+- git:
+    uri: https://github.com/straszheim/rosidl.git
+    local-name: rosidl
+    version: master
+
+- git:
+    uri: https://github.com/stonier/win_ros.git
+    local-name: win_ros
+    version: electric
+
+- git:
+    uri: https://github.com/stonier/qt_ros.git
+    local-name: qt_ros
+    version: electric
