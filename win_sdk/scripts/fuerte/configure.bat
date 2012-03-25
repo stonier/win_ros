@@ -18,7 +18,7 @@ cd %BLD_DIR%
 REM ************* Cmake *************
 echo ON
 
-cmake -G "NMake Makefiles" -C "%WORKSPACE%\MsvcConfig.cmake" -DCMAKE_USER_MAKE_RULES_OVERRIDE:STRING="%WORKSPACE%\MsvcFlags.cmake" %SRC_DIR%
+cmake -G "NMake Makefiles" -C "%WORKSPACE%\MsvcCache.cmake" -DCMAKE_USER_MAKE_RULES_OVERRIDE:STRING="%WORKSPACE%\MsvcFlags.cmake" %SRC_DIR%
 
 echo OFF
 cd ..
