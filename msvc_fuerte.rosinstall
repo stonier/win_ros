@@ -64,16 +64,14 @@
 #    local-name: actionlib
 #    uri: https://kforge.ros.org/common/actionlib
 
+- svn:
+    uri: https://code.ros.org/svn/ros-pkg/stacks/common_msgs/trunk
+    local-name: common_msgs
 
 # https://github.com/stonier/qt_ros.git
 #- git:
 #    uri: git@github.com:stonier/qt_ros.git
 #    local-name: qt_ros
-#    version: master
-
-#- git:
-#    uri: git@github.com:yujinrobot/catkin_issues.git
-#    local-name: catkin_issues
 #    version: master
 
 #    uri: git@github.com:stonier/win_ros.git
