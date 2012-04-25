@@ -9,6 +9,8 @@ set(INSTALL_ROOT "${CWD}/ros-sdk" CACHE PATH "Install root.")
 ###########################
 # CMake
 ###########################
+# If you change the build type, make sure you change the argument (/Debug, /Release) used when 
+# calling the msvc sdk/visual studio environment script
 set(CMAKE_BUILD_TYPE RelWithDebInfo CACHE STRING "Build mode.")
 set(CMAKE_INSTALL_PREFIX ${INSTALL_ROOT} CACHE PATH "Install root location.")
 set(CMAKE_INCLUDE_PATH ${ROSDEPS_ROOT}/include CACHE STRING "Prefix to the system include directories.")

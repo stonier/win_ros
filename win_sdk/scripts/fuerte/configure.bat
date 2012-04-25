@@ -1,35 +1,29 @@
-echo OFF
+@REM ************** Variables *************
 
-REM ************** Variables *************
+@set WORKSPACE=%cd%
+@set SRC_DIR=%WORKSPACE%\src
+@set BLD_DIR=%WORKSPACE%\build
 
-set WORKSPACE=%cd%
-set SRC_DIR=%WORKSPACE%\src
-set BLD_DIR=%WORKSPACE%\build
+@if X%1==Xclean goto Clean
 
-if X%1==Xclean goto Clean
+@REM ********** Directories **********
+@rd /S /Q %BLD_DIR%
+@mkdir %BLD_DIR%
+@cd %BLD_DIR%
 
-REM Default option 
+@REM ************* Cmake *************
 
-REM ********** Directories **********
-rd /S /Q %BLD_DIR%
-mkdir %BLD_DIR%
-cd %BLD_DIR%
-
-REM ************* Cmake *************
-echo ON
-
+@REM To change build mode, configure CMAKE_BUILD_TYPE in MsvcCache.cmake or add -DCMAKE_BUILD_TYPE=... here.
 cmake -G "NMake Makefiles" -C "%WORKSPACE%\MsvcCache.cmake" -DCMAKE_USER_MAKE_RULES_OVERRIDE:STRING="%WORKSPACE%\MsvcFlags.cmake" %SRC_DIR%
+@cd ..
+@GOTO End
 
-echo OFF
-cd ..
-GOTO End
-
-REM *****************************************************
+@REM *****************************************************
 :Clean
 
-rd /S /Q %BLD_DIR%
-GOTO End
+@rd /S /Q %BLD_DIR%
+@goto End
 
-REM *****************************************************
+@REM *****************************************************
  
 :End

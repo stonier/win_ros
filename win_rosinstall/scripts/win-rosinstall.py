@@ -2,17 +2,14 @@
 
 """
 usage: rosinstall [OPTIONS] INSTALL_PATH [ROSINSTALL FILES OR DIRECTORIES]
-see: http://www.ros.org/wiki/rosinstall
+see: http://www.ros.org/wiki/win_rosinstall
 
-Common Option:
--n or --nobuild (don't perform a 'make core_cools' on the ros stack)
-
-Type 'rosinstall --help' for usage.
+Type 'win-rosinstall --help' for usage.
 
 Common invocations:
 
-initial checkout:   win_rosinstall ~/ros "http://packages.ros.org/cgi-bin/gen_rosinstall.py?rosdistro=diamondback&variant=ros-full&overlay=no"
-subsequent update:  win_rosinstall ~/ros
+initial checkout:   win-rosinstall ~/ros "http://packages.ros.org/cgi-bin/gen_rosinstall.py?rosdistro=diamondback&variant=ros-full&overlay=no"
+subsequent update:  win-rosinstall ~/ros
 
 """
 from __future__ import print_function
@@ -97,7 +94,7 @@ Later URIs will shadow packages of earlier URIs.\n",
   #  parser.error("rosinstall no longer bootstraps the build, it will not call rosmake or pass it rosdep options") 
 
   if options.version:
-    print("rosinstall 0.5.30\n%s"%rosinstall.multiproject_cmd.cmd_version())
+    print("rosinstall 0.5.31\n%s"%rosinstall.multiproject_cmd.cmd_version())
     sys.exit(0)
   
   if len(args) < 1:
@@ -120,7 +117,7 @@ Later URIs will shadow packages of earlier URIs.\n",
   # Catkin must be enabled if catkinpp is set
   if options.catkinpp:
     options.catkin = True
-
+  
   # Get the path to the rosinstall 
   options.path = os.path.abspath(args[0])
 
