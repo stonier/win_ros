@@ -5,6 +5,7 @@ find_package(ROS COMPONENTS catkin std_msgs roscpp)
 catkin_stack()
 
 foreach(subdir
+    win_py2exe
     tutorials/win_roscpp_tutorials
     )
   add_subdirectory(${subdir})

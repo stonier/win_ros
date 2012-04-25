@@ -1,9 +1,7 @@
 /**
- * @file /src/win_bin.cpp
+ * @file /src/ros_bin.cpp
  *
- * @brief Self describing executable for launching python scripts in win_ros/bin
- *
- * This is waiting until we can get rosstack find working.
+ * @brief Self describing executable for launching python scripts in ${ROS_ROOT}/bin
  *
  * @date March 2011
  **/
@@ -21,31 +19,24 @@
 #endif
 
 char name[256];
-std::string win_ros_root, python_home, python_file, python_exe;
+std::string ros_bin_dir;
 std::stringstream arguments;
+std::string python_home, python_file, python_exe;
 
 /*****************************************************************************
 ** Functions
 *****************************************************************************/
 
-void print_environment_variables() {
-	std::cout << "Environment Variables:" << std::endl;
-	std::cout << "  PYTHONHOME: " << python_home << std::endl;
-	std::cout << std::endl;
-}
-
 void debug() {
-	print_environment_variables();
 	std::cout << std::endl;
 	std::cout << "Program Variables:" << std::endl;
-	std::cout << "  win_ros_root: " << win_ros_root << std::endl;
+	std::cout << "  Ros bin: " << ros_bin_dir << std::endl;
 	std::cout << "  Python exe: " << python_exe << std::endl;
 	std::cout << "  Target name: " << name << std::endl;
 	std::cout << "  Target python file: " << python_file << std::endl;
 	std::cout << "  Arguments: " << arguments.str() << std::endl;
 	std::cout << std::endl;
 }
-
 
 /*****************************************************************************
 ** Main
@@ -56,22 +47,24 @@ int main(int argc, char **argv) {
 	name[0] = '\0';
 #ifdef WIN32
 	_splitpath(argv[0], NULL, NULL, name, NULL);
-//	for ( int i = 0; i < argc; ++i ) {
-//		std::cout << "Argument[" << i << "] " << argv[i] << std::endl;
-//	}
-
-	//win_ros_root = std::getenv("win_ros_root"); need to use rosstack find here instead.
-	python_home = std::getenv("PYTHONHOME");
-	std::transform(python_home.begin(), python_home.end(), python_home.begin(), ::tolower);
-	std::string::iterator iter;
-	for ( iter = python_home.begin(); iter < python_home.end(); ++iter ) {
-		if ( *iter == '\\' ) {
-			*iter = '/';
-		}
+	for ( int i = 0; i < argc; ++i ) {
+		std::cout << "Argument[" << i << "] " << argv[i] << std::endl;
 	}
 
-	python_file = win_ros_root+std::string("/bin/")+std::string(name);
-	python_exe = python_home + std::string("/python.exe");
+	ros_bin_dir = "@ROS_BIN_DIR@";
+
+//	python_home = std::getenv("PYTHONHOME");
+//	std::transform(python_home.begin(), python_home.end(), python_home.begin(), ::tolower);
+//	std::string::iterator iter;
+//	for ( iter = python_home.begin(); iter < python_home.end(); ++iter ) {
+//		if ( *iter == '\\' ) {
+//			*iter = '/';
+//		}
+//	}
+
+	python_file = ros_bin_dir+std::string("/") + std::string(name);
+	//python_exe = python_home + std::string("/python.exe");
+	python_exe = std::string("C:/Python27/python.exe");
 	arguments << " " << python_file;
 	for ( int i = 1; i < argc; ++i ) {
 		// need the quotes to make sure spaces dont muck things up
@@ -104,7 +97,7 @@ int main(int argc, char **argv) {
 	if ( result == 0 ) {
 		switch ( result ) {
 			case ( ERROR_FILE_NOT_FOUND ) : {
-				std::cout << "The python executable could not be found - check PYTHONHOME has been correctly set in winsetup.py" << std::endl;
+				std::cout << "The python executable could not be found - check it is in your PATH" << std::endl;
 				debug();
 				break;
 			}

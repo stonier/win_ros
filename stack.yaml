@@ -7,6 +7,6 @@ Homepage: http://ros.org/wiki/win_ros
 
 Depends: catkin, std_msgs, ros_comm
 
-Catkin-CopyrightType:  willowgarage
+Catkin-CopyrightType: willowgarage
 Catkin-DebRulesType: cmake
 #Catkin-ROS-Message-Generator: cpp

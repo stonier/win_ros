@@ -1,4 +1,5 @@
 <package>
+  <catkin />
   <description brief="Creates executables to start python scripts in windows">
 
     Windows python scripts aren't recognised as executables, so alot of the ros
