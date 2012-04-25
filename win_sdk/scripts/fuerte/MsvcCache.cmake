@@ -13,14 +13,14 @@ set(INSTALL_ROOT "${CWD}/ros-sdk" CACHE PATH "Install root.")
 # calling the msvc sdk/visual studio environment script
 set(CMAKE_BUILD_TYPE RelWithDebInfo CACHE STRING "Build mode.")
 set(CMAKE_INSTALL_PREFIX ${INSTALL_ROOT} CACHE PATH "Install root location.")
-set(CMAKE_INCLUDE_PATH ${ROSDEPS_ROOT}/include CACHE STRING "Prefix to the system include directories.")
-set(CMAKE_PREFIX_PATH ${ROSDEPS_ROOT} CACHE STRING "Prefix to the system directories.")
+set(CATKIN_ROSDEPS_PATH ${ROSDEPS_ROOT} CACHE STRING "Prefix to the rosdep root directory(s).")
 
 ###########################
 # Catkin
 ###########################
 set(CATKIN_BLACKLIST_STACKS "None" CACHE STRING "Semi-colon separated list of stacks to exclude from the build.")
 set(CATKIN_BUILD_PROJECTS "All" CACHE STRING "Semi-colon list of stacks to build.")
+#set(CATKIN_BUILD_PROJECTS "catkin;roscpp_core" CACHE STRING "Semi-colon list of stacks to build.")
 
 ###########################
 # Boost
