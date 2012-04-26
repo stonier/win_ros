@@ -9,28 +9,8 @@ include_directories(${ROS_INCLUDE_DIRS})
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
 if(WIN32)
-  add_subdirectory(src)
-  
-#  set(ROSXXX_EXE rosxxx.exe)
-#  set(ROSXXX_PATHNAME ${CMAKE_SOURCE_DIR}/bin/${ROSXXX_EXE})
-#  add_custom_target(
-#    copy_into_ros_root_bin
-#    ALL
-#    COMMAND cmake -E copy ${ROSXXX_PATHNAME} $ENV{ROS_ROOT}/bin/rosversion.exe   
-#    COMMAND cmake -E copy ${ROSXXX_PATHNAME} $ENV{ROS_ROOT}/bin/rosmaster.exe   
-#    COMMAND cmake -E copy ${ROSXXX_PATHNAME} $ENV{ROS_ROOT}/bin/rostopic.exe   
-#    COMMAND cmake -E copy ${ROSXXX_PATHNAME} $ENV{ROS_ROOT}/bin/rosservice.exe   
-#    COMMAND cmake -E copy ${ROSXXX_PATHNAME} $ENV{ROS_ROOT}/bin/roscore.exe   
-#    COMMAND cmake -E copy ${ROSXXX_PATHNAME} $ENV{ROS_ROOT}/bin/roslaunch.exe
-#    COMMAND cmake -E copy ${ROSXXX_PATHNAME} $ENV{ROS_ROOT}/bin/roscreate-pkg.exe
-#    COMMAND cmake -E copy ${ROSXXX_PATHNAME} $ENV{ROS_ROOT}/bin/roscreate-stack.exe
-#    WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
-#    COMMENT "Copying files."
-#    VERBATIM
-#  )
-#  add_dependencies(copy_into_ros_root_bin rosxxx)
+  #add_subdirectory(src)
+  add_subdirectory(scripts)  
 else()
   message(WARNING "This package is only useful when compiling for windows.")
 endif()
-
- 
