@@ -1,7 +1,7 @@
-diff -uNr --exclude=.svn --exclude=build --exclude=lib rostime.original/src/time.cpp rostime.working_copy/src/time.cpp
---- rostime.original/src/time.cpp	2011-12-27 16:57:14.621223827 +0900
-+++ rostime.working_copy/src/time.cpp	2011-12-27 17:03:22.537736039 +0900
-@@ -121,8 +121,8 @@
+diff -NBaur roscpp_core/rostime/src/time.cpp roscpp_core_rostime/rostime/src/time.cpp
+--- roscpp_core/rostime/src/time.cpp	2012-04-26 12:16:42.102597524 +0900
++++ roscpp_core_rostime/rostime/src/time.cpp	2012-04-26 12:17:40.326596865 +0900
+@@ -122,8 +122,8 @@
      // problems in Windows Vista, and this API is by far the most accurate that
      // I know of in Windows, so I'll use it here despite all these caveats
      static LARGE_INTEGER cpu_freq, init_cpu_time;
