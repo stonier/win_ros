@@ -6,7 +6,7 @@
     build logic will fail when trying to call python scripts because they 
     utilise the bash logic at the top of the script.
      
-	This remedies the problem by creating an executable for each that calls
+	This remedies the problem by creating a batch script for each that calls
 	the relevant python script.
 
   </description>
