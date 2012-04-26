@@ -63,8 +63,9 @@ int main(int argc, char **argv) {
 //	}
 
 	python_file = ros_bin_dir+std::string("/") + std::string(name);
-	//python_exe = python_home + std::string("/python.exe");
-	python_exe = std::string("C:/Python27/python.exe");
+	python_exe = python_home + std::string("python");
+	//python_exe = std::string("C:/Python27/python.exe");
+	arguments << python_exe;
 	arguments << " " << python_file;
 	for ( int i = 1; i < argc; ++i ) {
 		// need the quotes to make sure spaces dont muck things up
@@ -83,7 +84,7 @@ int main(int argc, char **argv) {
 
 	int result =
 		CreateProcess(
-			python_exe.c_str(),
+			NULL, //python_exe.c_str(),
 			const_cast<char*>(arguments.str().c_str()), // bloody windoze
 			NULL,
 			NULL,

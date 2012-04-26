@@ -1,2 +1,3 @@
 
-@python rosversion %*
+@set DIR=%~dp0
+@python %DIR%/rosversion %*
