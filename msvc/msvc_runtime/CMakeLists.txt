@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.8)
-project(win_py2exe)
+project(msvc_runtime)
 find_package(ROS COMPONENTS catkin)
-catkin_project(win_py2exe)
+catkin_project(msvc_runtime)
 
 include_directories(${ROS_INCLUDE_DIRS})
 
