@@ -46,10 +46,10 @@ int main(int argc, char **argv) {
 
 	name[0] = '\0';
 #ifdef WIN32
-	_splitpath(argv[0], NULL, NULL, name, NULL);
-	for ( int i = 0; i < argc; ++i ) {
-		std::cout << "Argument[" << i << "] " << argv[i] << std::endl;
-	}
+	_splitpath_s(argv[0], NULL, 0, NULL, 0, name, 256, NULL, 0);
+	//for ( int i = 0; i < argc; ++i ) {
+	//	std::cout << "Argument[" << i << "] " << argv[i] << std::endl;
+	//}
 
 	ros_bin_dir = "C:/work/build/bin";
 
@@ -64,16 +64,13 @@ int main(int argc, char **argv) {
 
 	python_file = ros_bin_dir+std::string("/") + std::string(name);
 	python_exe = python_home + std::string("python");
-	//python_exe = std::string("C:/Python27/python.exe");
-	arguments << python_exe;
-	arguments << " " << python_file;
+	arguments << python_exe << " " << python_file;
 	for ( int i = 1; i < argc; ++i ) {
 		// need the quotes to make sure spaces dont muck things up
 		arguments << " \"" << argv[i] << "\"";
 	}
 
 	/* TODO: Need some validation checks here! */
-
 
 	STARTUPINFO startup_info;
 	PROCESS_INFORMATION process_info;
@@ -84,7 +81,7 @@ int main(int argc, char **argv) {
 
 	int result =
 		CreateProcess(
-			NULL, //python_exe.c_str(),
+			NULL, 
 			const_cast<char*>(arguments.str().c_str()), // bloody windoze
 			NULL,
 			NULL,
@@ -115,7 +112,6 @@ int main(int argc, char **argv) {
 	}
 #else
 	std::cout << "This is a windows application only." << std::endl;
-	// No implementation yet
 #endif
 	return 0;
 }

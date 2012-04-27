@@ -11,4 +11,5 @@
   <url>http://ros.org/wiki/win_setup</url>
   <depend package="win_py2exe"/>
   <depend package="win_roscd"/>
+  <depend package="roslib"/>
 </package>
