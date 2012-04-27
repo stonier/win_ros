@@ -1,0 +1,117 @@
+diff -NBaur -x *.pyc -x .svn ros_comm/tools/rosmsg/src/rosmsg/__init__.py C:\work\src\ros_comm/tools/rosmsg/src/rosmsg/__init__.py
+--- ros_comm/tools/rosmsg/src/rosmsg/__init__.py	Fri Apr 27 12:45:33 2012
++++ C:\work\src\ros_comm/tools/rosmsg/src/rosmsg/__init__.py	Fri Apr 27 12:39:16 2012
+@@ -334,7 +334,10 @@
+     except KeyError as e:
+         if not options.silent:
+             sys.stderr.write("Unknown message type: %s"%e, file=sys.stderr)
+-            sys.exit(os.EX_USAGE)
++            try:
++                sys.exit(os.EX_USAGE) # Unix only
++            except AttributeError:
++                sys.exit(1)
+     # except rospkg.InvalidROSPkgException as e:
+     #     if not options.silent:
+     #         print(file=sys.stderr, "Invalid package: '%s'"%e)
+@@ -342,7 +345,10 @@
+     except ValueError, e:
+         if not options.silent:
+             sys.stderr.write("Invalid type: '%s'"%e)
+-            sys.exit(os.EX_USAGE)
++            try:
++                sys.exit(os.EX_USAGE) # Unix only
++            except AttributeError:
++                sys.exit(1)
+     except RosMsgProtoException as e:
+         if not options.silent:
+             sys.stderr.write(str(e))
+@@ -350,7 +356,10 @@
+     except RosMsgProtoArgsException as e:
+         if not options.silent:
+             sys.stderr.write("%s"%e)
+-            sys.exit(os.EX_USAGE)
++            try:
++                sys.exit(os.EX_USAGE) # Unix only
++            except AttributeError:
++                sys.exit(1)
+     except KeyboardInterrupt:
+         pass
+ 
+@@ -722,16 +731,28 @@
+             sys.exit(0)
+         else:
+             print(fullusage('ros'+mode[1:]))
+-            sys.exit(os.EX_USAGE)
++            try:
++                sys.exit(os.EX_USAGE) # Unix only
++            except AttributeError:
++                sys.exit(1)
+     except KeyError as e:
+         print("Unknown message type: %s"%e, file=sys.stderr)
+-        sys.exit(os.EX_USAGE)
++        try:
++            sys.exit(os.EX_USAGE) # Unix only
++        except AttributeError:
++            sys.exit(1)
+     except rospkg.ResourceNotFound as e:
+         print("Invalid package: %s"%e, file=sys.stderr)
+-        sys.exit(os.EX_USAGE)        
++        try:
++            sys.exit(os.EX_USAGE) # Unix only
++        except AttributeError:
++            sys.exit(1)
+     except ValueError as e:
+         print("Invalid type: '%s'"%e, file=sys.stderr)
+-        sys.exit(os.EX_USAGE)          
++        try:
++            sys.exit(os.EX_USAGE) # Unix only
++        except AttributeError:
++            sys.exit(1)
+     except ROSMsgException as e:
+         print(str(e), file=sys.stderr)
+         sys.exit(1)        
+diff -NBaur -x *.pyc -x .svn ros_comm/tools/rosnode/src/rosnode/__init__.py C:\work\src\ros_comm/tools/rosnode/src/rosnode/__init__.py
+--- ros_comm/tools/rosnode/src/rosnode/__init__.py	Fri Apr 27 12:45:33 2012
++++ C:\work\src\ros_comm/tools/rosnode/src/rosnode/__init__.py	Fri Apr 27 12:41:34 2012
+@@ -740,7 +740,10 @@
+ Type rosnode <command> -h for more detailed usage, e.g. 'rosnode ping -h'
+ """)
+     if return_error:
+-        sys.exit(os.EX_USAGE)
++        try:
++            sys.exit(os.EX_USAGE) # Unix only
++        except AttributeError:
++            sys.exit(1)
+     else:
+         sys.exit(0)
+ 
+diff -NBaur -x *.pyc -x .svn ros_comm/tools/rosservice/src/rosservice/__init__.py C:\work\src\ros_comm/tools/rosservice/src/rosservice/__init__.py
+--- ros_comm/tools/rosservice/src/rosservice/__init__.py	Fri Apr 27 12:45:32 2012
++++ C:\work\src\ros_comm/tools/rosservice/src/rosservice/__init__.py	Fri Apr 27 12:41:09 2012
+@@ -711,7 +711,10 @@
+ 
+ Type rosservice <command> -h for more detailed usage, e.g. 'rosservice call -h'
+ """)
+-    sys.exit(os.EX_USAGE)
++    try:
++        sys.exit(os.EX_USAGE) # Unix only
++    except AttributeError:
++        sys.exit(1)
+ 
+ def rosservicemain(argv=sys.argv):
+     """
+diff -NBaur -x *.pyc -x .svn ros_comm/tools/rostopic/src/rostopic/__init__.py C:\work\src\ros_comm/tools/rostopic/src/rostopic/__init__.py
+--- ros_comm/tools/rostopic/src/rostopic/__init__.py	Fri Apr 27 12:45:31 2012
++++ C:\work\src\ros_comm/tools/rostopic/src/rostopic/__init__.py	Fri Apr 27 12:40:05 2012
+@@ -1619,7 +1619,10 @@
+ 
+ Type rostopic <command> -h for more detailed usage, e.g. 'rostopic echo -h'
+ """)
+-    sys.exit(os.EX_USAGE)
++    try:
++        sys.exit(os.EX_USAGE) # Unix only
++    except AttributeError:
++        sys.exit(1)
+ 
+ def rostopicmain(argv=None):
+     import rosbag
