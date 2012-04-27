@@ -8,12 +8,15 @@
      
 	This remedies the problem by creating a batch script for each that calls
 	the relevant python script.
+	
+	It also provides various other scripts, utilities, launchers and dependency
+	targets for setting up the runtime.
 
   </description>
   <author>Daniel Stonier</author>
   <license>BSD</license>
   <review status="experimental" notes=""/>
-  <url>http://ros.org/wiki/win_py2exe</url>
+  <url>http://ros.org/wiki/win_msvc_runtime</url>
   <depend package=win_roscpp_tutorials/>
   <depend package=rosgraph_msgs/>
   
