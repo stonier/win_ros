@@ -1,0 +1,23 @@
+diff -NBaur -x .svn -x *.pyc ros_comm/tools/roslaunch/src/roslaunch/nodeprocess.py ros_comm_roslaunch/tools/roslaunch/src/roslaunch/nodeprocess.py
+--- ros_comm/tools/roslaunch/src/roslaunch/nodeprocess.py	Fri Apr 27 12:45:38 2012
++++ ros_comm_roslaunch/tools/roslaunch/src/roslaunch/nodeprocess.py	Fri Apr 27 16:47:37 2012
+@@ -280,7 +280,18 @@
+             _logger.info("process[%s]: cwd will be [%s]", self.name, cwd)
+ 
+             try:
+-                self.popen = subprocess.Popen(self.args, cwd=cwd, stdout=logfileout, stderr=logfileerr, env=full_env, close_fds=True, preexec_fn=os.setsid)
++                preexec_function = os.setsid
++                close_file_descriptor=True
++            except AttributeError:
++                # No way to manage these on windows without setsid and close_fds
++                # This is not a real solution, we need a better way.
++                # setsid is there so we can kill children, without it, they are left as zombies
++                # so like this, windows won't be able to kill children that have been forked off 
++                # by programs on their own
++                preexec_function = None
++                close_file_descriptor=False
++            try:
++                self.popen = subprocess.Popen(self.args, cwd=cwd, stdout=logfileout, stderr=logfileerr, env=full_env, close_fds=close_file_descriptor, preexec_fn=preexec_function)
+             except OSError, (errno, msg):
+                 self.started = True # must set so is_alive state is correct
+                 _logger.error("OSError(%d, %s)", errno, msg)

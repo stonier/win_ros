@@ -1,0 +1,3 @@
+<launch>
+  <node pkg="win_roscpp_tutorials" type="win_talker" name="talker"  output="screen"/>
+</launch>

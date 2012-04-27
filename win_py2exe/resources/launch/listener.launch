@@ -1,0 +1,7 @@
+<!--
+  Starts up the win cpp listener, and also tests parameter setting. 
+    -->
+<launch>
+  <param name="dude" value="snorri" />
+  <node pkg="win_roscpp_tutorials" type="win_listener" name="listener"  output="screen"/>
+</launch>
