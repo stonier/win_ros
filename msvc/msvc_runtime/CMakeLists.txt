@@ -10,7 +10,15 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
 if(WIN32)
   add_subdirectory(src)
-  #add_subdirectory(scripts)  
+  # Make sure these automagically get built
+  add_custom_target(msvc_runtime_dummy_target ALL
+    DEPENDS 
+      win_listener 
+      win_talker
+      rosgraph_msgs_gencpp
+      rosgraph_msgs_genpy 
+  )
+  
 else()
   message(WARNING "This package is only useful when compiling for windows.")
 endif()
