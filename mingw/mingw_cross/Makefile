@@ -1,4 +1,3 @@
-#include $(shell rospack find eros_build)/mk/custom_installer.mk
 
 # You can modify where it gets installed by setting MINGW_INSTALL_PREFIX
 # as an environment variable (using for the jenkins build).
@@ -8,7 +7,8 @@ else
   PREFIX=$(HOME)/mingw
 endif
 TUPLE=i686-pc-mingw32
-URL=http://hg.savannah.nongnu.org/hgweb/mingw-cross-env
+#URL=http://hg.savannah.nongnu.org/hgweb/mingw-cross-env
+URL=https://github.com/mxe/mxe.git
 CMAKE_CACHE_FILE=$(PREFIX)/usr/${TUPLE}/share/cmake/mingw-cross-env-ros.cmake
 CMAKE_TOOLCHAIN_FILE=$(PREFIX)/usr/${TUPLE}/share/cmake/mingw-cross-env-conf.cmake
 
@@ -68,7 +68,7 @@ clone:
 	    mkdir -p $(PREFIX); \
 	    chown -R $(USER) $(PREFIX); \
 		echo "Cloning stable branch to $(PREFIX)"; \
-		hg clone -r stable $(URL) $(PREFIX); \
+		git clone -b stable $(URL) $(PREFIX); \
 		echo "Patching mingw_cross makefiles."; \
 	    for i in patches/*.mk; do cp $$i ${PREFIX}/src; done; \
 	    for i in patches/*.patch; do cp $$i ${PREFIX}/src; done; \
