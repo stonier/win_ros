@@ -16,7 +16,8 @@ if(WIN32)
       win_listener 
       win_talker
       rosgraph_msgs_gencpp
-      rosgraph_msgs_genpy 
+      rosgraph_msgs_genpy
+      rosout
   )
   
 else()
