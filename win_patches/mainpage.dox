@@ -13,7 +13,5 @@ until those patches are accepted upstream.
 Important:
 
  - rostime_static_variables.patch : not sent upstream yet, but ready to go.
- - ex_usage_xxx.patch : dont use os.EX_USAGE where it is not defined (only on *nix)
-  - https://github.com/ros/rospkg/pull/1
-  - https://code.ros.org/trac/ros/ticket/3939
+ - msvc_includes_rospack.patch : starts fixing the includes for msvc (not completely working yet though) 
 */
