@@ -1,6 +1,3 @@
-#- hg:
-#    uri: 'https://kforge.ros.org/rosrelease/rospack'
-#    local-name: rospack
 
 #    uri: 'git@github.com:yujinrobot/catkin.git'
 #    uri: 'git://github.com/willowgarage/catkin.git'
