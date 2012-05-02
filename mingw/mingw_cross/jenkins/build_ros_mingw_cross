@@ -6,7 +6,6 @@ echo " - workspace: ${WORKSPACE}"
 echo " - cleaning out old builds"
 rm -rf ${WORKSPACE}/mingw
 rm -rf ${WORKSPACE}/ros
-#sudo apt-get install -y ros-fuerte-ros-base
 sudo easy_install -U vcstools rosinstall
 rosinstall --catkin ${WORKSPACE}/ros https://raw.github.com/stonier/win_ros/master/mingw_jenkins.rosinstall
 export MINGW_INSTALL_PREFIX=${WORKSPACE}/mingw
