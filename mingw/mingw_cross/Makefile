@@ -57,7 +57,7 @@ uninstall:
 
 compile: clone
 	@echo "Compiling mingw gcc, log4cxx, boost and qt."
-	$(MAKE) -C $(PREFIX) $(ROS_PARALLEL_JOBS) gcc log4cxx boost qt
+	$(MAKE) -C $(PREFIX) gcc log4cxx boost qt
 	@if [ ! -f ${PREFIX}/usr/${TUPLE}/lib/libboost_thread-mt.a ]; then \
 	  echo "Making links to fix boost_thread."; \
 	  ln -sf ${PREFIX}/usr/${TUPLE}/lib/libboost_thread_win32-mt.a ${PREFIX}/usr/${TUPLE}/lib/libboost_thread-mt.a; \
