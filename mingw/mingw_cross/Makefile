@@ -72,8 +72,8 @@ clone:
 		echo "Patching mingw_cross makefiles."; \
 	    for i in patches/*.mk; do cp $$i ${PREFIX}/src; done; \
 	    for i in patches/*.patch; do cp $$i ${PREFIX}/src; done; \
+	    patch -d ${PREFIX} -p0 < index.patch; \
 	else \
 		echo "Mingw cross has already been cloned at $(PREFIX)."; \
 	fi
 
-#@for i in patches/*.c; do cp $$i ${PREFIX}/src; done
