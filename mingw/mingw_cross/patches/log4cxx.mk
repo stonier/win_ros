@@ -30,5 +30,5 @@ define $(PKG)_BUILD
         CXXFLAGS=-D_WIN32_WINNT=0x0500 
     $(MAKE) -C '$(1)' -j '$(JOBS)' install bin_PROGRAMS= sbin_PROGRAMS= noinst_PROGRAMS= man_MANS=
     mkdir -p $(PREFIX)/$(TARGET)/share/cmake/log4cxx
-    cp $(1)/log4cxx-config.cmake > $(PREFIX)/$(TARGET)/share/cmake/log4cxx/log4cxx-config.cmake
+    cp $(1)/log4cxx-config.cmake $(PREFIX)/$(TARGET)/share/cmake/log4cxx/log4cxx-config.cmake
 endef
