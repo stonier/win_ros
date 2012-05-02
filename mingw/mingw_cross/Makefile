@@ -9,6 +9,7 @@ endif
 TUPLE=i686-pc-mingw32
 #URL=http://hg.savannah.nongnu.org/hgweb/mingw-cross-env
 URL=https://github.com/mxe/mxe.git
+URL_DEV=https://github.com/yujinrobot/mxe.git
 CMAKE_CACHE_FILE=$(PREFIX)/usr/${TUPLE}/share/cmake/mingw-cross-env-ros.cmake
 CMAKE_TOOLCHAIN_FILE=$(PREFIX)/usr/${TUPLE}/share/cmake/mingw-cross-env-conf.cmake
 
@@ -64,6 +65,16 @@ compile: clone
 	fi
 
 clone: 
+	@if [ ! -f $(PREFIX)/Makefile ]; then \
+	    mkdir -p $(PREFIX); \
+	    chown -R $(USER) $(PREFIX); \
+		echo "Cloning mxe dev fork to $(PREFIX)"; \
+		git clone $(URL_DEV) $(PREFIX); \
+	else \
+		echo "Mingw cross has already been cloned at $(PREFIX)."; \
+	fi
+
+clone_stable: 
 	@if [ ! -f $(PREFIX)/Makefile ]; then \
 	    mkdir -p $(PREFIX); \
 	    chown -R $(USER) $(PREFIX); \
