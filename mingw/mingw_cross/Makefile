@@ -12,6 +12,7 @@ URL=https://github.com/mxe/mxe.git
 URL_DEV=https://github.com/yujinrobot/mxe.git
 CMAKE_CACHE_FILE=$(PREFIX)/usr/${TUPLE}/share/cmake/mingw-cross-env-ros.cmake
 CMAKE_TOOLCHAIN_FILE=$(PREFIX)/usr/${TUPLE}/share/cmake/mingw-cross-env-conf.cmake
+JOBS=1 # i.e. -j#
 
 ##############################################################################
 # Primary targets
@@ -57,7 +58,7 @@ uninstall:
 
 compile: clone
 	@echo "Compiling mingw gcc, log4cxx, boost and qt."
-	$(MAKE) -C $(PREFIX) gcc log4cxx boost qt
+	$(MAKE) JOBS=${JOBS} -C $(PREFIX) gcc log4cxx boost qt
 	@if [ ! -f ${PREFIX}/usr/${TUPLE}/lib/libboost_thread-mt.a ]; then \
 	  echo "Making links to fix boost_thread."; \
 	  ln -sf ${PREFIX}/usr/${TUPLE}/lib/libboost_thread_win32-mt.a ${PREFIX}/usr/${TUPLE}/lib/libboost_thread-mt.a; \
@@ -68,8 +69,8 @@ clone:
 	@if [ ! -f $(PREFIX)/Makefile ]; then \
 	    mkdir -p $(PREFIX); \
 	    chown -R $(USER) $(PREFIX); \
-		echo "Cloning mxe dev fork to $(PREFIX)"; \
-		git clone $(URL_DEV) $(PREFIX); \
+	    echo "Cloning mxe dev fork to $(PREFIX)"; \
+	    git clone $(URL_DEV) $(PREFIX); \
 	else \
 		echo "Mingw cross has already been cloned at $(PREFIX)."; \
 	fi
@@ -78,9 +79,9 @@ clone_stable:
 	@if [ ! -f $(PREFIX)/Makefile ]; then \
 	    mkdir -p $(PREFIX); \
 	    chown -R $(USER) $(PREFIX); \
-		echo "Cloning stable branch to $(PREFIX)"; \
-		git clone -b stable $(URL) $(PREFIX); \
-		echo "Patching mingw_cross makefiles."; \
+	    echo "Cloning stable branch to $(PREFIX)"; \
+	    git clone -b stable $(URL) $(PREFIX); \
+	    echo "Patching mingw_cross makefiles."; \
 	    for i in patches/*.mk; do cp $$i ${PREFIX}/src; done; \
 	    for i in patches/*.patch; do cp $$i ${PREFIX}/src; done; \
 	    patch -d ${PREFIX} -p0 < index.patch; \
