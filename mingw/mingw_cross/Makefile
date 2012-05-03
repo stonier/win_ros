@@ -55,7 +55,7 @@ uninstall:
 	  grep -v "MINGW" $(HOME)/.bashrc > /tmp/.bashrc; \
 	  cp /tmp/.bashrc $(HOME)/.bashrc; \
 	fi
-	#rm -rf $(PREFIX)
+	rm -rf $(PREFIX)
 
 compile: clone
 	@echo "Compiling mingw gcc, log4cxx, boost and qt."
