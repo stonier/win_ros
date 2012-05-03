@@ -33,8 +33,9 @@ help:
 	@echo ""
 
 install: compile
-	@if grep "$(PREFIX)/usr/bin" $(HOME)/.bashrc -q; then \
-	  echo "Mingw path already added to .bashrc"; \
+	@if grep "MINGW_ROOT" $(HOME)/.bashrc -q; then \
+	  echo "There are MINGW_XXX variables already added to .bashrc"; \
+	  echo "Not disturbing these values, please update by hand if necessary."; \
 	else \
 	  echo "Adding MINGW_ROOT and updating PATH in .bashrc"; \
 	  echo "export MINGW_ROOT=$(PREFIX); export PATH=\$${PATH}:$(PREFIX)/usr/bin" >> $(HOME)/.bashrc; \
@@ -50,8 +51,8 @@ install: compile
 
 uninstall:
 	@if grep "$(PREFIX)/usr/bin" $(HOME)/.bashrc -q; then \
-	  echo "Removing mingw path from .bashrc"; \
-	  grep -v "$(PREFIX)/usr/bin" $(HOME)/.bashrc > /tmp/.bashrc; \
+	  echo "Removing mingw path and variables from .bashrc"; \
+	  grep -v "MINGW" $(HOME)/.bashrc > /tmp/.bashrc; \
 	  cp /tmp/.bashrc $(HOME)/.bashrc; \
 	fi
 	rm -rf $(PREFIX)
