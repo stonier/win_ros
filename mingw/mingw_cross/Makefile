@@ -11,7 +11,7 @@ TUPLE=i686-pc-mingw32
 URL=https://github.com/mxe/mxe.git
 URL_DEV=https://github.com/yujinrobot/mxe.git
 CMAKE_CACHE_FILE=$(PREFIX)/usr/${TUPLE}/share/cmake/mingw-cross-env-ros.cmake
-CMAKE_TOOLCHAIN_FILE=$(PREFIX)/usr/${TUPLE}/share/cmake/mingw-cross-env-conf.cmake
+CMAKE_TOOLCHAIN_FILE=$(PREFIX)/usr/${TUPLE}/share/cmake/mxe-conf.cmake
 JOBS=1 # i.e. -j#
 
 ##############################################################################
