@@ -70,7 +70,7 @@ clone:
 	    mkdir -p $(PREFIX); \
 	    chown -R $(USER) $(PREFIX); \
 		echo "Cloning mxe dev fork to $(PREFIX)"; \
-		git clone $(URL_DEV) $(PREFIX); \
+		git clone $(URL) $(PREFIX); \
 	else \
 		echo "Mingw cross has already been cloned at $(PREFIX)."; \
 	fi
