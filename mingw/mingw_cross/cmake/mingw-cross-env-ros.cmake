@@ -25,11 +25,21 @@ set(CMAKE_C_FLAGS ${MINGW_CROSS_COMPILE_FLAGS} CACHE PATH "Compile flags for c."
 set(CMAKE_CXX_FLAGS ${MINGW_CROSS_COMPILE_FLAGS} CACHE PATH "Compile flags for c++.")
 
 ###############################
-# Qt
+# Mingw Ecosystem is Static
 ###############################
+set(ROS_BUILD_STATIC_EXES true CACHE BOOL "Build static executables")
+set(ROS_BUILD_SHARED_EXES false CACHE BOOL "Build shared executables")
+set(ROS_BUILD_STATIC_LIBS true CACHE BOOL "Build static libraries")
+set(ROS_BUILD_SHARED_LIBS false CACHE BOOL "Build shared libraries")
 
+set(BUILD_STATIC true CACHE BOOL "Build statically linked binaries")
+set(BUILD_SHARED false CACHE BOOL "Build dynamically linked binaries")
+
+###############################
+# Prepare Qt Environment
+###############################
 set(QT_IS_STATIC 1) # Works on my gentoo (cmake 2.8.1), fails on lucid ubuntu (cmake 2.8.0)
-set(QT_QMAKE_EXECUTABLE ${TOOLCHAIN_TUPLE}-qmake CACHE PATH "Qmake location") 
+set(QT_QMAKE_EXECUTABLE ${TOOLCHAIN_TUPLE}-qmake)
 
 ###############################
 # SSE
@@ -41,6 +51,5 @@ set(HAS_SSE_EXTENSIONS_EXITCODE FALSE CACHE BOOL "Cross-compiling variable en/di
 set(HAS_SSE2_EXTENSIONS_EXITCODE FALSE CACHE BOOL "Cross-compiling variable en/disabling sse2 extensions.")
 set(HAS_SSE3_EXTENSIONS_EXITCODE FALSE CACHE BOOL "Cross-compiling variable en/disabling sse3 extensions.")
 
-# Hide from cache's front page
-#MARK_AS_ADVANCED(CMAKE_GENERATOR CMAKE_FIND_ROOT_PATH CMAKE_TOOLCHAIN_FILE TOOLCHAIN_FAMILY TOOLCHAIN_TUPLE TOOLCHAIN_SYSROOT)
+
 
