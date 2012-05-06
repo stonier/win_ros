@@ -1,9 +1,0 @@
-/**
-\mainpage
-\htmlinclude manifest.html
-
-@section Overview
-
-Includes resources for building windows-ros programs with the mingw cross compiler.
-
-*/
