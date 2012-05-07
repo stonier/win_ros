@@ -389,3 +389,25 @@ diff -NBaur -x .svn -x *.pyc ros_comm/tools/rosbag/src/bag.cpp ros_comm_rosbag/t
  #include <signal.h>
  
  #include <iomanip>
+diff -NBaur -x .svn -x *.pyc ros_comm/tools/rosbag/src/chunked_file.cpp ros_comm_rosbag/tools/rosbag/src/chunked_file.cpp
+--- ros_comm/tools/rosbag/src/chunked_file.cpp	Fri Apr 27 12:45:35 2012
++++ ros_comm_rosbag/tools/rosbag/src/chunked_file.cpp	Mon May  7 22:26:02 2012
+@@ -39,6 +39,18 @@
+ #include <boost/format.hpp>
+ 
+ #include <ros/ros.h>
++#ifdef _WIN32
++#    ifdef __MINGW32__
++#      define fseeko fseeko64
++#      define ftello ftello64
++//     not sure if we need a ftruncate here yet or not
++#    else
++#        define fseeko _fseeki64
++#        define ftello _ftelli64
++#        include <io.h>
++#        define ftruncate _chsize
++#    endif
++#endif
+ 
+ using std::string;
+ using boost::format;
