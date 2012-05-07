@@ -27,4 +27,19 @@ Important:
   - https://code.ros.org/trac/ros/ticket/3943
  - win_find_resources_roslib.patch : help windows find executables with .exe or .bat extensions
   - https://code.ros.org/trac/ros/ticket/3944
+
+\section Other
+
+This may fix the fseeko ftello compile problems in msvc:
+
+#ifdef _WIN32
+#    ifdef __MINGW32__
+#        define fseeko fseeko64
+#      define ftello ftello64
+#    else
+#        define fseeko _fseeki64
+#        define ftello _ftelli64
+#    endif
+#endif
+
 */
