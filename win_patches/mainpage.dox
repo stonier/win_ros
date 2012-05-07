@@ -14,10 +14,6 @@ Important:
 
  - msvc_includes_rospack.patch : starts fixing the includes for msvc (not completely working yet though)
  - avoid_forking_roslaunch.patch : experimental hack to work around the fact that windows cant track its children
- - win_find_resources_roslib.patch : help windows find executables with .exe or .bat extensions
-  - https://code.ros.org/trac/ros/ticket/3944
- - decode_rosout.patch : compiles rosout by fixing string to LogString conversions with the log4cxx decoder.
-  - https://code.ros.org/trac/ros/ticket/3943
  - stop_win32_roslaunch.patch : adds a subroutine for sending signals to kill win32 processes.
   - https://code.ros.org/trac/ros/ticket/3945
 
@@ -25,4 +21,8 @@ Important:
 
  - rostime_static_variables.patch : bugfix an old problem with static variables.
   - https://github.com/ros/roscpp_core/pull/3
+ - decode_rosout.patch : compiles rosout by fixing string to LogString conversions with the log4cxx decoder.
+  - https://code.ros.org/trac/ros/ticket/3943
+ - win_find_resources_roslib.patch : help windows find executables with .exe or .bat extensions
+  - https://code.ros.org/trac/ros/ticket/3944
 */
