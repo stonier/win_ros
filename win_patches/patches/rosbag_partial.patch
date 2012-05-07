@@ -1,3 +1,28 @@
+diff -NBaur -x .svn -x *.pyc ros_comm/tools/CMakeLists.txt ros_comm_rosbag/tools/CMakeLists.txt
+--- ros_comm/tools/CMakeLists.txt	Fri Apr 27 12:45:39 2012
++++ ros_comm_rosbag/tools/CMakeLists.txt	Mon May  7 22:31:33 2012
+@@ -6,7 +6,6 @@
+     # It is add_subdirred from one level up.
+     # rosconsole
+     topic_tools
+-    rosbag
+     rosgraph
+     roslaunch
+     rosout
+@@ -19,6 +18,13 @@
+     )
+   add_subdirectory(${subdir})
+ endforeach()
++
++if(NOT MSVC)
++  foreach(subdir
++    rosbag
++  )
++  add_subdirectory(${subdir})
++endif()
+ 
+ install(PROGRAMS rosservice/scripts/rosservice
+   DESTINATION share/rosservice/scripts
 diff -NBaur -x .svn -x *.pyc ros_comm/tools/rosbag/include/rosbag/bag.h ros_comm_rosbag/tools/rosbag/include/rosbag/bag.h
 --- ros_comm/tools/rosbag/include/rosbag/bag.h	Fri Apr 27 12:45:33 2012
 +++ ros_comm_rosbag/tools/rosbag/include/rosbag/bag.h	Mon May  7 16:14:27 2012
