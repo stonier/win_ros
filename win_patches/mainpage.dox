@@ -16,6 +16,7 @@ Important:
  - avoid_forking_roslaunch.patch : experimental hack to work around the fact that windows cant track its children
  - stop_win32_roslaunch.patch : adds a subroutine for sending signals to kill win32 processes.
   - https://code.ros.org/trac/ros/ticket/3945
+ - topic_tools_windoze.patch : adds windows declspecs.
 
 \section Patched
 
