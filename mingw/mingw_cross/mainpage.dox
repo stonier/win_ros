@@ -8,11 +8,8 @@
      
 \section Usage
      
-     Simply run the following commands.
-     
      @code
-     roscd mingw_cross
-     make         // installs to /opt/mingw and compiles gcc, boost and qt, also adds links.
+     make install        // installs to /opt/mingw and compiles gcc, boost and qt, also adds links.
      @endcode
      
      Further build recipes can be compiled into the toolchain by 
@@ -28,6 +25,16 @@
      make wxwidgets
      @endcode
 
+\subsection Faster
+
+     The above compile takes a long time - you can speed it up by setting the
+     number of jobs in the Makefile.
+
+\subsection Location
+
+     You can change the install location by setting the environment variable
+     MINGW_INSTALL_PREFIX before running make install.
+     
 \section Troubleshooting
 
      <b>Broken Links</b>:
@@ -37,19 +44,12 @@
      
 \section ToDo
     
-     Create apr, apr-util and log4cxx build makefiles and submit upstream.
-     
-     - xxx : take out any temporary patches when mingw cross updates.
-     - apr : backup url's, update and test program.
-     - apr-util : backup url's update and test program.
-     - log4cxx : backup url's and test program.
-    
-     Redo this package so that it installs in a user's directory and adds
-     path information to the setup.sh
+     Upgrade apr, apr-util and fix log4cxx to work with them.
  
 \section ChangeLog
 
-	 - <b>Dec 11</b> : now installs to a non sudo location.
+     - <b>May 12</b> : move to mignw_cross' new github repo.
+     - <b>Dec 11</b> : now installs to a non sudo location.
      - <b>Oct 11</b> : moved to win_ros
      - <b>Oct 11</b> : converting to use hg clone and hg pull instead of the tarball.
      - <b>Nov 10</b> : Done and road tested.

@@ -1,0 +1,30 @@
+<package>
+  <catkin />
+  <description brief="Creates executables to start python scripts in windows">
+
+    Windows python scripts aren't recognised as executables, so alot of the ros
+    build logic will fail when trying to call python scripts because they 
+    utilise the bash logic at the top of the script.
+     
+	This remedies the problem by creating a batch script for each that calls
+	the relevant python script.
+	
+	It also provides various other scripts, utilities, launchers and dependency
+	targets for setting up the runtime.
+
+  </description>
+  <author>Daniel Stonier</author>
+  <license>BSD</license>
+  <review status="experimental" notes=""/>
+  <url>http://ros.org/wiki/msvc_runtime</url>
+  <depend package=win_roscpp_tutorials/>
+  <depend package=rosgraph_msgs/>
+  
+  <!-- Once we fix it to work with msvc 
+  <depend package=rosout/> 
+  -->
+  
+
+</package>
+
+

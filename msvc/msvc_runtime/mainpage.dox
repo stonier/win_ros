@@ -1,0 +1,23 @@
+/**
+\mainpage
+\htmlinclude manifest.html
+
+@section Overview
+
+Windows python scripts aren't recognised as executables, so alot of the ros
+build logic will fail when trying to call python scripts because they 
+utilise the bash logic at the top of the script.
+ 
+This remedies the problem by wrapping each build/bin python script with either 
+exe's or batch files. 
+
+@section how The Fugly
+
+Had problems getting standardised modules like py2exe and pyInstaller working with ros.
+So I quickly hacked a self-describing executable that does the job.
+
+Installation simply copies this exe with the appropriate name into build/bin.
+Batch scripts are alot simpler, but throw up an annoying prompt whenenver you 
+ctrl-c asking for conformation of termination.
+
+*/

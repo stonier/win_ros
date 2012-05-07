@@ -10,17 +10,20 @@
   <license>BSD</license>
   <review status="doc reviewed" notes=""/>
   <url>http://mingw-cross-env.nongnu.org/</url>
-  <!-- provided by win_ros/rosdep.yaml -->
-  <rosdep name="hg"/>
-  <rosdep name="xz"/>
+  <!-- 
+    Provided by rosdep2 but not very useful for a catkin stack yet
+    since you can't rosdep install packages in a catkin stack (no
+    ROS_PACKAGE_PATH).
+
+    On ubuntu: 
+      sudo apt-get install mercurial xz-utils flex bison yasm 
+      sudo apt-get install autoconf libtool intltool scons
+   -->
+  <rosdep name="mecurial"/>
+  <rosdep name="xz-utils"/>
   <rosdep name="flex"/>
   <rosdep name="bison"/>
   <rosdep name="yasm"/>
-  <!-- provided by ros/rosdep.yaml -->
-  <!-- actually supplying these in win_ros/rosdep.yaml for now
-       since huey's oneiric is spitting the dummy about the 
-       official ros/rosdep.yaml and I don't know why yet.
-  -->
   <rosdep name="autoconf"/>
   <rosdep name="libtool"/>
   <rosdep name="intltool"/>

@@ -1,10 +1,8 @@
 #    uri: git://github.com/willowgarage/catkin.git
 - git:
-#    uri: git@github.com:yujinrobot/catkin.git
     uri: https://github.com/yujinrobot/catkin.git
     local-name: catkin
     version: master
-#    version: win
 
 - git:
     uri: git://github.com/willowgarage/catkin-debs.git
@@ -15,7 +13,6 @@
     uri: git://github.com/ros/genmsg.git
     local-name: genmsg
     version: master
-#    version: 90e8fecafddf79f99afe0a1f2d55fe1b56566793
 
 - git:
     uri: git://github.com/ros/gencpp.git
@@ -67,12 +64,10 @@
 
 - git:
     uri: https://github.com/stonier/qt_ros.git
-#    uri: git@github.com:stonier/qt_ros.git
     local-name: qt_ros
     version: master
 
 - git:
-#    uri: git@github.com:stonier/win_ros.git
     uri: https://github.com/stonier/win_ros.git
     local-name: win_ros
     version: master
