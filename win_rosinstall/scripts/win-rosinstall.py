@@ -18,7 +18,7 @@ import os
 import sys
 from optparse import OptionParser
 import yaml
-
+import shutil
 import rosinstall.multiproject_cmd
 import rosinstall.rosinstall_cmd
 
@@ -94,7 +94,7 @@ Later URIs will shadow packages of earlier URIs.\n",
   #  parser.error("rosinstall no longer bootstraps the build, it will not call rosmake or pass it rosdep options") 
 
   if options.version:
-    print("rosinstall 0.5.31\n%s"%rosinstall.multiproject_cmd.cmd_version())
+    print("rosinstall 0.5.32\n%s"%rosinstall.multiproject_cmd.cmd_version())
     sys.exit(0)
   
   if len(args) < 1:
@@ -165,10 +165,13 @@ Later URIs will shadow packages of earlier URIs.\n",
                          options.path,
                          options.nobuild,
                          options.rosdep_yes,
-                         options.catkin,
-                         options.catkinpp)
+                         catkin=True # Let it generate catkin CMakeLists.txt (this version is dated out of date), we overwrite later
+                         )
   # win_ros : create setup.bat
   win_rosinstall.generate_setup(config)
+  # win_ros : create toplevel.cmake->CMakeLists.txt
+  shutil.copy(os.path.join(options.path,'catkin','toplevel.cmake'),
+              os.path.join(options.path,'CMakeLists.txt') )
 
   if not install_success:
      print("Warning: installation encountered errors, but --continue-on-error was requested.  Look above for warnings.")
