@@ -1,0 +1,391 @@
+diff -NBaur -x .svn -x *.pyc ros_comm/tools/rosbag/include/rosbag/bag.h ros_comm_rosbag/tools/rosbag/include/rosbag/bag.h
+--- ros_comm/tools/rosbag/include/rosbag/bag.h	Fri Apr 27 12:45:33 2012
++++ ros_comm_rosbag/tools/rosbag/include/rosbag/bag.h	Mon May  7 16:14:27 2012
+@@ -35,6 +35,7 @@
+ #ifndef ROSBAG_BAG_H
+ #define ROSBAG_BAG_H
+ 
++#include "rosbag/macros.h"
+ #include "rosbag/buffer.h"
+ #include "rosbag/chunked_file.h"
+ #include "rosbag/constants.h"
+@@ -74,7 +75,7 @@
+ class View;
+ class Query;
+ 
+-class Bag
++class ROSBAG_DECL Bag
+ {
+     friend class MessageInstance;
+     friend class View;
+diff -NBaur -x .svn -x *.pyc ros_comm/tools/rosbag/include/rosbag/buffer.h ros_comm_rosbag/tools/rosbag/include/rosbag/buffer.h
+--- ros_comm/tools/rosbag/include/rosbag/buffer.h	Fri Apr 27 12:45:33 2012
++++ ros_comm_rosbag/tools/rosbag/include/rosbag/buffer.h	Mon May  7 16:14:27 2012
+@@ -36,10 +36,11 @@
+ #define ROSBAG_BUFFER_H
+ 
+ #include <stdint.h>
++#include "macros.h"
+ 
+ namespace rosbag {
+ 
+-class Buffer
++class ROSBAG_DECL Buffer
+ {
+ public:
+     Buffer();
+diff -NBaur -x .svn -x *.pyc ros_comm/tools/rosbag/include/rosbag/chunked_file.h ros_comm_rosbag/tools/rosbag/include/rosbag/chunked_file.h
+--- ros_comm/tools/rosbag/include/rosbag/chunked_file.h	Fri Apr 27 12:45:33 2012
++++ ros_comm_rosbag/tools/rosbag/include/rosbag/chunked_file.h	Mon May  7 16:14:27 2012
+@@ -38,7 +38,7 @@
+ #include <ios>
+ #include <stdint.h>
+ #include <string>
+-
++#include "macros.h"
+ #include <boost/shared_ptr.hpp>
+ 
+ #include <bzlib.h>
+@@ -48,7 +48,7 @@
+ namespace rosbag {
+ 
+ //! ChunkedFile reads and writes files which contain interleaved chunks of compressed and uncompressed data.
+-class ChunkedFile
++class ROSBAG_DECL ChunkedFile
+ {
+     friend class Stream;
+ 
+diff -NBaur -x .svn -x *.pyc ros_comm/tools/rosbag/include/rosbag/macros.h ros_comm_rosbag/tools/rosbag/include/rosbag/macros.h
+--- ros_comm/tools/rosbag/include/rosbag/macros.h	Thu Jan  1 09:00:00 1970
++++ ros_comm_rosbag/tools/rosbag/include/rosbag/macros.h	Mon May  7 16:14:27 2012
+@@ -0,0 +1,45 @@
++/*
++ * Copyright (C) 2008, Willow Garage, Inc.
++ *
++ * Redistribution and use in source and binary forms, with or without
++ * modification, are permitted provided that the following conditions are met:
++ *   * Redistributions of source code must retain the above copyright notice,
++ *     this list of conditions and the following disclaimer.
++ *   * Redistributions in binary form must reproduce the above copyright
++ *     notice, this list of conditions and the following disclaimer in the
++ *     documentation and/or other materials provided with the distribution.
++ *   * Neither the names of Stanford University or Willow Garage, Inc. nor the names of its
++ *     contributors may be used to endorse or promote products derived from
++ *     this software without specific prior written permission.
++ *
++ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
++ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
++ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
++ * ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
++ * LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
++ * CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
++ * SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
++ * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
++ * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
++ * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
++ * POSSIBILITY OF SUCH DAMAGE.
++ */
++
++#ifndef ROSBAG_MACROS_H_
++#define ROSBAG_MACROS_H_
++
++#include <ros/macros.h> // for the DECL's
++
++// Import/export for windows dll's and visibility for gcc shared libraries.
++
++#ifdef ROS_BUILD_SHARED_LIBS // ros is being built around shared libraries
++  #ifdef rosbag_EXPORTS // we are building a shared lib/dll
++    #define ROSBAG_DECL ROS_HELPER_EXPORT
++  #else // we are using shared lib/dll
++    #define ROSBAG_DECL ROS_HELPER_IMPORT
++  #endif
++#else // ros is being built around static libraries
++  #define ROSBAG_DECL
++#endif
++
++#endif /* ROSBAG_MACROS_H_ */
+diff -NBaur -x .svn -x *.pyc ros_comm/tools/rosbag/include/rosbag/message_instance.h ros_comm_rosbag/tools/rosbag/include/rosbag/message_instance.h
+--- ros_comm/tools/rosbag/include/rosbag/message_instance.h	Fri Apr 27 12:45:33 2012
++++ ros_comm_rosbag/tools/rosbag/include/rosbag/message_instance.h	Mon May  7 16:14:27 2012
+@@ -40,6 +40,7 @@
+ #include <ros/time.h>
+ 
+ #include "rosbag/structures.h"
++#include "macros.h"
+ 
+ namespace rosbag {
+ 
+@@ -54,7 +55,7 @@
+  *  It adheres to the necessary ros::message_traits to be directly
+  *  serializable.
+  */
+-class MessageInstance
++class ROSBAG_DECL MessageInstance
+ {
+     friend class View;
+   
+diff -NBaur -x .svn -x *.pyc ros_comm/tools/rosbag/include/rosbag/player.h ros_comm_rosbag/tools/rosbag/include/rosbag/player.h
+--- ros_comm/tools/rosbag/include/rosbag/player.h	Fri Apr 27 12:45:33 2012
++++ ros_comm_rosbag/tools/rosbag/include/rosbag/player.h	Mon May  7 16:14:27 2012
+@@ -49,10 +49,11 @@
+ #include "rosbag/bag.h"
+ 
+ #include "rosbag/time_translator.h"
++#include "macros.h"
+ 
+ namespace rosbag {
+ 
+-struct PlayerOptions
++struct ROSBAG_DECL PlayerOptions
+ {
+     PlayerOptions();
+ 
+@@ -79,7 +80,7 @@
+ 
+ 
+ //! PRIVATE. A helper class to track relevant state for publishing time
+-class TimePublisher {
++class ROSBAG_DECL TimePublisher {
+ public:
+     /*! Create a time publisher
+      *  A publish_frequency of < 0 indicates that time shouldn't actually be published
+@@ -140,7 +141,7 @@
+  *  This API is currently considered private, but will be released in the 
+  * future after view.
+  */
+-class Player
++class ROSBAG_DECL Player
+ {
+ public:
+     Player(PlayerOptions const& options);
+diff -NBaur -x .svn -x *.pyc ros_comm/tools/rosbag/include/rosbag/query.h ros_comm_rosbag/tools/rosbag/include/rosbag/query.h
+--- ros_comm/tools/rosbag/include/rosbag/query.h	Fri Apr 27 12:45:33 2012
++++ ros_comm_rosbag/tools/rosbag/include/rosbag/query.h	Mon May  7 16:14:27 2012
+@@ -42,6 +42,7 @@
+ #include <set>
+ 
+ #include <boost/function.hpp>
++#include "macros.h"
+ 
+ namespace rosbag {
+ 
+@@ -49,7 +50,7 @@
+ class ConnectionInfo;
+ class IndexEntry;
+ 
+-class Query
++class ROSBAG_DECL Query
+ {
+ public:
+     //! The base query takes an optional time-range
+@@ -72,7 +73,7 @@
+     ros::Time end_time_;
+ };
+ 
+-class TopicQuery
++class ROSBAG_DECL TopicQuery
+ {
+ public:
+     TopicQuery(std::string const& topic);
+@@ -84,7 +85,7 @@
+     std::vector<std::string> topics_;
+ };
+ 
+-class TypeQuery
++class ROSBAG_DECL TypeQuery
+ {
+ public:
+     TypeQuery(std::string const& type);
+@@ -97,7 +98,7 @@
+ };
+ 
+ //! Pairs of queries and the bags they come from (used internally by View)
+-struct BagQuery
++struct ROSBAG_DECL BagQuery
+ {
+     BagQuery(Bag const* _bag, Query const& _query, uint32_t _bag_revision);
+ 
+@@ -106,7 +107,7 @@
+     uint32_t   bag_revision;
+ };
+ 
+-struct MessageRange
++struct ROSBAG_DECL MessageRange
+ {
+     MessageRange(std::multiset<IndexEntry>::const_iterator const& _begin,
+                  std::multiset<IndexEntry>::const_iterator const& _end,
+@@ -120,7 +121,7 @@
+ };
+ 
+ //! The actual iterator data structure
+-struct ViewIterHelper
++struct ROSBAG_DECL ViewIterHelper
+ {
+     ViewIterHelper(std::multiset<IndexEntry>::const_iterator _iter, MessageRange const* _range);
+ 
+diff -NBaur -x .svn -x *.pyc ros_comm/tools/rosbag/include/rosbag/recorder.h ros_comm_rosbag/tools/rosbag/include/rosbag/recorder.h
+--- ros_comm/tools/rosbag/include/rosbag/recorder.h	Fri Apr 27 12:45:33 2012
++++ ros_comm_rosbag/tools/rosbag/include/rosbag/recorder.h	Mon May  7 16:14:27 2012
+@@ -56,10 +56,11 @@
+ 
+ #include "rosbag/bag.h"
+ #include "rosbag/stream.h"
++#include "rosbag/macros.h"
+ 
+ namespace rosbag {
+ 
+-class OutgoingMessage
++class ROSBAG_DECL OutgoingMessage
+ {
+ public:
+     OutgoingMessage(std::string const& _topic, topic_tools::ShapeShifter::ConstPtr _msg, boost::shared_ptr<ros::M_string> _connection_header, ros::Time _time);
+@@ -70,7 +71,7 @@
+     ros::Time                           time;
+ };
+ 
+-class OutgoingQueue
++class ROSBAG_DECL OutgoingQueue
+ {
+ public:
+     OutgoingQueue(std::string const& _filename, std::queue<OutgoingMessage>* _queue, ros::Time _time);
+@@ -80,7 +81,7 @@
+     ros::Time                    time;
+ };
+ 
+-struct RecorderOptions
++struct ROSBAG_DECL RecorderOptions
+ {
+     RecorderOptions();
+ 
+@@ -106,7 +107,7 @@
+     std::vector<std::string> topics;
+ };
+ 
+-class Recorder
++class ROSBAG_DECL Recorder
+ {
+ public:
+     Recorder(RecorderOptions const& options);
+diff -NBaur -x .svn -x *.pyc ros_comm/tools/rosbag/include/rosbag/stream.h ros_comm_rosbag/tools/rosbag/include/rosbag/stream.h
+--- ros_comm/tools/rosbag/include/rosbag/stream.h	Fri Apr 27 12:45:33 2012
++++ ros_comm_rosbag/tools/rosbag/include/rosbag/stream.h	Mon May  7 16:14:27 2012
+@@ -44,6 +44,7 @@
+ #include <bzlib.h>
+ 
+ #include "rosbag/exceptions.h"
++#include "rosbag/macros.h"
+ 
+ namespace rosbag {
+ 
+@@ -59,7 +60,7 @@
+ 
+ class ChunkedFile;
+ 
+-class Stream
++class ROSBAG_DECL Stream
+ {
+ public:
+     Stream(ChunkedFile* file);
+@@ -93,7 +94,7 @@
+     ChunkedFile* file_;
+ };
+ 
+-class StreamFactory
++class ROSBAG_DECL StreamFactory
+ {
+ public:
+     StreamFactory(ChunkedFile* file);
+@@ -105,7 +106,7 @@
+     boost::shared_ptr<Stream> bz2_stream_;
+ };
+ 
+-class UncompressedStream : public Stream
++class ROSBAG_DECL UncompressedStream : public Stream
+ {
+ public:
+     UncompressedStream(ChunkedFile* file);
+@@ -121,7 +122,7 @@
+ /*!
+  * BZ2Stream uses libbzip2 (http://www.bzip.org) for reading/writing compressed data in the BZ2 format.
+  */
+-class BZ2Stream : public Stream
++class ROSBAG_DECL BZ2Stream : public Stream
+ {
+ public:
+     BZ2Stream(ChunkedFile* file);
+diff -NBaur -x .svn -x *.pyc ros_comm/tools/rosbag/include/rosbag/structures.h ros_comm_rosbag/tools/rosbag/include/rosbag/structures.h
+--- ros_comm/tools/rosbag/include/rosbag/structures.h	Fri Apr 27 12:45:33 2012
++++ ros_comm_rosbag/tools/rosbag/include/rosbag/structures.h	Mon May  7 16:14:27 2012
+@@ -40,6 +40,7 @@
+ 
+ #include "ros/time.h"
+ #include "ros/ros.h"
++#include "macros.h"
+ 
+ namespace rosbag {
+ 
+@@ -56,7 +57,7 @@
+     boost::shared_ptr<ros::M_string> header;
+ };
+ 
+-ros::AdvertiseOptions createAdvertiseOptions(const ConnectionInfo* c, uint32_t queue_size);
++ROSBAG_DECL ros::AdvertiseOptions createAdvertiseOptions(const ConnectionInfo* c, uint32_t queue_size);
+ 
+ struct ChunkInfo
+ {
+diff -NBaur -x .svn -x *.pyc ros_comm/tools/rosbag/include/rosbag/time_translator.h ros_comm_rosbag/tools/rosbag/include/rosbag/time_translator.h
+--- ros_comm/tools/rosbag/include/rosbag/time_translator.h	Fri Apr 27 12:45:33 2012
++++ ros_comm_rosbag/tools/rosbag/include/rosbag/time_translator.h	Mon May  7 16:14:27 2012
+@@ -36,6 +36,7 @@
+ #define ROSBAG_TIME_TRANSLATOR_H
+ 
+ #include "ros/time.h"
++#include "macros.h"
+ 
+ namespace rosbag {
+ 
+@@ -51,7 +52,7 @@
+  * That is, a time-sequence with time-scale 2 will finish twice as
+  * quickly.
+  */
+-class TimeTranslator
++class ROSBAG_DECL TimeTranslator
+ {
+ public:
+     TimeTranslator();
+diff -NBaur -x .svn -x *.pyc ros_comm/tools/rosbag/include/rosbag/view.h ros_comm_rosbag/tools/rosbag/include/rosbag/view.h
+--- ros_comm/tools/rosbag/include/rosbag/view.h	Fri Apr 27 12:45:33 2012
++++ ros_comm_rosbag/tools/rosbag/include/rosbag/view.h	Mon May  7 16:14:27 2012
+@@ -40,6 +40,7 @@
+ 
+ #include "rosbag/message_instance.h"
+ #include "rosbag/query.h"
++#include "rosbag/macros.h"
+ 
+ namespace rosbag {
+ 
+@@ -47,7 +48,7 @@
+ class IndexEntry;
+ class ViewIterHelper;
+ 
+-class View
++class ROSBAG_DECL View
+ {
+     friend class Bag;
+ 
+diff -NBaur -x .svn -x *.pyc ros_comm/tools/rosbag/src/bag.cpp ros_comm_rosbag/tools/rosbag/src/bag.cpp
+--- ros_comm/tools/rosbag/src/bag.cpp	Fri Apr 27 12:45:35 2012
++++ ros_comm_rosbag/tools/rosbag/src/bag.cpp	Mon May  7 16:14:28 2012
+@@ -30,7 +30,11 @@
+ #include "rosbag/query.h"
+ #include "rosbag/view.h"
+ 
+-#include <inttypes.h>
++#if defined(_MSC_VER)
++  #include <stdint.h> // only on v2010 and later -> is this enough for msvc and linux?
++#else
++  #include <inttypes.h>
++#endif
+ #include <signal.h>
+ 
+ #include <iomanip>
