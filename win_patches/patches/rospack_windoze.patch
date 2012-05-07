@@ -1,7 +1,7 @@
-diff -NBaur -x .hg rospack/CMakeLists.txt rospack_mods/CMakeLists.txt
+diff -NBaur -x .svn -x .hg rospack/CMakeLists.txt C:\work\src\rospack/CMakeLists.txt
 --- rospack/CMakeLists.txt	Thu May  3 18:27:02 2012
-+++ rospack_mods/CMakeLists.txt	Thu May  3 18:17:35 2012
-@@ -14,7 +14,7 @@
++++ C:\work\src\rospack/CMakeLists.txt	Mon May  7 12:12:55 2012
+@@ -14,10 +14,10 @@
    message(STATUS "Rospack building shared objects.")
  else()
    message(STATUS "Rospack building static objects.")
@@ -9,11 +9,15 @@ diff -NBaur -x .hg rospack/CMakeLists.txt rospack_mods/CMakeLists.txt
 +  add_definitions(-DROS_BUILD_STATIC_LIBS) # tinyxml.h:86,  macros.h
  endif()
  
- add_definitions(-Wall)
-diff -NBaur -x .hg rospack/include/rospack/macros.h rospack_mods/include/rospack/macros.h
+-add_definitions(-Wall)
++#add_definitions(-Wall)
+ 
+ set(API_BACKCOMPAT_V1 "YES"
+     CACHE BOOL "Whether to enable backwards compatibility with old C++ API")
+diff -NBaur -x .svn -x .hg rospack/include/rospack/macros.h C:\work\src\rospack/include/rospack/macros.h
 --- rospack/include/rospack/macros.h	Thu Jan  1 09:00:00 1970
-+++ rospack_mods/include/rospack/macros.h	Thu May  3 18:17:54 2012
-@@ -0,0 +1,70 @@
++++ C:\work\src\rospack/include/rospack/macros.h	Mon May  7 12:40:00 2012
+@@ -0,0 +1,75 @@
 +/*
 + * Copyright (C) 2008, Willow Garage, Inc.
 + *
@@ -69,8 +73,13 @@ diff -NBaur -x .hg rospack/include/rospack/macros.h rospack_mods/include/rospack
 +
 +// Ignore warnings about import/exports when deriving from std classes.
 +#ifdef _MSC_VER
-+  #pragma warning(disable: 4251)
-+  #pragma warning(disable: 4275)
++  #pragma warning(disable:4251)
++  #pragma warning(disable:4275)
++  #pragma warning(disable:4514) // unreferenced inline function has been removed
++  #pragma warning(disable:4668) // warnigns about used, but not defined macros, replacing with 0
++  #pragma warning(disable:4710) // function not inlined
++  #pragma warning(disable:4738) // storing floats, memory splitting, possible loss in performance
++  #pragma warning(disable:4820) // structs and padding
 +#endif
 +
 +#ifdef ROS_BUILD_STATIC_LIBS // ros is being built around shared libraries
@@ -84,9 +93,9 @@ diff -NBaur -x .hg rospack/include/rospack/macros.h rospack_mods/include/rospack
 +#endif
 +
 +#endif /* ROSPACK_MACROS_H_ */
-diff -NBaur -x .hg rospack/include/rospack/rospack.h rospack_mods/include/rospack/rospack.h
+diff -NBaur -x .svn -x .hg rospack/include/rospack/rospack.h C:\work\src\rospack/include/rospack/rospack.h
 --- rospack/include/rospack/rospack.h	Thu May  3 18:27:02 2012
-+++ rospack_mods/include/rospack/rospack.h	Thu May  3 18:20:28 2012
++++ C:\work\src\rospack/include/rospack/rospack.h	Mon May  7 12:14:49 2012
 @@ -111,6 +111,7 @@
  #include <vector>
  #include <set>
@@ -122,9 +131,9 @@ diff -NBaur -x .hg rospack/include/rospack/rospack.h rospack_mods/include/rospac
  {
    public:
      /**
-diff -NBaur -x .hg rospack/include/rospack/rospack_backcompat.h rospack_mods/include/rospack/rospack_backcompat.h
+diff -NBaur -x .svn -x .hg rospack/include/rospack/rospack_backcompat.h C:\work\src\rospack/include/rospack/rospack_backcompat.h
 --- rospack/include/rospack/rospack_backcompat.h	Thu May  3 18:27:02 2012
-+++ rospack_mods/include/rospack/rospack_backcompat.h	Thu May  3 18:20:17 2012
++++ C:\work\src\rospack/include/rospack/rospack_backcompat.h	Mon May  7 12:15:13 2012
 @@ -30,6 +30,7 @@
  #define ROSPACK_ROSPACK_BACKCOMPAT_H
  
@@ -142,9 +151,9 @@ diff -NBaur -x .hg rospack/include/rospack/rospack_backcompat.h rospack_mods/inc
  {
    private:
      std::string output_;
-diff -NBaur -x .hg rospack/src/rospack.cpp rospack_mods/src/rospack.cpp
+diff -NBaur -x .svn -x .hg rospack/src/rospack.cpp C:\work\src\rospack/src/rospack.cpp
 --- rospack/src/rospack.cpp	Thu May  3 18:27:02 2012
-+++ rospack_mods/src/rospack.cpp	Thu May  3 17:21:04 2012
++++ C:\work\src\rospack/src/rospack.cpp	Mon May  7 12:14:56 2012
 @@ -36,14 +36,20 @@
  #if defined(WIN32)
    #include <windows.h>
@@ -173,15 +182,104 @@ diff -NBaur -x .hg rospack/src/rospack.cpp rospack_mods/src/rospack.cpp
  #endif
  
  #include <climits>
-diff -NBaur -x .hg rospack/src/rospack_cmdline.h rospack_mods/src/rospack_cmdline.h
+diff -NBaur -x .svn -x .hg rospack/src/rospack_cmdline.cpp C:\work\src\rospack/src/rospack_cmdline.cpp
+--- rospack/src/rospack_cmdline.cpp	Thu May  3 18:27:02 2012
++++ C:\work\src\rospack/src/rospack_cmdline.cpp	Mon May  7 12:38:53 2012
+@@ -27,6 +27,7 @@
+ 
+ #include "rospack/rospack.h"
+ #include "utils.h"
++#include "rospack_cmdline.h"
+ 
+ #include <boost/program_options.hpp>
+ #include <boost/algorithm/string.hpp>
+@@ -37,15 +38,13 @@
+ 
+ namespace po = boost::program_options;
+ 
+-namespace rospack
+-{
++namespace rospack {
+ 
+-bool parse_args(int argc, char** argv, 
++bool parse_args(int argc, char** argv,
+                 rospack::Rosstackage& rp,
+                 po::variables_map& vm);
+ 
+-bool
+-rospack_run(int argc, char** argv, rospack::Rosstackage& rp, std::string& output)
++bool rospack_run(int argc, char** argv, rospack::Rosstackage& rp, std::string& output)
+ {
+   po::variables_map vm;
+ 
+@@ -792,7 +791,7 @@
+ }
+ 
+ bool
+-parse_args(int argc, char** argv, 
++parse_args(int argc, char** argv,
+            rospack::Rosstackage& rp, po::variables_map& vm)
+ {
+   po::options_description desc("Allowed options");
+@@ -825,4 +824,4 @@
+   return true;
+ }
+ 
+-}
++} // namespace rospack
+diff -NBaur -x .svn -x .hg rospack/src/rospack_cmdline.h C:\work\src\rospack/src/rospack_cmdline.h
 --- rospack/src/rospack_cmdline.h	Thu May  3 18:27:02 2012
-+++ rospack_mods/src/rospack_cmdline.h	Thu May  3 18:25:17 2012
-@@ -33,7 +33,7 @@
++++ C:\work\src\rospack/src/rospack_cmdline.h	Mon May  7 12:27:51 2012
+@@ -28,12 +28,13 @@
+ #ifndef ROSPACK_ROSPACK_CMDLINE_H
+ #define ROSPACK_ROSPACK_CMDLINE_H
+ 
++#include "../include/rospack/macros.h"
+ #include "rospack/rospack.h"
+ 
  namespace rospack
  {
  
 -bool rospack_run(int argc, char** argv, 
-+bool rospack_run(int argc, char** argv,
++ROSPACK_DECL bool rospack_run(int argc, char** argv,
                   rospack::Rosstackage& rp, 
                   std::string& output);
  
+diff -NBaur -x .svn -x .hg rospack/src/utils.cpp C:\work\src\rospack/src/utils.cpp
+--- rospack/src/utils.cpp	Thu May  3 18:27:02 2012
++++ C:\work\src\rospack/src/utils.cpp	Mon May  7 12:40:57 2012
+@@ -29,7 +29,8 @@
+ #include <vector>
+ #include <boost/algorithm/string.hpp>
+ #include <boost/tr1/unordered_set.hpp>
+-        
++#include "utils.h"
++
+ namespace rospack
+ {
+ 
+diff -NBaur -x .svn -x .hg rospack/src/utils.h C:\work\src\rospack/src/utils.h
+--- rospack/src/utils.h	Thu May  3 18:27:02 2012
++++ C:\work\src\rospack/src/utils.h	Mon May  7 12:40:28 2012
+@@ -28,6 +28,7 @@
+ #ifndef ROSPACK_UTILS_H
+ #define ROSPACK_UTILS_H
+ 
++#include "../include/rospack/macros.h"
+ #include <string>
+ 
+ namespace rospack
+@@ -37,11 +38,11 @@
+ static const char* ROSPACK_NAME = "rospack";
+ static const char* ROSSTACK_NAME = "rosstack";
+ 
+-void deduplicate_tokens(const std::string& instring, 
++ROSPACK_DECL void deduplicate_tokens(const std::string& instring,
+                         bool last,
+                         std::string& outstring);
+ 
+-void
++ROSPACK_DECL void
+ parse_compiler_flags(const std::string& instring, 
+                      const std::string& token,
+                      bool select,
