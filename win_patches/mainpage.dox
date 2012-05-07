@@ -16,6 +16,7 @@ Important:
  - avoid_forking_roslaunch.patch : experimental hack to work around the fact that windows cant track its children
  - stop_win32_roslaunch.patch : adds a subroutine for sending signals to kill win32 processes.
   - https://code.ros.org/trac/ros/ticket/3945
+ - message_filters_windoze.patch : adds windows declspecs.
  - topic_tools_windoze.patch : adds windows declspecs.
  - rosbag_partial.patch : adds windows declspecs, but still not compiling.
 
@@ -27,19 +28,5 @@ Important:
   - https://code.ros.org/trac/ros/ticket/3943
  - win_find_resources_roslib.patch : help windows find executables with .exe or .bat extensions
   - https://code.ros.org/trac/ros/ticket/3944
-
-\section Other
-
-This may fix the fseeko ftello compile problems in msvc:
-
-#ifdef _WIN32
-#    ifdef __MINGW32__
-#        define fseeko fseeko64
-#      define ftello ftello64
-#    else
-#        define fseeko _fseeki64
-#        define ftello _ftelli64
-#    endif
-#endif
 
 */
