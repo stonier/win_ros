@@ -17,7 +17,9 @@ Important:
  - stop_win32_roslaunch.patch : adds a subroutine for sending signals to kill win32 processes.
   - https://code.ros.org/trac/ros/ticket/3945
  - message_filters_windoze.patch : adds windows declspecs.
+  - https://code.ros.org/trac/ros/ticket/3958
  - topic_tools_windoze.patch : adds windows declspecs.
+  - https://code.ros.org/trac/ros/ticket/3957
  - rosbag_partial.patch : adds windows declspecs, but still not compiling.
 
 \section Patched
