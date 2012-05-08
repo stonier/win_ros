@@ -1,7 +1,7 @@
 /**
  * @file /src/ros_bin.cpp
  *
- * @brief Self describing executable for launching python scripts in ${ROS_ROOT}/bin
+ * @brief Self describing executable for launching python scripts in /bin
  *
  * @date March 2011
  **/
@@ -18,10 +18,9 @@
   #include <windows.h>
 #endif
 
-char name[256];
-std::string ros_bin_dir;
+char exe_name[MAX_PATH];
 std::stringstream arguments;
-std::string python_home, python_file, python_exe;
+std::string python_home, python_script, python_exe;
 
 /*****************************************************************************
 ** Functions
@@ -30,10 +29,9 @@ std::string python_home, python_file, python_exe;
 void debug() {
 	std::cout << std::endl;
 	std::cout << "Program Variables:" << std::endl;
-	std::cout << "  Ros bin: " << ros_bin_dir << std::endl;
 	std::cout << "  Python exe: " << python_exe << std::endl;
-	std::cout << "  Target name: " << name << std::endl;
-	std::cout << "  Target python file: " << python_file << std::endl;
+	std::cout << "  Executable: " << exe_name << std::endl;
+	std::cout << "  Python script: " << python_script << std::endl;
 	std::cout << "  Arguments: " << arguments.str() << std::endl;
 	std::cout << std::endl;
 }
@@ -44,27 +42,18 @@ void debug() {
 
 int main(int argc, char **argv) {
 
-	name[0] = '\0';
+	exe_name[0] = '\0';
 #ifdef WIN32
-	_splitpath_s(argv[0], NULL, 0, NULL, 0, name, 256, NULL, 0);
-	//for ( int i = 0; i < argc; ++i ) {
-	//	std::cout << "Argument[" << i << "] " << argv[i] << std::endl;
-	//}
+	//_splitpath_s(argv[0], NULL, 0, NULL, 0, name, 256, NULL, 0);
 
-	ros_bin_dir = "@ROS_BIN_DIR@";
+    // could use GetModuleHandleW, WCHAR, GetModuleFileNameW, wcout and wstring here instead.
+	HMODULE hModule = GetModuleHandle(NULL);
+    GetModuleFileName(hModule, exe_name, MAX_PATH);
+    python_script = std::string(exe_name);
+    python_script.replace(python_script.end()-4, python_script.end(), ""); // replace trailing ".exe" with ""
 
-//	python_home = std::getenv("PYTHONHOME");
-//	std::transform(python_home.begin(), python_home.end(), python_home.begin(), ::tolower);
-//	std::string::iterator iter;
-//	for ( iter = python_home.begin(); iter < python_home.end(); ++iter ) {
-//		if ( *iter == '\\' ) {
-//			*iter = '/';
-//		}
-//	}
-
-	python_file = ros_bin_dir+std::string("/") + std::string(name);
 	python_exe = python_home + std::string("python");
-	arguments << python_exe << " " << python_file;
+	arguments << python_exe << " " << python_script;
 	for ( int i = 1; i < argc; ++i ) {
 		// need the quotes to make sure spaces dont muck things up
 		arguments << " \"" << argv[i] << "\"";

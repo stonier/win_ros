@@ -2,11 +2,11 @@
 # Files
 ###############################################################################
 
-set(ROS_BIN_DIR ${CMAKE_BINARY_DIR}/bin)
+#set(ROS_BIN_DIR ${CMAKE_BINARY_DIR}/bin)
 
-configure_file(${CMAKE_CURRENT_SOURCE_DIR}/ros_bin.cpp.in
-    ${CMAKE_CURRENT_SOURCE_DIR}/ros_bin.cpp
-    )
+#configure_file(${CMAKE_CURRENT_SOURCE_DIR}/ros_bin.cpp.in
+#    ${CMAKE_CURRENT_SOURCE_DIR}/ros_bin.cpp
+#    )
 
 macro(add_pyexe name)
   # make the target name unique so we don't clash (e.g. rosbag target)
