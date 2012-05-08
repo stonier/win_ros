@@ -24,6 +24,8 @@ Important:
 
 \section Patched
 
+ - genpy : modified install locations for installing python msg/srv packages.
+  - https://github.com/ros/genpy/pull/5
  - rostime_static_variables.patch : bugfix an old problem with static variables.
   - https://github.com/ros/roscpp_core/pull/3
  - decode_rosout.patch : compiles rosout by fixing string to LogString conversions with the log4cxx decoder.
