@@ -17,14 +17,13 @@ macro(add_pyexe name)
 endmacro()
 
 add_pyexe(rosmaster)
-# Not working yet (python issues)
 add_pyexe(roscore)
 add_pyexe(rostopic)
 add_pyexe(roslaunch)
-add_pyexe(rosbag)
+#add_pyexe(rosbag) # Not ported yet.
 add_pyexe(rosparam)
 add_pyexe(rosversion)
-#add_pyexe(rosservice)
-#add_pyexe(rosrun)
-#add_pyexe(roswtf)
+add_pyexe(rosservice)
+add_pyexe(rosrun)
+add_pyexe(roswtf)
 
