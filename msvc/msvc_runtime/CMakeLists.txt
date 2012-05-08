@@ -19,7 +19,7 @@ if(WIN32)
       rosgraph_msgs_genpy
       rosout
   )
-  
+  install(DIRECTORY resources DESTINATION share/${PROJECT_NAME}) 
 else()
   message(WARNING "This package is only useful when compiling for windows.")
 endif()
