@@ -22,8 +22,9 @@
     local-name: gencpp
     version: master
 
+#uri: 'git://github.com/ros/genpy.git'
 - git:
-    uri: 'git://github.com/ros/genpy.git'
+    uri: 'git://github.com/yujinrobot/genpy.git'
     local-name: genpy
     version: master
 
