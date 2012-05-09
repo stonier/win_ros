@@ -35,13 +35,17 @@ Currently, I assume that:
  - all tools required by the build environment are installed (including windows sdk7.1).
  - rosdeps are installed in C:\opt\rosdeps\x86
 
-\section Execution
+\section Connection
 
 Slave connection:
 
 @code
 > hudson.bat
 @endcode
+
+You can verify the status of the connection at http://build.willowgarage.com/job/roswin/.
+
+\section Execution
 
 Open the trigger url in a browser:
 
