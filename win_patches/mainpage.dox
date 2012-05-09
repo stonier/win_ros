@@ -18,12 +18,13 @@ Important:
   - https://code.ros.org/trac/ros/ticket/3945
  - message_filters_windoze.patch : adds windows declspecs.
   - https://code.ros.org/trac/ros/ticket/3958
- - topic_tools_windoze.patch : adds windows declspecs.
-  - https://code.ros.org/trac/ros/ticket/3957
  - rosbag_partial.patch : adds windows declspecs, but still not compiling.
-
+ - rospy_noop_badtopics.patch : bugfix to hacked nooop code to avoid spammy exceptions
+  - https://code.ros.org/trac/ros/ticket/3959
 \section Patched
 
+ - topic_tools_windoze.patch : adds windows declspecs.
+  - https://code.ros.org/trac/ros/ticket/3957
  - genpy : modified install locations for installing python msg/srv packages.
   - https://github.com/ros/genpy/pull/5
  - rostime_static_variables.patch : bugfix an old problem with static variables.
