@@ -23,7 +23,7 @@ This is an ''ugly'', but necessary constraint of the script on the hudson server
  - Create the working directory and download a few scripts.
 
 @code
-> mkdir %USERPROFILE%/hudson/workspace/roswin
+> mkdir -p %USERPROFILE%\hudson\workspace\roswin
 > cd %USERPROFILE%/hudson/workspace/roswin
 > wget --no-check-certificate https://raw.github.com/stonier/win_ros/master/win_sdk/scripts/schebang.bat
 > wget --no-check-certificate https://raw.github.com/stonier/win_ros/master/win_hudson/resources/hudson.bat
