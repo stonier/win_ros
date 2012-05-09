@@ -12,7 +12,7 @@ rm -rf %PWD%\build
 rm -rf %PWD%\src
 
 echo "Rosinstalling, patching and build configuration"
-wget --no-check-certificate https://raw.github.com/stonier/win_ros/master/win_sdk/scripts/fuerte/download.bat
+wget --no-check-certificate https://raw.github.com/stonier/win_ros/master/msvc/msvc_sdk/scripts/fuerte/download.bat
 call download
 echo "Build - cmake"
 REM call %PWD%\src\setup.bat
