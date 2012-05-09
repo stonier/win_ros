@@ -1,0 +1,21 @@
+diff -NBaur -x .svn -x *.pyc ros_comm/clients/rospy/src/rospy/topics.py ros_comm_rospy/clients/rospy/src/rospy/topics.py
+--- ros_comm/clients/rospy/src/rospy/topics.py	Fri Apr 27 12:45:48 2012
++++ ros_comm_rospy/clients/rospy/src/rospy/topics.py	Wed May  9 10:12:25 2012
+@@ -205,11 +205,16 @@
+                 self.poller = self.noop
+                 self.add_fd = self.noop
+                 self.remove_fd = self.noop
+-                self.error_iter = self.noop
++                self.error_iter = self.noop_error_poll_iter
+ 
+     def noop(self, *args):
+         pass
+ 
++    def noop_error_poll_iter(self):
++        empty_generator = (x for x in list())
++        for x in empty_generator:
++            yield x
++            
+     def add_poll(self, fd):
+         self.poller.register(fd)
+ 
