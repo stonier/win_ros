@@ -25,7 +25,7 @@ This is an ''ugly'', but necessary constraint of the script on the hudson server
 @code
 > mkdir -p %USERPROFILE%\hudson\workspace\roswin
 > cd %USERPROFILE%/hudson/workspace/roswin
-> wget --no-check-certificate https://raw.github.com/stonier/win_ros/master/win_sdk/scripts/fuerte/schebang.bat
+> wget --no-check-certificate https://raw.github.com/stonier/win_ros/master/msvc/msvc_sdk/scripts/fuerte/schebang.bat
 > wget --no-check-certificate https://raw.github.com/stonier/win_ros/master/msvc/msvc_hudson/resources/hudson.bat
 > wget --no-check-certificate https://raw.github.com/stonier/win_ros/master/msvc/msvc_hudson/resources/slave.jar
 @endcode
