@@ -15,7 +15,7 @@ Resources to get the auto-build up and running on hudson.
 
 \section machineSetup Machine Setup
 
- - Install [[http://www.java.com/en/download/index.jsp|java]]
+ - Install java: http://www.java.com/en/download/index.jsp
  - Create a user `rosbuild`.
 
 This is an ''ugly'', but necessary constraint of the script on the hudson server. It also needs a specific directory in which to operate (i.e. look for the script that needs to be run).
