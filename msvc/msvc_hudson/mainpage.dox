@@ -43,7 +43,7 @@ Slave connection:
 > hudson.bat
 @endcode
 
-You can verify the status of the connection at http://build.willowgarage.com/job/roswin/.
+You can verify the status of the connection at http://build.willowgarage.com/computer/win7-64/.
 
 \section Execution
 
