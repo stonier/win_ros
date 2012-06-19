@@ -3,10 +3,10 @@ from distutils.core import setup
 
 
 setup(name='win_rosinstall',
-      version= '0.5.32',
-      packages=['win_rosinstall', 'rosinstall', 'vcstools'],
+      version= '0.6.17',
+      packages=['rosinstall', 'vcstools'],
       package_dir = {'':'src'},
-      scripts = ["scripts/win-rosinstall.py", "scripts/win-rosinstall.bat"],
+      scripts = ["scripts/win-rosinstall.py", "scripts/win-rosinstall.bat", "scripts/win-setupfiles.py"],
       author = "Daniel Stonier", 
       author_email = "d.stonier@gmail.com",
       url = "http://code.google.com/p/win-ros-pkg/wiki/WinRosinstall",
