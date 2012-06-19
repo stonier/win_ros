@@ -40,17 +40,17 @@
 - svn:
     uri: 'https://code.ros.org/svn/ros/stacks/ros_comm/trunk/'
     local-name: ros_comm
-    version: r16718
+#    version: r16718
 
 - svn:
     uri: 'https://code.ros.org/svn/ros/stacks/ros/trunk/'
     local-name: ros
-    version: r16718
+#    version: r16718
 
 - svn:
     uri: 'https://code.ros.org/svn/ros-pkg/stacks/common_msgs/trunk'
     local-name: common_msgs
-    version: r39405
+#    version: r39405
 
 - git:
     local-name: rospkg
