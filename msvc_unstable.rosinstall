@@ -9,58 +9,54 @@
 - git:
     uri: 'git://github.com/willowgarage/catkin-debs.git'
     local-name: catkin-debs
-    version: 69fbacbd503568fd87de6b0f1cb01b4d4cf14238
+    version: master
 
 - git:
     uri: 'git://github.com/ros/genmsg.git'
     local-name: genmsg
-    version: 407ed8d616571324dc9d5c74e59f6ec0b0ec43aa 
+    version: master 
 #    version: 90e8fecafddf79f99afe0a1f2d55fe1b56566793
 
 - git:
     uri: 'git://github.com/ros/gencpp.git'
     local-name: gencpp
-    version: 2a02af2421ba37f9a9f68b9c91d75dd0274af613
+    version: master
 
 - git:
     uri: 'git://github.com/ros/genpy.git'
     local-name: genpy
-    version: ffa9d219521a9d0550707ee69ecde08f6232b3af
+    version: master
 
 - git:
     uri: 'git://github.com/ros/std_msgs.git'
     local-name: std_msgs
-    version: 044dea4662585e9de2f3345486897f133a720fd1
+    version: master
 
 - git:
     uri: 'git://github.com/ros/roscpp_core.git'
     local-name: roscpp_core
-    version: ddfb916d830f0f658b0e68be2128ab0c15445ad3 
+    version: master
 
 - svn:
     uri: 'https://code.ros.org/svn/ros/stacks/ros_comm/trunk/'
     local-name: ros_comm
-    version: r16718
 
 - svn:
     uri: 'https://code.ros.org/svn/ros/stacks/ros/trunk/'
     local-name: ros
-    version: r16718
 
 - svn:
     uri: 'https://code.ros.org/svn/ros-pkg/stacks/common_msgs/trunk'
     local-name: common_msgs
-    version: r39405
 
 - git:
     local-name: rospkg
     uri: https://github.com/ros/rospkg.git
-    version: 6a0bf6633df113b5dfc3fdccbb14e42566214bb1
+    version: master
 
 - hg:
     local-name: rospack
     uri: https://kforge.ros.org/rosrelease/rospack
-    version: 102:02de7ff9c947
 
 #- hg:
 #    local-name: actionlib
