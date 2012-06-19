@@ -15,7 +15,6 @@
     uri: 'git://github.com/ros/genmsg.git'
     local-name: genmsg
     version: 407ed8d616571324dc9d5c74e59f6ec0b0ec43aa 
-#    version: 90e8fecafddf79f99afe0a1f2d55fe1b56566793
 
 - git:
     uri: 'git://github.com/ros/gencpp.git'
@@ -40,17 +39,17 @@
 - svn:
     uri: 'https://code.ros.org/svn/ros/stacks/ros_comm/trunk/'
     local-name: ros_comm
-#    version: r16718
+    version: r16718
 
 - svn:
     uri: 'https://code.ros.org/svn/ros/stacks/ros/trunk/'
     local-name: ros
-#    version: r16718
+    version: r16718
 
 - svn:
     uri: 'https://code.ros.org/svn/ros-pkg/stacks/common_msgs/trunk'
     local-name: common_msgs
-#    version: r39405
+    version: r39405
 
 - git:
     local-name: rospkg
