@@ -1,6 +1,20 @@
-diff -NBaur roscpp_core_original/rostime/include/ros/time.h roscpp_core/rostime/include/ros/time.h
---- roscpp_core_original/rostime/include/ros/time.h	2012-06-21 12:32:51.331706471 +0900
-+++ roscpp_core/rostime/include/ros/time.h	2012-06-21 12:33:19.243706154 +0900
+diff -NBaur roscpp_core/rostime/include/ros/duration.h roscpp_core_rostime/rostime/include/ros/duration.h
+--- roscpp_core/rostime/include/ros/duration.h	2012-06-21 18:06:35.731479604 +0900
++++ roscpp_core_rostime/rostime/include/ros/duration.h	2012-06-21 18:04:27.467481057 +0900
+@@ -124,8 +124,8 @@
+   bool sleep() const;
+ };
+ 
+-extern const Duration DURATION_MAX;
+-extern const Duration DURATION_MIN;
++extern ROSTIME_DECL const Duration DURATION_MAX;
++extern ROSTIME_DECL const Duration DURATION_MIN;
+ 
+ /**
+  * \brief Duration representation for use with the WallTime class.
+diff -NBaur roscpp_core/rostime/include/ros/time.h roscpp_core_rostime/rostime/include/ros/time.h
+--- roscpp_core/rostime/include/ros/time.h	2012-06-21 18:06:47.631479469 +0900
++++ roscpp_core_rostime/rostime/include/ros/time.h	2012-06-21 18:03:44.803481540 +0900
 @@ -213,8 +213,8 @@
      static Time fromBoost(const boost::posix_time::time_duration& d);
    };
