@@ -10,8 +10,8 @@ until those patches are accepted upstream.
 
 \section Patches
 
-Important:
-
+ - roscpp_core_rostime_decl.patch : add declspecs for TIME_MIN and TIME_MAX.
+  - ready to make ticked upstream once I've tested.
  - msvc_includes_rospack.patch : starts fixing the includes for msvc (not completely working yet though)
  - avoid_forking_roslaunch.patch : experimental hack to work around the fact that windows cant track its children
  - stop_win32_roslaunch.patch : adds a subroutine for sending signals to kill win32 processes.
@@ -21,6 +21,7 @@ Important:
  - rosbag_partial.patch : adds windows declspecs, but still not compiling.
  - rospy_noop_badtopics.patch : bugfix to hacked nooop code to avoid spammy exceptions
   - https://code.ros.org/trac/ros/ticket/3959
+
 \section Patched
 
  - topic_tools_windoze.patch : adds windows declspecs.
