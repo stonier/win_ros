@@ -1,0 +1,14 @@
+diff -NBaur roscpp_core_original/rostime/include/ros/time.h roscpp_core/rostime/include/ros/time.h
+--- roscpp_core_original/rostime/include/ros/time.h	2012-06-21 12:32:51.331706471 +0900
++++ roscpp_core/rostime/include/ros/time.h	2012-06-21 12:33:19.243706154 +0900
+@@ -213,8 +213,8 @@
+     static Time fromBoost(const boost::posix_time::time_duration& d);
+   };
+ 
+-  extern const Time TIME_MAX;
+-  extern const Time TIME_MIN;
++  extern ROSTIME_DECL const Time TIME_MAX;
++  extern ROSTIME_DECL const Time TIME_MIN;
+ 
+   /**
+    * \brief Time representation.  Always wall-clock time.
