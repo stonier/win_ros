@@ -1,13 +1,14 @@
 <stack>
+  <name>win_ros</name>
+  <version>0.1.01</version>
   <description brief="Resources enabling ros on windows">
     Setup and utilities for ros on windows.
   </description>
-  <author>Maintained by Daniel Stonier</author>
+  <author email="d.stonier@gmail.com">Daniel Stonier</author>
   <license>BSD</license>  
+  <copyright>Yujin Robot</copyright>
   <review status="experimental" notes=""/>
   <url>http://ros.org/wiki/win_ros</url>
-  <depend stack="ros" />
-  <depend stack="ros_comm" /> <!-- rospy, roscpp -->
-  <depend stack="rosidl" />
-  <depend stack="cmake" />
+  <build_depends>ros</build_depends>
+  <build_depends>ros_comm</build_depends>
 </stack>
