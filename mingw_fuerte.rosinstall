@@ -2,7 +2,7 @@
 - git:
     uri: https://github.com/yujinrobot/catkin.git
     local-name: catkin
-    version: master
+    version: 2711b0c46379ecf1af2d3a483a67dbf173339075
 
 - git:
     uri: git://github.com/willowgarage/catkin-debs.git
@@ -76,5 +76,5 @@
 - git:
     uri: https://github.com/stonier/win_ros.git
     local-name: win_ros
-    version: master
+    version: e52e7f85867cb4b16824f93a5d388f3dc87be66e
 
