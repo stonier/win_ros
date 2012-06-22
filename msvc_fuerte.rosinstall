@@ -49,11 +49,6 @@
     local-name: common_msgs
     version: r39405
 
-- git:
-    local-name: rospkg
-    uri: https://github.com/ros/rospkg.git
-    version: 6a0bf6633df113b5dfc3fdccbb14e42566214bb1
-
 - hg:
     local-name: rospack
     uri: https://kforge.ros.org/rosrelease/rospack
