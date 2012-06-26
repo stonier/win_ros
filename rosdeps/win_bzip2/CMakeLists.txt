@@ -23,6 +23,7 @@ set(LIBRARY_SOURCES
 add_definitions(-DWIN32 -D_FILE_OFFSET_BITS=64 -nologo)
 add_library(bzip2 ${LIBRARY_SOURCES})
 add_subdirectory(src)
+add_subdirectory(cmake)
 
 install(TARGETS bzip2 
         RUNTIME DESTINATION bin
