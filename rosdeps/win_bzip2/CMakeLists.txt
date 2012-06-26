@@ -22,6 +22,16 @@ set(LIBRARY_SOURCES
 		
 add_definitions(-DWIN32 -D_FILE_OFFSET_BITS=64 -nologo)
 add_library(bzip2 ${LIBRARY_SOURCES})
+add_subdirectory(src)
+
+install(TARGETS bzip2 
+        RUNTIME DESTINATION bin
+        ARCHIVE DESTINATION lib
+        LIBRARY DESTINATION lib
+        )
+if( NOT CMAKE_BUILD_TYPE STREQUAL "Release")
+  install(FILES ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/bzip2.pdb DESTINATION bin)
+endif() 
 
 #GENERATE_EXPORT_HEADER( bzip2
 #             BASE_NAME bzip2
