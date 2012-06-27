@@ -3,7 +3,7 @@ get_filename_component(CWD ${CMAKE_CURRENT_LIST_FILE} PATH)
 ###########################
 # WinRos
 ###########################
-set(ROSDEPS_ROOT "C:/opt/rosdeps/x86" CACHE STRING "System root for many rosdep installations.")
+set(ROSDEPS_ROOT "C:/opt/rosdeps/fuerte/x86" CACHE STRING "System root for ros dependency.")
 set(INSTALL_ROOT "C:/opt/ros/fuerte/x86" CACHE PATH "Install root.")
 
 ###########################
