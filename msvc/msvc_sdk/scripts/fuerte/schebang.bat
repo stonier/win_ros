@@ -29,6 +29,7 @@ echo "Usage: call with args from ['clean', 'all', 'download', 'build', 'install'
 goto End
 
 :Clean
+@echo on
 echo.
 echo "Cleaning the workspace"
 rm -f %PWD%\download.bat
@@ -36,9 +37,10 @@ rm -f %PWD%\configure.bat
 rm -f *.cmake
 rm -rf %INSTALL_ROOT%\ros\fuerte
 rm -rf %INSTALL_ROOT%\rosws\fuerte
-rm -f %INSTALL_ROOT%\sdk-fuerte-x86-vx10-%SDK_VERSION%.zip
+rm -f %INSTALL_ROOT%\%SDK_ZIP%
 rm -rf %PWD%\build
 rm -rf %PWD%\src
+@echo off
 if X%COMMAND%==Xall (
   goto Download
 ) else (
@@ -50,8 +52,9 @@ echo.
 echo "Rosinstalling, patching and cmake invocation"
 cd %PWD%
 wget --no-check-certificate https://raw.github.com/stonier/win_ros/master/msvc/msvc_sdk/scripts/fuerte/download.bat
-call download
-REM call %PWD%\src\setup.bat
+rem call download
+call download unstable
+rem call %PWD%\src\setup.bat
 call configure
 if X%COMMAND%==Xall (
   goto Build
@@ -78,9 +81,10 @@ cd %PWD%
 cd build
 nmake install
 cd ..
+echo -- Installing %INSTALL_ROOT%\rosws\fuerte\sdk-tutorials
 rm -rf C:\opt\rosws\fuerte
 mkdir C:\opt\rosws\fuerte
-cp -r %PWD%\src\win_ros\msvc\msvc_sdk\sdk_projects\fuerte\sdk-tutorials C:\opt\rosws\fuerte\sdk-tutorials
+cp -r %PWD%\src\win_ros\msvc\msvc_sdk\sdk_projects\fuerte\sdk-tutorials %INSTALL_ROOT%\rosws\fuerte\sdk-tutorials
 if X%COMMAND%==Xall (
   goto Package
 ) else (
