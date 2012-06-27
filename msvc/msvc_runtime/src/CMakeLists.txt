@@ -22,7 +22,6 @@ add_pyexe(rostopic)
 add_pyexe(roslaunch)
 add_pyexe(rosbag)
 add_pyexe(rosparam)
-add_pyexe(rosversion)
 add_pyexe(rosservice)
 #add_pyexe(rosrun) # It's a bash file, not a python file
 add_pyexe(roswtf)
