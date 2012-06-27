@@ -12,13 +12,15 @@ until those patches are accepted upstream.
 
  - msvc_includes_rospack.patch : starts fixing the includes for msvc (not completely working yet though)
  - avoid_forking_roslaunch.patch : experimental hack to work around the fact that windows cant track its children
+ - roslaunch_popen_shells.patch : lets us use .bat scripts to call python code and execute via popen.
+  - not committing upstream yet as using shells is considered a security problem
  - stop_win32_roslaunch.patch : adds a subroutine for sending signals to kill win32 processes.
   - https://code.ros.org/trac/ros/ticket/3945
  - message_filters_windoze.patch : adds windows declspecs.
   - https://code.ros.org/trac/ros/ticket/3958
- - rosbag_partial.patch : adds windows declspecs, but still not compiling.
  - rospy_noop_badtopics.patch : bugfix to hacked nooop code to avoid spammy exceptions
   - https://code.ros.org/trac/ros/ticket/3959
+ - rosbag_partial.patch : adds windows declspecs, but still not compiling.
 
 \section Patched
 

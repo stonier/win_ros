@@ -1,0 +1,15 @@
+diff -Nbaur ros_comm/tools/roslaunch/src/roslaunch/loader.py ros_comm_roslaunch_shells/tools/roslaunch/src/roslaunch/loader.py
+--- ros_comm/tools/roslaunch/src/roslaunch/loader.py	Fri Jun 22 11:06:38 2012
++++ ros_comm_roslaunch_shells/tools/roslaunch/src/roslaunch/loader.py	Wed Jun 27 15:48:43 2012
+@@ -463,7 +463,10 @@
+                 print "... executing command param [%s]"%command
+             import subprocess, shlex #shlex rocks
+             try:
+-                p = subprocess.Popen(shlex.split(command), stdout=subprocess.PIPE)
++			    # Need the shell to be able to call windows .bat python starters,
++				# possible security hazard if the input is untrusted though. Refer to
++ 				#   http://docs.python.org/library/subprocess.html#using-the-subprocess-module
++                p = subprocess.Popen(shlex.split(command), stdout=subprocess.PIPE, shell=True) 
+                 c_value = p.communicate()[0]
+                 if p.returncode != 0:
+                     raise ValueError("Cannot load command parameter [%s]: command [%s] returned with code [%s]"%(name, command, p.returncode))
