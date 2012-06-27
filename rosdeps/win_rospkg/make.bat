@@ -1,5 +1,6 @@
 @ECHO OFF
 
+set PWD=%~dp0
 set COMMAND=%1
 if X%COMMAND%==X set COMMAND=all
 if X%COMMAND%==Xhelp goto Help
@@ -35,6 +36,7 @@ if X%COMMAND%==Xall (
 )
 
 :Distro
+echo.
 echo "Building msi installer."
 cd rospkg
 python setup.py bdist_msi
@@ -46,6 +48,7 @@ if X%COMMAND%==Xall (
 )
 
 :Upload
+echo.
 echo "Uploading to file server."
 cd rospkg/dist
 scp *.msi files@files.yujinrobot.com:pub/appupdater/python/2.7/
@@ -54,9 +57,7 @@ goto End
 
 :Clean
 rd /S /Q %cd%\rospkg
-GOTO End
-
-
-GOTO End
+goto End
 
 :End
+cd %PWD%
