@@ -1,0 +1,15 @@
+﻿Build started 2012-06-26 오후 5:51:19.
+     1>Project "C:\opt\sdk-tutorials-fuerte-x86-vs10\ros\init_test\init_test.vcxproj" on node 2 (rebuild target(s)).
+     1>InitializeBuildStatus:
+         Creating "ReleaseWithDebugSymbol\init_test.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Yc"StdAfx.h" /Fp"ReleaseWithDebugSymbol\init_test.pch" /Fo"ReleaseWithDebugSymbol\\" /Fd"ReleaseWithDebugSymbol\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
+         stdafx.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"ReleaseWithDebugSymbol\init_test.pch" /Fo"ReleaseWithDebugSymbol\\" /Fd"ReleaseWithDebugSymbol\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt init_test.cpp
+         init_test.cpp
+     1>init_test.cpp(7): fatal error C1083: Cannot open include file: 'ros/ros.h': No such file or directory
+     1>Done Building Project "C:\opt\sdk-tutorials-fuerte-x86-vs10\ros\init_test\init_test.vcxproj" (rebuild target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:01.40

@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros">
+    <ROS_DIR>$(SolutionDir)..\..\..\ros</ROS_DIR>
+    <ROSDEPS_DIR>$(SolutionDir)..\..\..\rosdeps</ROSDEPS_DIR>
+    <ROS_VER>fuerte</ROS_VER>
+    <MACHINE_TYPE>x86</MACHINE_TYPE>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(ROSDEPS_DIR)\$(ROS_VER)\$(MACHINE_TYPE)\include;$(ROS_DIR)\$(ROS_VER)\$(MACHINE_TYPE)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>ROS_BUILD_SHARED_LIBS=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(ROSDEPS_DIR)\$(ROS_VER)\$(MACHINE_TYPE)\lib;$(ROS_DIR)\$(ROS_VER)\$(MACHINE_TYPE)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>roscpp.lib;roscpp_serialization.lib;rosconsole.lib;rostime.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>
+      </AdditionalOptions>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <BuildMacro Include="ROS_DIR">
+      <Value>$(ROS_DIR)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="ROSDEPS_DIR">
+      <Value>$(ROSDEPS_DIR)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="ROS_VER">
+      <Value>$(ROS_VER)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="MACHINE_TYPE">
+      <Value>$(MACHINE_TYPE)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+  </ItemGroup>
+</Project>
