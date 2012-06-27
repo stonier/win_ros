@@ -7,7 +7,7 @@ $(LocalDebuggerEnvironment)</LocalDebuggerEnvironment>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <LocalDebuggerEnvironment>PATH=C:\opt\rosdeps\x86\lib;C:\opt\rosdeps\x86\bin;C:\opt\ros\fuerte\x86\lib;C:\opt\ros\fuerte\x86\bin;$(Path)
+    <LocalDebuggerEnvironment>PATH=$(ROSDEPS_DIR)\$(ROS_VER)\$(MACHINE_TYPE)\lib;$(ROS_DIR)\$(ROS_VER)\$(MACHINE_TYPE)\lib;$(ROSDEPS_DIR)\$(ROS_VER)\$(MACHINE_TYPE)\bin;$(ROS_DIR)\$(ROS_VER)\$(MACHINE_TYPE)\bin;$(Path)
 ROS_MASTER_URI=http://localhost:11311
 $(LocalDebuggerEnvironment)</LocalDebuggerEnvironment>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
