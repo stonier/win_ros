@@ -5,7 +5,6 @@ rm -f ros.sdf
 rm -f ros.suo
 rm -rf Debug
 rm -rf ipch
-rm -rf init_test
 rm -rf Release
 rm -rf listener/Debug
 rm -rf listener/Release
