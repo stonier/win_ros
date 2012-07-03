@@ -20,7 +20,9 @@ until those patches are accepted upstream.
   - https://code.ros.org/trac/ros/ticket/3958
  - rospy_noop_badtopics.patch : bugfix to hacked nooop code to avoid spammy exceptions
   - https://code.ros.org/trac/ros/ticket/3959
- - rosbag_partial.patch : adds windows declspecs, but still not compiling.
+ - rosbag_decl.patch : adds windows declspecs, class->struct warning removals.
+  - https://code.ros.org/trac/ros/ticket/3997
+ - rosbag_dodgy.patch : lets it compile, but fairly broken.
 
 \section Patched
 
