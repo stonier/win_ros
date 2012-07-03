@@ -1,6 +1,6 @@
-diff -NBaur ros_comm/tools/rosbag/include/rosbag/bag.h ros_comm_rosbag/tools/rosbag/include/rosbag/bag.h
---- ros_comm/tools/rosbag/include/rosbag/bag.h	Fri Jun 22 11:06:35 2012
-+++ ros_comm_rosbag/tools/rosbag/include/rosbag/bag.h	Thu Jun 21 12:44:51 2012
+diff -NBaur -x .svn ros_comm/tools/rosbag/include/rosbag/bag.h ros_comm_decl/tools/rosbag/include/rosbag/bag.h
+--- ros_comm/tools/rosbag/include/rosbag/bag.h	2012-07-03 11:37:13.836151266 +0900
++++ ros_comm_decl/tools/rosbag/include/rosbag/bag.h	2012-07-03 11:35:17.812154662 +0900
 @@ -35,6 +35,7 @@
  #ifndef ROSBAG_BAG_H
  #define ROSBAG_BAG_H
@@ -18,9 +18,9 @@ diff -NBaur ros_comm/tools/rosbag/include/rosbag/bag.h ros_comm_rosbag/tools/ros
  {
      friend class MessageInstance;
      friend class View;
-diff -NBaur ros_comm/tools/rosbag/include/rosbag/buffer.h ros_comm_rosbag/tools/rosbag/include/rosbag/buffer.h
---- ros_comm/tools/rosbag/include/rosbag/buffer.h	Fri Jun 22 11:06:35 2012
-+++ ros_comm_rosbag/tools/rosbag/include/rosbag/buffer.h	Thu Jun 21 12:44:51 2012
+diff -NBaur -x .svn ros_comm/tools/rosbag/include/rosbag/buffer.h ros_comm_decl/tools/rosbag/include/rosbag/buffer.h
+--- ros_comm/tools/rosbag/include/rosbag/buffer.h	2012-07-03 11:37:13.836151266 +0900
++++ ros_comm_decl/tools/rosbag/include/rosbag/buffer.h	2012-07-03 11:35:17.812154662 +0900
 @@ -36,10 +36,11 @@
  #define ROSBAG_BUFFER_H
  
@@ -34,9 +34,9 @@ diff -NBaur ros_comm/tools/rosbag/include/rosbag/buffer.h ros_comm_rosbag/tools/
  {
  public:
      Buffer();
-diff -NBaur ros_comm/tools/rosbag/include/rosbag/chunked_file.h ros_comm_rosbag/tools/rosbag/include/rosbag/chunked_file.h
---- ros_comm/tools/rosbag/include/rosbag/chunked_file.h	Fri Jun 22 11:06:35 2012
-+++ ros_comm_rosbag/tools/rosbag/include/rosbag/chunked_file.h	Thu Jun 21 12:44:51 2012
+diff -NBaur -x .svn ros_comm/tools/rosbag/include/rosbag/chunked_file.h ros_comm_decl/tools/rosbag/include/rosbag/chunked_file.h
+--- ros_comm/tools/rosbag/include/rosbag/chunked_file.h	2012-07-03 11:37:13.836151266 +0900
++++ ros_comm_decl/tools/rosbag/include/rosbag/chunked_file.h	2012-07-03 11:35:17.812154662 +0900
 @@ -38,7 +38,7 @@
  #include <ios>
  #include <stdint.h>
@@ -55,9 +55,9 @@ diff -NBaur ros_comm/tools/rosbag/include/rosbag/chunked_file.h ros_comm_rosbag/
  {
      friend class Stream;
  
-diff -NBaur ros_comm/tools/rosbag/include/rosbag/macros.h ros_comm_rosbag/tools/rosbag/include/rosbag/macros.h
---- ros_comm/tools/rosbag/include/rosbag/macros.h	Thu Jan  1 09:00:00 1970
-+++ ros_comm_rosbag/tools/rosbag/include/rosbag/macros.h	Thu Jun 21 12:44:51 2012
+diff -NBaur -x .svn ros_comm/tools/rosbag/include/rosbag/macros.h ros_comm_decl/tools/rosbag/include/rosbag/macros.h
+--- ros_comm/tools/rosbag/include/rosbag/macros.h	1970-01-01 09:00:00.000000000 +0900
++++ ros_comm_decl/tools/rosbag/include/rosbag/macros.h	2012-07-03 11:35:17.812154662 +0900
 @@ -0,0 +1,45 @@
 +/*
 + * Copyright (C) 2008, Willow Garage, Inc.
@@ -104,9 +104,9 @@ diff -NBaur ros_comm/tools/rosbag/include/rosbag/macros.h ros_comm_rosbag/tools/
 +#endif
 +
 +#endif /* ROSBAG_MACROS_H_ */
-diff -NBaur ros_comm/tools/rosbag/include/rosbag/message_instance.h ros_comm_rosbag/tools/rosbag/include/rosbag/message_instance.h
---- ros_comm/tools/rosbag/include/rosbag/message_instance.h	Fri Jun 22 11:06:35 2012
-+++ ros_comm_rosbag/tools/rosbag/include/rosbag/message_instance.h	Thu Jun 21 12:44:51 2012
+diff -NBaur -x .svn ros_comm/tools/rosbag/include/rosbag/message_instance.h ros_comm_decl/tools/rosbag/include/rosbag/message_instance.h
+--- ros_comm/tools/rosbag/include/rosbag/message_instance.h	2012-07-03 11:37:13.840151266 +0900
++++ ros_comm_decl/tools/rosbag/include/rosbag/message_instance.h	2012-07-03 11:35:17.812154662 +0900
 @@ -40,6 +40,7 @@
  #include <ros/time.h>
  
@@ -124,24 +124,10 @@ diff -NBaur ros_comm/tools/rosbag/include/rosbag/message_instance.h ros_comm_ros
  {
      friend class View;
    
-diff -NBaur ros_comm/tools/rosbag/include/rosbag/player.h ros_comm_rosbag/tools/rosbag/include/rosbag/player.h
---- ros_comm/tools/rosbag/include/rosbag/player.h	Fri Jun 22 11:06:35 2012
-+++ ros_comm_rosbag/tools/rosbag/include/rosbag/player.h	Thu Jun 21 17:13:08 2012
-@@ -36,9 +36,11 @@
- #define ROSBAG_PLAYER_H
- 
- #include <sys/stat.h>
--#include <termios.h>
-+#if !defined(_MSC_VER)
-+  #include <termios.h>
-+  #include <unistd.h>
-+#endif
- #include <time.h>
--#include <unistd.h>
- 
- #include <queue>
- #include <string>
-@@ -49,10 +51,11 @@
+diff -NBaur -x .svn ros_comm/tools/rosbag/include/rosbag/player.h ros_comm_decl/tools/rosbag/include/rosbag/player.h
+--- ros_comm/tools/rosbag/include/rosbag/player.h	2012-07-03 11:37:13.836151266 +0900
++++ ros_comm_decl/tools/rosbag/include/rosbag/player.h	2012-07-03 11:35:17.812154662 +0900
+@@ -49,10 +49,11 @@
  #include "rosbag/bag.h"
  
  #include "rosbag/time_translator.h"
@@ -154,7 +140,7 @@ diff -NBaur ros_comm/tools/rosbag/include/rosbag/player.h ros_comm_rosbag/tools/
  {
      PlayerOptions();
  
-@@ -79,7 +82,7 @@
+@@ -79,7 +80,7 @@
  
  
  //! PRIVATE. A helper class to track relevant state for publishing time
@@ -163,7 +149,7 @@ diff -NBaur ros_comm/tools/rosbag/include/rosbag/player.h ros_comm_rosbag/tools/
  public:
      /*! Create a time publisher
       *  A publish_frequency of < 0 indicates that time shouldn't actually be published
-@@ -140,7 +143,7 @@
+@@ -140,7 +141,7 @@
   *  This API is currently considered private, but will be released in the 
   * future after view.
   */
@@ -172,20 +158,9 @@ diff -NBaur ros_comm/tools/rosbag/include/rosbag/player.h ros_comm_rosbag/tools/
  {
  public:
      Player(PlayerOptions const& options);
-@@ -175,8 +178,10 @@
- 
-     // Terminal
-     bool    terminal_modified_;
-+#if !defined(_MSC_VER)
-     termios orig_flags_;
-     fd_set  stdin_fdset_;
-+#endif
-     int     maxfd_;
- 
-     TimeTranslator time_translator_;
-diff -NBaur ros_comm/tools/rosbag/include/rosbag/query.h ros_comm_rosbag/tools/rosbag/include/rosbag/query.h
---- ros_comm/tools/rosbag/include/rosbag/query.h	Fri Jun 22 11:06:35 2012
-+++ ros_comm_rosbag/tools/rosbag/include/rosbag/query.h	Fri Jun 22 08:07:19 2012
+diff -NBaur -x .svn ros_comm/tools/rosbag/include/rosbag/query.h ros_comm_decl/tools/rosbag/include/rosbag/query.h
+--- ros_comm/tools/rosbag/include/rosbag/query.h	2012-07-03 11:37:13.840151266 +0900
++++ ros_comm_decl/tools/rosbag/include/rosbag/query.h	2012-07-03 11:35:17.812154662 +0900
 @@ -42,14 +42,15 @@
  #include <set>
  
@@ -259,24 +234,10 @@ diff -NBaur ros_comm/tools/rosbag/include/rosbag/query.h ros_comm_rosbag/tools/r
  {
      bool operator()(ViewIterHelper const& a, ViewIterHelper const& b);
  };
-diff -NBaur ros_comm/tools/rosbag/include/rosbag/recorder.h ros_comm_rosbag/tools/rosbag/include/rosbag/recorder.h
---- ros_comm/tools/rosbag/include/rosbag/recorder.h	Fri Jun 22 11:06:35 2012
-+++ ros_comm_rosbag/tools/rosbag/include/rosbag/recorder.h	Thu Jun 21 17:18:33 2012
-@@ -36,9 +36,11 @@
- #define ROSBAG_RECORDER_H
- 
- #include <sys/stat.h>
--#include <termios.h>
-+#if !defined(_MSC_VER)
-+  #include <termios.h>
-+  #include <unistd.h>
-+#endif
- #include <time.h>
--#include <unistd.h>
- 
- #include <queue>
- #include <string>
-@@ -56,10 +58,11 @@
+diff -NBaur -x .svn ros_comm/tools/rosbag/include/rosbag/recorder.h ros_comm_decl/tools/rosbag/include/rosbag/recorder.h
+--- ros_comm/tools/rosbag/include/rosbag/recorder.h	2012-07-03 11:37:13.840151266 +0900
++++ ros_comm_decl/tools/rosbag/include/rosbag/recorder.h	2012-07-03 11:35:17.812154662 +0900
+@@ -56,10 +56,11 @@
  
  #include "rosbag/bag.h"
  #include "rosbag/stream.h"
@@ -289,7 +250,7 @@ diff -NBaur ros_comm/tools/rosbag/include/rosbag/recorder.h ros_comm_rosbag/tool
  {
  public:
      OutgoingMessage(std::string const& _topic, topic_tools::ShapeShifter::ConstPtr _msg, boost::shared_ptr<ros::M_string> _connection_header, ros::Time _time);
-@@ -70,7 +73,7 @@
+@@ -70,7 +71,7 @@
      ros::Time                           time;
  };
  
@@ -298,7 +259,7 @@ diff -NBaur ros_comm/tools/rosbag/include/rosbag/recorder.h ros_comm_rosbag/tool
  {
  public:
      OutgoingQueue(std::string const& _filename, std::queue<OutgoingMessage>* _queue, ros::Time _time);
-@@ -80,7 +83,7 @@
+@@ -80,7 +81,7 @@
      ros::Time                    time;
  };
  
@@ -307,7 +268,7 @@ diff -NBaur ros_comm/tools/rosbag/include/rosbag/recorder.h ros_comm_rosbag/tool
  {
      RecorderOptions();
  
-@@ -106,7 +109,7 @@
+@@ -106,7 +107,7 @@
      std::vector<std::string> topics;
  };
  
@@ -316,9 +277,9 @@ diff -NBaur ros_comm/tools/rosbag/include/rosbag/recorder.h ros_comm_rosbag/tool
  {
  public:
      Recorder(RecorderOptions const& options);
-diff -NBaur ros_comm/tools/rosbag/include/rosbag/stream.h ros_comm_rosbag/tools/rosbag/include/rosbag/stream.h
---- ros_comm/tools/rosbag/include/rosbag/stream.h	Fri Jun 22 11:06:35 2012
-+++ ros_comm_rosbag/tools/rosbag/include/rosbag/stream.h	Thu Jun 21 12:44:51 2012
+diff -NBaur -x .svn ros_comm/tools/rosbag/include/rosbag/stream.h ros_comm_decl/tools/rosbag/include/rosbag/stream.h
+--- ros_comm/tools/rosbag/include/rosbag/stream.h	2012-07-03 11:37:13.836151266 +0900
++++ ros_comm_decl/tools/rosbag/include/rosbag/stream.h	2012-07-03 11:35:17.812154662 +0900
 @@ -44,6 +44,7 @@
  #include <bzlib.h>
  
@@ -363,9 +324,9 @@ diff -NBaur ros_comm/tools/rosbag/include/rosbag/stream.h ros_comm_rosbag/tools/
  {
  public:
      BZ2Stream(ChunkedFile* file);
-diff -NBaur ros_comm/tools/rosbag/include/rosbag/structures.h ros_comm_rosbag/tools/rosbag/include/rosbag/structures.h
---- ros_comm/tools/rosbag/include/rosbag/structures.h	Fri Jun 22 11:06:35 2012
-+++ ros_comm_rosbag/tools/rosbag/include/rosbag/structures.h	Fri Jun 22 08:04:42 2012
+diff -NBaur -x .svn ros_comm/tools/rosbag/include/rosbag/structures.h ros_comm_decl/tools/rosbag/include/rosbag/structures.h
+--- ros_comm/tools/rosbag/include/rosbag/structures.h	2012-07-03 11:37:13.840151266 +0900
++++ ros_comm_decl/tools/rosbag/include/rosbag/structures.h	2012-07-03 11:35:17.812154662 +0900
 @@ -40,10 +40,11 @@
  
  #include "ros/time.h"
@@ -414,9 +375,9 @@ diff -NBaur ros_comm/tools/rosbag/include/rosbag/structures.h ros_comm_rosbag/to
  {
      bool operator()(ros::Time const& a, IndexEntry const& b) const { return a < b.time; }
      bool operator()(IndexEntry const& a, ros::Time const& b) const { return a.time < b; }
-diff -NBaur ros_comm/tools/rosbag/include/rosbag/time_translator.h ros_comm_rosbag/tools/rosbag/include/rosbag/time_translator.h
---- ros_comm/tools/rosbag/include/rosbag/time_translator.h	Fri Jun 22 11:06:35 2012
-+++ ros_comm_rosbag/tools/rosbag/include/rosbag/time_translator.h	Thu Jun 21 12:44:51 2012
+diff -NBaur -x .svn ros_comm/tools/rosbag/include/rosbag/time_translator.h ros_comm_decl/tools/rosbag/include/rosbag/time_translator.h
+--- ros_comm/tools/rosbag/include/rosbag/time_translator.h	2012-07-03 11:37:13.840151266 +0900
++++ ros_comm_decl/tools/rosbag/include/rosbag/time_translator.h	2012-07-03 11:35:17.812154662 +0900
 @@ -36,6 +36,7 @@
  #define ROSBAG_TIME_TRANSLATOR_H
  
@@ -434,9 +395,9 @@ diff -NBaur ros_comm/tools/rosbag/include/rosbag/time_translator.h ros_comm_rosb
  {
  public:
      TimeTranslator();
-diff -NBaur ros_comm/tools/rosbag/include/rosbag/view.h ros_comm_rosbag/tools/rosbag/include/rosbag/view.h
---- ros_comm/tools/rosbag/include/rosbag/view.h	Fri Jun 22 11:06:35 2012
-+++ ros_comm_rosbag/tools/rosbag/include/rosbag/view.h	Fri Jun 22 08:07:28 2012
+diff -NBaur -x .svn ros_comm/tools/rosbag/include/rosbag/view.h ros_comm_decl/tools/rosbag/include/rosbag/view.h
+--- ros_comm/tools/rosbag/include/rosbag/view.h	2012-07-03 11:37:13.836151266 +0900
++++ ros_comm_decl/tools/rosbag/include/rosbag/view.h	2012-07-03 11:35:17.812154662 +0900
 @@ -40,14 +40,15 @@
  
  #include "rosbag/message_instance.h"
@@ -457,151 +418,3 @@ diff -NBaur ros_comm/tools/rosbag/include/rosbag/view.h ros_comm_rosbag/tools/ro
  {
      friend class Bag;
  
-diff -NBaur ros_comm/tools/rosbag/src/bag.cpp ros_comm_rosbag/tools/rosbag/src/bag.cpp
---- ros_comm/tools/rosbag/src/bag.cpp	Fri Jun 22 11:06:36 2012
-+++ ros_comm_rosbag/tools/rosbag/src/bag.cpp	Thu Jun 21 12:44:51 2012
-@@ -30,7 +30,11 @@
- #include "rosbag/query.h"
- #include "rosbag/view.h"
- 
--#include <inttypes.h>
-+#if defined(_MSC_VER)
-+  #include <stdint.h> // only on v2010 and later -> is this enough for msvc and linux?
-+#else
-+  #include <inttypes.h>
-+#endif
- #include <signal.h>
- 
- #include <iomanip>
-diff -NBaur ros_comm/tools/rosbag/src/chunked_file.cpp ros_comm_rosbag/tools/rosbag/src/chunked_file.cpp
---- ros_comm/tools/rosbag/src/chunked_file.cpp	Fri Jun 22 11:06:36 2012
-+++ ros_comm_rosbag/tools/rosbag/src/chunked_file.cpp	Thu Jun 21 12:44:51 2012
-@@ -39,6 +39,18 @@
- #include <boost/format.hpp>
- 
- #include <ros/ros.h>
-+#ifdef _WIN32
-+#    ifdef __MINGW32__
-+#      define fseeko fseeko64
-+#      define ftello ftello64
-+//     not sure if we need a ftruncate here yet or not
-+#    else
-+#        define fseeko _fseeki64
-+#        define ftello _ftelli64
-+#        include <io.h>
-+#        define ftruncate _chsize
-+#    endif
-+#endif
- 
- using std::string;
- using boost::format;
-diff -NBaur ros_comm/tools/rosbag/src/player.cpp ros_comm_rosbag/tools/rosbag/src/player.cpp
---- ros_comm/tools/rosbag/src/player.cpp	Fri Jun 22 11:06:36 2012
-+++ ros_comm_rosbag/tools/rosbag/src/player.cpp	Thu Jun 21 17:16:20 2012
-@@ -36,7 +36,9 @@
- #include "rosbag/message_instance.h"
- #include "rosbag/view.h"
- 
--#include <sys/select.h>
-+#if !defined(_MSC_VER)
-+  #include <sys/select.h>
-+#endif
- 
- #include <boost/foreach.hpp>
- #include <boost/format.hpp>
-@@ -401,6 +403,7 @@
- 	if (terminal_modified_)
- 		return;
- 
-+#if !defined(_MSC_VER)
-     const int fd = fileno(stdin);
-     termios flags;
-     tcgetattr(fd, &orig_flags_);
-@@ -413,7 +416,7 @@
-     FD_ZERO(&stdin_fdset_);
-     FD_SET(fd, &stdin_fdset_);
-     maxfd_ = fd + 1;
--
-+#endif
-     terminal_modified_ = true;
- }
- 
-@@ -421,9 +424,10 @@
- 	if (!terminal_modified_)
- 		return;
- 
-+#if !defined(_MSC_VER)
-     const int fd = fileno(stdin);
-     tcsetattr(fd, TCSANOW, &orig_flags_);
--
-+#endif
-     terminal_modified_ = false;
- }
- 
-@@ -431,16 +435,17 @@
- #ifdef __APPLE__
-     fd_set testfd;
-     FD_COPY(&stdin_fdset_, &testfd);
--#else
-+#elif !defined(_MSC_VER)
-     fd_set testfd = stdin_fdset_;
- #endif
- 
-+#if !defined(_MSC_VER)
-     timeval tv;
-     tv.tv_sec  = 0;
-     tv.tv_usec = 0;
-     if (select(maxfd_, &testfd, NULL, NULL, &tv) <= 0)
-         return EOF;
--
-+#endif
-     return getc(stdin);
- }
- 
-diff -NBaur ros_comm/tools/rosbag/src/record.cpp ros_comm_rosbag/tools/rosbag/src/record.cpp
---- ros_comm/tools/rosbag/src/record.cpp	Fri Jun 22 11:06:36 2012
-+++ ros_comm_rosbag/tools/rosbag/src/record.cpp	Fri Jun 22 08:09:00 2012
-@@ -147,9 +147,9 @@
-       if ((iss >> duration).fail())
-         throw ros::Exception("Duration must start with a floating point number.");
- 
--      if (!iss.eof() and ((iss >> unit).fail()))
-+      if ( (!iss.eof() && ((iss >> unit).fail())) ) {
-         throw ros::Exception("Duration unit must be s, m, or h");
--      
-+      }
-       if (unit == std::string(""))
-         multiplier = 1.0;
-       else if (unit == std::string("s"))
-diff -NBaur ros_comm/tools/rosbag/src/recorder.cpp ros_comm_rosbag/tools/rosbag/src/recorder.cpp
---- ros_comm/tools/rosbag/src/recorder.cpp	Fri Jun 22 11:06:36 2012
-+++ ros_comm_rosbag/tools/rosbag/src/recorder.cpp	Thu Jun 21 17:20:52 2012
-@@ -35,7 +35,9 @@
- #include "rosbag/recorder.h"
- 
- #include <sys/stat.h>
--#include <sys/statvfs.h>
-+#if !defined(_MSC_VER)
-+  #include <sys/statvfs.h>
-+#endif
- #include <time.h>
- 
- #include <queue>
-@@ -574,6 +576,7 @@
- }
- 
- bool Recorder::checkDisk() {
-+#if !defined(_MSC_VER)
-     struct statvfs fiData;
-     if ((statvfs(bag_.getFileName().c_str(), &fiData)) < 0) {
-         ROS_WARN("Failed to check filesystem stats.");
-@@ -593,6 +595,9 @@
-     else {
-         writing_enabled_ = true;
-     }
-+#else
-+    writing_enabled_ = true;
-+#endif
- 
-     return true;
- }
