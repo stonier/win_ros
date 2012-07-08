@@ -1,0 +1,29 @@
+###############################
+# General
+###############################
+
+*.bak
+*.swp
+
+###############################
+# Python Temporaries
+###############################
+
+*.pyc
+
+###############################
+# Visual Studio Temporaries
+###############################
+
+# User Files
+*.sou
+
+# Build results
+*[Dd]ebug
+*.obj
+*.pdb
+*.pch
+
+# Visual C++ cache files
+ipch
+*.sdf
