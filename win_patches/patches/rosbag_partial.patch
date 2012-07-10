@@ -1,250 +1,249 @@
 diff -b -B -r -x .svn -x *.hg -x *.pyc -x *.py -x *.lisp -x *.cmake -x *.in -x *.msg -x *.bak -x *.bat -x *.xml -x *.yaml ./include/rosbag/bag.h C:\work\src\ros_comm\tools\rosbag/include/rosbag/bag.h
-38d37
-< #include "rosbag/macros.h"
-78c77
-< class ROSBAG_DECL Bag
+37a38
+> #include "rosbag/macros.h"
+77c78
+< class Bag
 ---
-> class Bag
+> class ROSBAG_DECL Bag
 diff -b -B -r -x .svn -x *.hg -x *.pyc -x *.py -x *.lisp -x *.cmake -x *.in -x *.msg -x *.bak -x *.bat -x *.xml -x *.yaml ./include/rosbag/buffer.h C:\work\src\ros_comm\tools\rosbag/include/rosbag/buffer.h
-39d38
-< #include "macros.h"
-43c42
-< class ROSBAG_DECL Buffer
+38a39
+> #include "macros.h"
+42c43
+< class Buffer
 ---
-> class Buffer
+> class ROSBAG_DECL Buffer
 diff -b -B -r -x .svn -x *.hg -x *.pyc -x *.py -x *.lisp -x *.cmake -x *.in -x *.msg -x *.bak -x *.bat -x *.xml -x *.yaml ./include/rosbag/chunked_file.h C:\work\src\ros_comm\tools\rosbag/include/rosbag/chunked_file.h
 41c41
-< #include "macros.h"
+< 
 ---
-> 
+> #include "macros.h"
 51c51
-< class ROSBAG_DECL ChunkedFile
+< class ChunkedFile
 ---
-> class ChunkedFile
-Only in ./include/rosbag: macros.h
+> class ROSBAG_DECL ChunkedFile
+Only in C:\work\src\ros_comm\tools\rosbag/include/rosbag: macros.h
 diff -b -B -r -x .svn -x *.hg -x *.pyc -x *.py -x *.lisp -x *.cmake -x *.in -x *.msg -x *.bak -x *.bat -x *.xml -x *.yaml ./include/rosbag/message_instance.h C:\work\src\ros_comm\tools\rosbag/include/rosbag/message_instance.h
-43d42
-< #include "macros.h"
-58c57
-< class ROSBAG_DECL MessageInstance
+42a43
+> #include "macros.h"
+57c58
+< class MessageInstance
 ---
-> class MessageInstance
+> class ROSBAG_DECL MessageInstance
 diff -b -B -r -x .svn -x *.hg -x *.pyc -x *.py -x *.lisp -x *.cmake -x *.in -x *.msg -x *.bak -x *.bat -x *.xml -x *.yaml ./include/rosbag/player.h C:\work\src\ros_comm\tools\rosbag/include/rosbag/player.h
-39d38
-< #ifndef WIN32
-41d39
-< #endif
-43d40
-< #ifndef WIN32
-45d41
-< #endif
-56d51
-< #include "macros.h"
-60c55
-< struct ROSBAG_DECL PlayerOptions
+38a39
+> #ifndef WIN32
+39a41
+> #endif
+40a43
+> #ifndef WIN32
+41a45
+> #endif
+51a56
+> #include "macros.h"
+55c60
+< struct PlayerOptions
 ---
-> struct PlayerOptions
-87c82
-< class ROSBAG_DECL TimePublisher {
+> struct ROSBAG_DECL PlayerOptions
+82c87
+< class TimePublisher {
 ---
-> class TimePublisher {
-148c143
-< class ROSBAG_DECL Player
+> class ROSBAG_DECL TimePublisher {
+143c148
+< class Player
 ---
-> class Player
-183d177
-< #ifndef WIN32
-186d179
-< #endif
+> class ROSBAG_DECL Player
+177a183
+> #ifndef WIN32
+179a186
+> #endif
 diff -b -B -r -x .svn -x *.hg -x *.pyc -x *.py -x *.lisp -x *.cmake -x *.in -x *.msg -x *.bak -x *.bat -x *.xml -x *.yaml ./include/rosbag/query.h C:\work\src\ros_comm\tools\rosbag/include/rosbag/query.h
-45d44
-< #include "macros.h"
-50,51c49,50
-< struct ConnectionInfo;
-< struct IndexEntry;
+44a45
+> #include "macros.h"
+49,50c50,51
+< class ConnectionInfo;
+< class IndexEntry;
 ---
-> class ConnectionInfo;
-> class IndexEntry;
-53c52
-< class ROSBAG_DECL Query
+> struct ConnectionInfo;
+> struct IndexEntry;
+52c53
+< class Query
 ---
-> class Query
-76c75
-< class ROSBAG_DECL TopicQuery
+> class ROSBAG_DECL Query
+75c76
+< class TopicQuery
 ---
-> class TopicQuery
-88c87
-< class ROSBAG_DECL TypeQuery
+> class ROSBAG_DECL TopicQuery
+87c88
+< class TypeQuery
 ---
-> class TypeQuery
-101c100
-< struct ROSBAG_DECL BagQuery
+> class ROSBAG_DECL TypeQuery
+100c101
+< struct BagQuery
 ---
-> struct BagQuery
-110c109
-< struct ROSBAG_DECL MessageRange
+> struct ROSBAG_DECL BagQuery
+109c110
+< struct MessageRange
 ---
-> struct MessageRange
-124c123
-< struct ROSBAG_DECL ViewIterHelper
+> struct ROSBAG_DECL MessageRange
+123c124
+< struct ViewIterHelper
 ---
-> struct ViewIterHelper
+> struct ROSBAG_DECL ViewIterHelper
 diff -b -B -r -x .svn -x *.hg -x *.pyc -x *.py -x *.lisp -x *.cmake -x *.in -x *.msg -x *.bak -x *.bat -x *.xml -x *.yaml ./include/rosbag/recorder.h C:\work\src\ros_comm\tools\rosbag/include/rosbag/recorder.h
-39d38
-< #ifndef WIN32
-41d39
-< #endif
-43d40
-< #ifndef WIN32
-45d41
-< #endif
-63d58
-< #include "rosbag/macros.h"
-67c62
-< class ROSBAG_DECL OutgoingMessage
+38a39
+> #ifndef WIN32
+39a41
+> #endif
+40a43
+> #ifndef WIN32
+41a45
+> #endif
+58a63
+> #include "rosbag/macros.h"
+62c67
+< class OutgoingMessage
 ---
-> class OutgoingMessage
-78c73
-< class ROSBAG_DECL OutgoingQueue
+> class ROSBAG_DECL OutgoingMessage
+73c78
+< class OutgoingQueue
 ---
-> class OutgoingQueue
-88c83
-< struct ROSBAG_DECL RecorderOptions
+> class ROSBAG_DECL OutgoingQueue
+83c88
+< struct RecorderOptions
 ---
-> struct RecorderOptions
-114c109
-< class ROSBAG_DECL Recorder
+> struct ROSBAG_DECL RecorderOptions
+109c114
+< class Recorder
 ---
-> class Recorder
+> class ROSBAG_DECL Recorder
 diff -b -B -r -x .svn -x *.hg -x *.pyc -x *.py -x *.lisp -x *.cmake -x *.in -x *.msg -x *.bak -x *.bat -x *.xml -x *.yaml ./include/rosbag/stream.h C:\work\src\ros_comm\tools\rosbag/include/rosbag/stream.h
-47d46
-< #include "rosbag/macros.h"
-63c62
-< class ROSBAG_DECL Stream
+46a47
+> #include "rosbag/macros.h"
+62c63
+< class Stream
 ---
-> class Stream
-97c96
-< class ROSBAG_DECL StreamFactory
+> class ROSBAG_DECL Stream
+96c97
+< class StreamFactory
 ---
-> class StreamFactory
-109c108
-< class ROSBAG_DECL UncompressedStream : public Stream
+> class ROSBAG_DECL StreamFactory
+108c109
+< class UncompressedStream : public Stream
 ---
-> class UncompressedStream : public Stream
-125c124
-< class ROSBAG_DECL BZ2Stream : public Stream
+> class ROSBAG_DECL UncompressedStream : public Stream
+124c125
+< class BZ2Stream : public Stream
 ---
-> class BZ2Stream : public Stream
+> class ROSBAG_DECL BZ2Stream : public Stream
 diff -b -B -r -x .svn -x *.hg -x *.pyc -x *.py -x *.lisp -x *.cmake -x *.in -x *.msg -x *.bak -x *.bat -x *.xml -x *.yaml ./include/rosbag/structures.h C:\work\src\ros_comm\tools\rosbag/include/rosbag/structures.h
-43d42
-< #include "macros.h"
-60c59
-< ROSBAG_DECL ros::AdvertiseOptions createAdvertiseOptions(const ConnectionInfo* c, uint32_t queue_size);
+42a43
+> #include "macros.h"
+59c60
+< ros::AdvertiseOptions createAdvertiseOptions(const ConnectionInfo* c, uint32_t queue_size);
 ---
-> ros::AdvertiseOptions createAdvertiseOptions(const ConnectionInfo* c, uint32_t queue_size);
+> ROSBAG_DECL ros::AdvertiseOptions createAdvertiseOptions(const ConnectionInfo* c, uint32_t queue_size);
 diff -b -B -r -x .svn -x *.hg -x *.pyc -x *.py -x *.lisp -x *.cmake -x *.in -x *.msg -x *.bak -x *.bat -x *.xml -x *.yaml ./include/rosbag/time_translator.h C:\work\src\ros_comm\tools\rosbag/include/rosbag/time_translator.h
-39d38
-< #include "macros.h"
-55c54
-< class ROSBAG_DECL TimeTranslator
+38a39
+> #include "macros.h"
+54c55
+< class TimeTranslator
 ---
-> class TimeTranslator
+> class ROSBAG_DECL TimeTranslator
 diff -b -B -r -x .svn -x *.hg -x *.pyc -x *.py -x *.lisp -x *.cmake -x *.in -x *.msg -x *.bak -x *.bat -x *.xml -x *.yaml ./include/rosbag/view.h C:\work\src\ros_comm\tools\rosbag/include/rosbag/view.h
-43d42
-< #include "rosbag/macros.h"
-47,49c46,48
-< struct MessageRange;
-< struct IndexEntry;
-< struct ViewIterHelper;
+42a43
+> #include "rosbag/macros.h"
+46,48c47,49
+< class MessageRange;
+< class IndexEntry;
+< class ViewIterHelper;
 ---
-> class MessageRange;
-> class IndexEntry;
-> class ViewIterHelper;
-51c50
-< class ROSBAG_DECL View
+> struct MessageRange;
+> struct IndexEntry;
+> struct ViewIterHelper;
+50c51
+< class View
 ---
-> class View
-Only in .: my.patch
+> class ROSBAG_DECL View
 Only in .: rosbag_partial.patch
 diff -b -B -r -x .svn -x *.hg -x *.pyc -x *.py -x *.lisp -x *.cmake -x *.in -x *.msg -x *.bak -x *.bat -x *.xml -x *.yaml ./src/bag.cpp C:\work\src\ros_comm\tools\rosbag/src/bag.cpp
-33d32
-< #ifndef WIN32
-35,37d33
-< #else
-< #include <stdint.h>
-< #endif
+32a33
+> #ifndef WIN32
+33a35,37
+> #else
+> #include <stdint.h>
+> #endif
 diff -b -B -r -x .svn -x *.hg -x *.pyc -x *.py -x *.lisp -x *.cmake -x *.in -x *.msg -x *.bak -x *.bat -x *.xml -x *.yaml ./src/chunked_file.cpp C:\work\src\ros_comm\tools\rosbag/src/chunked_file.cpp
-43,49d42
-< #ifdef WIN32
-< #include <io.h>
-< #define ftello _ftelli64
-< #define fseeko _fseeki64
-< #define ftruncate _chsize_s
-< #endif
-< 
+42a43,49
+> #ifdef WIN32
+> #include <io.h>
+> #define ftello _ftelli64
+> #define fseeko _fseeki64
+> #define ftruncate _chsize_s
+> #endif
+> 
 diff -b -B -r -x .svn -x *.hg -x *.pyc -x *.py -x *.lisp -x *.cmake -x *.in -x *.msg -x *.bak -x *.bat -x *.xml -x *.yaml ./src/player.cpp C:\work\src\ros_comm\tools\rosbag/src/player.cpp
-39d38
-< #ifndef WIN32
-41d39
-< #endif
-294,295d291
-< 			if (!paused_ && time_publisher_.horizonReached())
-< 				break; 
-339d334
-< 				break;
-409d403
-< #ifndef WIN32
-424d417
-< #endif
-431d423
-< #ifndef WIN32
-436d427
-< #endif
-444d434
-< #ifndef WIN32
-447d436
-< #endif
-449d437
-< #ifndef WIN32
-457,481d444
-< #else
-< 	HANDLE input_handle = GetStdHandle(STD_INPUT_HANDLE);
-< 	DWORD events = 0;
-< 	INPUT_RECORD input_record[1];
-< 	DWORD input_size = 1;
-< 
-< 	BOOL b = GetNumberOfConsoleInputEvents(input_handle, &events);
-< 	if (b && events > 0)
-< 	{
-< 		b = ReadConsoleInput(input_handle, input_record, input_size, &events);
-< 		if (b)
-< 		{
-< 			for (int i = 0; i < events; i++)
-< 			{
-< 				if (input_record[i].EventType & KEY_EVENT & input_record[i].Event.KeyEvent.bKeyDown)
-< 				{
-< 					CHAR ch = input_record[i].Event.KeyEvent.uChar.AsciiChar;
-< 					return ch;
-< 				}
-< 			}
-< 		}
-< 	}
-< 
-< 	return '\0';
-< #endif
+38a39
+> #ifndef WIN32
+39a41
+> #endif
+291a294,295
+> 			if (!paused_ && time_publisher_.horizonReached())
+> 				break; 
+334a339
+> 				break;
+403a409
+> #ifndef WIN32
+417a424
+> #endif
+423a431
+> #ifndef WIN32
+427a436
+> #endif
+434a444
+> #ifndef WIN32
+436a447
+> #endif
+437a449
+> #ifndef WIN32
+444a457,481
+> #else
+> 	HANDLE input_handle = GetStdHandle(STD_INPUT_HANDLE);
+> 	DWORD events = 0;
+> 	INPUT_RECORD input_record[1];
+> 	DWORD input_size = 1;
+> 
+> 	BOOL b = GetNumberOfConsoleInputEvents(input_handle, &events);
+> 	if (b && events > 0)
+> 	{
+> 		b = ReadConsoleInput(input_handle, input_record, input_size, &events);
+> 		if (b)
+> 		{
+> 			for (int i = 0; i < events; i++)
+> 			{
+> 				if (input_record[i].EventType & KEY_EVENT & input_record[i].Event.KeyEvent.bKeyDown)
+> 				{
+> 					CHAR ch = input_record[i].Event.KeyEvent.uChar.AsciiChar;
+> 					return ch;
+> 				}
+> 			}
+> 		}
+> 	}
+> 
+> 	return '\0';
+> #endif
 diff -b -B -r -x .svn -x *.hg -x *.pyc -x *.py -x *.lisp -x *.cmake -x *.in -x *.msg -x *.bak -x *.bat -x *.xml -x *.yaml ./src/record.cpp C:\work\src\ros_comm\tools\rosbag/src/record.cpp
 150c150
-<       if (!iss.eof() && ((iss >> unit).fail()))
+<       if (!iss.eof() and ((iss >> unit).fail()))
 ---
->       if (!iss.eof() and ((iss >> unit).fail()))
+>       if (!iss.eof() && ((iss >> unit).fail()))
 diff -b -B -r -x .svn -x *.hg -x *.pyc -x *.py -x *.lisp -x *.cmake -x *.in -x *.msg -x *.bak -x *.bat -x *.xml -x *.yaml ./src/recorder.cpp C:\work\src\ros_comm\tools\rosbag/src/recorder.cpp
-38d37
-< #ifndef WIN32
-40d38
-< #endif
-579d576
-< #ifndef WIN32
-599c596
-< #endif
+37a38
+> #ifndef WIN32
+38a40
+> #endif
+576a579
+> #ifndef WIN32
+596c599
+< 
 ---
-> 
+> #endif
