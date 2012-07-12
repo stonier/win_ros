@@ -1,0 +1,12 @@
+<package>
+  <catkin />
+  <description brief="Shows the features of ROS step-by-step">
+    Includes a few tutorials to introduce the workflow with 
+	the win-ros msvc sdk and visual studio/express.
+  </description>
+  <author>Daniel Stonier</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/msvc_sdk_tutorials</url>
+</package>
+

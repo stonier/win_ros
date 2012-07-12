@@ -9,7 +9,7 @@
   <author>Daniel Stonier</author>
   <license>BSD</license>
   <review status="unreviewed" notes=""/>
-  <url>http://ros.org/wiki/roscpp_tutorials</url>
+  <url>http://ros.org/wiki/win_roscpp_tutorials</url>
   <depend package="roscpp"/>
   <depend package="std_srvs"/>
   <depend package="std_msgs"/>
