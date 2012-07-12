@@ -1,15 +1,19 @@
-diff -Nbaur ros_comm/tools/roslaunch/src/roslaunch/loader.py ros_comm_roslaunch_shells/tools/roslaunch/src/roslaunch/loader.py
---- ros_comm/tools/roslaunch/src/roslaunch/loader.py	Fri Jun 22 11:06:38 2012
-+++ ros_comm_roslaunch_shells/tools/roslaunch/src/roslaunch/loader.py	Wed Jun 27 15:48:43 2012
-@@ -463,7 +463,10 @@
+diff -NBaur -x .svn -x '*.pyc' ros_comm/tools/roslaunch/src/roslaunch/loader.py ros_comm_popen_shells/tools/roslaunch/src/roslaunch/loader.py
+--- ros_comm/tools/roslaunch/src/roslaunch/loader.py	2012-07-13 07:46:48.988043716 +0900
++++ ros_comm_popen_shells/tools/roslaunch/src/roslaunch/loader.py	2012-07-13 07:47:35.508274409 +0900
+@@ -463,7 +463,14 @@
                  print "... executing command param [%s]"%command
              import subprocess, shlex #shlex rocks
              try:
 -                p = subprocess.Popen(shlex.split(command), stdout=subprocess.PIPE)
-+			    # Need the shell to be able to call windows .bat python starters,
-+				# possible security hazard if the input is untrusted though. Refer to
-+ 				#   http://docs.python.org/library/subprocess.html#using-the-subprocess-module
-+                p = subprocess.Popen(shlex.split(command), stdout=subprocess.PIPE, shell=True) 
++                # Original command used no shell.
++                # p = subprocess.Popen(shlex.split(command), stdout=subprocess.PIPE) 
++                # Need the shell to be able to call windows .bat python starters without adding
++                # the .bat to the command call. Note that the command then has to be a string in 
++                # unix, not a list. Is this going to cause issues anywhere?
++                # possible security hazard if the input is untrusted though. Refer to
++                # http://docs.python.org/library/subprocess.html#using-the-subprocess-module
++                p = subprocess.Popen(command, stdout=subprocess.PIPE, shell=True) 
                  c_value = p.communicate()[0]
                  if p.returncode != 0:
                      raise ValueError("Cannot load command parameter [%s]: command [%s] returned with code [%s]"%(name, command, p.returncode))
