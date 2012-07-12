@@ -409,8 +409,36 @@ diff -NBaur -x .svn -x *.pyc ros_comm/tools/rosbag/src/recorder.cpp ros_comm_ros
  
 diff -NBaur -x .svn -x *.pyc ros_comm/tools/rosbag/src/rosbag/rosbag_main.py ros_comm_rosbag_working/tools/rosbag/src/rosbag/rosbag_main.py
 --- ros_comm/tools/rosbag/src/rosbag/rosbag_main.py	Fri Jun 22 11:06:36 2012
-+++ ros_comm_rosbag_working/tools/rosbag/src/rosbag/rosbag_main.py	Thu Jul 12 10:54:53 2012
-@@ -189,7 +189,10 @@
++++ ros_comm_rosbag_working/tools/rosbag/src/rosbag/rosbag_main.py	Thu Jul 12 13:18:44 2012
+@@ -87,7 +87,10 @@
+     if options.prefix is not None and options.name is not None:
+         parser.error("Can't set both prefix and name.")
+ 
+-    cmd = ['record']
++    recordpath = roslib.packages.find_node('rosbag', 'record')
++    if not recordpath:
++        parser.error("Cannot find rosbag/record executable")
++    cmd = [recordpath[0]]
+ 
+     cmd.extend(['--buffsize', str(options.buffsize)])
+ 
+@@ -111,11 +114,10 @@
+         cmd.extend(["--node", options.node])
+ 
+     cmd.extend(args)
+-
+-    recordpath = roslib.packages.find_node('rosbag', 'record')
+-    if not recordpath:
+-        parser.error("Cannot find rosbag/record executable")
+-    os.execv(recordpath[0], cmd)
++    
++    # Better way of handling it than os.execv
++    # This makes sure stdin handles are passed to the process.
++    subprocess.call(cmd)
+ 
+ def info_cmd(argv):
+     parser = optparse.OptionParser(usage='rosbag info [options] BAGFILE1 [BAGFILE2 BAGFILE3 ...]',
+@@ -189,7 +191,10 @@
      if len(args) == 0:
          parser.error('You must specify at least 1 bag file to play back.')
  
@@ -422,7 +450,7 @@ diff -NBaur -x .svn -x *.pyc ros_comm/tools/rosbag/src/rosbag/rosbag_main.py ros
  
      if options.quiet:      cmd.extend(["--quiet"])
      if options.pause:      cmd.extend(["--pause"])
-@@ -212,11 +215,9 @@
+@@ -212,11 +217,9 @@
          cmd.extend(['--topics'] + options.topics + ['--bags'])
  
      cmd.extend(args)
@@ -437,7 +465,7 @@ diff -NBaur -x .svn -x *.pyc ros_comm/tools/rosbag/src/rosbag/rosbag_main.py ros
  
  def filter_cmd(argv):
      def expr_eval(expr):
-@@ -779,7 +780,7 @@
+@@ -779,7 +782,7 @@
              s     = struct.pack('HHHH', 0, 0, 0, 0)
              x     = fcntl.ioctl(1, termios.TIOCGWINSZ, s)
              width = struct.unpack('HHHH', x)[1]
