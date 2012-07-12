@@ -1,50 +1,24 @@
 #!/bin/sh
 
-EXPECTED_ARGS=1
-if [ $# -ne ${EXPECTED_ARGS} ]
-then
-  echo "Usage: `basename $0` <ros-workspace-dir>"
-  echo ""
-  echo "Note: only works if everything is rooted under the ros"
-  echo "workspace directory. Fix this with rospack help later."
-  echo ""
-  exit 1
-fi
+#!/bin/bash
 
-cp -r updates/* $1/
+# We are assuming that all source stacks are two directories below this and nowhere else.
 
-exit
+DIR=`dirname $0`
+PATCH_DIR=$DIR/patches
+ROOT_DIR=$DIR/../..
 
-# This is old patching from electric.
+echo "PATCHING"
+echo ""
+echo "  Dir..........$DIR"
+echo "  Patch Dir....$PATCH_DIR"
+echo "  Source Dir...$ROOT_DIR"
+echo ""
 
-WIN_PATCHES=`rospack find win_patches`
-ROSCONSOLE=`rospack find rosconsole`
-ROSCPP=`rospack find roscpp`
-CPP_COMMON=`rospack find cpp_common`
-ROSPY=`rospack find rospy`
-ROSTIME=`rospack find rostime`
+cd $ROOT_DIR
+for i in $PATCH_DIR/*.patch; do
+  echo "# $i"
+  patch -p0 < $i
+done
 
-cp ${WIN_PATCHES}/updates/ros_comm/tools/rosconsole/rosbuild.cmake ${ROSCONSOLE}/
-cp ${WIN_PATCHES}/updates/ros_comm/clients/cpp/roscpp/cmake/rosbuild2.cmake ${ROSCPP}/cmake
-cp ${WIN_PATCHES}/updates/ros_comm/clients/rospy/cmake/rosbuild2.cmake ${ROSPY}/cmake
-cp ${WIN_PATCHES}/updates/ros_comm/clients/rospy/scripts/rosbuild2/genutil.py ${ROSPY}/scripts/rosbuild2
-cp ${WIN_PATCHES}/updates/ros_comm/utilities/cpp_common/include/ros/platform.h ${CPP_COMMON}/include/ros
-patch -p1 -N -d $ROSTIME < ${WIN_PATCHES}/patches/rostime.patch
-
-if [ $? -eq 0 ]; then
-  echo "Successfully patched."
-else
-  echo "Failed to patch, trying with sudo"
-  sudo cp ${WIN_PATCHES}/updates/ros_comm/tools/rosconsole/rosbuild.cmake ${ROSCONSOLE}/
-  sudo cp ${WIN_PATCHES}/updates/ros_comm/clients/cpp/roscpp/cmake/rosbuild2.cmake ${ROSCPP}/cmake
-  sudo cp ${WIN_PATCHES}/updates/ros_comm/clients/rospy/cmake/rosbuild2.cmake ${ROSPY}/cmake
-  sudo cp ${WIN_PATCHES}/updates/ros_comm/clients/rospy/scripts/rosbuild2/genutil.py ${ROSPY}/scripts/rosbuild2
-  sudo cp ${WIN_PATCHES}/updates/ros_comm/utilities/cpp_common/include/ros/platform.h ${CPP_COMMON}/include/ros
-  sudo patch -p1 -N -d $ROSTIME < ${WIN_PATCHES}/patches/rostime.patch
-  if [ $? -eq 0 ]; then
-    echo "Successfully patched."
-  else
-    echo "Failed to patch"
-  fi
-fi
-  
+ 
