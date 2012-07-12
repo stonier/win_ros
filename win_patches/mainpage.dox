@@ -11,6 +11,7 @@ until those patches are accepted upstream.
 \section Patches
 
  - msvc_includes_rospack.patch : starts fixing the includes for msvc (not completely working yet though)
+  - last patched for changeset 108.
  - avoid_forking_roslaunch.patch : experimental hack to work around the fact that windows cant track its children
  - roslaunch_popen_shells.patch : lets us use .bat scripts to call python code and execute via popen.
   - not committing upstream yet as using shells is considered a security problem

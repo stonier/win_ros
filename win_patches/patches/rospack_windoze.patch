@@ -1,6 +1,6 @@
-diff -NBaur -x .hg rospack/CMakeLists.txt rospack_mods/CMakeLists.txt
---- rospack/CMakeLists.txt	Wed May  9 12:20:17 2012
-+++ rospack_mods/CMakeLists.txt	Wed May  9 12:20:41 2012
+diff -NBaur -x .hg -x .svn -x '*.pyc' rospack/CMakeLists.txt rospack_patched/CMakeLists.txt
+--- rospack/CMakeLists.txt	2012-07-13 06:40:07.888203333 +0900
++++ rospack_patched/CMakeLists.txt	2012-07-13 06:33:52.342341092 +0900
 @@ -14,10 +14,10 @@
    message(STATUS "Rospack building shared objects.")
  else()
@@ -14,9 +14,9 @@ diff -NBaur -x .hg rospack/CMakeLists.txt rospack_mods/CMakeLists.txt
  
  set(API_BACKCOMPAT_V1 "YES"
      CACHE BOOL "Whether to enable backwards compatibility with old C++ API")
-diff -NBaur -x .hg rospack/include/rospack/macros.h rospack_mods/include/rospack/macros.h
---- rospack/include/rospack/macros.h	Thu Jan  1 09:00:00 1970
-+++ rospack_mods/include/rospack/macros.h	Wed May  9 12:20:41 2012
+diff -NBaur -x .hg -x .svn -x '*.pyc' rospack/include/rospack/macros.h rospack_patched/include/rospack/macros.h
+--- rospack/include/rospack/macros.h	1970-01-01 09:00:00.000000000 +0900
++++ rospack_patched/include/rospack/macros.h	2012-07-13 06:33:52.342341092 +0900
 @@ -0,0 +1,75 @@
 +/*
 + * Copyright (C) 2008, Willow Garage, Inc.
@@ -93,170 +93,29 @@ diff -NBaur -x .hg rospack/include/rospack/macros.h rospack_mods/include/rospack
 +#endif
 +
 +#endif /* ROSPACK_MACROS_H_ */
-diff -NBaur -x .hg rospack/include/rospack/macros.h.orig rospack_mods/include/rospack/macros.h.orig
---- rospack/include/rospack/macros.h.orig	Thu Jan  1 09:00:00 1970
-+++ rospack_mods/include/rospack/macros.h.orig	Wed May  9 12:20:41 2012
-@@ -0,0 +1,75 @@
-+/*
-+ * Copyright (C) 2008, Willow Garage, Inc.
-+ *
-+ * Redistribution and use in source and binary forms, with or without
-+ * modification, are permitted provided that the following conditions are met:
-+ *   * Redistributions of source code must retain the above copyright notice,
-+ *     this list of conditions and the following disclaimer.
-+ *   * Redistributions in binary form must reproduce the above copyright
-+ *     notice, this list of conditions and the following disclaimer in the
-+ *     documentation and/or other materials provided with the distribution.
-+ *   * Neither the names of Stanford University or Willow Garage, Inc. nor the names of its
-+ *     contributors may be used to endorse or promote products derived from
-+ *     this software without specific prior written permission.
-+ *
-+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
-+ * ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
-+ * LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
-+ * CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
-+ * SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
-+ * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
-+ * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
-+ * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
-+ * POSSIBILITY OF SUCH DAMAGE.
-+ */
-+
-+#ifndef ROSPACK_MACROS_H_
-+#define ROSPACK_MACROS_H_
-+
-+/*
-+ * Windows macros for dll exports
-+ *
-+ * This replicates what ros has in roscpp_core/cpp_common/macros.h
-+ * so rospack can be standalone.
-+ *
-+ * See also http://gcc.gnu.org/wiki/Visibility
-+ */
-+
-+#if defined(_MSC_VER)
-+    #define ROS_HELPER_IMPORT __declspec(dllimport)
-+    #define ROS_HELPER_EXPORT __declspec(dllexport)
-+    #define ROS_HELPER_LOCAL
-+#elif __GNUC__ >= 4
-+    #define ROS_HELPER_IMPORT __attribute__ ((visibility("default")))
-+    #define ROS_HELPER_EXPORT __attribute__ ((visibility("default")))
-+    #define ROS_HELPER_LOCAL  __attribute__ ((visibility("hidden")))
-+#else
-+    #define ROS_HELPER_IMPORT
-+    #define ROS_HELPER_EXPORT
-+    #define ROS_HELPER_LOCAL
-+#endif
-+
-+// Ignore warnings about import/exports when deriving from std classes.
-+#ifdef _MSC_VER
-+  #pragma warning(disable:4251)
-+  #pragma warning(disable:4275)
-+  #pragma warning(disable:4514) // unreferenced inline function has been removed
-+  #pragma warning(disable:4668) // warnigns about used, but not defined macros, replacing with 0
-+  #pragma warning(disable:4710) // function not inlined
-+  #pragma warning(disable:4738) // storing floats, memory splitting, possible loss in performance
-+  #pragma warning(disable:4820) // structs and padding
-+#endif
-+
-+#ifdef ROS_BUILD_STATIC_LIBS // ros is being built around shared libraries
-+  #define ROSPACK_DECL
-+#else // ros is being built around shared libraries
-+  #ifdef rospack_EXPORTS // we are building a shared lib/dll
-+    #define ROSPACK_DECL ROS_HELPER_EXPORT
-+  #else // we are using shared lib/dll
-+    #define ROSPACK_DECL ROS_HELPER_IMPORT
-+  #endif
-+#endif
-+
-+#endif /* ROSPACK_MACROS_H_ */
-diff -NBaur -x .hg rospack/include/rospack/macros.h.rej rospack_mods/include/rospack/macros.h.rej
---- rospack/include/rospack/macros.h.rej	Thu Jan  1 09:00:00 1970
-+++ rospack_mods/include/rospack/macros.h.rej	Wed May  9 12:20:41 2012
-@@ -0,0 +1,78 @@
-+***************
-+*** 0 ****
-+--- 1,75 ----
-++ /*
-++  * Copyright (C) 2008, Willow Garage, Inc.
-++  *
-++  * Redistribution and use in source and binary forms, with or without
-++  * modification, are permitted provided that the following conditions are met:
-++  *   * Redistributions of source code must retain the above copyright notice,
-++  *     this list of conditions and the following disclaimer.
-++  *   * Redistributions in binary form must reproduce the above copyright
-++  *     notice, this list of conditions and the following disclaimer in the
-++  *     documentation and/or other materials provided with the distribution.
-++  *   * Neither the names of Stanford University or Willow Garage, Inc. nor the names of its
-++  *     contributors may be used to endorse or promote products derived from
-++  *     this software without specific prior written permission.
-++  *
-++  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-++  * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-++  * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
-++  * ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
-++  * LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
-++  * CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
-++  * SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
-++  * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
-++  * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
-++  * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
-++  * POSSIBILITY OF SUCH DAMAGE.
-++  */
-++ 
-++ #ifndef ROSPACK_MACROS_H_
-++ #define ROSPACK_MACROS_H_
-++ 
-++ /*
-++  * Windows macros for dll exports
-++  *
-++  * This replicates what ros has in roscpp_core/cpp_common/macros.h
-++  * so rospack can be standalone.
-++  *
-++  * See also http://gcc.gnu.org/wiki/Visibility
-++  */
-++ 
-++ #if defined(_MSC_VER)
-++     #define ROS_HELPER_IMPORT __declspec(dllimport)
-++     #define ROS_HELPER_EXPORT __declspec(dllexport)
-++     #define ROS_HELPER_LOCAL
-++ #elif __GNUC__ >= 4
-++     #define ROS_HELPER_IMPORT __attribute__ ((visibility("default")))
-++     #define ROS_HELPER_EXPORT __attribute__ ((visibility("default")))
-++     #define ROS_HELPER_LOCAL  __attribute__ ((visibility("hidden")))
-++ #else
-++     #define ROS_HELPER_IMPORT
-++     #define ROS_HELPER_EXPORT
-++     #define ROS_HELPER_LOCAL
-++ #endif
-++ 
-++ // Ignore warnings about import/exports when deriving from std classes.
-++ #ifdef _MSC_VER
-++   #pragma warning(disable:4251)
-++   #pragma warning(disable:4275)
-++   #pragma warning(disable:4514) // unreferenced inline function has been removed
-++   #pragma warning(disable:4668) // warnigns about used, but not defined macros, replacing with 0
-++   #pragma warning(disable:4710) // function not inlined
-++   #pragma warning(disable:4738) // storing floats, memory splitting, possible loss in performance
-++   #pragma warning(disable:4820) // structs and padding
-++ #endif
-++ 
-++ #ifdef ROS_BUILD_STATIC_LIBS // ros is being built around shared libraries
-++   #define ROSPACK_DECL
-++ #else // ros is being built around shared libraries
-++   #ifdef rospack_EXPORTS // we are building a shared lib/dll
-++     #define ROSPACK_DECL ROS_HELPER_EXPORT
-++   #else // we are using shared lib/dll
-++     #define ROSPACK_DECL ROS_HELPER_IMPORT
-++   #endif
-++ #endif
-++ 
-++ #endif /* ROSPACK_MACROS_H_ */
-diff -NBaur -x .hg rospack/include/rospack/rospack.h rospack_mods/include/rospack/rospack.h
---- rospack/include/rospack/rospack.h	Wed May  9 12:20:17 2012
-+++ rospack_mods/include/rospack/rospack.h	Wed May  9 12:20:41 2012
+diff -NBaur -x .hg -x .svn -x '*.pyc' rospack/include/rospack/rospack_backcompat.h rospack_patched/include/rospack/rospack_backcompat.h
+--- rospack/include/rospack/rospack_backcompat.h	2012-07-13 06:40:07.888203333 +0900
++++ rospack_patched/include/rospack/rospack_backcompat.h	2012-07-13 06:33:52.342341092 +0900
+@@ -30,6 +30,7 @@
+ #define ROSPACK_ROSPACK_BACKCOMPAT_H
+ 
+ #include <string>
++#include "macros.h"
+ 
+ namespace rospack
+ {
+@@ -38,7 +39,7 @@
+  * @brief Backward compatibility API for librospack (DEPRECATED).
+  * @deprecated Used by roslib.  Don't use in new code.
+  */
+-class ROSPack
++class ROSPACK_DECL ROSPack
+ {
+   private:
+     std::string output_;
+diff -NBaur -x .hg -x .svn -x '*.pyc' rospack/include/rospack/rospack.h rospack_patched/include/rospack/rospack.h
+--- rospack/include/rospack/rospack.h	2012-07-13 06:40:07.888203333 +0900
++++ rospack_patched/include/rospack/rospack.h	2012-07-13 06:33:52.342341092 +0900
 @@ -111,6 +111,7 @@
  #include <vector>
  #include <set>
@@ -292,60 +151,9 @@ diff -NBaur -x .hg rospack/include/rospack/rospack.h rospack_mods/include/rospac
  {
    public:
      /**
-diff -NBaur -x .hg rospack/include/rospack/rospack_backcompat.h rospack_mods/include/rospack/rospack_backcompat.h
---- rospack/include/rospack/rospack_backcompat.h	Wed May  9 12:20:17 2012
-+++ rospack_mods/include/rospack/rospack_backcompat.h	Wed May  9 12:20:41 2012
-@@ -30,6 +30,7 @@
- #define ROSPACK_ROSPACK_BACKCOMPAT_H
- 
- #include <string>
-+#include "macros.h"
- 
- namespace rospack
- {
-@@ -38,7 +39,7 @@
-  * @brief Backward compatibility API for librospack (DEPRECATED).
-  * @deprecated Used by roslib.  Don't use in new code.
-  */
--class ROSPack
-+class ROSPACK_DECL ROSPack
- {
-   private:
-     std::string output_;
-diff -NBaur -x .hg rospack/src/rospack.cpp rospack_mods/src/rospack.cpp
---- rospack/src/rospack.cpp	Wed May  9 12:20:17 2012
-+++ rospack_mods/src/rospack.cpp	Wed May  9 12:20:41 2012
-@@ -36,14 +36,20 @@
- #if defined(WIN32)
-   #include <windows.h>
-   #include <direct.h>
--  #include <libgen.h> // for dirname
-   #include <fcntl.h>  // for O_RDWR, O_EXCL, O_CREAT
--#else //!defined(WIN32)
--  #include <sys/types.h>
--  #include <libgen.h>
--  #include <pwd.h>
--  #include <unistd.h>
--  #include <sys/time.h>
-+  // simple workaround - could have issues though. See
-+  //   http://stackoverflow.com/questions/2915672/snprintf-and-visual-studio-2010
-+  // for potentially better solutions. Similar probably applies for some of the others
-+  #define snprintf _snprintf
-+  #define pclose _pclose
-+  #define popen _popen
-+  #define PATH_MAX MAX_PATH
-+  #if defined(__MINGW32__)
-+    #include <libgen.h> // for dirname
-+  #endif
-+  #if defined(_MSC_VER)
-+    #include <io.h> // _mktemp_s
-+  #endif
- #endif
- 
- #include <climits>
-diff -NBaur -x .hg rospack/src/rospack_cmdline.cpp rospack_mods/src/rospack_cmdline.cpp
---- rospack/src/rospack_cmdline.cpp	Wed May  9 12:20:17 2012
-+++ rospack_mods/src/rospack_cmdline.cpp	Wed May  9 12:20:41 2012
+diff -NBaur -x .hg -x .svn -x '*.pyc' rospack/src/rospack_cmdline.cpp rospack_patched/src/rospack_cmdline.cpp
+--- rospack/src/rospack_cmdline.cpp	2012-07-13 06:40:07.892203356 +0900
++++ rospack_patched/src/rospack_cmdline.cpp	2012-07-13 06:43:34.149226153 +0900
 @@ -27,6 +27,7 @@
  
  #include "rospack/rospack.h"
@@ -354,26 +162,7 @@ diff -NBaur -x .hg rospack/src/rospack_cmdline.cpp rospack_mods/src/rospack_cmdl
  
  #include <boost/program_options.hpp>
  #include <boost/algorithm/string.hpp>
-@@ -37,15 +38,13 @@
- 
- namespace po = boost::program_options;
- 
--namespace rospack
--{
-+namespace rospack {
- 
--bool parse_args(int argc, char** argv, 
-+bool parse_args(int argc, char** argv,
-                 rospack::Rosstackage& rp,
-                 po::variables_map& vm);
- 
--bool
--rospack_run(int argc, char** argv, rospack::Rosstackage& rp, std::string& output)
-+bool rospack_run(int argc, char** argv, rospack::Rosstackage& rp, std::string& output)
- {
-   po::variables_map vm;
- 
-@@ -792,7 +791,7 @@
+@@ -792,7 +793,7 @@
  }
  
  bool
@@ -382,15 +171,15 @@ diff -NBaur -x .hg rospack/src/rospack_cmdline.cpp rospack_mods/src/rospack_cmdl
             rospack::Rosstackage& rp, po::variables_map& vm)
  {
    po::options_description desc("Allowed options");
-@@ -825,4 +824,4 @@
+@@ -825,4 +826,4 @@
    return true;
  }
  
 -}
 +} // namespace rospack
-diff -NBaur -x .hg rospack/src/rospack_cmdline.h rospack_mods/src/rospack_cmdline.h
---- rospack/src/rospack_cmdline.h	Wed May  9 12:20:17 2012
-+++ rospack_mods/src/rospack_cmdline.h	Wed May  9 12:20:41 2012
+diff -NBaur -x .hg -x .svn -x '*.pyc' rospack/src/rospack_cmdline.h rospack_patched/src/rospack_cmdline.h
+--- rospack/src/rospack_cmdline.h	2012-07-13 06:40:07.892203356 +0900
++++ rospack_patched/src/rospack_cmdline.h	2012-07-13 06:33:52.342341092 +0900
 @@ -28,12 +28,13 @@
  #ifndef ROSPACK_ROSPACK_CMDLINE_H
  #define ROSPACK_ROSPACK_CMDLINE_H
@@ -406,9 +195,34 @@ diff -NBaur -x .hg rospack/src/rospack_cmdline.h rospack_mods/src/rospack_cmdlin
                   rospack::Rosstackage& rp, 
                   std::string& output);
  
-diff -NBaur -x .hg rospack/src/utils.cpp rospack_mods/src/utils.cpp
---- rospack/src/utils.cpp	Wed May  9 12:20:17 2012
-+++ rospack_mods/src/utils.cpp	Wed May  9 12:20:41 2012
+diff -NBaur -x .hg -x .svn -x '*.pyc' rospack/src/rospack.cpp rospack_patched/src/rospack.cpp
+--- rospack/src/rospack.cpp	2012-07-13 06:40:07.892203356 +0900
++++ rospack_patched/src/rospack.cpp	2012-07-13 06:33:52.342341092 +0900
+@@ -36,8 +36,20 @@
+ #if defined(WIN32)
+   #include <windows.h>
+   #include <direct.h>
+-  #include <libgen.h> // for dirname
+   #include <fcntl.h>  // for O_RDWR, O_EXCL, O_CREAT
++  // simple workaround - could have issues though. See
++  //   http://stackoverflow.com/questions/2915672/snprintf-and-visual-studio-2010
++  // for potentially better solutions. Similar probably applies for some of the others
++  #define snprintf _snprintf
++  #define pclose _pclose
++  #define popen _popen
++  #define PATH_MAX MAX_PATH
++  #if defined(__MINGW32__)
++    #include <libgen.h> // for dirname
++  #endif
++  #if defined(_MSC_VER)
++    #include <io.h> // _mktemp_s
++  #endif
+ #else //!defined(WIN32)
+   #include <sys/types.h>
+   #include <libgen.h>
+diff -NBaur -x .hg -x .svn -x '*.pyc' rospack/src/utils.cpp rospack_patched/src/utils.cpp
+--- rospack/src/utils.cpp	2012-07-13 06:40:07.896203384 +0900
++++ rospack_patched/src/utils.cpp	2012-07-13 06:33:52.342341092 +0900
 @@ -29,7 +29,8 @@
  #include <vector>
  #include <boost/algorithm/string.hpp>
@@ -419,9 +233,9 @@ diff -NBaur -x .hg rospack/src/utils.cpp rospack_mods/src/utils.cpp
  namespace rospack
  {
  
-diff -NBaur -x .hg rospack/src/utils.h rospack_mods/src/utils.h
---- rospack/src/utils.h	Wed May  9 12:20:17 2012
-+++ rospack_mods/src/utils.h	Wed May  9 12:20:41 2012
+diff -NBaur -x .hg -x .svn -x '*.pyc' rospack/src/utils.h rospack_patched/src/utils.h
+--- rospack/src/utils.h	2012-07-13 06:40:07.896203384 +0900
++++ rospack_patched/src/utils.h	2012-07-13 06:33:52.342341092 +0900
 @@ -28,6 +28,7 @@
  #ifndef ROSPACK_UTILS_H
  #define ROSPACK_UTILS_H
