@@ -1,0 +1,448 @@
+diff -NBaur -x .svn -x *.pyc ros_comm/tools/rosbag/CMakeLists.txt ros_comm_rosbag_working/tools/rosbag/CMakeLists.txt
+--- ros_comm/tools/rosbag/CMakeLists.txt	Fri Jun 22 11:06:36 2012
++++ ros_comm_rosbag_working/tools/rosbag/CMakeLists.txt	Thu Jul 12 08:20:11 2012
+@@ -5,7 +5,7 @@
+   )
+ 
+ find_package(ROS REQUIRED COMPONENTS cpp_common roscpp_serialization roscpp rosconsole xmlrpcpp topic_tools rosunit rostest)
+-find_package(Boost REQUIRED COMPONENTS regex program_options)
++find_package(Boost REQUIRED COMPONENTS date_time regex program_options filesystem)
+ find_package(BZip2 REQUIRED)
+ # Support large bags (>2GB) on 32-bit systems
+ add_definitions(-D_FILE_OFFSET_BITS=64)
+diff -NBaur -x .svn -x *.pyc ros_comm/tools/rosbag/include/rosbag/player.h ros_comm_rosbag_working/tools/rosbag/include/rosbag/player.h
+--- ros_comm/tools/rosbag/include/rosbag/player.h	Thu Jul 12 11:45:15 2012
++++ ros_comm_rosbag_working/tools/rosbag/include/rosbag/player.h	Thu Jul 12 08:51:11 2012
+@@ -36,9 +36,11 @@
+ #define ROSBAG_PLAYER_H
+ 
+ #include <sys/stat.h>
+-#include <termios.h>
++#if !defined(_MSC_VER)
++  #include <termios.h>
++  #include <unistd.h>
++#endif
+ #include <time.h>
+-#include <unistd.h>
+ 
+ #include <queue>
+ #include <string>
+@@ -176,8 +178,13 @@
+ 
+     // Terminal
+     bool    terminal_modified_;
++#if defined(_MSC_VER)
++    HANDLE input_handle;
++	DWORD stdin_set;
++#else
+     termios orig_flags_;
+     fd_set  stdin_fdset_;
++#endif
+     int     maxfd_;
+ 
+     TimeTranslator time_translator_;
+diff -NBaur -x .svn -x *.pyc ros_comm/tools/rosbag/include/rosbag/recorder.h ros_comm_rosbag_working/tools/rosbag/include/rosbag/recorder.h
+--- ros_comm/tools/rosbag/include/rosbag/recorder.h	Thu Jul 12 11:45:15 2012
++++ ros_comm_rosbag_working/tools/rosbag/include/rosbag/recorder.h	Thu Jul 12 08:20:58 2012
+@@ -36,9 +36,11 @@
+ #define ROSBAG_RECORDER_H
+ 
+ #include <sys/stat.h>
+-#include <termios.h>
++#if !defined(_MSC_VER)
++  #include <termios.h>
++  #include <unistd.h>
++#endif
+ #include <time.h>
+-#include <unistd.h>
+ 
+ #include <queue>
+ #include <string>
+diff -NBaur -x .svn -x *.pyc ros_comm/tools/rosbag/src/bag.cpp ros_comm_rosbag_working/tools/rosbag/src/bag.cpp
+--- ros_comm/tools/rosbag/src/bag.cpp	Fri Jun 22 11:06:36 2012
++++ ros_comm_rosbag_working/tools/rosbag/src/bag.cpp	Thu Jul 12 09:59:56 2012
+@@ -30,7 +30,11 @@
+ #include "rosbag/query.h"
+ #include "rosbag/view.h"
+ 
+-#include <inttypes.h>
++#if defined(_MSC_VER)
++  #include <stdint.h> // only on v2010 and later -> is this enough for msvc and linux?
++#else
++  #include <inttypes.h>
++#endif
+ #include <signal.h>
+ 
+ #include <iomanip>
+@@ -210,7 +214,11 @@
+ 
+     char logtypename[100];
+     int version_major, version_minor;
++#if defined(_MSC_VER)
++    if (sscanf_s(version_line.c_str(), "#ROS%s V%d.%d", logtypename, sizeof(logtypename), &version_major, &version_minor) != 3)
++#else
+     if (sscanf(version_line.c_str(), "#ROS%s V%d.%d", logtypename, &version_major, &version_minor) != 3)
++#endif
+         throw BagIOException("Error reading version line");
+ 
+     version_ = version_major * 100 + version_minor;
+diff -NBaur -x .svn -x *.pyc ros_comm/tools/rosbag/src/chunked_file.cpp ros_comm_rosbag_working/tools/rosbag/src/chunked_file.cpp
+--- ros_comm/tools/rosbag/src/chunked_file.cpp	Fri Jun 22 11:06:36 2012
++++ ros_comm_rosbag_working/tools/rosbag/src/chunked_file.cpp	Thu Jul 12 10:34:03 2012
+@@ -39,6 +39,19 @@
+ #include <boost/format.hpp>
+ 
+ #include <ros/ros.h>
++#ifdef _WIN32
++#    ifdef __MINGW32__
++#      define fseeko fseeko64
++#      define ftello ftello64
++//     not sure if we need a ftruncate here yet or not
++#    else
++#        include <io.h>
++#        define fseeko _fseeki64
++#        define ftello _ftelli64
++#        define fileno _fileno
++#        define ftruncate _chsize
++#    endif
++#endif
+ 
+ using std::string;
+ using boost::format;
+@@ -52,9 +65,9 @@
+     offset_(0),
+     compressed_in_(0),
+     unused_(NULL),
+-    nUnused_(0),
+-    stream_factory_(new StreamFactory(this))
++    nUnused_(0)
+ {
++    stream_factory_ = boost::shared_ptr<StreamFactory>(new StreamFactory(this));
+ }
+ 
+ ChunkedFile::~ChunkedFile() {
+@@ -73,16 +86,32 @@
+     // Open the file
+     if (mode == "r+b") {
+         // Read + write requires file to exists.  Create a new file if it doesn't exist.
+-        file_ = fopen(filename.c_str(), "r");
++        #if defined(_MSC_VER) && (_MSC_VER >= 1400 )
++    	    fopen_s( &file_, filename.c_str(), "r" );
++        #else
++            file_ = fopen(filename.c_str(), "r");
++        #endif
+         if (file_ == NULL)
+-            file_ = fopen(filename.c_str(), "w+b");
++            #if defined(_MSC_VER) && (_MSC_VER >= 1400 )
++                fopen_s( &file_, filename.c_str(), "w+b" );
++            #else
++                file_ = fopen(filename.c_str(), "w+b");
++            #endif
+         else {
+             fclose(file_);
+-            file_ = fopen(filename.c_str(), "r+b");
++            #if defined(_MSC_VER) && (_MSC_VER >= 1400 )
++                fopen_s( &file_, filename.c_str(), "w+b" );
++            #else
++                file_ = fopen(filename.c_str(), "r+b");
++            #endif
+         }
+     }
+     else
+-        file_ = fopen(filename.c_str(), mode.c_str());
++        #if defined(_MSC_VER) && (_MSC_VER >= 1400 )
++            fopen_s( &file_, filename.c_str(), mode.c_str() );
++        #else
++            file_ = fopen(filename.c_str(), mode.c_str());
++        #endif
+ 
+     if (!file_)
+         throw BagIOException((format("Error opening file: %1%") % filename.c_str()).str());
+diff -NBaur -x .svn -x *.pyc ros_comm/tools/rosbag/src/play.cpp ros_comm_rosbag_working/tools/rosbag/src/play.cpp
+--- ros_comm/tools/rosbag/src/play.cpp	Fri Jun 22 11:06:36 2012
++++ ros_comm_rosbag_working/tools/rosbag/src/play.cpp	Thu Jul 12 10:07:51 2012
+@@ -49,10 +49,10 @@
+       ("pause", "start in paused mode")
+       ("queue", po::value<int>()->default_value(100), "use an outgoing queue of size SIZE")
+       ("clock", "publish the clock time")
+-      ("hz", po::value<float>()->default_value(100.0), "use a frequency of HZ when publishing clock time")
+-      ("delay,d", po::value<float>()->default_value(0.2), "sleep SEC seconds after every advertise call")
+-      ("rate,r", po::value<float>()->default_value(1.0), "multiply the publish rate by FACTOR")
+-      ("start,s", po::value<float>()->default_value(0.0), "start SEC seconds into the bag files")
++      ("hz", po::value<float>()->default_value(100.0f), "use a frequency of HZ when publishing clock time")
++      ("delay,d", po::value<float>()->default_value(0.2f), "sleep SEC seconds after every advertise call")
++      ("rate,r", po::value<float>()->default_value(1.0f), "multiply the publish rate by FACTOR")
++      ("start,s", po::value<float>()->default_value(0.0f), "start SEC seconds into the bag files")
+       ("loop,l", "loop playback")
+       ("keep-alive,k", "keep alive past end of bag")
+       ("try-future-version", "still try to open a bag file, even if the version is not known to the player")
+diff -NBaur -x .svn -x *.pyc ros_comm/tools/rosbag/src/player.cpp ros_comm_rosbag_working/tools/rosbag/src/player.cpp
+--- ros_comm/tools/rosbag/src/player.cpp	Fri Jun 22 11:06:36 2012
++++ ros_comm_rosbag_working/tools/rosbag/src/player.cpp	Thu Jul 12 10:00:46 2012
+@@ -36,7 +36,9 @@
+ #include "rosbag/message_instance.h"
+ #include "rosbag/view.h"
+ 
+-#include <sys/select.h>
++#if !defined(_MSC_VER)
++  #include <sys/select.h>
++#endif
+ 
+ #include <boost/foreach.hpp>
+ #include <boost/format.hpp>
+@@ -401,6 +402,27 @@
+ 	if (terminal_modified_)
+ 		return;
+ 
++#if defined(_MSC_VER)
++    input_handle = GetStdHandle(STD_INPUT_HANDLE);
++	if (input_handle == INVALID_HANDLE_VALUE)
++	{
++        std::cout << "Failed to set up standard input handle." << std::endl;
++		return;
++	}
++	if (! GetConsoleMode(input_handle, &stdin_set) )
++	{
++        std::cout << "Failed to save the console mode." << std::endl;
++		return;
++	}
++	// don't actually need anything but the default.
++	//DWORD event_mode = ENABLE_WINDOW_INPUT | ENABLE_MOUSE_INPUT; 
++	//if (! SetConsoleMode(input_handle, event_mode) ) 
++	//{
++    //    std::cout << "Failed to set the console mode." << std::endl;
++	//	return;
++	//}
++    terminal_modified_ = true;
++#else
+     const int fd = fileno(stdin);
+     termios flags;
+     tcgetattr(fd, &orig_flags_);
+@@ -413,17 +435,20 @@
+     FD_ZERO(&stdin_fdset_);
+     FD_SET(fd, &stdin_fdset_);
+     maxfd_ = fd + 1;
+-
+     terminal_modified_ = true;
++#endif
+ }
+ 
+ void Player::restoreTerminal() {
+ 	if (!terminal_modified_)
+ 		return;
+ 
++#if defined(_MSC_VER)
++    SetConsoleMode(input_handle, stdin_set);
++#else
+     const int fd = fileno(stdin);
+     tcsetattr(fd, TCSANOW, &orig_flags_);
+-
++#endif
+     terminal_modified_ = false;
+ }
+ 
+@@ -431,10 +456,32 @@
+ #ifdef __APPLE__
+     fd_set testfd;
+     FD_COPY(&stdin_fdset_, &testfd);
+-#else
++#elif !defined(_MSC_VER)
+     fd_set testfd = stdin_fdset_;
+ #endif
+ 
++#if defined(_MSC_VER)
++    DWORD events = 0;
++	INPUT_RECORD input_record[1];
++    DWORD input_size = 1;
++	BOOL b = GetNumberOfConsoleInputEvents(input_handle, &events);
++	if (b && events > 0) 
++	{
++	    b = ReadConsoleInput(input_handle, input_record, input_size, &events);
++		if (b)
++		{
++		    for (unsigned int i = 0; i < events; i++)
++			{
++			    if (input_record[i].EventType & KEY_EVENT & input_record[i].Event.KeyEvent.bKeyDown)
++				{
++				    CHAR ch = input_record[i].Event.KeyEvent.uChar.AsciiChar;
++					return ch;
++			    }
++			}
++		}
++	}
++    return EOF;
++#else
+     timeval tv;
+     tv.tv_sec  = 0;
+     tv.tv_usec = 0;
+@@ -440,8 +487,8 @@
+     tv.tv_usec = 0;
+     if (select(maxfd_, &testfd, NULL, NULL, &tv) <= 0)
+         return EOF;
+-
+     return getc(stdin);
++#endif
+ }
+ 
+ TimePublisher::TimePublisher() : time_scale_(1.0)
+diff -NBaur -x .svn -x *.pyc ros_comm/tools/rosbag/src/record.cpp ros_comm_rosbag_working/tools/rosbag/src/record.cpp
+--- ros_comm/tools/rosbag/src/record.cpp	Fri Jun 22 11:06:36 2012
++++ ros_comm_rosbag_working/tools/rosbag/src/record.cpp	Thu Jul 12 08:20:30 2012
+@@ -147,9 +147,9 @@
+       if ((iss >> duration).fail())
+         throw ros::Exception("Duration must start with a floating point number.");
+ 
+-      if (!iss.eof() and ((iss >> unit).fail()))
++      if ( (!iss.eof() && ((iss >> unit).fail())) ) {
+         throw ros::Exception("Duration unit must be s, m, or h");
+-      
++      }
+       if (unit == std::string(""))
+         multiplier = 1.0;
+       else if (unit == std::string("s"))
+diff -NBaur -x .svn -x *.pyc ros_comm/tools/rosbag/src/recorder.cpp ros_comm_rosbag_working/tools/rosbag/src/recorder.cpp
+--- ros_comm/tools/rosbag/src/recorder.cpp	Fri Jun 22 11:06:36 2012
++++ ros_comm_rosbag_working/tools/rosbag/src/recorder.cpp	Thu Jul 12 09:42:25 2012
+@@ -35,7 +35,12 @@
+ #include "rosbag/recorder.h"
+ 
+ #include <sys/stat.h>
+-#include <sys/statvfs.h>
++#include <boost/filesystem.hpp>
++// Boost filesystem v3 is default in 1.46.0 and above
++// Fallback to original posix code (*nix only) if this is not true
++#if BOOST_FILESYSTEM_VERSION < 3
++  #include <sys/statvfs.h>
++#endif
+ #include <time.h>
+ 
+ #include <queue>
+@@ -48,6 +53,7 @@
+ #include <boost/regex.hpp>
+ #include <boost/thread.hpp>
+ #include <boost/thread/xtime.hpp>
++#include <boost/date_time/local_time/local_time.hpp>
+ 
+ #include <ros/ros.h>
+ #include <topic_tools/shape_shifter.h>
+@@ -246,11 +252,14 @@
+ 
+ template<class T>
+ std::string Recorder::timeToStr(T ros_t) {
+-    char buf[1024] = "";
+-    time_t t = ros_t.sec;
+-    struct tm* tms = localtime(&t);
+-    strftime(buf, 1024, "%Y-%m-%d-%H-%M-%S", tms);
+-    return string(buf);
++    std::stringstream msg;
++    const boost::posix_time::ptime now=
++        boost::posix_time::second_clock::local_time();
++    boost::posix_time::time_facet *const f=
++        new boost::posix_time::time_facet("%Y-%m-%d-%H-%M-%S");
++    msg.imbue(std::locale(msg.getloc(),f));
++    msg << now;
++    return msg.str();
+ }
+ 
+ //! Callback to be invoked to save messages into a queue
+@@ -574,26 +583,52 @@
+ }
+ 
+ bool Recorder::checkDisk() {
++#if BOOST_FILESYSTEM_VERSION < 3
+     struct statvfs fiData;
+-    if ((statvfs(bag_.getFileName().c_str(), &fiData)) < 0) {
+-        ROS_WARN("Failed to check filesystem stats.");
+-        return true;
++	if ((statvfs(bag_.getFileName().c_str(), &fiData)) < 0) {
++		ROS_WARN("Failed to check filesystem stats.");
++		return true;
++	}
++	unsigned long long free_space = 0;
++	free_space = (unsigned long long) (fiData.f_bsize) * (unsigned long long) (fiData.f_bavail);
++	if (free_space < 1073741824ull) {
++		ROS_ERROR("Less than 1GB of space free on disk with %s.  Disabling recording.", bag_.getFileName().c_str());
++		writing_enabled_ = false;
++		return false;
++	}
++	else if (free_space < 5368709120ull) {
++		ROS_WARN("Less than 5GB of space free on disk with %s.", bag_.getFileName().c_str());
++	}
++	else {
++		writing_enabled_ = true;
++	}
++#else
++    boost::filesystem::path p(boost::filesystem::system_complete(bag_.getFileName().c_str()));
++	p = p.parent_path();
++	boost::filesystem::space_info info;
++	try 
++	{
++        info = boost::filesystem::space(p);
++	} 
++    catch (boost::filesystem::filesystem_error &e) 
++    { 
++        ROS_WARN("Failed to check filesystem stats [%s].", e.what());
++        writing_enabled_ = false;
++        return false;
+     }
+-
+-    unsigned long long free_space = 0;
+-    free_space = (unsigned long long) (fiData.f_bsize) * (unsigned long long) (fiData.f_bavail);
+-    if (free_space < 1073741824ull) {
++    if ( info.available < 1073741824ull) {
+         ROS_ERROR("Less than 1GB of space free on disk with %s.  Disabling recording.", bag_.getFileName().c_str());
+         writing_enabled_ = false;
+         return false;
+     }
+-    else if (free_space < 5368709120ull) {
++    else if (info.available < 5368709120ull) {
+         ROS_WARN("Less than 5GB of space free on disk with %s.", bag_.getFileName().c_str());
++        writing_enabled_ = true;
+     }
+     else {
+         writing_enabled_ = true;
+     }
+-
++#endif
+     return true;
+ }
+ 
+diff -NBaur -x .svn -x *.pyc ros_comm/tools/rosbag/src/rosbag/rosbag_main.py ros_comm_rosbag_working/tools/rosbag/src/rosbag/rosbag_main.py
+--- ros_comm/tools/rosbag/src/rosbag/rosbag_main.py	Fri Jun 22 11:06:36 2012
++++ ros_comm_rosbag_working/tools/rosbag/src/rosbag/rosbag_main.py	Thu Jul 12 10:54:53 2012
+@@ -189,7 +189,10 @@
+     if len(args) == 0:
+         parser.error('You must specify at least 1 bag file to play back.')
+ 
+-    cmd = ['play']
++    playpath = roslib.packages.find_node('rosbag', 'play')
++    if not playpath:
++        parser.error("Cannot find rosbag/play executable")
++    cmd = [playpath[0]]
+ 
+     if options.quiet:      cmd.extend(["--quiet"])
+     if options.pause:      cmd.extend(["--pause"])
+@@ -212,11 +215,9 @@
+         cmd.extend(['--topics'] + options.topics + ['--bags'])
+ 
+     cmd.extend(args)
+-
+-    playpath = roslib.packages.find_node('rosbag', 'play')
+-    if not playpath:
+-        parser.error("Cannot find rosbag/play executable")
+-    os.execv(playpath[0], cmd)
++    # Better way of handling it than os.execv
++	# This makes sure stdin handles are passed to the process.
++    subprocess.call(cmd)
+ 
+ def filter_cmd(argv):
+     def expr_eval(expr):
+@@ -779,7 +780,7 @@
+             s     = struct.pack('HHHH', 0, 0, 0, 0)
+             x     = fcntl.ioctl(1, termios.TIOCGWINSZ, s)
+             width = struct.unpack('HHHH', x)[1]
+-        except IOError:
++        except (IOError, ImportError):
+             pass
+         if width <= 0:
+             try:
