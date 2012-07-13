@@ -7,7 +7,7 @@ rem
 rem - rosdeps are already installed
 rem - required python modules are already installed
 
-set SDK_VERSION=0.1.1
+set SDK_VERSION=0.1.2
 set INSTALL_ROOT=C:\opt
 set SDK_ZIP=sdk-fuerte-x86-vx10-%SDK_VERSION%.zip
 set PWD=%~dp0
@@ -84,7 +84,7 @@ cd ..
 echo -- Installing %INSTALL_ROOT%\rosws\fuerte\sdk-tutorials
 rm -rf C:\opt\rosws\fuerte
 mkdir C:\opt\rosws\fuerte
-cp -r %PWD%\src\win_ros\msvc\msvc_sdk\sdk_projects\fuerte\sdk-tutorials %INSTALL_ROOT%\rosws\fuerte\sdk-tutorials
+cp -r %PWD%\src\win_ros\tutorials\msvc_sdk_tutorials %INSTALL_ROOT%\rosws\fuerte\sdk-tutorials
 if X%COMMAND%==Xall (
   goto Package
 ) else (
