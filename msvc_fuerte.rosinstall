@@ -2,57 +2,57 @@
 - git:
     uri: 'https://github.com/yujinrobot/catkin.git'
     local-name: catkin
-    version: 2711b0c46379ecf1af2d3a483a67dbf173339075
+    version: c136e55cf88706d10fc5fc263d59dd21053ab198
 
 - git:
     uri: 'git://github.com/willowgarage/catkin-debs.git'
     local-name: catkin-debs
-    version: 69fbacbd503568fd87de6b0f1cb01b4d4cf14238
+    version: 85b4d8663032cd0e81ee112be36cf11c6e5c0ef3
 
 - git:
     uri: 'git://github.com/ros/genmsg.git'
     local-name: genmsg
-    version: 407ed8d616571324dc9d5c74e59f6ec0b0ec43aa 
+    version: d1276c1f930262476827e20c9d0c15472147ba7b
 
 - git:
     uri: 'git://github.com/ros/gencpp.git'
     local-name: gencpp
-    version: 2a02af2421ba37f9a9f68b9c91d75dd0274af613
+    version: f63bf7e775dd374e37fcd2d167f7c8b60b00e013
 
 - git:
     uri: 'git://github.com/ros/genpy.git'
     local-name: genpy
-    version: ffa9d219521a9d0550707ee69ecde08f6232b3af
+    version: 822684544a26a91c3f3afc4dbf9ae19d68e7e3cd
 
 - git:
     uri: 'git://github.com/ros/std_msgs.git'
     local-name: std_msgs
-    version: 044dea4662585e9de2f3345486897f133a720fd1
+    version: 4d8302c006f80ab6e340fcd4489bb0edc5ca1ec3
 
 - git:
     uri: 'git://github.com/ros/roscpp_core.git'
     local-name: roscpp_core
-    version: ddfb916d830f0f658b0e68be2128ab0c15445ad3 
+    version: d0b5ce1d8f42050a5674875b866a7dda6383a75b
 
 - svn:
     uri: 'https://code.ros.org/svn/ros/stacks/ros_comm/trunk/'
     local-name: ros_comm
-    version: r16718
+    version: r16836
 
 - svn:
     uri: 'https://code.ros.org/svn/ros/stacks/ros/trunk/'
     local-name: ros
-    version: r16718
+    version: r16836
 
 - svn:
     uri: 'https://code.ros.org/svn/ros-pkg/stacks/common_msgs/trunk'
     local-name: common_msgs
-    version: r39405
+    version: r39681
 
 - hg:
     local-name: rospack
     uri: https://kforge.ros.org/rosrelease/rospack
-    version: 102:02de7ff9c947
+    version: 108:6633c85bf03d
 
 #- hg:
 #    local-name: actionlib
@@ -64,9 +64,8 @@
 #    local-name: qt_ros
 #    version: master
 
-#    uri: git@github.com:stonier/win_ros.git
 - git:
     uri: 'https://github.com/stonier/win_ros.git'
     local-name: win_ros
-    version: e52e7f85867cb4b16824f93a5d388f3dc87be66e
+    version: fuerte
 
