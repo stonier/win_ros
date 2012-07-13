@@ -1,0 +1,14 @@
+diff -NBaur -x .git -x '*.pyc' genpy/src/genpy/dynamic.py genpy_nodelete/src/genpy/dynamic.py
+--- genpy/src/genpy/dynamic.py	2012-07-13 17:27:12.580724592 +0900
++++ genpy_nodelete/src/genpy/dynamic.py	2012-07-13 17:21:18.570969183 +0900
+@@ -159,8 +159,8 @@
+     # Afterwards, we are going to remove the directory so that the .pyc file gets cleaned up if it's still around
+     atexit.register(shutil.rmtree, tmp_dir)
+     
+-    # write the entire text to a file and import it
+-    tmp_file = tempfile.NamedTemporaryFile(suffix=".py",dir=tmp_dir)
++    # write the entire text to a file and import it (it will get deleted when tmp_dir goes - above)
++    tmp_file = tempfile.NamedTemporaryFile(suffix=".py",dir=tmp_dir,delete=False)
+     tmp_file.file.write(full_text)
+     tmp_file.file.close()
+ 
