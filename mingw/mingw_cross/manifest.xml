@@ -11,16 +11,11 @@
   <review status="doc reviewed" notes=""/>
   <url>http://mingw-cross-env.nongnu.org/</url>
   <!-- provided by win_ros/rosdep.yaml -->
-  <rosdep name="hg"/>
-  <rosdep name="xz"/>
+  <rosdep name="mecurial"/>
+  <rosdep name="xz-utils"/>
   <rosdep name="flex"/>
   <rosdep name="bison"/>
   <rosdep name="yasm"/>
-  <!-- provided by ros/rosdep.yaml -->
-  <!-- actually supplying these in win_ros/rosdep.yaml for now
-       since huey's oneiric is spitting the dummy about the 
-       official ros/rosdep.yaml and I don't know why yet.
-  -->
   <rosdep name="autoconf"/>
   <rosdep name="libtool"/>
   <rosdep name="intltool"/>
