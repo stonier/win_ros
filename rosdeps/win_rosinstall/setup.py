@@ -3,7 +3,7 @@ from distutils.core import setup
 
 
 setup(name='rosinstall',
-      version= '0.6.18',
+      version= '0.6.17',
       packages=['rosinstall', 'vcstools'],
       package_dir = {'':'src'},
       scripts = ["scripts/win-rosinstall.py", "scripts/rosinstall.bat", "scripts/win-rosws.py", "scripts/rosws.bat", "scripts/win-rosinstall-setupfiles.py"],
