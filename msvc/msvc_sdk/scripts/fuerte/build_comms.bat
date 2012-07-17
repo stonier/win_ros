@@ -40,8 +40,7 @@ echo "Rosinstalling, patching and cmake invocation"
 cd %PWD%
 IF EXIST %PWD%msvc_unstable_comms.rosinstall rm -f %PWD%msvc_unstable_comms.rosinstall
 wget --no-check-certificate https://raw.github.com/stonier/win_ros/master/msvc_unstable_comms.rosinstall
-rem call win-rosinstall
-call win-rosinstall %SRC_DIR% msvc_unstable_comms.rosinstall
+call rosinstall %SRC_DIR% msvc_unstable_comms.rosinstall
 if X%COMMAND%==Xall (
   goto Build
 ) else (
