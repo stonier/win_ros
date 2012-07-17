@@ -6,7 +6,7 @@
 
 Dev notes are on https://github.com/stonier/win_ros/wiki/Rosinstall
 
-Experimental hacks on rosinstall/vcstools for playing with windows. Hopefully we can later merge this back upstream.
+This is currently 
 
-
+ - patching os.path.samefile for windows with the python3 patch.
 */
