@@ -10,8 +10,6 @@ until those patches are accepted upstream.
 
 \section Patches
 
- - genpy_nodelete.patch : tempfile bug that fixes rosbag compression.
-  - https://github.com/ros/genpy/pull/6
  - msvc_includes_rospack.patch : starts fixing the includes for msvc (not completely working yet though)
   - last patched for changeset 108.
  - avoid_forking_roslaunch.patch : experimental hack to work around the fact that windows cant track its children
@@ -30,6 +28,8 @@ until those patches are accepted upstream.
 
 \section Patched
 
+ - genpy_nodelete.patch : tempfile bug that fixes rosbag compression.
+  - https://github.com/ros/genpy/pull/6
  - rostopic_graceful_exit.patch : handles and passes on exceptions from time interrupts on windows.
   - https://code.ros.org/trac/ros/ticket/4009
   - https://code.ros.org/gf/project/ros/scmsvn/?action=browse&path=%2Fstacks%2Fros_comm%2Ftrunk%2Ftools%2Frostopic%2Fsrc%2Frostopic%2F__init__.py&r1=16672&r2=16837
