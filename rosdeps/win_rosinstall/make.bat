@@ -18,16 +18,18 @@ echo "Make sure you bump the version in setup.py if necessary."
 goto End
 
 :Download
-IF NOT EXIST %cd%\scripts\win-rosinstall.py (
+IF NOT EXIST %cd%\scripts\rosinstall.py (
   echo.
   echo "Downloading sources and patching"
   echo.
-  REM This is tip 02/03/2012
-  call hg clone -r 15d0b6e38e2e https://kforge.ros.org/vcstools/hg vcstools
-  call hg clone -r 4ab7a92fdf07 https://kforge.ros.org/vcstools/rosinstall rosinstall
+  rem This is tip 02/03/2012
+  rem This is vcstools 0.1.18 and rosinstall 0.6.17
+  call hg clone -r b18d3b8c3065 https://kforge.ros.org/vcstools/hg vcstools
+  call hg clone -r 893f479dbb63 https://kforge.ros.org/vcstools/rosinstall rosinstall
   move %cd%\vcstools\src\vcstools %cd%\src\vcstools
   move %cd%\rosinstall\src\rosinstall %cd%\src\rosinstall
   move %cd%\rosinstall\scripts\rosinstall %cd%\scripts\win-rosinstall.py
+  move %cd%\rosinstall\scripts\rosws %cd%\scripts\win-rosws.py
   rd /S /Q vcstools
   rd /S /Q rosinstall
   rem put patching here if we want it
@@ -71,6 +73,7 @@ rd /S /Q %cd%\dist
 rd /S /Q %cd%\src\vcstools
 rd /S /Q %cd%\src\rosinstall
 rm %cd%\scripts\win-rosinstall.py
+rm %cd%\scripts\win-rosws.py
 goto End
 
 :End
