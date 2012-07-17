@@ -30,8 +30,7 @@ IF NOT EXIST %cd%\scripts\win-rosinstall.py (
   move %cd%\rosinstall\scripts\rosinstall %cd%\scripts\win-rosinstall.py
   rd /S /Q vcstools
   rd /S /Q rosinstall
-  REM copy /Y %cd%\patches\svn.py %cd%\src\vcstools
-  REM copy /Y %cd%\patches\multiproject_cmd.py %cd%\src\rosinstall
+  rem put patching here if we want it
 ) ELSE (
   echo.
   echo "Already prepped"
