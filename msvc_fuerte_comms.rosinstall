@@ -1,0 +1,40 @@
+
+- git:
+    uri: 'https://github.com/yujinrobot/catkin.git'
+    local-name: catkin
+    version: c136e55cf88706d10fc5fc263d59dd21053ab198
+
+- git:
+    uri: 'git://github.com/ros/genmsg.git'
+    local-name: genmsg
+    version: d1276c1f930262476827e20c9d0c15472147ba7b
+
+- git:
+    uri: 'git://github.com/ros/gencpp.git'
+    local-name: gencpp
+    version: f63bf7e775dd374e37fcd2d167f7c8b60b00e013
+
+- git:
+    uri: 'git://github.com/ros/genpy.git'
+    local-name: genpy
+    version: 822684544a26a91c3f3afc4dbf9ae19d68e7e3cd
+
+- git:
+    uri: 'git://github.com/ros/std_msgs.git'
+    local-name: std_msgs
+    version: 4d8302c006f80ab6e340fcd4489bb0edc5ca1ec3
+
+- svn:
+    uri: 'https://code.ros.org/svn/ros-pkg/stacks/common_msgs/trunk'
+    local-name: common_msgs
+    version: r39681
+
+#- hg:
+#    local-name: actionlib
+#    uri: https://kforge.ros.org/common/actionlib
+
+- git:
+    uri: 'https://github.com/stonier/win_ros.git'
+    local-name: win_ros
+    version: fuerte
+
