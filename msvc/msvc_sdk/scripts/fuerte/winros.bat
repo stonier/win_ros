@@ -242,7 +242,7 @@ echo.
 @echo on
 rm -rf %COMMS_INSTALL_PREFIX%
 rm -rf %DIR_COMMS_BUILD%
-rm -rf %DIR_COMMMS_SOURCES%
+rm -rf %DIR_COMMS_SOURCES%
 @echo off
 goto End
 
