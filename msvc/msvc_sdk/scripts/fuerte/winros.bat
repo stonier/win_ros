@@ -259,7 +259,7 @@ if "%BUILD%"=="stable" (
 )
 cd %PWD%
 if X%TARGET%==Xall (
-  goto SdkConfigure
+  goto CommsConfigure
 ) else (
   echo.
   echo "You may now proceed with 'winros comms configure'"
@@ -273,6 +273,9 @@ echo.
 call %DIR_COMMS_SOURCES%\setup.bat
 if not exist %DIR_COMMS_BUILD% mkdir %DIR_COMMS_BUILD%
 cd %DIR_COMMS_BUILD%
+echo %DIR_COMMS_BUILD%
+echo %DIR_COMMS_SOURCES%
+
 rem 1) CATKIN_BUILD_STACKS and BLACKLIST_STACKS are semicolon separated list of stack names (ALL and None are the defaults).
 rem   e.g. -DCATKIN_BUILD_STACKS:STRING="catkin;genmsg;gencpp;genpy"
 cmake -G "NMake Makefiles" ^
