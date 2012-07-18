@@ -214,6 +214,7 @@ echo -- Installing %INSTALL_ROOT%\rosws\fuerte\sdk-tutorials
 rm -rf %INSTALL_ROOT%\rosws\fuerte
 mkdir %INSTALL_ROOT%\rosws\fuerte
 cp -r %DIR_SDK_SOURCES%\win_ros\tutorials\msvc_sdk_tutorials %INSTALL_ROOT%\rosws\fuerte\sdk-tutorials
+goto End
 
 :SdkPackage
 echo.
