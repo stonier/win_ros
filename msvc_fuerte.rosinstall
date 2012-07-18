@@ -2,7 +2,7 @@
 - git:
     uri: 'https://github.com/yujinrobot/catkin.git'
     local-name: catkin
-    version: c136e55cf88706d10fc5fc263d59dd21053ab198
+    version: 832c1312cccc79ac7325bfe13dc22b87a5389a93
 
 - git:
     uri: 'git://github.com/willowgarage/catkin-debs.git'
