@@ -2,8 +2,8 @@
 
 rem **************************** Variables ***********************************
 
-rem set BUILD=stable
-set BUILD=unstable
+set BUILD=stable
+rem set BUILD=unstable
 if "%BUILD%" == "stable" (
   set SDK_VERSION=0.1.2
 ) else (
