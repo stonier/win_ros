@@ -18,7 +18,6 @@ set ROSDEPS_ROOT=%INSTALL_ROOT%\rosdeps\fuerte\x86
 
 rem ***************************** Constants **********************************
 
-
 set PWD=%~dp0
 set DIR_SDK_SOURCES=%PWD%sdk
 set DIR_COMMS_SOURCES=%PWD%comms
@@ -171,7 +170,6 @@ rem 1) CATKIN_BUILD_STACKS and BLACKLIST_STACKS are semicolon separated list of 
 rem   e.g. -DCATKIN_BUILD_STACKS:STRING="catkin;genmsg;gencpp;ros;roscpp_core"
 rem 2) Boost_xxx variables are useful for debugging boost problems.
 rem
-@echo on
 cmake -G "NMake Makefiles" ^
 	  -DCMAKE_BUILD_TYPE=RelWithDebInfo ^
 	  -DCMAKE_INSTALL_PREFIX:PATH=%SDK_INSTALL_PREFIX% ^
@@ -182,7 +180,6 @@ cmake -G "NMake Makefiles" ^
 	  -DBoost_DETAILED_FAILURE_MSG=False ^
 	  -DCMAKE_USER_MAKE_RULES_OVERRIDE:STRING="%DIR_SDK_FILES%\MsvcFlags.cmake" ^
 	  %DIR_SDK_SOURCES%
-@echo off
 cd %PWD%
 if X%TARGET%==Xall (
   goto SdkBuild
