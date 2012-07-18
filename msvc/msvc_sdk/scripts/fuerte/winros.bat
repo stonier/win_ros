@@ -2,8 +2,8 @@
 
 rem **************************** Variables ***********************************
 
-set BUILD=stable
-rem set BUILD=unstable
+rem set BUILD=stable
+set BUILD=unstable
 if "%BUILD%" == "stable" (
   set SDK_VERSION=0.1.2
 ) else (
@@ -36,6 +36,7 @@ if X%COMMAND%==X set COMMAND=help
 if X%COMMAND%==Xhelp goto Help
 if X%COMMAND%==Xsdk goto Sdk
 if X%COMMAND%==Xcomms goto Comms
+if X%COMMAND%==Xruntime goto Runtime
 goto Help
 
 :Help
@@ -48,6 +49,7 @@ echo Type 'winros [subcommand] help' for more detailed usage.
 echo.
 echo   sdk        build/bundle the winros sdk
 echo   comms      generate headers and modules for ros msgs/srvs.
+echo   comms      step into the runtime build or install environments
 echo.
 goto End
 
@@ -94,7 +96,7 @@ echo.
 echo If not building the 'all' target, make sure the others
 echo are called in the correct sequence.
 echo.
-echo   clean      clean the workspace (remove build and source directories)
+echo   clean      remove build and source directories
 echo   all        download, configure, build and install
 echo   download   rosinstall minimal set of generators and comms stacks
 echo   configure  run cmake on the comms stacks
@@ -119,6 +121,33 @@ if X%TARGET%==Xpackage goto CommsPackage
 if X%TARGET%==Xupload goto CommsUpload
 goto CommsHelp
 
+:RuntimeHelp
+echo.
+echo Usage: winros runtime [target]
+echo.
+echo Use to conveniently step into a runtime environment.
+echo Note that it requires the sdk to have been built/installed
+echo beforehand.
+echo.
+echo   build      step into the build runtime environment
+echo   install    step into the installed runtime environment
+echo.
+goto End
+
+:Runtime
+if X%TARGET%==Xbuild goto RuntimeBuild
+if X%TARGET%==Xinstall goto RuntimeInstall
+goto CommsHelp
+
+rem ************************* Runtime Targets ********************************
+
+:RuntimeBuild
+cd %DIR_SDK_BUILD%
+cmd /k %DIR_SDK_BUILD%\env.bat
+
+:RuntimeInstall
+cd %SDK_INSTALL_PREFIX%
+cmd /k %SDK_INSTALL_PREFIX%\env.bat
 
 rem *************************** Sdk Targets **********************************
 
@@ -170,15 +199,15 @@ rem
 rem 1) CATKIN_BUILD_STACKS and BLACKLIST_STACKS are semicolon separated list of stack names (ALL and None are the defaults).
 rem   e.g. -DCATKIN_BUILD_STACKS:STRING="catkin;genmsg;gencpp;ros;roscpp_core"
 rem 2) Boost_xxx variables are useful for debugging boost problems.
+rem	       -DBoost_DEBUG:BOOL=False ^
+rem	       -DBoost_DETAILED_FAILURE_MSG=False ^
 rem
 cmake -G "NMake Makefiles" ^
 	  -DCMAKE_BUILD_TYPE=RelWithDebInfo ^
 	  -DCMAKE_INSTALL_PREFIX:PATH=%SDK_INSTALL_PREFIX% ^
-	  -DCATKIN_ROSDEPS_PATH:PATH=%ROSDEPS_ROOT% ^
+	  -DCATKIN_ROSDEPS_PATH:PATH="%ROSDEPS_ROOT%" ^
 	  -DCATKIN_BUILD_STACKS:STRING=ALL ^
 	  -DCATKIN_BLACKLIST_STACKS:STRING=None ^
-	  -DBoost_DEBUG:BOOL=False ^
-	  -DBoost_DETAILED_FAILURE_MSG=False ^
 	  -DCMAKE_USER_MAKE_RULES_OVERRIDE:STRING="%DIR_SDK_FILES%\MsvcFlags.cmake" ^
 	  %DIR_SDK_SOURCES%
 cd %PWD%
@@ -273,9 +302,6 @@ echo.
 call %DIR_COMMS_SOURCES%\setup.bat
 if not exist %DIR_COMMS_BUILD% mkdir %DIR_COMMS_BUILD%
 cd %DIR_COMMS_BUILD%
-echo %DIR_COMMS_BUILD%
-echo %DIR_COMMS_SOURCES%
-
 rem 1) CATKIN_BUILD_STACKS and BLACKLIST_STACKS are semicolon separated list of stack names (ALL and None are the defaults).
 rem   e.g. -DCATKIN_BUILD_STACKS:STRING="catkin;genmsg;gencpp;genpy"
 cmake -G "NMake Makefiles" ^
