@@ -94,6 +94,7 @@ echo.
 echo If not building the 'all' target, make sure the others
 echo are called in the correct sequence.
 echo.
+echo   clean      clean the workspace (remove build and source directories)
 echo   all        download, configure, build and install
 echo   download   rosinstall minimal set of generators and comms stacks
 echo   configure  run cmake on the comms stacks
