@@ -11,10 +11,9 @@
     version: master
 
 - git:
-    uri: 'git://github.com/ros/genmsg.git'
+    uri: 'git://github.com/yujinrobot/genmsg.git'
     local-name: genmsg
     version: master 
-#    version: 90e8fecafddf79f99afe0a1f2d55fe1b56566793
 
 - git:
     uri: 'git://github.com/ros/gencpp.git'
