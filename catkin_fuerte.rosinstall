@@ -1,0 +1,6 @@
+
+- git:
+    uri: 'https://github.com/yujinrobot/catkin.git'
+    local-name: catkin
+    version: 832c1312cccc79ac7325bfe13dc22b87a5389a93
+
