@@ -54,9 +54,10 @@
     uri: https://kforge.ros.org/rosrelease/rospack
     version: 108:6633c85bf03d
 
-#- hg:
-#    local-name: actionlib
-#    uri: https://kforge.ros.org/common/actionlib
+- hg:
+    local-name: actionlib
+    uri: https://kforge.ros.org/common/actionlib
+    version: 643:17280b297847
 
 # https://github.com/stonier/qt_ros.git
 #- git:

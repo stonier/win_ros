@@ -51,9 +51,9 @@
     local-name: rospack
     uri: https://kforge.ros.org/rosrelease/rospack
 
-#- hg:
-#    local-name: actionlib
-#    uri: https://kforge.ros.org/common/actionlib
+- hg:
+    local-name: actionlib
+    uri: https://kforge.ros.org/common/actionlib
 
 # https://github.com/stonier/qt_ros.git
 #- git:
