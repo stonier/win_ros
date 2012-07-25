@@ -25,13 +25,13 @@ until those patches are accepted upstream.
   - https://code.ros.org/trac/ros/ticket/3959
  - rosbag_decl.patch : adds windows declspecs, class->struct warning removals.
   - https://code.ros.org/trac/ros/ticket/3997
- - rosbag_working.patch : lets it compile, but fairly broken.
+ - rosbag_working.patch : working now.
   - https://code.ros.org/trac/ros/ticket/4006
- - genmsg needed cross platform absolute path checking for actionlib
-  - https://github.com/ros/genmsg/pull/4
 
 \section Patched
 
+ - genmsg needed cross platform absolute path checking for actionlib
+  - https://github.com/ros/genmsg/pull/4
  - genpy_nodelete.patch : tempfile bug that fixes rosbag compression.
   - https://github.com/ros/genpy/pull/6
  - rostopic_graceful_exit.patch : handles and passes on exceptions from time interrupts on windows.
