@@ -21,10 +21,13 @@ rem ***************************** Constants **********************************
 set PWD=%~dp0
 set DIR_SDK_SOURCES=%PWD%sdk
 set DIR_COMMS_SOURCES=%PWD%comms
+set DIR_WS_SOURCES=%PWD%ws
 set DIR_SDK_BUILD=%PWD%build_sdk
 set DIR_COMMS_BUILD=%PWD%build_comms
+set DIR_WS_BUILD=%PWD%build_ws
 set DIR_PATCHES=%DIR_SDK_SOURCES%\win_ros\win_patches\patches
-set DIR_SDK_FILES=%DIR_SDK_SOURCES%\win_ros\msvc\msvc_sdk\scripts\fuerte
+set DIR_SDK_CMAKE=%DIR_SDK_SOURCES%\win_ros\msvc\msvc_sdk\cmake
+set DIR_SDK_CMAKE_INSTALLED=%SDK_INSTALL_PREFIX%\share\cmake
 set SDK_ZIP=sdk-fuerte-x86-vs10-%SDK_VERSION%.zip
 set COMMS_ZIP=comms-fuerte-x86-vs10-%SDK_VERSION%.zip
 set COMMAND=%1
@@ -35,6 +38,7 @@ rem ************************** Options Parser ********************************
 if X%COMMAND%==X set COMMAND=help
 if X%COMMAND%==Xhelp goto Help
 if X%COMMAND%==Xsdk goto Sdk
+if X%COMMAND%==Xws goto Ws
 if X%COMMAND%==Xcomms goto Comms
 if X%COMMAND%==Xruntime goto Runtime
 goto Help
@@ -47,9 +51,10 @@ echo Various commands used to help build various targets for winros.
 echo.
 echo Type 'winros [subcommand] help' for more detailed usage.
 echo.
-echo   sdk        build/bundle the winros sdk
-echo   comms      generate headers and modules for ros msgs/srvs.
-echo   comms      step into the runtime build or install environments
+echo   sdk        Build/bundle the winros sdk
+echo   comms      Generate headers and modules for ros msgs/srvs.
+echo   ws         Build your own extended workspace.
+echo   runtime    step into the runtime build or install environments
 echo.
 goto End
 
@@ -74,7 +79,6 @@ echo.
 goto End
 
 :Sdk
-if X%TARGET%==X set COMMAND=help
 if X%TARGET%==Xhelp goto SdkHelp
 if X%TARGET%==Xclean goto SdkClean
 if X%TARGET%==Xall goto SdkDownload
@@ -86,6 +90,34 @@ if X%TARGET%==Xinstall goto SdkInstall
 if X%TARGET%==Xpackage goto SdkPackage
 if X%TARGET%==Xupload goto SdkUpload
 goto SdkHelp
+
+:WsHelp
+echo.
+echo Usage: winros ws [target]
+echo.
+echo Various targets used for building your own extended workspace.
+echo It assumes that you have already installed the windows sdk and you
+echo are wanting to compile additional source stacks you have
+echo already prepared in %DIR_WS_SOURCES%.
+echo.
+echo If not building the 'all' target, make sure the others
+echo are called in the correct sequence.
+echo.
+echo   clean      clean the workspace (remove build and source directories)
+echo   init       initialise the %DIR_WS_SOURCES% workspace
+echo   configure  run cmake on the sources
+echo   build      compile sources and generate comms
+echo.
+goto End
+
+:Ws
+if X%TARGET%==Xhelp goto WsHelp
+if X%TARGET%==Xclean goto WsClean
+if X%TARGET%==Xinit goto WsInit
+if X%TARGET%==Xcmake goto WsConfigure
+if X%TARGET%==Xconfigure goto WsConfigure
+if X%TARGET%==Xbuild goto WsBuild
+goto WsHelp
 
 :CommsHelp
 echo.
@@ -108,7 +140,6 @@ echo.
 goto End
 
 :Comms
-if X%TARGET%==X set COMMAND=help
 if X%TARGET%==Xhelp goto CommsHelp
 if X%TARGET%==Xclean goto CommsClean
 if X%TARGET%==Xall goto CommsDownload
@@ -137,7 +168,7 @@ goto End
 :Runtime
 if X%TARGET%==Xbuild goto RuntimeBuild
 if X%TARGET%==Xinstall goto RuntimeInstall
-goto CommsHelp
+goto RuntimeHelp
 
 rem ************************* Runtime Targets ********************************
 
@@ -194,13 +225,15 @@ call %DIR_SDK_SOURCES%\setup.bat
 if not exist %DIR_SDK_BUILD% mkdir %DIR_SDK_BUILD%
 cd %DIR_SDK_BUILD%
 rem You can use a cache file for this, like
-rem cmake -G "NMake Makefiles" -C "%DIR_SDK_FILES%\MsvcCache.cmake" -DCMAKE_USER_MAKE_RULES_OVERRIDE:STRING="%DIR_SDK_FILES%\MsvcFlags.cmake" %DIR_SDK_SOURCES%
+rem cmake -G "NMake Makefiles" -C "%DIR_SDK_CMAKE%\MsvcCache.cmake" -DCMAKE_USER_MAKE_RULES_OVERRIDE:STRING="%DIR_SDK_CMAKE%\MsvcFlags.cmake" %DIR_SDK_SOURCES%
 rem
 rem 1) CATKIN_BUILD_STACKS and BLACKLIST_STACKS are semicolon separated list of stack names (ALL and None are the defaults).
 rem   e.g. -DCATKIN_BUILD_STACKS:STRING="catkin;genmsg;gencpp;ros;roscpp_core"
 rem 2) Boost_xxx variables are useful for debugging boost problems.
 rem	       -DBoost_DEBUG:BOOL=False ^
 rem	       -DBoost_DETAILED_FAILURE_MSG=False ^
+rem 3) Set higher catkin (cmake) logging levels (0-Normal, 3-Highest):
+rem        -DCATKIN_LOG:STRING=2
 rem
 cmake -G "NMake Makefiles" ^
 	  -DCMAKE_BUILD_TYPE=RelWithDebInfo ^
@@ -208,7 +241,7 @@ cmake -G "NMake Makefiles" ^
 	  -DCATKIN_ROSDEPS_PATH:PATH="%ROSDEPS_ROOT%" ^
 	  -DCATKIN_BUILD_STACKS:STRING=ALL ^
 	  -DCATKIN_BLACKLIST_STACKS:STRING=None ^
-	  -DCMAKE_USER_MAKE_RULES_OVERRIDE:STRING="%DIR_SDK_FILES%\MsvcFlags.cmake" ^
+	  -DCMAKE_USER_MAKE_RULES_OVERRIDE:STRING="%DIR_SDK_CMAKE%\MsvcFlags.cmake" ^
 	  %DIR_SDK_SOURCES%
 cd %PWD%
 if X%TARGET%==Xall (
@@ -260,6 +293,61 @@ echo "Uploading to file server."
 echo.
 cd %INSTALL_ROOT%
 scp %SDK_ZIP% files@files.yujinrobot.com:pub/win_ros/sdk
+goto End
+
+rem ***************************** Ws Targets *********************************
+
+:WsClean
+echo.
+echo "Cleaning extended workspace built from %DIR_WS_SOURCES%"
+echo.
+@echo on
+rm -rf %DIR_WS_BUILD%
+rm -rf %DIR_WS_SOURCES%
+@echo off
+goto End
+
+:WsInit
+echo.
+echo "Initialising %DIR_WS_SOURCES%"
+echo.
+rem Could use a check to see if there is already a workspace directory
+if "%BUILD%"=="stable" (
+  call rosinstall %DIR_WS_SOURCES% https://raw.github.com/stonier/win_ros/master/catkin_fuerte.rosinstall
+) else (
+  call rosinstall %DIR_WS_SOURCES% https://raw.github.com/stonier/win_ros/master/catkin_unstable.rosinstall
+)
+echo.
+echo "You can now add your own source stacks using `rosws set` or rosws `merge`.
+echo.
+goto End
+
+:WsConfigure
+echo.
+echo "Configuring the build"
+echo.
+call %DIR_WS_SOURCES%\setup.bat
+if not exist %DIR_WS_BUILD% mkdir %DIR_WS_BUILD%
+cd %DIR_WS_BUILD%
+rem See SdkConfigure for more cmake help
+cmake -G "NMake Makefiles" ^
+	  -DCMAKE_BUILD_TYPE=RelWithDebInfo ^
+	  -DCMAKE_INSTALL_PREFIX:PATH=%SDK_INSTALL_PREFIX% ^
+	  -DCATKIN_ROSDEPS_PATH:PATH="%ROSDEPS_ROOT%" ^
+	  -DCATKIN_BUILD_STACKS:STRING=ALL ^
+	  -DCATKIN_BLACKLIST_STACKS:STRING=None ^
+	  -DCMAKE_USER_MAKE_RULES_OVERRIDE:STRING="%DIR_SDK_CMAKE_INSTALLED%\MsvcFlags.cmake" ^
+	  %DIR_WS_SOURCES%
+cd %PWD%
+goto End
+
+:WsBuild
+echo.
+echo "Compiling sources and generating headers/modules"
+echo.
+cd %DIR_WS_BUILD%
+nmake
+cd %PWD%
 goto End
 
 rem ************************** Comms Targets *********************************
