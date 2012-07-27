@@ -10,8 +10,9 @@
     local-name: catkin-debs
     version: master
 
+#uri: 'git://github.com/ros/genmsg.git'
 - git:
-    uri: 'git://github.com/ros/genmsg.git'
+    uri: 'git://github.com/yujinrobot/genmsg.git'
     local-name: genmsg
     version: master 
 

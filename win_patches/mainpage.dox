@@ -10,6 +10,8 @@ until those patches are accepted upstream.
 
 \section Patches
 
+ - actionlib_msgs_installation_path : fix to avoid mashing two full paths together.
+  - 
  - common_msgs_actionlib_absolute_path : fix absolute path checking for windows.
   - https://code.ros.org/trac/ros-pkg/ticket/5504 
  - actionlib_boost_dependencies : link boost dependences it actually uses so catkin can build.
