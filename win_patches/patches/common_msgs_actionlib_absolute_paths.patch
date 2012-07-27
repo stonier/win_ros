@@ -1,0 +1,16 @@
+diff -NBaur -x .svn -x .pyc common_msgs/actionlib_msgs/cmake/actionlib_msgs-extras.cmake.in common_msgs_new/actionlib_msgs/cmake/actionlib_msgs-extras.cmake.in
+--- common_msgs/actionlib_msgs/cmake/actionlib_msgs-extras.cmake.in	2012-07-27 10:21:14.242745967 +0900
++++ common_msgs_new/actionlib_msgs/cmake/actionlib_msgs-extras.cmake.in	2012-07-27 10:21:56.918745485 +0900
+@@ -14,7 +14,11 @@
+     set(ARG_PACKAGE ${PROJECT_NAME})
+   endif()
+ 
+-  string(REGEX MATCH "^/.*" IS_FULL_PATH ${ARG_DIRECTORY})
++  if(CMAKE_HOST_UNIX)
++    string(REGEX MATCH "^/.*" IS_FULL_PATH ${ARG_DIRECTORY})
++  else() # Windows
++    string(REGEX MATCH "^.:.*" IS_FULL_PATH ${ARG_DIRECTORY})
++  endif()
+ 
+   if(IS_FULL_PATH)
+     set(DIRECTORY_FULL_PATH ${ARG_DIRECTORY})
