@@ -11,7 +11,7 @@
   <review status="doc reviewed" notes=""/>
   <url>http://mingw-cross-env.nongnu.org/</url>
   <!-- provided by win_ros/rosdep.yaml -->
-  <rosdep name="mecurial"/>
+  <rosdep name="mercurial"/>
   <rosdep name="xz-utils"/>
   <rosdep name="flex"/>
   <rosdep name="bison"/>
