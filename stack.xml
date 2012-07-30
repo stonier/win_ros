@@ -1,6 +1,6 @@
 <stack>
   <name>win_ros</name>
-  <version>0.1.01</version>
+  <version>0.1.3</version>
   <description brief="Resources enabling ros on windows">
     Setup and utilities for ros on windows.
   </description>

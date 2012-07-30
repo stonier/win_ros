@@ -5,9 +5,9 @@ rem **************************** Variables ***********************************
 rem set BUILD=stable
 set BUILD=unstable
 if "%BUILD%" == "stable" (
-  set SDK_VERSION=0.1.2
-) else (
   set SDK_VERSION=0.1.3
+) else (
+  set SDK_VERSION=0.1.4
 )
 set INSTALL_ROOT=C:\opt
 set SDK_INSTALL_PREFIX=%INSTALL_ROOT%\ros\fuerte\x86
