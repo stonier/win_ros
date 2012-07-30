@@ -7,12 +7,12 @@
 - git:
     uri: 'git://github.com/willowgarage/catkin-debs.git'
     local-name: catkin-debs
-    version: 85b4d8663032cd0e81ee112be36cf11c6e5c0ef3
+    version: cbce757c27d40ddf9e81efdfa2955732e081d1e8
 
 - git:
-    uri: 'git://github.com/ros/genmsg.git'
+    uri: 'git://github.com/yujinrobot/genmsg.git'
     local-name: genmsg
-    version: d1276c1f930262476827e20c9d0c15472147ba7b
+    version: d0deea302d5485ba88a401a24531d4d652f5d1d9
 
 - git:
     uri: 'git://github.com/ros/gencpp.git'
@@ -22,7 +22,7 @@
 - git:
     uri: 'git://github.com/ros/genpy.git'
     local-name: genpy
-    version: 822684544a26a91c3f3afc4dbf9ae19d68e7e3cd
+    version: ffeaf86f2cea416e2db64bcb186f88603b6a2db7
 
 - git:
     uri: 'git://github.com/ros/std_msgs.git'
@@ -37,17 +37,17 @@
 - svn:
     uri: 'https://code.ros.org/svn/ros/stacks/ros_comm/trunk/'
     local-name: ros_comm
-    version: r16836
+    version: r16862
 
 - svn:
     uri: 'https://code.ros.org/svn/ros/stacks/ros/trunk/'
     local-name: ros
-    version: r16836
+    version: r16862
 
 - svn:
     uri: 'https://code.ros.org/svn/ros-pkg/stacks/common_msgs/trunk'
     local-name: common_msgs
-    version: r39681
+    version: r39774
 
 - hg:
     local-name: rospack
