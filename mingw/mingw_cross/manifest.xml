@@ -19,7 +19,7 @@
       sudo apt-get install mercurial xz-utils flex bison yasm 
       sudo apt-get install autoconf libtool intltool scons
    -->
-  <rosdep name="mecurial"/>
+  <rosdep name="mercurial"/>
   <rosdep name="xz-utils"/>
   <rosdep name="flex"/>
   <rosdep name="bison"/>
