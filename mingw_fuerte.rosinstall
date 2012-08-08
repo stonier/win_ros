@@ -71,5 +71,5 @@
 - git:
     uri: 'https://github.com/stonier/win_ros.git'
     local-name: win_ros
-    version: 6a104255a84fd36bec5fbe3c829b87158ae775c2 
+    version: 7cd1d4440bccc317f550cf2a971ac5de8bb328fe
 
