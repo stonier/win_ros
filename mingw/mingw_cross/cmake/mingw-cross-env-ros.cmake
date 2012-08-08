@@ -38,8 +38,8 @@ set(BUILD_SHARED false CACHE BOOL "Build dynamically linked binaries")
 ###############################
 # Prepare Qt Environment
 ###############################
-set(QT_IS_STATIC 1) # Works on my gentoo (cmake 2.8.1), fails on lucid ubuntu (cmake 2.8.0)
-set(QT_QMAKE_EXECUTABLE ${TOOLCHAIN_TUPLE}-qmake)
+set(QT_IS_STATIC true CACHE BOOL "Qt will use static libraries") # Works on my gentoo (cmake 2.8.1), fails on lucid ubuntu (cmake 2.8.0)
+set(QT_QMAKE_EXECUTABLE ${TOOLCHAIN_TUPLE}-qmake CACHE STRING "The qmake executable")
 
 ###############################
 # SSE
