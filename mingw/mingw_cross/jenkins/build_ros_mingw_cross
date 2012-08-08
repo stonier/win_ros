@@ -6,7 +6,8 @@ echo " - workspace: ${WORKSPACE}"
 echo " - cleaning out old builds"
 rm -rf ${WORKSPACE}/mingw
 rm -rf ${WORKSPACE}/mingwros
-sudo pip install -U vcstools rosinstall
+sudo pip uninstall vcstools rosinstall rospkg rosdep
+sudo apt-get install python-vcstools python-rosinstall python-rospkg python-rosdep
 sudo apt-get install mercurial xz-utils flex bison yasm autoconf libtool intltool scons
 #rosinstall --catkin ${WORKSPACE}/ros https://raw.github.com/stonier/win_ros/master/mingw_jenkins.rosinstall
 rosinstall --catkin ${WORKSPACE}/mingwros/src https://raw.github.com/stonier/win_ros/master/mingw_fuerte.rosinstall
