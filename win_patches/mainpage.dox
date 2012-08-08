@@ -10,6 +10,8 @@ until those patches are accepted upstream.
 
 \section Patches
 
+ - ros_comm_chrono, rostime_chrono : boost 1.50 (mingw) now needs chrono below thread...make sure to add them
+  - not upstreaming this one as its a way off yet and needs a better fix than dropping the required while both boosts are supported
  - actionlib_msgs_installation_path : fix to avoid mashing two full paths together.
   - https://github.com/ros/genmsg/pull/5
  - common_msgs_actionlib_absolute_path : fix absolute path checking for windows.

@@ -1,0 +1,12 @@
+diff -NBaur roscpp_core/rostime/CMakeLists.txt roscpp_core_chrono/rostime/CMakeLists.txt
+--- roscpp_core/rostime/CMakeLists.txt	2012-08-08 22:29:26.260933564 +1000
++++ roscpp_core_chrono/rostime/CMakeLists.txt	2012-08-08 22:30:50.348933364 +1000
+@@ -4,7 +4,7 @@
+ 
+ find_package(cpp_common REQUIRED)
+ include_directories(${cpp_common_INCLUDE_DIRS})
+-find_package(Boost REQUIRED COMPONENTS date_time thread)
++find_package(Boost COMPONENTS date_time thread chrono)
+ 
+ add_library(rostime 
+   src/time.cpp src/rate.cpp src/duration.cpp)
