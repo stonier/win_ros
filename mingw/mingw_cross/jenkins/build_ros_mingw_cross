@@ -8,8 +8,17 @@ rm -rf ${WORKSPACE}/mingw
 rm -rf ${WORKSPACE}/ros
 sudo pip install -U vcstools rosinstall
 sudo apt-get install mercurial xz-utils flex bison yasm autoconf libtool intltool scons
-rosinstall --catkin ${WORKSPACE}/ros https://raw.github.com/stonier/win_ros/master/mingw_jenkins.rosinstall
+#rosinstall --catkin ${WORKSPACE}/ros https://raw.github.com/stonier/win_ros/master/mingw_jenkins.rosinstall
+rosinstall --catkin ${WORKSPACE}/mingw/src https://raw.github.com/stonier/win_ros/master/mingw_fuerte.rosinstall
 export MINGW_INSTALL_PREFIX=${WORKSPACE}/mingw
-cd ${WORKSPACE}/ros/win_ros/mingw/mingw_cross
-make compile
+cd ${WORKSPACE}/mingw/src/win_ros/mingw/mingw_cross
+make install
+cd ${WORKSPACE}/mingw/src
+./win_ros/win_patches/apply_mingw_patches
+cd ${WORKSPACE}/mingw
+mkdir build
+cd build; cmake ../src
+cd build/qt_ros/qt_tutorials; make
+
+
 
