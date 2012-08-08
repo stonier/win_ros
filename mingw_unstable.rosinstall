@@ -34,8 +34,8 @@
     local-name: ros_comm
 
 - hg:
+    uri: 'https://kforge.ros.org/rosrelease/rospack'
     local-name: rospack
-    uri: https://kforge.ros.org/rosrelease/rospack
 
 - svn:
     uri: 'https://code.ros.org/svn/ros/stacks/ros/trunk/'
