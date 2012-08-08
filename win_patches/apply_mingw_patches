@@ -10,13 +10,13 @@ ROOT_DIR=$DIR/../..
 
 echo "PATCHING"
 echo ""
-echo "  Dir..........$DIR"
-echo "  Patch Dir....$PATCH_DIR"
-echo "  Source Dir...$ROOT_DIR"
+echo "  Dir.......... $DIR"
+echo "  Patch Dir.... $PATCH_DIR"
+echo "  Source Dir... $ROOT_DIR"
 echo ""
 
 cd $ROOT_DIR
-for i in $PATCH_DIR/*.patch; do
+for i in win_ros/win_patches/patches/*.patch; do
   echo "# $i"
   patch -p0 < $i
 done
