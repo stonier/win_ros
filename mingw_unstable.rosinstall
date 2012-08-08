@@ -1,61 +1,52 @@
 #    uri: git://github.com/willowgarage/catkin.git
 - git:
-    uri: https://github.com/yujinrobot/catkin.git
+    uri: 'https://github.com/yujinrobot/catkin.git'
     local-name: catkin
     version: master
 
 - git:
-    uri: git://github.com/willowgarage/catkin-debs.git
-    local-name: catkin-debs
-    version: master
-
-- git:
-    uri: git://github.com/ros/genmsg.git
+    uri: 'git://github.com/ros/genmsg.git'
     local-name: genmsg
     version: master
 
 - git:
-    uri: git://github.com/ros/gencpp.git
+    uri: 'git://github.com/ros/gencpp.git'
     local-name: gencpp
     version: master
 
 - git:
-    uri: git://github.com/ros/genpy.git
+    uri: 'git://github.com/ros/genpy.git'
     local-name: genpy
     version: master
 
 - git:
-    uri: git://github.com/ros/std_msgs.git
+    uri: 'git://github.com/ros/std_msgs.git'
     local-name: std_msgs
     version: master
 
 - git:
-    uri: git://github.com/ros/roscpp_core.git
+    uri: 'git://github.com/ros/roscpp_core.git'
     local-name: roscpp_core
     version: master
 
 - svn:
-    uri: https://code.ros.org/svn/ros/stacks/ros_comm/trunk
+    uri: 'https://code.ros.org/svn/ros/stacks/ros_comm/trunk'
     local-name: ros_comm
 
 - svn:
-    uri: https://code.ros.org/svn/ros/stacks/ros/trunk/
+    uri: 'https://code.ros.org/svn/ros/stacks/ros/trunk/'
     local-name: ros
 
 - svn:
-    uri: https://code.ros.org/svn/ros-pkg/stacks/common_msgs/trunk
+    uri: 'https://code.ros.org/svn/ros-pkg/stacks/common_msgs/trunk'
     local-name: common_msgs
 
 - hg:
-    local-name: rospack
-    uri: https://kforge.ros.org/rosrelease/rospack
-
-- hg:
+    uri: 'https://kforge.ros.org/common/actionlib'
     local-name: actionlib
-    uri: https://kforge.ros.org/common/actionlib
 
 - svn:
-    uri: https://code.ros.org/svn/ros/stacks/ros_tutorials/trunk
+    uri: 'https://code.ros.org/svn/ros/stacks/ros_tutorials/trunk'
     local-name: ros_tutorials
 
 #- svn:
@@ -63,12 +54,12 @@
 #    uri: https://code.ros.org/svn/ros/stacks/rx/trunk
 
 - git:
-    uri: https://github.com/stonier/qt_ros.git
+    uri: 'https://github.com/stonier/qt_ros.git'
     local-name: qt_ros
     version: master
 
 - git:
-    uri: https://github.com/stonier/win_ros.git
+    uri: 'https://github.com/stonier/win_ros.git'
     local-name: win_ros
     version: master
 

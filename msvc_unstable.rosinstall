@@ -5,11 +5,6 @@
     local-name: catkin
     version: master
 
-- git:
-    uri: 'git://github.com/willowgarage/catkin-debs.git'
-    local-name: catkin-debs
-    version: master
-
 #uri: 'git://github.com/ros/genmsg.git'
 - git:
     uri: 'git://github.com/yujinrobot/genmsg.git'
