@@ -17,9 +17,10 @@ make install
 cd ${WORKSPACE}/mingwros/src
 ./win_ros/win_patches/apply_mingw_patches
 cd ${WORKSPACE}/mingwros
+export MINGW_ROOT=${WORKSPACE}/mingw; export PATH=${PATH}:${WORKSPACE}/mingw/usr/bin
+export MINGW_CMAKE_TOOLCHAIN_FILE=${WORKSPACE}/mingw/usr/i686-pc-mingw32/share/cmake/mxe-conf.cmake
+export MINGW_CMAKE_ROS_CONFIG_FILE=${WORKSPACE}/mingw/usr/i686-pc-mingw32/share/cmake/mingw-cross-env-ros.cmake
 mkdir build
-cd build; cmake ../src
+cd build; cmake -DCMAKE_TOOLCHAIN_FILE=${MINGW_CMAKE_TOOLCHAIN_FILE} -C ${MINGW_CMAKE_ROS_CONFIG_FILE} ../src
 cd build/qt_ros/qt_tutorials; make
-
-
 
