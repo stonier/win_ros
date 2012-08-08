@@ -1,28 +1,28 @@
 
-#    uri: 'git://github.com/willowgarage/catkin.git'
+#    uri: 'https://github.com/willowgarage/catkin.git'
 - git:
     uri: 'https://github.com/yujinrobot/catkin.git'
     local-name: catkin
     version: master
 
-#uri: 'git://github.com/ros/genmsg.git'
+#uri: 'https://github.com/ros/genmsg.git'
 - git:
-    uri: 'git://github.com/yujinrobot/genmsg.git'
+    uri: 'https://github.com/yujinrobot/genmsg.git'
     local-name: genmsg
     version: master 
 
 - git:
-    uri: 'git://github.com/ros/gencpp.git'
+    uri: 'https://github.com/ros/gencpp.git'
     local-name: gencpp
     version: master
 
 - git:
-    uri: 'git://github.com/ros/genpy.git'
+    uri: 'https://github.com/ros/genpy.git'
     local-name: genpy
     version: master
 
 - git:
-    uri: 'git://github.com/ros/std_msgs.git'
+    uri: 'https://github.com/ros/std_msgs.git'
     local-name: std_msgs
     version: master
 

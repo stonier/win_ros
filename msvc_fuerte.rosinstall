@@ -5,32 +5,32 @@
     version: 832c1312cccc79ac7325bfe13dc22b87a5389a93
 
 - git:
-    uri: 'git://github.com/willowgarage/catkin-debs.git'
+    uri: 'https://github.com/willowgarage/catkin-debs.git'
     local-name: catkin-debs
     version: cbce757c27d40ddf9e81efdfa2955732e081d1e8
 
 - git:
-    uri: 'git://github.com/yujinrobot/genmsg.git'
+    uri: 'https://github.com/yujinrobot/genmsg.git'
     local-name: genmsg
     version: d0deea302d5485ba88a401a24531d4d652f5d1d9
 
 - git:
-    uri: 'git://github.com/ros/gencpp.git'
+    uri: 'https://github.com/ros/gencpp.git'
     local-name: gencpp
     version: f63bf7e775dd374e37fcd2d167f7c8b60b00e013
 
 - git:
-    uri: 'git://github.com/ros/genpy.git'
+    uri: 'https://github.com/ros/genpy.git'
     local-name: genpy
     version: ffeaf86f2cea416e2db64bcb186f88603b6a2db7
 
 - git:
-    uri: 'git://github.com/ros/std_msgs.git'
+    uri: 'https://github.com/ros/std_msgs.git'
     local-name: std_msgs
     version: 4d8302c006f80ab6e340fcd4489bb0edc5ca1ec3
 
 - git:
-    uri: 'git://github.com/ros/roscpp_core.git'
+    uri: 'https://github.com/ros/roscpp_core.git'
     local-name: roscpp_core
     version: d0b5ce1d8f42050a5674875b866a7dda6383a75b
 

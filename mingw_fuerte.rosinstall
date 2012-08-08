@@ -1,36 +1,36 @@
-#    uri: git://github.com/willowgarage/catkin.git
+#    uri: https://github.com/willowgarage/catkin.git
 - git:
     uri: https://github.com/yujinrobot/catkin.git
     local-name: catkin
     version: 2711b0c46379ecf1af2d3a483a67dbf173339075
 
 - git:
-    uri: git://github.com/willowgarage/catkin-debs.git
+    uri: https://github.com/willowgarage/catkin-debs.git
     local-name: catkin-debs
     version: 69fbacbd503568fd87de6b0f1cb01b4d4cf14238
 
 - git:
-    uri: git://github.com/ros/genmsg.git
+    uri: https://github.com/ros/genmsg.git
     local-name: genmsg
     version: 407ed8d616571324dc9d5c74e59f6ec0b0ec43aa 
 
 - git:
-    uri: git://github.com/ros/gencpp.git
+    uri: https://github.com/ros/gencpp.git
     local-name: gencpp
     version: 2a02af2421ba37f9a9f68b9c91d75dd0274af613
 
 - git:
-    uri: git://github.com/ros/genpy.git
+    uri: https://github.com/ros/genpy.git
     local-name: genpy
     version: ffa9d219521a9d0550707ee69ecde08f6232b3af
 
 - git:
-    uri: git://github.com/ros/std_msgs.git
+    uri: https://github.com/ros/std_msgs.git
     local-name: std_msgs
     version: 044dea4662585e9de2f3345486897f133a720fd1
 
 - git:
-    uri: git://github.com/ros/roscpp_core.git
+    uri: https://github.com/ros/roscpp_core.git
     local-name: roscpp_core
     version: ddfb916d830f0f658b0e68be2128ab0c15445ad3 
 
