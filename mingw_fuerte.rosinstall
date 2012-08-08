@@ -1,80 +1,75 @@
 #    uri: https://github.com/willowgarage/catkin.git
 - git:
-    uri: https://github.com/yujinrobot/catkin.git
+    uri: 'https://github.com/yujinrobot/catkin.git'
     local-name: catkin
-    version: 2711b0c46379ecf1af2d3a483a67dbf173339075
+    version: 832c1312cccc79ac7325bfe13dc22b87a5389a93
 
 - git:
-    uri: https://github.com/willowgarage/catkin-debs.git
-    local-name: catkin-debs
-    version: 69fbacbd503568fd87de6b0f1cb01b4d4cf14238
-
-- git:
-    uri: https://github.com/ros/genmsg.git
+    uri: 'https://github.com/ros/genmsg.git'
     local-name: genmsg
-    version: 407ed8d616571324dc9d5c74e59f6ec0b0ec43aa 
+    version: 93d43f1f5a1f3683e2f6f2a2f9f6b001aa1c1ef7
 
 - git:
-    uri: https://github.com/ros/gencpp.git
+    uri: 'https://github.com/ros/gencpp.git'
     local-name: gencpp
-    version: 2a02af2421ba37f9a9f68b9c91d75dd0274af613
+    version: f63bf7e775dd374e37fcd2d167f7c8b60b00e013 
 
 - git:
-    uri: https://github.com/ros/genpy.git
+    uri: 'https://github.com/ros/genpy.git'
     local-name: genpy
-    version: ffa9d219521a9d0550707ee69ecde08f6232b3af
+    version: ffeaf86f2cea416e2db64bcb186f88603b6a2db7
 
 - git:
-    uri: https://github.com/ros/std_msgs.git
+    uri: 'https://github.com/ros/std_msgs.git'
     local-name: std_msgs
-    version: 044dea4662585e9de2f3345486897f133a720fd1
+    version: 4d8302c006f80ab6e340fcd4489bb0edc5ca1ec3
 
 - git:
-    uri: https://github.com/ros/roscpp_core.git
+    uri: 'https://github.com/ros/roscpp_core.git'
     local-name: roscpp_core
-    version: ddfb916d830f0f658b0e68be2128ab0c15445ad3 
+    version: d0b5ce1d8f42050a5674875b866a7dda6383a75b
 
 - svn:
-    uri: https://code.ros.org/svn/ros/stacks/ros_comm/trunk
+    uri: 'https://code.ros.org/svn/ros/stacks/ros_comm/trunk'
     local-name: ros_comm
-    version: r16718
-
-- svn:
-    uri: https://code.ros.org/svn/ros/stacks/ros/trunk/
-    local-name: ros
-    version: r16718
-
-- svn:
-    uri: https://code.ros.org/svn/ros-pkg/stacks/common_msgs/trunk
-    local-name: common_msgs
-    version: r39405
+    version: r16865 
 
 - hg:
+    uri: 'https://kforge.ros.org/rosrelease/rospack'
     local-name: rospack
-    uri: https://kforge.ros.org/rosrelease/rospack
-    version: 102:02de7ff9c947
-
-- hg:
-    local-name: actionlib
-    uri: https://kforge.ros.org/common/actionlib
-    version: 860d372a2ada
+    version: 108:6633c85bf03d
 
 - svn:
-    uri: https://code.ros.org/svn/ros/stacks/ros_tutorials/trunk
+    uri: 'https://code.ros.org/svn/ros/stacks/ros/trunk/'
+    local-name: ros
+    version: r16865 
+
+- svn:
+    uri: 'https://code.ros.org/svn/ros-pkg/stacks/common_msgs/trunk'
+    local-name: common_msgs
+    version: r39856
+
+- hg:
+    uri: 'https://kforge.ros.org/common/actionlib'
+    local-name: actionlib
+    version: 643:17280b297847
+
+- svn:
+    uri: 'https://code.ros.org/svn/ros/stacks/ros_tutorials/trunk'
     local-name: ros_tutorials
-    version: r16718
+    version: r16865 
 
 #- svn:
 #    local-name: rx
 #    uri: https://code.ros.org/svn/ros/stacks/rx/trunk
 
 - git:
-    uri: https://github.com/stonier/qt_ros.git
+    uri: 'https://github.com/stonier/qt_ros.git'
     local-name: qt_ros
-    version: master
+    version: e41fe4f64865b26f2244a61c03965dabcc764b42 
 
 - git:
-    uri: https://github.com/stonier/win_ros.git
+    uri: 'https://github.com/stonier/win_ros.git'
     local-name: win_ros
-    version: e52e7f85867cb4b16824f93a5d388f3dc87be66e
+    version: 6a104255a84fd36bec5fbe3c829b87158ae775c2 
 
