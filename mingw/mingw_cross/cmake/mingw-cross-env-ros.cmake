@@ -28,8 +28,8 @@ set(CMAKE_CXX_FLAGS ${MINGW_CROSS_COMPILE_FLAGS} CACHE PATH "Compile flags for c
 # Qt
 ###############################
 
-set(QT_IS_STATIC 1) # Works on my gentoo (cmake 2.8.1), fails on lucid ubuntu (cmake 2.8.0)
-set(QT_QMAKE_EXECUTABLE ${TOOLCHAIN_TUPLE}-qmake CACHE PATH "Qmake location") 
+set(QT_IS_STATIC true CACHE BOOL "Qt will use static libraries") # Works on my gentoo (cmake 2.8.1), fails on lucid ubuntu (cmake 2.8.0)
+set(QT_QMAKE_EXECUTABLE ${TOOLCHAIN_TUPLE}-qmake CACHE STRING "The qmake executable")
 
 ###############################
 # SSE
