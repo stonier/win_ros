@@ -9,18 +9,19 @@ rm -rf ${WORKSPACE}/mingwros
 sudo pip uninstall vcstools rosinstall rospkg rosdep
 sudo apt-get install python-vcstools python-rosinstall python-rospkg python-rosdep
 sudo apt-get install mercurial xz-utils flex bison yasm autoconf libtool intltool scons
-#rosinstall --catkin ${WORKSPACE}/ros https://raw.github.com/stonier/win_ros/master/mingw_jenkins.rosinstall
 rosinstall --catkin ${WORKSPACE}/mingwros/src https://raw.github.com/stonier/win_ros/master/mingw_fuerte.rosinstall
 export MINGW_INSTALL_PREFIX=${WORKSPACE}/mingw
 cd ${WORKSPACE}/mingwros/src/win_ros/mingw/mingw_cross
-make install
+#make install
 cd ${WORKSPACE}/mingwros/src
-./win_ros/win_patches/apply_mingw_patches
+#./win_ros/win_patches/apply_mingw_patches
 cd ${WORKSPACE}/mingwros
 export MINGW_ROOT=${WORKSPACE}/mingw; export PATH=${PATH}:${WORKSPACE}/mingw/usr/bin
 export MINGW_CMAKE_TOOLCHAIN_FILE=${WORKSPACE}/mingw/usr/i686-pc-mingw32/share/cmake/mxe-conf.cmake
 export MINGW_CMAKE_ROS_CONFIG_FILE=${WORKSPACE}/mingw/usr/i686-pc-mingw32/share/cmake/mingw-cross-env-ros.cmake
 mkdir build
-cd build; cmake -DCMAKE_TOOLCHAIN_FILE=${MINGW_CMAKE_TOOLCHAIN_FILE} -C ${MINGW_CMAKE_ROS_CONFIG_FILE} ../src
-cd build/qt_ros/qt_tutorials; make
+cd build
+cmake -DCMAKE_TOOLCHAIN_FILE=${MINGW_CMAKE_TOOLCHAIN_FILE} -C ${MINGW_CMAKE_ROS_CONFIG_FILE} ../src
+cd qt_ros/qt_tutorials
+make
 
