@@ -12,9 +12,9 @@ sudo apt-get install mercurial xz-utils flex bison yasm autoconf libtool intltoo
 rosinstall --catkin ${WORKSPACE}/mingwros/src https://raw.github.com/stonier/win_ros/master/mingw_fuerte.rosinstall
 export MINGW_INSTALL_PREFIX=${WORKSPACE}/mingw
 cd ${WORKSPACE}/mingwros/src/win_ros/mingw/mingw_cross
-#make install
+make install
 cd ${WORKSPACE}/mingwros/src
-#./win_ros/win_patches/apply_mingw_patches
+./win_ros/win_patches/apply_mingw_patches
 cd ${WORKSPACE}/mingwros
 export MINGW_ROOT=${WORKSPACE}/mingw; export PATH=${PATH}:${WORKSPACE}/mingw/usr/bin
 export MINGW_CMAKE_TOOLCHAIN_FILE=${WORKSPACE}/mingw/usr/i686-pc-mingw32/share/cmake/mxe-conf.cmake
