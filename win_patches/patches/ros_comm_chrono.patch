@@ -7,9 +7,9 @@ diff -NBaur ros_comm/clients/cpp/roscpp/CMakeLists.txt ros_comm_chrono/clients/c
  
 -find_package(Boost REQUIRED COMPONENTS signals filesystem system)
 +# Boost 1.50 thread needs chrono
-+find_package(Boost 1.50.0 COMPONENTS date_time thread chrono)
++find_package(Boost 1.50.0 COMPONENTS signals filesystem system chrono)
 +if(NOT Boost_FOUND)
-+  find_package(Boost REQUIRED COMPONENTS date_time thread)
++  find_package(Boost REQUIRED COMPONENTS signals filesystem system)
 +endif()
  
  include_directories(include)
@@ -23,9 +23,9 @@ diff -NBaur ros_comm/tools/rosconsole/CMakeLists.txt ros_comm_chrono/tools/rosco
  
 -find_package(Boost COMPONENTS regex thread)
 +# Boost 1.50 thread needs chrono
-+find_package(Boost 1.50.0 COMPONENTS date_time thread chrono)
++find_package(Boost 1.50.0 COMPONENTS regex thread chrono)
 +if(NOT Boost_FOUND)
-+  find_package(Boost REQUIRED COMPONENTS date_time thread)
++  find_package(Boost REQUIRED COMPONENTS regex thread)
 +endif()
  
  include_directories(include)
