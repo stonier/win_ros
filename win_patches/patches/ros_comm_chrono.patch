@@ -1,22 +1,6 @@
-diff -NBaur ros_comm/clients/cpp/roscpp/CMakeLists.txt ros_comm_chrono/clients/cpp/roscpp/CMakeLists.txt
---- ros_comm/clients/cpp/roscpp/CMakeLists.txt	2012-08-08 22:31:59.052933201 +1000
-+++ ros_comm_chrono/clients/cpp/roscpp/CMakeLists.txt	2012-08-10 22:24:36.144524748 +1000
-@@ -7,7 +7,11 @@
-   )
- include_directories(${ROS_INCLUDE_DIRS})
- 
--find_package(Boost REQUIRED COMPONENTS signals filesystem system)
-+# Boost 1.50 thread needs chrono
-+find_package(Boost 1.50.0 COMPONENTS signals filesystem system chrono)
-+if(NOT Boost_FOUND)
-+  find_package(Boost REQUIRED COMPONENTS signals filesystem system)
-+endif()
- 
- include_directories(include)
- 
 diff -NBaur ros_comm/tools/rosconsole/CMakeLists.txt ros_comm_chrono/tools/rosconsole/CMakeLists.txt
 --- ros_comm/tools/rosconsole/CMakeLists.txt	2012-08-08 22:31:55.840933212 +1000
-+++ ros_comm_chrono/tools/rosconsole/CMakeLists.txt	2012-08-10 22:24:51.620524709 +1000
++++ ros_comm_chrono/tools/rosconsole/CMakeLists.txt	2012-08-10 23:31:28.640434463 +1000
 @@ -19,7 +19,11 @@
  
  include_directories(${ROS_INCLUDE_DIRS})
