@@ -7,7 +7,7 @@
 - git:
     uri: 'https://github.com/ros/genmsg.git'
     local-name: genmsg
-    version: d0deea302d5485ba88a401a24531d4d652f5d1d9
+    version: 93d43f1f5a1f3683e2f6f2a2f9f6b001aa1c1ef7
 
 - git:
     uri: 'https://github.com/ros/gencpp.git'
