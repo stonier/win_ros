@@ -10,11 +10,15 @@ if "%BUILD%" == "stable" (
   set SDK_VERSION=0.1.4
 )
 set INSTALL_ROOT=C:\opt
+set ROSDEPS_ROOT=%INSTALL_ROOT%\rosdeps\fuerte\x86
 set SDK_INSTALL_PREFIX=%INSTALL_ROOT%\ros\fuerte\x86
 set COMMS_INSTALL_PREFIX=%INSTALL_ROOT%\roscomms\fuerte\x86
 rem alternatively put it directly in your sdk folder
 rem set COMMS_INSTALL_PREFIX=%SDK_INSTALL_PREFIX%
-set ROSDEPS_ROOT=%INSTALL_ROOT%\rosdeps\fuerte\x86
+set SDK_ROSINSTALL_STABLE_URL=https://raw.github.com/stonier/win_ros/master/msvc_fuerte.rosinstall
+set SDK_ROSINSTALL_UNSTABLE_URL=https://raw.github.com/stonier/win_ros/master/msvc_unstable.rosinstall
+set COMMS_ROSINSTALL_STABLE_URL=https://raw.github.com/stonier/win_ros/master/msvc_fuerte_comms.rosinstall
+set COMMS_ROSINSTALL_UNSTABLE_URL=https://raw.github.com/stonier/win_ros/master/msvc_unstable_comms.rosinstall
 
 rem ***************************** Constants **********************************
 
@@ -200,11 +204,11 @@ echo.
 if "%BUILD%"=="stable" (
   echo "Downloading stable sources."
   echo.
-  call rosinstall %DIR_SDK_SOURCES% https://raw.github.com/stonier/win_ros/master/msvc_fuerte.rosinstall
+  call rosinstall %DIR_SDK_SOURCES% %SDK_ROSINSTALL_STABLE_URL%
 ) else (
   echo "Downloading latest sources."
   echo.
-  call rosinstall %DIR_SDK_SOURCES% https://raw.github.com/stonier/win_ros/master/msvc_unstable.rosinstall
+  call rosinstall %DIR_SDK_SOURCES% %SDK_ROSINSTALL_UNSTABLE_URL%
 )
 cd %DIR_SDK_SOURCES%\win_ros\win_patches
 call apply_msvc_patches
@@ -251,6 +255,10 @@ if X%TARGET%==Xall (
   echo "You may now proceed with 'winros sdk build'"
   goto End
 )
+
+:SdkDude
+echo "Hello Dude"
+goto End
 
 :SdkBuild
 echo.
@@ -368,11 +376,11 @@ echo.
 if "%BUILD%"=="stable" (
   echo "Downloading stable generators and comms sources."
   echo.
-  call rosinstall %DIR_COMMS_SOURCES% https://raw.github.com/stonier/win_ros/master/msvc_fuerte_comms.rosinstall
+  call rosinstall %DIR_COMMS_SOURCES% %COMMS_ROSINSTALL_STABLE_URL%
 ) else (
   echo "Downloading latest generators and comms sources."
   echo.
-  call rosinstall %DIR_COMMS_SOURCES% https://raw.github.com/stonier/win_ros/master/msvc_unstable_comms.rosinstall
+  call rosinstall %DIR_COMMS_SOURCES% %COMMS_ROSINSTALL_UNSTABLE_URL%
 )
 cd %PWD%
 if X%TARGET%==Xall (
@@ -396,6 +404,7 @@ cmake -G "NMake Makefiles" ^
 	  -DCATKIN_BUILD_STACKS:STRING=ALL ^
       -DCATKIN_BLACKLIST_STACKS:STRING="win_ros" ^
 	  -DCMAKE_INSTALL_PREFIX=%COMMS_INSTALL_PREFIX% ^
+	  -DCATKIN_ROSDEPS_PATH:PATH="%ROSDEPS_ROOT%" ^
 	  %DIR_COMMS_SOURCES%
 cd %PWD%
 if X%TARGET%==Xall (
