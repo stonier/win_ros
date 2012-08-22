@@ -2,7 +2,7 @@
 - git:
     uri: 'https://github.com/yujinrobot/catkin.git'
     local-name: catkin
-    version: master
+    version: e8e5da3afec0371a570011b889c5cae8ebeaca80
 
 - git:
     uri: 'https://github.com/ros/genmsg.git'
