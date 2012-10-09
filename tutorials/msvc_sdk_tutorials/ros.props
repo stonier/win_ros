@@ -11,7 +11,7 @@
   <ItemDefinitionGroup>
     <ClCompile>
       <AdditionalIncludeDirectories>$(ROSDEPS_DIR)\$(ROS_VER)\$(MACHINE_TYPE)\include;$(ROS_DIR)\$(ROS_VER)\$(MACHINE_TYPE)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>ROS_BUILD_SHARED_LIBS=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>ROS_BUILD_SHARED_LIBS=1;BOOST_ALL_NO_LIB=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(ROSDEPS_DIR)\$(ROS_VER)\$(MACHINE_TYPE)\lib;$(ROS_DIR)\$(ROS_VER)\$(MACHINE_TYPE)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>

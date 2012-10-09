@@ -3,13 +3,19 @@
 
 rm -f ros.sdf
 rm -f ros.suo
-rm -rf Debug
 rm -rf ipch
 rm -rf Release
-rm -rf listener/Debug
+rm -rf ReleaseWithDebugSymbol
+rm -rf listener/ReleaseWithDebugSymbol
 rm -rf listener/Release
-rm -rf talker/Debug
+rm -rf talker/ReleaseWithDebugSymbol
 rm -rf talker/Release
-rm -rf rostime/Debug
+rm -rf rostime/ReleaseWithDebugSymbol
 rm -rf rostime/Release
+rm -rf add_two_ints_client/ReleaseWithDebugSymbol
+rm -rf add_two_ints_client/Release
+rm -rf add_two_ints_server/ReleaseWithDebugSymbol
+rm -rf add_two_ints_server/Release
+
+
 
