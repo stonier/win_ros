@@ -66,7 +66,7 @@
 - git:
     uri: 'https://github.com/stonier/qt_ros.git'
     local-name: qt_ros
-    version: e41fe4f64865b26f2244a61c03965dabcc764b42 
+    version: catkin_fuerte 
 
 - git:
     uri: 'https://github.com/stonier/win_ros.git'
