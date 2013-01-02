@@ -1,0 +1,16 @@
+42,56d41
+< def samefile(f1, f2):
+<     "Test whether two pathnames reference the same actual file"
+<     try:
+<         return os.path.samefile(f1,f2)
+<     except AttributeError:
+<         try:
+<             from nt import _getfinalpathname
+<             return _getfinalpathname(f1) == _getfinalpathname(f2)
+<         except (NotImplementedError, ImportError):
+<             # On Windows XP and earlier, two files are the same if their
+<             #  absolute pathnames are the same.
+<             # Also, on other operating systems, fake this method with a
+<             #  Windows-XP approximation.
+<             return os.path.abspath(f1) == os.path.abspath(f2)
+< 

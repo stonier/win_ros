@@ -1,0 +1,8 @@
+39c39
+< from common import samefile, select_element, select_elements, MultiProjectException
+---
+> from common import select_element, select_elements, MultiProjectException
+272c272
+<                 if not samefile(os.getcwd(), config.get_base_path()):
+---
+>                 if not os.path.samefile(os.getcwd(), config.get_base_path()):
