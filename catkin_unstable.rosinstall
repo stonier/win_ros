@@ -1,5 +1,0 @@
-#    uri: 'git://github.com/willowgarage/catkin.git'
-- git:
-    uri: 'git://github.com/yujinrobot/catkin.git'
-    local-name: catkin
-    version: master
