@@ -2,9 +2,8 @@
 - git:
     uri: 'https://github.com/yujinrobot/catkin.git'
     local-name: catkin
-    version: e8e5da3afec0371a570011b889c5cae8ebeaca80
+    version: master
 
-#uri: 'https://github.com/ros/genmsg.git'
 - git:
     uri: 'https://github.com/yujinrobot/genmsg.git'
     local-name: genmsg
@@ -25,34 +24,37 @@
     local-name: std_msgs
     version: master
 
+- svn:
+    uri: 'https://code.ros.org/svn/ros/stacks/ros/trunk/'
+    local-name: ros
+
 - git:
     uri: 'https://github.com/ros/roscpp_core.git'
     local-name: roscpp_core
     version: master
 
-- svn:
-    uri: 'https://code.ros.org/svn/ros/stacks/ros_comm/trunk/'
+- git:
+    uri: 'https://github.com/ros/ros_comm.git'
     local-name: ros_comm
+    version: master
 
-- hg:
-    uri: 'https://kforge.ros.org/rosrelease/rospack'
-    local-name: rospack
+#- hg:
+#    uri: 'https://kforge.ros.org/rosrelease/rospack'
+#    local-name: rospack
 
-- svn:
-    uri: 'https://code.ros.org/svn/ros/stacks/ros/trunk/'
-    local-name: ros
-
-- svn:
-    uri: 'https://code.ros.org/svn/ros-pkg/stacks/common_msgs/trunk'
+- git:
+    uri: 'https://github.com/ros/common_msgs.git'
     local-name: common_msgs
+    version: master
 
-- hg:
-    local-name: actionlib
-    uri: 'https://kforge.ros.org/common/actionlib'
+#- hg:
+#    local-name: actionlib
+#    uri: 'https://kforge.ros.org/common/actionlib'
 
-#- svn:
-#    uri: 'https://code.ros.org/svn/ros/stacks/ros_tutorials/trunk'
-#    local-name: ros_tutorials
+- git:
+    uri: 'https://github.com/ros/ros_tutorials.git'
+    local-name: ros_tutorials
+    version: master
 
 # https://github.com/stonier/qt_ros.git
 #- git:
@@ -60,7 +62,6 @@
 #    local-name: qt_ros
 #    version: master
 
-#    uri: git@github.com:stonier/win_ros.git
 - git:
     uri: 'https://github.com/stonier/win_ros.git'
     local-name: win_ros
