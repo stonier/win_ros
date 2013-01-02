@@ -4,8 +4,8 @@
 
 \section Status
 
- - Downloads version 3.10
- - Builds an msi installer (build/PyYAML-3.10/dist/PyYAML-3.10.win32.msi)
+ - Downloads version 2.1.1
+ - Builds an msi installer (build/???)
  - Will build against whatever python you currently have.
  - By default builds a 'pure' python version of hg.
 
