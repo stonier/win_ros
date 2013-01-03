@@ -2,7 +2,10 @@
 <package>
   <name>win_python_build_tools</name>
   <version>0.1.0</version>
-  <description>Collects all the ros python build tools packages together in one installer</description>
+  <description>
+    Collects all the ros python build tools packages together in 
+    one installer
+  </description>
 
   <maintainer email="d.stonier@gmail.com">Daniel Stonier</maintainer>
   <license>BSD</license>
