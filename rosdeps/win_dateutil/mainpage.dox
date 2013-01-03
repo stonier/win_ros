@@ -1,0 +1,13 @@
+/**
+\mainpage
+\htmlinclude manifest.html
+
+\section Current Status
+
+ - Downloads version 1.5.0
+ - Builds an msi installer
+ - Built for python2.7, use dateutil 2.0.0+ for python3
+
+See make.bat for details.
+
+*/

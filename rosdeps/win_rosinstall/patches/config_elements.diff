@@ -1,8 +1,0 @@
-41c41
-< from common import samefile, MultiProjectException
----
-> from common import MultiProjectException
-221c221
-<           if not (os.path.isdir(self.uri) and os.path.isdir(cur_url) and samefile(cur_url, self.uri)):
----
->           if not (os.path.isdir(self.uri) and os.path.isdir(cur_url) and os.path.samefile(cur_url, self.uri)):

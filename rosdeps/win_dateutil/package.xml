@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<package>
+  <name>win_dateutil</name>
+  <version>1.5.0</version>
+  <description>Windows installer for dateutil module</description>
+
+  <maintainer email="d.stonier@gmail.com">Daniel Stonier</maintainer>
+  <license>BSD</license>
+  <url type="website">http://ros.org/wiki/win_dateutil</url>
+  <author email="d.stonier@gmail.com">Daniel Stonier</author> -->
+  <buildtool_depend>catkin</buildtool_depend>
+  <!-- <export></export> -->
+</package>

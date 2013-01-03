@@ -18,24 +18,29 @@ echo "Make sure you bump the version in setup.py if necessary."
 goto End
 
 :Download
-IF NOT EXIST %cd%\scripts\rosinstall.py (
+IF NOT EXIST %cd%\scripts\win-rosinstall.py (
   echo.
   echo "Downloading sources and patching"
   echo.
-  rem This is tip 02/03/2012
-  rem This is vcstools 0.1.18 and rosinstall 0.6.17
-  call hg clone -r b18d3b8c3065 https://kforge.ros.org/vcstools/hg vcstools
-  call hg clone -r 893f479dbb63 https://kforge.ros.org/vcstools/rosinstall rosinstall
+  mkdir src
+  rem vcstools 0.1.26 rosinstall 0.6.22 rem wstool 0.0.2
+  call git clone https://github.com/vcstools/vcstools.git
+  cd vcstools & call git checkout c57f0ab7be2eede0ead237a783d2cf2c7dd94cba & cd ..  
+  call git clone https://github.com/vcstools/rosinstall.git
+  cd rosinstall & call git checkout 73451bff3dac0d45a79a5dc177ea7a8fd743da3e & cd ..
+  call git clone https://github.com/vcstools/wstool.git
+  cd wstool & call git checkout e2e4c03f915926ef45e142ea7c97df43fe1bf017 & cd ..
   move %cd%\vcstools\src\vcstools %cd%\src\vcstools
   move %cd%\rosinstall\src\rosinstall %cd%\src\rosinstall
-  move %cd%\rosinstall\scripts\rosinstall %cd%\scripts\win-rosinstall.py
-  move %cd%\rosinstall\scripts\rosws %cd%\scripts\win-rosws.py
+  move %cd%\wstool\src\wstool %cd%\src\wstool
+  move %cd%\wstool\scripts\wstool %cd%\scripts\win-wstool.py
   rem put patching here if we want it
-  copy /Y %cd%\patches\common.py %cd%\src\rosinstall
-  copy /Y %cd%\patches\multiproject_cli.py %cd%\src\rosinstall
-  copy /Y %cd%\patches\config_elements.py %cd%\src\rosinstall
+  rem copy /Y %cd%\patches\common.py %cd%\src\rosinstall
+  rem copy /Y %cd%\patches\multiproject_cli.py %cd%\src\rosinstall
+  rem copy /Y %cd%\patches\config_elements.py %cd%\src\rosinstall
   rd /S /Q vcstools
   rd /S /Q rosinstall
+  rd /S /Q wstool
 ) ELSE (
   echo.
   echo "Already prepped"
@@ -67,7 +72,7 @@ echo.
 echo "Uploading to file server."
 echo.
 cd dist
-scp *.msi files@files.yujinrobot.com:pub/appupdater/python/2.7/
+scp *.msi files@files.yujinrobot.com:pub/windows/python/2.7/
 goto End
 
 :Clean
@@ -75,8 +80,8 @@ rd /S /Q %cd%\build
 rd /S /Q %cd%\dist
 rd /S /Q %cd%\src\vcstools
 rd /S /Q %cd%\src\rosinstall
-rm %cd%\scripts\win-rosinstall.py
-rm %cd%\scripts\win-rosws.py
+rd /S /Q %cd%\src\wstool
+rm %cd%\scripts\win-wstool.py
 goto End
 
 :End
