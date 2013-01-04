@@ -17,8 +17,8 @@
   <license>BSD</license>
   <review status="experimental" notes=""/>
   <url>http://ros.org/wiki/msvc_runtime</url>
-  <depend package=win_roscpp_tutorials/>
-  <depend package=rosgraph_msgs/>
+  <depend package="win_roscpp_tutorials"/>
+  <depend package="rosgraph_msgs"/>
   
   <!-- Once we fix it to work with msvc 
   <depend package=rosout/> 
