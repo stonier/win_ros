@@ -1,0 +1,6 @@
+#!/bin/bash
+
+git push origin --delete groovy-devel
+git checkout -b groovy-devel
+git push origin groovy-devel
+git checkout master
