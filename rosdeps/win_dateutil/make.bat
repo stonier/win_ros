@@ -58,7 +58,7 @@ echo.
 echo "Uploading to file server."
 echo.
 cd %cd%\build\python-dateutil-1.5\dist
-scp *.msi files@files.yujinrobot.com:pub/windows/python/2.7/
+scp *.msi files@files.yujinrobot.com:pub/repositories/windows/python/2.7/
 goto End
 
 :Clean

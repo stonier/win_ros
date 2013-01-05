@@ -29,7 +29,7 @@ IF X%1==Xall GOTO Upload
 GOTO End
 
 :Upload
-scp fakeroot/bzip2*.zip files@files.yujinrobot.com:pub/appupdater/libraries 
+scp fakeroot/bzip2*.zip files@files.yujinrobot.com:pub/windows/repo/libraries 
 GOTO End
 
 :Clean

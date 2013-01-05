@@ -4,10 +4,6 @@
 
 \section Overview
 
-Dev notes are on https://github.com/stonier/win_ros/wiki/Rosinstall
+Bundles the core ros python tools. More information on the ros wiki.
 
-This is currently 
-
- - patching os.path.samefile for windows with the python3 patch.
-  - https://kforge.ros.org/vcstools/trac/ticket/57
 */

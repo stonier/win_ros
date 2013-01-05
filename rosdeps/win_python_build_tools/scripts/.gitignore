@@ -1,4 +1,3 @@
-win-rosinstall.py
-win-rosws.py
-win-wstool.py
-/win-rosversion.py
+winros_wstool.py
+winros_rosversion.py
+winros_catkin_create_pkg.py
