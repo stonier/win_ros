@@ -59,18 +59,22 @@ def parse_args():
                    help='base path for the workspace')
     return parser.parse_args()
 
-def populate(rosinstall_file_uri):
-        wstool_arguments = ['wstool', 
-                            'merge', 
-                            rosinstall_file_uri,
-                            "--target-workspace=%s"%os.path.join(base_path, 'src')
-                            ]
-        wstool.wstool_cli.wstool_main(wstool_arguments)
-        wstool_arguments = ['wstool', 
-                            'update', 
-                            "--target-workspace=%s"%os.path.join(base_path, 'src')
-                            ]
-        wstool.wstool_cli.wstool_main(wstool_arguments)
+def populate(base_path, rosinstall_file_uri):
+    '''
+      @param rosinstall_file_uri : the uri for the rosinstall file
+      @param distro : whether it is win_ros.STABLE or win_ros.UNSTABLE 
+    '''
+    wstool_arguments = ['wstool', 
+                        'merge', 
+                        rosinstall_file_uri,
+                        "--target-workspace=%s"%os.path.join(base_path, 'src')
+                        ]
+    wstool.wstool_cli.wstool_main(wstool_arguments)
+    wstool_arguments = ['wstool', 
+                        'update', 
+                        "--target-workspace=%s"%os.path.join(base_path, 'src')
+                        ]
+    wstool.wstool_cli.wstool_main(wstool_arguments)
 
 if __name__ == "__main__":
     args = parse_args()
@@ -91,11 +95,15 @@ if __name__ == "__main__":
         sys.stderr.write("ERROR in config: %s\n" % str(e))
         sys.exit(1)
     text = win_ros.write_setup_bat(base_path)
+    distro = win_ros.STABLE  # default
     if args.sdk_stable:
-        populate('https://raw.github.com/stonier/win_ros/master/msvc_groovy.rosinstall')
+        populate(base_path, 'https://raw.github.com/stonier/win_ros/master/msvc_groovy.rosinstall')
     if args.sdk_unstable:
-        populate('https://raw.github.com/stonier/win_ros/master/msvc_unstable.rosinstall')
+        populate(base_path, 'https://raw.github.com/stonier/win_ros/master/msvc_unstable.rosinstall')
+        distro = win_ros.UNSTABLE
     if args.comms_stable:
-        populate('https://raw.github.com/stonier/win_ros/master/msvc_groovy_comms.rosinstall')
+        populate(base_path, 'https://raw.github.com/stonier/win_ros/master/msvc_groovy_comms.rosinstall')
     if args.comms_unstable:
-        populate('https://raw.github.com/stonier/win_ros/master/msvc_unstable_comms.rosinstall')
+        populate(base_path, 'https://raw.github.com/stonier/win_ros/master/msvc_unstable_comms.rosinstall')
+        distro = win_ros.UNSTABLE
+    win_ros.write_toplevel_cmake(os.path.join(base_path, 'src'), distro)

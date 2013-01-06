@@ -22,7 +22,6 @@ IF NOT EXIST %cd%\scripts\win-rosinstall.py (
   echo.
   echo "Downloading sources and patching"
   echo.
-  mkdir src
   rem vcstools 0.1.26 rosinstall 0.6.22 wstool 0.0.2, rospkg 1.0.17, catkin_pkg 0.1.8
   call git clone https://github.com/ros/rospkg.git
   cd rospkg & call git checkout 85310f77b412bb52a3190bcbadf3c0677be9ced4 & cd ..
@@ -65,12 +64,14 @@ if X%COMMAND%==Xall (
 echo.
 echo "Building msi installer."
 echo.
-IF NOT EXIST %cd%\dist (
-  python setup.py bdist_msi
-) ELSE (
-  echo.
-  echo "Msi installer already built"
-)
+# Always build, it's easier this way.
+python setup.py bdist_msi
+rem IF NOT EXIST %cd%\dist (
+rem  python setup.py bdist_msi
+rem ) ELSE (
+rem  echo.
+rem  echo "Msi installer already built"
+rem )
 if X%COMMAND%==Xall (
   goto Upload
 ) else (
